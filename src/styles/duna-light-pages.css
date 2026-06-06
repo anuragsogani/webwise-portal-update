@@ -1,0 +1,464 @@
+/*
+ * Duna light-theme overrides for ported marketing pages.
+ * Applied after shared-page.css and page-specific styles.
+ */
+
+/* ── Global square corners on ported components ─────────────── */
+.sp-tile,
+.sp-card,
+.sp-chip,
+.sp-hero,
+.sp-section,
+.ab-hero,
+.sv-hero,
+.pf-card,
+.inner-hero,
+.me-card,
+.te-card,
+.ins-card,
+.ba-card,
+.gl-card,
+.fi-card {
+  border-radius: var(--radius-none) !important;
+}
+
+/* Inner page heroes → hero-product pattern */
+.sp-hero,
+.ab-hero,
+.sv-hero,
+.pf-hero,
+.ct-hero,
+.me-hero,
+.te-hero,
+.rs-hero,
+.gl-hero,
+.fi-hero,
+.ins-hero,
+.ba-hero,
+.sd-hero,
+.inner-hero {
+  background: var(--color-canvas);
+  padding-block: var(--space-section-fluid);
+  text-align: left;
+}
+
+.sp-hero__h1,
+.ab-hero__h1,
+.sv-hero__h1,
+.inner-hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: var(--tracking-display-xl);
+  max-width: var(--max-read);
+}
+
+.sp-hero__body,
+.ab-hero__body,
+.inner-hero__body {
+  max-width: var(--max-read-tight);
+  font-size: var(--text-body-lg);
+}
+
+/* Closing sections map to cta-band */
+.sp-closing-band,
+.ab-cta,
+.me-closing,
+.sd-closing,
+.ct-closing {
+  border-radius: var(--radius-none);
+}
+
+.page-wrap,
+.sp-main,
+.inner-main,
+.ab-main,
+.sv-main,
+.pf-main,
+.ct-main,
+.me-main,
+.te-main,
+.rs-main,
+.gl-main,
+.fi-main,
+.ins-main,
+.ba-main,
+.bc-main,
+.bi-main,
+.cs-main,
+.sd-main,
+.notfound-main {
+  background: var(--color-canvas);
+  color: var(--color-body);
+}
+
+/* ── Typography on light bands ─────────────────────────────── */
+.sp-section-title,
+.section-title,
+.pf-hero__h1,
+.ct-hero__h1,
+.me-hero__h1,
+.te-hero__h1,
+.rs-hero__h1,
+.gl-hero__h1,
+.fi-hero__h1,
+.ins-hero__h1,
+.ba-hero__title,
+.sd-hero__h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-display-lg);
+  letter-spacing: var(--tracking-display-lg);
+  line-height: 1.1;
+  color: var(--color-ink-deep);
+}
+
+.sp-section-title--lg {
+  font-size: var(--text-display-xl);
+  letter-spacing: var(--tracking-display-xl);
+  line-height: 1.05;
+}
+
+.sp-section-title--sm {
+  font-size: var(--text-display-sm);
+  letter-spacing: var(--tracking-display-sm);
+  line-height: 1.2;
+}
+
+.sp-hero__body,
+.sp-intro,
+.section-lead,
+.inner-hero__body,
+.ab-hero__body,
+.sp-closing__body,
+.ct-hero__body,
+.me-hero__body {
+  font-family: var(--font-body);
+  color: var(--color-body-strong);
+}
+
+.sp-eyebrow,
+.sp-label,
+.sp-section__label,
+.eyebrow,
+.ab-label,
+.inner-hero__eyebrow,
+.faq-section .eyebrow {
+  font-family: var(--font-mono) !important;
+  font-size: var(--text-eyebrow) !important;
+  letter-spacing: var(--tracking-mono) !important;
+  text-transform: none !important;
+  color: var(--color-muted) !important;
+}
+
+.sp-rule,
+.ab-divider,
+.inner-divider,
+.sp-divider {
+  border-color: var(--color-hairline) !important;
+}
+
+/* ── Cards & surfaces on light pages ───────────────────────── */
+.sp-card,
+.ab-card,
+.sv-domain,
+.pf-card,
+.me-card,
+.te-card,
+.gl-card,
+.fi-card,
+.sp-chip {
+  background: var(--color-surface-soft);
+  border-color: var(--color-hairline-strong);
+  border-radius: var(--radius-none);
+  color: var(--color-body);
+}
+
+.sp-chip {
+  color: var(--color-body-strong);
+}
+
+.sp-text-link,
+.sp-closing__link,
+.inner-text-link {
+  font-family: var(--font-ui);
+  font-size: var(--text-button);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+/* ── FAQ accordion — colors inherit from components.css ───── */
+.faq-section .section-title {
+  color: var(--color-ink);
+}
+
+/* ── Dark product tiles (intentional Duna bands) ───────────── */
+.sp-tile,
+.cs-tile {
+  background: var(--color-surface-dark);
+  border-radius: var(--radius-none);
+  border-color: var(--color-hairline-dark);
+}
+
+.sp-tile__label,
+.sp-tile__title,
+.sp-tile__body,
+.sp-tile__content .sp-text-link,
+.cs-tile + .cs-main .sp-section-title {
+  color: var(--color-on-dark);
+}
+
+.sp-tile__body {
+  color: var(--color-on-dark-muted);
+}
+
+/* ── CTA / closing bands ───────────────────────────────────── */
+.sp-closing-band,
+.ab-cta,
+.ct-closing,
+.me-closing,
+.sd-closing {
+  background: var(--color-surface-dark);
+  color: var(--color-on-dark);
+}
+
+.sp-closing-band .sp-section-title,
+.ab-cta__title,
+.ct-closing__title {
+  color: var(--color-on-dark);
+}
+
+/* ── About page ────────────────────────────────────────────── */
+.ab-main {
+  padding-bottom: var(--space-section-fluid);
+}
+
+.ab-card {
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+}
+
+.ab-card__title {
+  color: var(--color-ink);
+}
+
+.ab-stat__val {
+  color: var(--color-ink-deep);
+  font-family: var(--font-display);
+}
+
+/* ── Services page ─────────────────────────────────────────── */
+.sv-domain {
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+}
+
+.sv-domain__title {
+  color: var(--color-ink);
+}
+
+/* ── Portfolio ─────────────────────────────────────────────── */
+.pf-card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+}
+
+.pf-card:hover {
+  border-color: var(--color-hairline-strong);
+}
+
+.pf-card__title {
+  color: var(--color-ink);
+}
+
+/* ── Contact form ──────────────────────────────────────────── */
+.ct-form input,
+.ct-form textarea,
+.ct-form select {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-sm);
+}
+
+.ct-form button[type="submit"] {
+  background: var(--color-primary);
+  color: var(--color-on-accent);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+/* ── Blog / insights ─────────────────────────────────────── */
+.ins-card,
+.ba-card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-none);
+}
+
+.ins-card__title,
+.ba-card__title {
+  color: var(--color-ink);
+}
+
+/* Newsletter (Insights index) + pre-footer handoff */
+.page-wrap .ns-wrap {
+  border-color: var(--color-hairline);
+  margin-block: var(--space-xl) 0;
+}
+
+.page-wrap .ns-label {
+  color: var(--color-muted);
+}
+
+.page-wrap .ns-headline {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display-sm);
+  color: var(--color-ink-deep);
+}
+
+.page-wrap .ns-sub,
+.page-wrap .ns-note,
+.page-wrap .ns-success,
+.page-wrap .ns-error {
+  color: var(--color-body);
+}
+
+.page-wrap .ns-input {
+  background: var(--color-canvas);
+  border-color: var(--color-hairline-strong);
+  color: var(--color-ink);
+  border-radius: var(--radius-sm);
+}
+
+.page-wrap .ns-input:focus {
+  border-color: var(--color-ink);
+}
+
+.page-wrap .ns-btn {
+  border-color: var(--color-hairline-strong);
+  color: var(--color-ink);
+  border-radius: var(--radius-sm);
+}
+
+.page-wrap .ns-btn:hover:not(:disabled) {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.page-wrap .bi-main + .cta-get-started {
+  border-top: 1px solid var(--color-hairline);
+}
+
+/* ── Glossary ──────────────────────────────────────────────── */
+.gl-term-card {
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+}
+
+/* ── APAC / MSSP landings ──────────────────────────────────── */
+.apac-page,
+.mssp-page {
+  background: var(--color-canvas);
+  color: var(--color-body);
+}
+
+.apac-hero__h1,
+.mssp-hero__h1,
+.apac-section-title,
+.mssp-section-title {
+  color: var(--color-ink-deep);
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.apac-eyebrow,
+.mssp-eyebrow {
+  font-family: var(--font-mono);
+  color: var(--color-muted);
+}
+
+.apac-divider,
+.mssp-divider {
+  border-color: var(--color-hairline);
+}
+
+.apac-card,
+.mssp-card {
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-none);
+}
+
+.apac-cta,
+.mssp-cta,
+.apac-btn-primary,
+.mssp-btn-primary {
+  background: var(--color-primary) !important;
+  color: var(--color-on-accent) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.apac-band-teal,
+.mssp-band-teal {
+  background: var(--color-accent-teal);
+  color: var(--color-on-dark);
+}
+
+/* ── Book call FAB ─────────────────────────────────────────── */
+.book-call-fab {
+  background: var(--color-surface-dark);
+  color: var(--color-on-dark);
+  border-radius: var(--radius-sm);
+}
+
+.book-call-fab:hover {
+  background: var(--color-surface-dark-elevated);
+}
+
+/* ── Clients grid (ported CSS) ─────────────────────────────── */
+.client-grid__cell {
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+}
+
+.client-grid__name {
+  color: var(--color-body);
+}
+
+/* ── Legal / prose pages ───────────────────────────────────── */
+.legal-prose,
+.inner-prose {
+  color: var(--color-body);
+}
+
+.legal-prose h2,
+.legal-prose h3,
+.inner-prose h2 {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+}
+
+/* ── Buttons used in ported pages ──────────────────────────── */
+.sp-btn,
+.sp-btn--primary,
+.inner-btn--primary {
+  background: var(--color-primary);
+  color: var(--color-on-accent);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+.sp-btn--secondary,
+.inner-btn--secondary {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-sm);
+}

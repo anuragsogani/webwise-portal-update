@@ -1,0 +1,77 @@
+/* ════════════════════════════════════════════════════════════════
+   BLOG CATEGORY PAGE  -  pillar hub additions
+   ════════════════════════════════════════════════════════════════ */
+
+/* Primer paragraph  -  authoritative intro text */
+.bcp-primer {
+  font-size: 0.9rem;
+  line-height: 1.82;
+  color: var(--dim);
+  max-width: 680px;
+  margin: 0 0 2rem;
+}
+
+/* Concept chips row */
+.bcp-concepts {
+  margin-bottom: 2.5rem;
+}
+
+.bcp-concepts__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+/* Featured read card */
+.bcp-featured {
+  margin-top: 2rem;
+}
+
+.bcp-featured__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.bcp-featured__card {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  border: 0.5px solid var(--border2);
+  border-radius: 4px;
+  background: var(--card2);
+  text-decoration: none;
+  max-width: 560px;
+  transition: border-color 0.18s;
+}
+
+.bcp-featured__card:hover {
+  border-color: var(--lime-border);
+}
+
+.bcp-featured__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--white);
+  margin: 0 0 0.5rem;
+}
+
+.bcp-featured__desc {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--dim);
+  margin: 0 0 0.75rem;
+}
+
+.bcp-featured__cta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--lime);
+}

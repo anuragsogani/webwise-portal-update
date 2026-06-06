@@ -1,0 +1,50 @@
+/* ═══════════════════════════════════════════════════════════════
+   SERVICES PAGE  (.sv-*)
+   ═══════════════════════════════════════════════════════════════ */
+
+.sv-main {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sv-domain__top {
+  display: grid;
+  grid-template-columns: 1fr 176px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.sv-domain__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sv-domain__visual {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 0.25rem;
+}
+
+.sv-domain-svg {
+  width: 152px;
+  height: 152px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.24));
+}
+
+.sv-case-link {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 860px) {
+  .sv-domain__top {
+    grid-template-columns: 1fr;
+  }
+
+  .sv-domain__visual {
+    justify-content: flex-start;
+  }
+}

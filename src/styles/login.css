@@ -1,0 +1,181 @@
+.lg-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, #0c0c0e 0%, #050506 100%);
+  padding: 24px;
+}
+
+.lg-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0; /* Sharp corners */
+  padding: 48px 40px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.lg-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(163, 230, 53, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.lg-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.lg-logo {
+  margin-inline: auto;
+  margin-bottom: 12px;
+}
+
+.lg-header h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--white);
+  margin: 0;
+}
+
+.lg-header p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 8px 0 0;
+}
+
+.lg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.lg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lg-field label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-left: 4px;
+}
+
+.lg-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lg-input-wrap svg {
+  position: absolute;
+  left: 16px;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.lg-field input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 0; /* Sharp corners */
+  padding: 14px 16px 14px 48px;
+  color: var(--white);
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.lg-field input:focus {
+  outline: none;
+  border-color: var(--lime-border);
+  background: rgba(163, 230, 53, 0.05);
+  box-shadow: 0 0 0 4px rgba(163, 230, 53, 0.1);
+}
+
+.lg-field input:focus + svg {
+  color: var(--lime);
+}
+
+.lg-submit {
+  width: 100%;
+  background: var(--lime);
+  color: var(--void);
+  border: none;
+  border-radius: 0; /* Sharp corners */
+  padding: 16px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.lg-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(163, 230, 53, 0.3);
+}
+
+.lg-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.lg-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.lg-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 12px 16px;
+  border-radius: 0; /* Sharp corners */
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.lg-footer {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.lg-footer p {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.lg-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--void);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

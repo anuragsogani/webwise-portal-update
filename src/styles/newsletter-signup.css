@@ -1,0 +1,101 @@
+/* ════════════════════════════════════════════════════════════════
+   NEWSLETTER SIGNUP COMPONENT  (.ns-*)
+   ════════════════════════════════════════════════════════════════ */
+
+.ns-wrap {
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+.ns-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.ns-headline {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--white);
+  margin: 0 0 0.4rem;
+}
+
+.ns-sub {
+  font-size: 0.82rem;
+  color: var(--dim);
+  margin: 0 0 1.25rem;
+  line-height: 1.65;
+}
+
+.ns-form {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  max-width: 480px;
+}
+
+.ns-input {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: 0.6rem 0.9rem;
+  background: var(--card2);
+  border: 0.5px solid var(--border2);
+  border-radius: 3px;
+  color: var(--white);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.ns-input::placeholder {
+  color: var(--muted);
+}
+
+.ns-input:focus {
+  border-color: var(--lime-border);
+}
+
+.ns-btn {
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 0.5px solid var(--border2);
+  border-radius: 3px;
+  color: var(--white);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s;
+  white-space: nowrap;
+}
+
+.ns-btn:hover {
+  border-color: var(--lime-border);
+  color: var(--lime);
+}
+
+.ns-success {
+  font-size: 0.85rem;
+  color: var(--lime);
+  font-family: var(--font-mono);
+  margin-top: 0.75rem;
+}
+
+.ns-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+.ns-error {
+  flex-basis: 100%;
+  font-size: 0.82rem;
+  color: #f87171;
+  font-family: var(--font-mono);
+  margin: 0.35rem 0 0;
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="6 6 108 108" role="img" aria-labelledby="title desc">
+  <title id="title">Observability Trace Doodle</title>
+  <desc id="desc">A pastel doodle card with logs, metrics line, and trace nodes.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="16" fill="#c6ced8"/>
+  <path d="M22 26 C40 25 79 25 98 26 C98 50 98 72 98 91 C79 91 40 90 22 89 C22 72 22 49 22 26 Z" fill="#f7f2eb"/>
+  <rect x="28" y="34" width="26" height="28" rx="3" fill="#efe7dc" stroke="#101114" stroke-width="1.6"/>
+  <path d="M33 41 H49 M33 47 H46 M33 53 H44" stroke="#101114" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M58 62 L66 50 L73 56 L80 44 L88 50" fill="none" stroke="#101114" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="66" cy="50" r="2.2" fill="#f7f2eb" stroke="#101114" stroke-width="1.2"/>
+  <circle cx="80" cy="44" r="2.2" fill="#f7f2eb" stroke="#101114" stroke-width="1.2"/>
+  <circle cx="88" cy="50" r="2.2" fill="#f7f2eb" stroke="#101114" stroke-width="1.2"/>
+  <path d="M61 74 L72 74 L82 82" stroke="#101114" stroke-width="1.7" stroke-linecap="round"/>
+  <circle cx="82" cy="82" r="3.3" fill="#f7f2eb" stroke="#101114" stroke-width="1.4"/>
+</svg>

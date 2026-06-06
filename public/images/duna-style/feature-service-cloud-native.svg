@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Cloud-native platform engineering</title>
+  <desc id="desc">AiRAT diagram of Kubernetes services, IaC guardrails, and CI/CD pipelines with measurable deploy frequency.</desc>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <text x="56" y="72" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="500" fill="#1a1a18">Cloud-native and platform engineering</text>
+  <text x="56" y="92" font-family="ui-monospace, monospace" font-size="11" fill="#898683">Kubernetes &#183; IaC &#183; CI/CD guardrails</text>
+  <rect x="56" y="120" width="128" height="360" rx="10" fill="#f3f2ef" stroke="#e8e6e1"/>
+  <text x="72" y="148" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#1a1a18">Domains</text>
+  <rect x="72" y="164" width="96" height="28" rx="6" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="72" y="204" width="96" height="28" rx="6" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="72" y="244" width="96" height="28" rx="6" fill="#c8f542" opacity="0.35"/>
+  <rect x="72" y="284" width="96" height="28" rx="6" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="200" y="120" width="304" height="168" rx="10" fill="#fafaf8" stroke="#e8e6e1"/>
+  <text x="216" y="148" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a18">CI/CD pipeline</text>
+  <rect x="216" y="164" width="64" height="32" rx="6" fill="#46838c" opacity="0.3"/>
+  <text x="248" y="184" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#1a1a18">build</text>
+  <path d="M280 180h24" stroke="#46838c" stroke-width="2"/>
+  <rect x="304" y="164" width="64" height="32" rx="6" fill="#2dd4bf" opacity="0.35"/>
+  <text x="336" y="184" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#1a1a18">scan</text>
+  <path d="M368 180h24" stroke="#46838c" stroke-width="2"/>
+  <rect x="392" y="164" width="64" height="32" rx="6" fill="#c8f542" opacity="0.45"/>
+  <text x="424" y="184" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#1a1a18">deploy</text>
+  <text x="216" y="232" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#898683">Policy, secrets, and blast radius as code</text>
+  <rect x="200" y="304" width="304" height="176" rx="10" fill="#1a1a18"/>
+  <text x="216" y="332" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#c8f542">Deploy frequency</text>
+  <rect x="216" y="348" width="48" height="112" rx="4" fill="#2dd4bf" opacity="0.5"/>
+  <rect x="280" y="320" width="48" height="140" rx="4" fill="#46838c" opacity="0.6"/>
+  <rect x="344" y="296" width="48" height="164" rx="4" fill="#c8f542" opacity="0.55"/>
+  <rect x="408" y="276" width="48" height="184" rx="4" fill="#f7f7f5" opacity="0.25"/>
+  <text x="56" y="522" font-family="ui-monospace, monospace" font-size="10" fill="#b2afae">AiRAT &#183; illustrative</text>
+</svg>

@@ -1,0 +1,207 @@
+/* Admin Dashboard Layout & Theme Variables */
+
+:root {
+  --admin-bg: #050510;
+  --admin-bg-gradient: radial-gradient(circle at top right, #0a0a1f 0%, #050510 100%);
+  --admin-surface: rgba(255, 255, 255, 0.03);
+  --admin-border: rgba(255, 255, 255, 0.1);
+  --admin-accent: #00ffff;
+  --admin-accent-dim: rgba(0, 255, 255, 0.1);
+  --admin-text: #e0e0ff;
+  --admin-text-dim: rgba(224, 224, 255, 0.5);
+  --admin-font-display: 'Outfit', sans-serif;
+  --admin-font-mono: var(--font-mono, monospace);
+  --admin-padding: 40px;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--admin-bg-gradient);
+  color: var(--admin-text);
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Common Admin Typography */
+.admin-main h1 {
+  font-family: var(--admin-font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px 0;
+}
+
+.admin-main h2 {
+  font-family: var(--admin-font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--admin-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.admin-main .hint {
+  font-size: 13px;
+  color: var(--admin-text-dim);
+  margin-bottom: 32px;
+}
+
+/* Sidebar Styling */
+.admin-sidebar {
+  width: 260px;
+  background: var(--admin-bg);
+  border-right: 1px solid var(--admin-border);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+}
+
+.admin-sidebar__logo {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.admin-sidebar__logo .logo-text {
+  font-family: var(--admin-font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.admin-sidebar__logo .accent {
+  color: var(--admin-accent);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.admin-sidebar__logo .logo-badge {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--admin-text-dim);
+  letter-spacing: 2px;
+  margin-top: -2px;
+}
+
+.admin-sidebar__nav {
+  flex: 1;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.nav-group__label {
+  font-family: var(--admin-font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--admin-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  padding-left: 12px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  color: var(--admin-text-dim);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  border-radius: 0;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.nav-link.active {
+  background: var(--admin-accent-dim);
+  color: var(--admin-accent);
+  border-left: 2px solid var(--admin-accent);
+}
+
+.nav-link__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-sidebar__footer {
+  padding: 24px 16px;
+  border-top: 1px solid var(--admin-border);
+}
+
+.logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 77, 77, 0.1);
+}
+
+/* Main Content Wrapper */
+.admin-main {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  padding: var(--admin-padding);
+  position: relative;
+}
+
+.admin-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-main::-webkit-scrollbar-thumb {
+  background: var(--admin-border);
+  border-radius: 0;
+}
+
+@media (max-width: 1024px) {
+  .admin-sidebar {
+    width: 80px;
+  }
+  .admin-sidebar__logo .logo-text,
+  .admin-sidebar__logo .logo-badge,
+  .nav-group__label,
+  .nav-link__label,
+  .logout-btn span {
+    display: none;
+  }
+  .admin-sidebar__logo {
+    align-items: center;
+    padding: 32px 0;
+  }
+}

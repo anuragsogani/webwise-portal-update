@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="6 6 108 108" role="img" aria-labelledby="title desc">
+  <title id="title">SOC Runbook Doodle</title>
+  <desc id="desc">A pastel doodle card with a runbook checklist and response flow arrows.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="16" fill="#e0c8ca"/>
+  <path d="M22 24 C41 24 79 23 97 24 C98 48 98 72 97 92 C78 92 41 92 22 91 C22 72 22 49 22 24 Z" fill="#f7f2eb"/>
+  <rect x="32" y="30" width="38" height="50" rx="4" fill="#efe7dc" stroke="#101114" stroke-width="2"/>
+  <path d="M40 42 L44 46 L51 38" stroke="#101114" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 54 L44 58 L51 50" stroke="#101114" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 66 L44 70 L51 62" stroke="#101114" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M57 42 H63 M57 54 H63 M57 66 H63" stroke="#101114" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M77 42 H91 M86 35 L93 42 L86 49" stroke="#101114" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M77 61 H91 M86 54 L93 61 L86 68" stroke="#101114" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

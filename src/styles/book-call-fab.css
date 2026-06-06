@@ -1,0 +1,80 @@
+/* ══════════════════════════════════════════════════════════════
+   GLOBAL BOOK A CALL FAB  —  WIDTH-style two-line pill
+   ══════════════════════════════════════════════════════════════ */
+.bc-fab {
+  position: fixed;
+  bottom: clamp(1.25rem, 3vw, 2rem);
+  right: clamp(1.25rem, 3vw, 2rem);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-ui);
+  background: linear-gradient(135deg, #76e4df 0%, #4ab8b2 100%);
+  border: none;
+  border-radius: 100px;
+  padding: 0.85rem 1.5rem 0.85rem 1.25rem;
+  cursor: pointer;
+  min-width: 190px;
+  box-shadow: 0 4px 24px rgba(118, 228, 223, 0.3), 0 0 0 0 rgba(118, 228, 223, 0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: bc-fab-in 0.5s ease 1.5s both;
+  text-decoration: none;
+}
+
+.bc-fab:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(118, 228, 223, 0.4), 0 0 0 3px rgba(118, 228, 223, 0.15);
+}
+
+.bc-fab:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.bc-fab__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.bc-fab__primary {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #040404;
+  line-height: 1.2;
+}
+
+.bc-fab__secondary {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(4, 4, 4, 0.65);
+  line-height: 1.2;
+}
+
+.bc-fab__arrow {
+  color: #040404;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@keyframes bc-fab-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.88); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 640px) {
+  .bc-fab {
+    min-width: 160px;
+    padding: 0.7rem 1.1rem 0.7rem 1rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .bc-fab__primary { font-size: 0.82rem; }
+  .bc-fab__secondary { font-size: 0.68rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bc-fab { animation: none; }
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="900" viewBox="0 0 1920 900" fill="none" role="img" aria-labelledby="footerSceneTitle">
+  <title id="footerSceneTitle">AiRAT footer landscape</title>
+  <defs>
+    <linearGradient id="sky" x1="960" y1="0" x2="960" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a3a45"/>
+      <stop offset="42%" stop-color="#2a5560"/>
+      <stop offset="100%" stop-color="#1a3a45"/>
+    </linearGradient>
+    <linearGradient id="water" x1="960" y1="520" x2="960" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2d6a72" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#14343d" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a6a78" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#3d4a56" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b8f6a" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#4a6b52" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fa86c" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#5f7a48" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="900" fill="url(#sky)"/>
+  <ellipse cx="1520" cy="180" rx="220" ry="90" fill="#f7e6a8" opacity="0.12"/>
+  <path d="M0 420 C320 360 480 400 720 370 C960 340 1200 390 1440 350 C1680 310 1840 330 1920 340 L1920 520 L0 520 Z" fill="url(#hillFar)"/>
+  <path d="M0 500 C280 440 520 470 800 430 C1080 390 1360 460 1640 420 C1780 400 1880 410 1920 415 L1920 620 L0 620 Z" fill="url(#hillMid)"/>
+  <path d="M0 580 C360 520 640 560 960 530 C1280 500 1560 570 1920 540 L1920 900 L0 900 Z" fill="url(#hillNear)"/>
+  <rect x="0" y="560" width="1920" height="340" fill="url(#water)"/>
+  <path d="M0 600 C480 590 960 610 1440 595 C1680 588 1840 592 1920 595" stroke="#7ec8c8" stroke-width="2" opacity="0.18"/>
+  <path d="M0 640 C420 628 840 652 1260 636 C1560 626 1780 634 1920 638" stroke="#c8f542" stroke-width="1.5" opacity="0.12"/>
+  <text x="960" y="760" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="280" font-weight="500" letter-spacing="-12" fill="#ffffff" opacity="0.06">AiRAT</text>
+</svg>

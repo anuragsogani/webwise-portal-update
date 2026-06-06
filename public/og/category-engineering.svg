@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">AiRAT Insights - Engineering Playbooks</title>
+  <desc id="desc">Open Graph image for AiRAT's Engineering Playbooks category featuring an abstract systems pipeline and descriptive category text.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0e0e0e"/>
+    </linearGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="65"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <ellipse cx="950" cy="250" rx="320" ry="210" fill="#76e4df" opacity="0.05" filter="url(#blur)"/>
+
+  <g stroke="#1e1e1e" stroke-width="0.5">
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+  </g>
+
+  <!-- Pipeline diagram - abstract -->
+  <g transform="translate(800, 180)" opacity="0.26">
+    <!-- Nodes -->
+    <rect x="0" y="60" width="70" height="36" rx="4" fill="none" stroke="#76e4df" stroke-width="1"/>
+    <text x="10" y="83" font-family="monospace" font-size="9" fill="#76e4df">INGEST</text>
+    <rect x="120" y="20" width="70" height="36" rx="4" fill="none" stroke="#76e4df" stroke-width="1" opacity="0.9"/>
+    <text x="130" y="43" font-family="monospace" font-size="9" fill="#76e4df">PROCESS</text>
+    <rect x="120" y="100" width="70" height="36" rx="4" fill="none" stroke="#76e4df" stroke-width="1" opacity="0.7"/>
+    <text x="136" y="123" font-family="monospace" font-size="9" fill="#76e4df">ENRICH</text>
+    <rect x="240" y="60" width="70" height="36" rx="4" fill="none" stroke="#76e4df" stroke-width="1" opacity="0.8"/>
+    <text x="252" y="83" font-family="monospace" font-size="9" fill="#76e4df">STORE</text>
+    <rect x="360" y="60" width="70" height="36" rx="4" fill="none" stroke="#76e4df" stroke-width="1" opacity="0.6"/>
+    <text x="365" y="83" font-family="monospace" font-size="9" fill="#76e4df">SERVE</text>
+    <!-- Arrows -->
+    <g stroke="#76e4df" stroke-width="0.8" fill="none">
+      <line x1="70" y1="78" x2="118" y2="40"/>
+      <line x1="70" y1="78" x2="118" y2="116"/>
+      <line x1="190" y1="40" x2="238" y2="72"/>
+      <line x1="190" y1="116" x2="238" y2="86"/>
+      <line x1="310" y1="78" x2="358" y2="78"/>
+      <!-- Arrow heads -->
+      <polyline points="113,36 118,40 113,44"/>
+      <polyline points="113,112 118,116 113,120"/>
+      <polyline points="233,68 238,72 233,76"/>
+      <polyline points="233,82 238,86 233,90"/>
+      <polyline points="353,74 358,78 353,82"/>
+    </g>
+    <!-- Latency annotation -->
+    <text x="130" y="170" font-family="monospace" font-size="9" fill="#76e4df" opacity="0.5">&lt; 40ms p99</text>
+  </g>
+
+  <text x="80" y="192" font-family="monospace" font-size="13" fill="#76e4df" letter-spacing="4" opacity="0.9">AiRAT / INSIGHTS</text>
+  <text x="80" y="275" font-family="Georgia, serif" font-size="58" fill="#f5f5f5" font-weight="400" letter-spacing="-1">Engineering</text>
+  <text x="80" y="345" font-family="Georgia, serif" font-size="58" fill="#f5f5f5" font-weight="400" letter-spacing="-1">Playbooks</text>
+  <rect x="80" y="378" width="60" height="1.5" fill="#76e4df" opacity="0.8"/>
+  <text x="80" y="432" font-family="system-ui, sans-serif" font-size="20" fill="#888">Architecture decisions, migration patterns, and SLO</text>
+  <text x="80" y="460" font-family="system-ui, sans-serif" font-size="20" fill="#888">design written by the team that ships the systems.</text>
+  <text x="80" y="575" font-family="monospace" font-size="13" fill="#444" letter-spacing="2">airat.in/blog/category/engineering</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">FinTech and regulated financial platforms</title>
+  <desc id="desc">AiRAT diagram of KYC compliance paths, trading latency, and audit-ready custody workflows.</desc>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <text x="280" y="72" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="500" fill="#1a1a18">FinTech and InsurTech platforms</text>
+  <text x="280" y="92" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#898683">Compliance, trading, and custody under audit</text>
+  <rect x="56" y="120" width="136" height="88" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <text x="72" y="148" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#898683">KYC / AML</text>
+  <text x="72" y="176" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#46838c">100%</text>
+  <text x="72" y="192" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#898683">traceable</text>
+  <rect x="208" y="120" width="136" height="88" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <text x="224" y="148" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#898683">Trade latency</text>
+  <text x="224" y="176" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#1a1a18">8ms</text>
+  <rect x="360" y="120" width="144" height="88" rx="8" fill="#1a1a18"/>
+  <text x="376" y="148" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#928e8b">Custody audit</text>
+  <text x="376" y="176" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#c8f542">Pass</text>
+  <rect x="56" y="224" width="448" height="272" rx="10" fill="#fafaf8" stroke="#e8e6e1"/>
+  <text x="72" y="252" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a18">Regulated workflow</text>
+  <circle cx="120" cy="320" r="24" fill="#2dd4bf" opacity="0.35"/>
+  <text x="120" y="326" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#1a1a18">onboard</text>
+  <path d="M144 320h72" stroke="#46838c" stroke-width="2"/>
+  <circle cx="240" cy="320" r="24" fill="#46838c" opacity="0.35"/>
+  <text x="240" y="326" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#1a1a18">trade</text>
+  <path d="M264 320h72" stroke="#46838c" stroke-width="2"/>
+  <circle cx="360" cy="320" r="24" fill="#c8f542" opacity="0.55"/>
+  <text x="360" y="326" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#1a1a18">settle</text>
+  <path d="M384 320h72" stroke="#46838c" stroke-width="2"/>
+  <circle cx="480" cy="320" r="24" fill="#1a1a18"/>
+  <text x="480" y="326" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500" fill="#c8f542">audit</text>
+  <text x="72" y="400" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Data residency and evidence designed in from first architecture pass</text>
+  <text x="56" y="522" font-family="ui-monospace, monospace" font-size="10" fill="#b2afae">AiRAT &#183; illustrative</text>
+</svg>

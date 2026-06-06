@@ -1,0 +1,75 @@
+/* ═══════════════════════════════════════════════════════════════
+   METHODOLOGY PAGE  (.me-*)
+   ═══════════════════════════════════════════════════════════════ */
+
+.me-main {
+  padding-bottom: 0;
+}
+
+.me-phases .sp-value-item__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.me-phase__duration {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.me-phase__deliverable {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lime);
+  border-bottom: 0.5px solid var(--lime-border);
+  padding-bottom: 1px;
+}
+
+/* FAQ */
+.me-faq {
+  display: flex;
+  flex-direction: column;
+}
+
+.me-faq__item {
+  padding: 1.1rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.me-faq__item:first-child {
+  border-top: 0.5px solid var(--border);
+}
+
+.me-faq__q {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.me-faq__a {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+  margin: 0;
+}
+
+.me-faq__a :where(strong, b) {
+  font-weight: var(--fw-prose-strong);
+  color: var(--white);
+}
+
+.me-faq__a :where(em, i) {
+  font-style: italic;
+}

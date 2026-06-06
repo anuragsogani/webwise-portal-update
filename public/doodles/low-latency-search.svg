@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="6 6 108 108" role="img" aria-labelledby="title desc">
+  <title id="title">Low Latency Search Doodle</title>
+  <desc id="desc">A pastel doodle card combining search lens, speed lines, and a clock cue.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="16" fill="#c7c5dc"/>
+  <path d="M22 26 C40 25 79 25 98 26 C98 50 98 74 98 92 C79 92 40 91 22 90 C22 73 22 50 22 26 Z" fill="#f7f2eb"/>
+  <circle cx="50" cy="57" r="18" stroke="#101114" stroke-width="2.6" fill="none"/>
+  <path d="M61 68 L78 84" stroke="#101114" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M60 67 L66 61 L81 76 L75 81 Z" stroke="#101114" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
+  <path d="M25 46 H39 M23 53 H39 M21 60 H39" stroke="#101114" stroke-width="2.1" stroke-linecap="round"/>
+  <circle cx="84" cy="37" r="7.3" stroke="#101114" stroke-width="1.8" fill="none"/>
+  <path d="M84 37 L84 33 M84 37 L88 39" stroke="#101114" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

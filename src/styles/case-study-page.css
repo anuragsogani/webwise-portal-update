@@ -1,0 +1,163 @@
+/* ═══════════════════════════════════════════════════════════════
+   CASE STUDY PAGE  (.cs-*)
+   ═══════════════════════════════════════════════════════════════ */
+
+.cs-main {
+  padding-bottom: 0;
+}
+
+/* Domain tile  -  full-viewport-width dark block */
+.cs-tile-wrap {
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.cs-tile {
+  background: #060d0d;
+  border-radius: 18px;
+  overflow: hidden;
+  height: 380px;
+  border: 0.5px solid rgba(255,255,255,0.07);
+  position: relative;
+}
+
+.cs-tile__img-clip {
+  position: absolute;
+  inset: -15%;
+  will-change: transform;
+  transition: transform 0s;
+}
+
+.cs-tile__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Prose list */
+.cs-prose-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.cs-prose-list li {
+  position: relative;
+  padding-left: 1rem;
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+}
+
+.cs-prose-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--lime);
+}
+
+.cs-prose-list--compact li {
+  font-size: 0.82rem;
+}
+
+.cs-sub-heading {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+/* Tech stack groups */
+.cs-stack-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cs-stack-group__title {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+/* FAQ */
+.cs-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cs-faq__item {
+  padding: 1.1rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.cs-faq__item:first-child {
+  border-top: 0.5px solid var(--border);
+}
+
+.cs-faq__q {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.45rem;
+}
+
+.cs-faq__a {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+  margin: 0;
+}
+
+.cs-faq__a :where(strong, b) {
+  font-weight: var(--fw-prose-strong);
+  color: var(--white);
+}
+
+.cs-faq__a :where(em, i) {
+  font-style: italic;
+}
+
+/* Metrics override  -  use checkmarks for outcomes */
+.cs-main .sp-metric__val {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--lime);
+}
+
+.cs-main .sp-metric__label {
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--dim);
+  max-width: 18rem;
+  line-height: 1.5;
+}
+
+.cs-main .sp-metrics {
+  gap: 1rem 2.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+  .cs-tile {
+    height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-tile__img-clip { transition: none; }
+}

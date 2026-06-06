@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" fill="none" role="img" aria-labelledby="title">
+  <title>Immutable evidence chain panel</title>
+  <rect width="320" height="320" fill="#f7f7f5"/>
+  <rect x="16" y="16" width="288" height="288" rx="10" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="32" y="32" width="120" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="32" y="52" width="80" height="4" rx="2" fill="#d4d2cc"/>
+  <circle cx="48" cy="96" r="8" fill="#c8f542"/>
+  <rect x="64" y="90" width="200" height="12" rx="4" fill="#fafaf8" stroke="#e8e6e1"/>
+  <circle cx="48" cy="136" r="8" fill="#2dd4bf"/>
+  <rect x="64" y="130" width="180" height="12" rx="4" fill="#fafaf8" stroke="#e8e6e1"/>
+  <circle cx="48" cy="176" r="8" fill="#c8f542"/>
+  <rect x="64" y="170" width="160" height="12" rx="4" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="32" y="208" width="256" height="72" rx="8" fill="#1a1a18"/>
+  <rect x="48" y="224" width="96" height="6" rx="3" fill="#c8f542"/>
+  <rect x="48" y="244" width="200" height="4" rx="2" fill="#555"/>
+  <rect x="48" y="256" width="160" height="4" rx="2" fill="#444"/>
+</svg>

@@ -1,0 +1,159 @@
+/*
+ * Duna typography system
+ * Display & UI: GT America (Inter fallback until licensed files are self-hosted)
+ * Body: Inter
+ * Eyebrows & labels: JetBrains Mono (Fragment Mono substitute)
+ */
+
+:root {
+  /* Brand & accent */
+  --color-primary: #aeec1d;
+  --color-primary-active: #9bd40f;
+  --color-primary-disabled: #d6e8a8;
+  --color-accent-teal: #46838c;
+  --color-accent-teal-deep: #3a6e76;
+  --color-accent-plum: #1b0624;
+  --color-on-accent: #1a1816;
+
+  /* Surfaces */
+  --color-canvas: #ffffff;
+  --color-canvas-warm: #f7f7f5;
+  --color-surface-soft: #edece7;
+  --color-surface-cream-strong: #dbd9cd;
+  --color-surface-dark: #1a1816;
+  --color-surface-dark-deep: #160f0c;
+  --color-surface-dark-elevated: #292421;
+  --color-surface-dark-soft: #222221;
+  --color-hairline: #edece7;
+  --color-hairline-strong: #dbd9cd;
+  --color-hairline-dark: #38322f;
+
+  /* Text — Duna ink ramp */
+  --color-ink: #222221;
+  --color-ink-deep: #17100d;
+  --color-body-strong: #292421;
+  --color-body: #292421;
+  --color-body-secondary: #4d4846;
+  --color-muted: #898683;
+  --color-muted-soft: #b2afae;
+  --color-on-dark: #f7f7f5;
+  --color-on-dark-muted: #928e8b;
+
+  /* Semantic */
+  --color-success: #5db872;
+  --color-warning: #d4a017;
+  --color-error: #c64545;
+
+  /* Typography families */
+  --font-display: "GT America", "GT America Regular", "GT America Trial Rg", Inter, "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  --font-ui: "GT America", "GT America Medium", "GT America Trial Md", Inter, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Fragment Mono", "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* Type scale — GT America display + Inter body (Duna reference) */
+  --text-display-2xl: clamp(2.5rem, 4.5vw + 1rem, 4.5rem); /* 72px · H1 */
+  --text-display-xl: clamp(2.25rem, 3.5vw + 1rem, 4rem); /* 64px */
+  --text-display-lg: clamp(1.875rem, 2vw + 1rem, 2.75rem); /* 44px · H2 */
+  --text-display-md: clamp(1.75rem, 1.25vw + 1rem, 2.5rem); /* 40px · H3 */
+  --text-display-sm: clamp(1.375rem, 0.75vw + 1rem, 2rem); /* 32px · H4 */
+  --text-stat: clamp(2.75rem, 5vw + 1rem, 5rem); /* 80px · stat numerals · 500 */
+  --text-title-lg: 1.375rem; /* 22px · H5 · 500 */
+  --text-title-md: 1.375rem; /* 22px · 500 */
+  --text-title-sm: 1.125rem; /* 18px · 500 · sub-feature labels */
+  --text-body-lg: 1.25rem; /* 20px */
+  --text-body-md: 1rem; /* 16px · default body */
+  --text-body-sm: 0.875rem; /* 14px */
+  --text-caption: 0.875rem; /* 14px */
+  --text-caption-upper: 0.75rem; /* 12px · uppercase labels */
+  --text-code: 0.875rem; /* 14px · mono */
+  --text-eyebrow: 0.875rem; /* 14px · Fragment Mono eyebrows */
+  --text-label-mono: 0.75rem; /* 12px */
+  --text-button: 1rem; /* 16px · GT America Medium */
+  --text-nav: 1rem; /* 16px · 500 */
+
+  /* Tracking — tight on display (essential for GT America feel) */
+  --tracking-display-2xl: -0.04em;
+  --tracking-display-xl: -0.035em;
+  --tracking-display-lg: -0.03em;
+  --tracking-display-md: -0.025em;
+  --tracking-display-sm: -0.02em;
+  --tracking-stat: -0.03em;
+  --tracking-title: -0.01em;
+  --tracking-button: -0.01em;
+  --tracking-nav: -0.01em;
+  --tracking-caption-upper: 0.125em; /* 1.5px at 12px */
+  --tracking-mono: 0.02em;
+
+  /* Spacing — 4px base scale (xxs 4 → section 96) */
+  --space-xxs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 0.75rem; /* 12px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-xxl: 3rem; /* 48px */
+  --space-section: 6rem; /* 96px — vertical rhythm between major bands */
+  --space-section-fluid: clamp(var(--space-xxl), 8vw, var(--space-section));
+
+  /* Layout */
+  --max-width: 75rem;
+  --max-read: 50rem; /* 800px */
+  --max-read-tight: 45rem; /* 720px */
+  --nav-height: 4.5rem;
+  /* Sticky header in document flow: inner min-height + vertical padding */
+  --nav-block-height: calc(var(--nav-height) + 2 * var(--space-sm));
+
+  /* Radius — none (tiles) → sm (utility) → md (Pearl) → lg (cards) → pill / full */
+  --radius-none: 0;
+  --radius-xs: 5px;
+  --radius-sm: 8px;
+  --radius-md: 11px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+  --radius-full: 50%;
+
+  /* Shadow */
+  --shadow-product: 0 8px 30px rgba(26, 24, 22, 0.08);
+
+  /* Legacy aliases — ported pages from webwise-portal */
+  --void: var(--color-canvas);
+  --card: var(--color-surface-soft);
+  --card2: var(--color-canvas-warm);
+  --border: var(--color-hairline-strong);
+  --border2: var(--color-hairline);
+  --lime: var(--color-primary);
+  --lime-dim: rgba(174, 236, 29, 0.14);
+  --lime-border: rgba(174, 236, 29, 0.35);
+  --teal-dim: var(--color-accent-teal);
+  --white: var(--color-on-dark);
+  --dim: var(--color-muted);
+  --muted: var(--color-muted);
+  --blue: var(--color-accent-teal);
+  --purple: var(--color-accent-teal-deep);
+  --outcome-amber: var(--color-ink);
+  --page-pad: clamp(var(--space-sm), 4vw, var(--space-xl));
+  --max: var(--max-width);
+  --font-prose: var(--font-body);
+  --text-prose: var(--text-body-md);
+  --leading-prose: 1.55;
+  --fw-prose-strong: 500;
+  --reveal-duration: 0.55s;
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-distance: 28px;
+  --motion-duration-snappy: 0.18s;
+  --motion-duration-panel: 0.22s;
+  --motion-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --stack-tab-bg: var(--color-canvas-warm);
+  --stack-tab-bg-active: var(--color-surface-soft);
+  --stack-panel-bg: var(--color-canvas);
+  --stack-panel-shadow: var(--shadow-product);
+  --stack-tag-fg: var(--color-body-strong);
+  --stack-tag-bg: var(--color-surface-soft);
+  --stack-tag-border: var(--color-hairline-strong);
+}
+
+html {
+  color-scheme: light;
+}

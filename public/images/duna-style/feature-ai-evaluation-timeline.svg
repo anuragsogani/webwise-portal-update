@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Evaluation harness release timeline</title>
+  <desc id="desc">AiRAT timeline of model evaluation scores improving across release versions with regression thresholds.</desc>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <text x="280" y="72" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="500" fill="#1a1a18">Evaluation harnesses</text>
+  <text x="280" y="92" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#898683">Golden sets and regression gates per release</text>
+  <line x1="80" y1="420" x2="480" y2="420" stroke="#e8e6e1" stroke-width="2"/>
+  <line x1="120" y1="160" x2="120" y2="420" stroke="#2dd4bf" stroke-width="3"/>
+  <circle cx="120" cy="148" r="14" fill="#fafaf8" stroke="#46838c" stroke-width="2"/>
+  <text x="120" y="152" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500" fill="#46838c">v1</text>
+  <text x="120" y="448" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Baseline</text>
+  <line x1="200" y1="200" x2="200" y2="420" stroke="#46838c" stroke-width="3"/>
+  <circle cx="200" cy="188" r="14" fill="#fafaf8" stroke="#46838c" stroke-width="2"/>
+  <text x="200" y="192" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500" fill="#46838c">v2</text>
+  <text x="200" y="448" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">+RAG</text>
+  <line x1="280" y1="248" x2="280" y2="420" stroke="#2dd4bf" stroke-width="3"/>
+  <circle cx="280" cy="236" r="14" fill="#c8f542" stroke="#1a1a18" stroke-width="2"/>
+  <text x="280" y="240" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500" fill="#1a1a18">v3</text>
+  <text x="280" y="448" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Tuned</text>
+  <line x1="360" y1="176" x2="360" y2="420" stroke="#46838c" stroke-width="3"/>
+  <circle cx="360" cy="164" r="14" fill="#fafaf8" stroke="#46838c" stroke-width="2"/>
+  <text x="360" y="168" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500" fill="#46838c">v4</text>
+  <text x="360" y="448" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Prod</text>
+  <line x1="440" y1="128" x2="440" y2="420" stroke="#c8f542" stroke-width="3"/>
+  <circle cx="440" cy="116" r="14" fill="#1a1a18" stroke="#c8f542" stroke-width="2"/>
+  <text x="440" y="120" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="500" fill="#c8f542">v5</text>
+  <text x="440" y="448" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Stable</text>
+  <path d="M120 340 L200 300 L280 268 L360 220 L440 180" stroke="#1a1a18" stroke-width="2" fill="none" stroke-dasharray="6 4"/>
+  <text x="400" y="148" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#46838c">+24%</text>
+  <text x="400" y="168" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#898683">accuracy vs baseline</text>
+  <text x="56" y="522" font-family="ui-monospace, monospace" font-size="10" fill="#b2afae">AiRAT &#183; illustrative</text>
+</svg>

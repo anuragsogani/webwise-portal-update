@@ -1,0 +1,731 @@
+/* ═══════════════════════════════════════════════════════════════
+   SHARED PAGE SYSTEM  (.sp-*)
+   Used by ALL inner pages for consistent Anthropic-style layout.
+   Import this file in every page component.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Shell ──────────────────────────────────────────────────── */
+.sp-main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 max(var(--page-pad), env(safe-area-inset-right, 0px)) 0 max(var(--page-pad), env(safe-area-inset-left, 0px));
+}
+
+/* ── Divider ────────────────────────────────────────────────── */
+.sp-rule {
+  border: none;
+  border-top: 0.5px solid var(--border);
+  margin: 0;
+}
+
+/* ── Eyebrow ────────────────────────────────────────────────── */
+.sp-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+/* ── Section titles ─────────────────────────────────────────── */
+.sp-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 0.85rem;
+}
+
+.sp-section-title--lg {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.sp-section-title--sm {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO PATTERNS
+   ══════════════════════════════════════════════════════════════ */
+
+/* Centered hero (most pages) */
+.sp-hero {
+  text-align: center;
+  max-width: min(720px, 100%);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 9vw, 6rem) 0 clamp(2.5rem, 6vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.sp-hero__h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 5vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--white);
+  margin: 0;
+}
+
+.sp-hero__body {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+  margin: 0;
+}
+
+/* Split-column hero (Services, Technology) */
+.sp-hero--split {
+  text-align: left;
+  max-width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: clamp(3.5rem, 9vw, 6rem) 0 clamp(2.5rem, 6vw, 4rem);
+}
+
+.sp-hero--split .sp-hero__actions {
+  align-items: flex-start;
+}
+
+.sp-hero__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION ROWS  -  left label + right body
+   ══════════════════════════════════════════════════════════════ */
+.sp-section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  align-items: start;
+}
+
+.sp-section__label {
+  padding-top: 0.15rem;
+}
+
+.sp-label {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.35;
+}
+
+.sp-section__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Large serif opening paragraph */
+.sp-lede {
+  font-family: var(--font-prose);
+  font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--white);
+  max-width: 52rem;
+  margin: 0;
+}
+
+/* Regular prose intro */
+.sp-intro {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+  max-width: 52rem;
+  margin: 0;
+}
+
+/* Body text block */
+.sp-body {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   GRIDS  -  2-col and 3-col borderless (Anthropic principle style)
+   ══════════════════════════════════════════════════════════════ */
+.sp-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.sp-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+/* Generic card  -  top border only, left border on even items */
+.sp-card {
+  padding: 1.5rem 1.5rem 1.5rem 0;
+  border-top: 0.5px solid var(--border);
+}
+
+.sp-grid-2 .sp-card:nth-child(2n),
+.sp-grid-3 .sp-card:nth-child(3n+2),
+.sp-grid-3 .sp-card:nth-child(3n+3) {
+  padding-left: 1.5rem;
+  padding-right: 0;
+  border-left: 0.5px solid var(--border);
+}
+
+.sp-card__title {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.sp-card__body {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   NUMBERED VALUE ITEMS (Anthropic 01 02 03 pattern)
+   ══════════════════════════════════════════════════════════════ */
+.sp-values {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-value-item {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 0.5px solid var(--border);
+  align-items: start;
+}
+
+.sp-value-item:last-child {
+  border-bottom: 0.5px solid var(--border);
+}
+
+.sp-value-item__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding-top: 0.2rem;
+}
+
+.sp-value-item__title {
+  font-family: var(--font-ui);
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.45rem;
+  line-height: 1.3;
+}
+
+.sp-value-item__sub {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PUBLICATIONS TABLE (Anthropic research list pattern)
+   ══════════════════════════════════════════════════════════════ */
+.sp-table {
+  width: 100%;
+}
+
+.sp-table__head {
+  display: grid;
+  grid-template-columns: 90px 160px 1fr;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 0.5px solid var(--border);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.sp-table__row {
+  display: grid;
+  grid-template-columns: 90px 160px 1fr;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 0.5px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  align-items: baseline;
+}
+
+.sp-table__row:hover .sp-table__title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.sp-table__date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.sp-table__cat {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--lime);
+  text-transform: uppercase;
+}
+
+.sp-table__title {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--white);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CHIPS
+   ══════════════════════════════════════════════════════════════ */
+.sp-chip {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 0.5px solid var(--border);
+  border-radius: 100px;
+  padding: 0.2rem 0.65rem;
+  color: var(--dim);
+  display: inline-block;
+}
+
+.sp-chip--lime {
+  border-color: var(--lime-border);
+  color: var(--lime);
+}
+
+.sp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TEXT LINKS
+   ══════════════════════════════════════════════════════════════ */
+.sp-text-link {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lime);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--lime-border);
+  padding-bottom: 1px;
+  transition: border-color 0.15s;
+  display: inline-block;
+}
+
+.sp-text-link:hover { border-color: var(--lime); }
+
+/* ══════════════════════════════════════════════════════════════
+   STATS ROW
+   ══════════════════════════════════════════════════════════════ */
+.sp-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 3.5rem;
+}
+
+.sp-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sp-stat__val {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--white);
+}
+
+.sp-stat__label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CLOSING SECTION  -  centered CTA
+   ══════════════════════════════════════════════════════════════ */
+.sp-closing {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sp-closing__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.sp-closing__body {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+  margin: 0;
+}
+
+.sp-closing__links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sp-closing__primary {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--lime);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--lime-border);
+  padding-bottom: 2px;
+  transition: border-color 0.15s;
+}
+
+.sp-closing__primary:hover { border-color: var(--lime); }
+
+.sp-closing__secondary {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--dim);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border);
+  padding-bottom: 2px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.sp-closing__secondary:hover { color: var(--white); border-color: var(--border2); }
+
+.sp-closing__note {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FEATURE TILE (dark rounded card with parallax image)
+   shared across Services, Portfolio, Case Study
+   ══════════════════════════════════════════════════════════════ */
+.sp-tile-wrap {
+  box-sizing: border-box;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: clamp(1.5rem, 3vw, 2.5rem) max(clamp(1rem, 3vw, 2rem), env(safe-area-inset-right, 0px)) clamp(1.5rem, 3vw, 2.5rem) max(clamp(1rem, 3vw, 2rem), env(safe-area-inset-left, 0px));
+}
+
+.sp-tile {
+  background: #080d0d;
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  border: 0.5px solid rgba(255,255,255,0.07);
+}
+
+.sp-tile__content {
+  padding: clamp(2.5rem, 5vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.sp-tile__label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(10,191,188,0.7);
+}
+
+.sp-tile__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0;
+}
+
+.sp-tile__sub {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: rgba(255,255,255,0.5);
+  max-width: 30rem;
+}
+
+.sp-tile__cta {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+  border: 0.5px solid rgba(255,255,255,0.2);
+  border-radius: 100px;
+  padding: 0.5rem 1.25rem;
+  text-decoration: none;
+  width: fit-content;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+
+.sp-tile__cta:hover {
+  background: var(--lime-dim);
+  border-color: var(--lime-border);
+  color: var(--lime);
+}
+
+.sp-tile__img-clip {
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 1.5rem 1.5rem 0;
+}
+
+.sp-tile__img {
+  position: absolute;
+  inset: -14% 1.5rem -14% 0;
+  will-change: transform;
+}
+
+.sp-tile__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   METRICS ROW (inline proof)
+   ══════════════════════════════════════════════════════════════ */
+.sp-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 4rem;
+}
+
+.sp-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sp-metric__val {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: var(--lime);
+  display: block;
+}
+
+.sp-metric__label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .sp-section {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .sp-hero--split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 680px) {
+  .sp-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-grid-2 .sp-card:nth-child(2n),
+  .sp-grid-3 .sp-card:nth-child(n) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .sp-table__head,
+  .sp-table__row {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-table__date,
+  .sp-table__cat {
+    display: none;
+  }
+
+  .sp-tile {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .sp-tile__img-clip {
+    height: 260px;
+    padding: 1rem;
+  }
+
+  .sp-tile__img {
+    inset: -8% 1rem;
+  }
+
+  .sp-value-item {
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   REUSABLE FAQ ROWS (shared across pages)
+   ══════════════════════════════════════════════════════════════ */
+.fi-faq,
+.sp-faq {
+  display: flex;
+  flex-direction: column;
+}
+
+.fi-faq__item,
+.sp-faq__item {
+  padding: 1.1rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.fi-faq__item:first-child,
+.sp-faq__item:first-child {
+  border-top: 0.5px solid var(--border);
+}
+
+.fi-faq__q,
+.sp-faq__q {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.fi-faq__a,
+.sp-faq__a {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+  margin: 0;
+}
+
+/* Rich inline type  -  bold / italic read clearly on long sections */
+.sp-intro :where(strong, b),
+.sp-body :where(strong, b),
+.sp-card__body :where(strong, b),
+.sp-hero__body :where(strong, b),
+.sp-value-item__sub :where(strong, b),
+.sp-closing__body :where(strong, b),
+.sp-faq__a :where(strong, b),
+.fi-faq__a :where(strong, b) {
+  font-weight: var(--fw-prose-strong);
+  color: var(--white);
+}
+
+.sp-intro :where(em, i, cite, dfn),
+.sp-body :where(em, i, cite, dfn),
+.sp-card__body :where(em, i, cite, dfn),
+.sp-hero__body :where(em, i, cite, dfn),
+.sp-value-item__sub :where(em, i, cite, dfn),
+.sp-closing__body :where(em, i, cite, dfn),
+.sp-faq__a :where(em, i, cite, dfn),
+.fi-faq__a :where(em, i, cite, dfn) {
+  font-style: italic;
+}
+
+.sp-lede :where(strong, b) {
+  font-weight: var(--fw-prose-strong);
+}
+
+.sp-lede :where(em, i, cite) {
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-text-link,
+  .sp-tile__cta,
+  .sp-closing__primary,
+  .sp-closing__secondary { transition: none; }
+}

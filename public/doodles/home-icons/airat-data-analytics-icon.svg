@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Data, search, and analytics icon</title>
+  <desc id="desc">Abstract icon showing query flow through search and ranked insight nodes.</desc>
+  <rect x="28" y="28" width="456" height="456" rx="96" fill="#D7E0EA"/>
+
+  <g fill="none" stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="110" cy="278" r="10" fill="#111111"/>
+    <path d="M120 278c46 0 74-10 98-36 24-24 48-34 86-34"/>
+
+    <circle cx="242" cy="228" r="44"/>
+    <line x1="270" y1="256" x2="314" y2="300"/>
+
+    <circle cx="370" cy="182" r="9" fill="#111111"/>
+    <circle cx="394" cy="246" r="9" fill="#111111"/>
+    <circle cx="418" cy="310" r="9" fill="#111111"/>
+    <path d="M362 172l56 146"/>
+  </g>
+</svg>

@@ -1,0 +1,1252 @@
+/* Job Search demo preview: complete CSS-only route styling. */
+
+.jf-page {
+  --jf-void: var(--void, #141413);
+  --jf-card: var(--card, #0f0f0f);
+  --jf-card-2: var(--card2, #131313);
+  --jf-border: var(--border, #1e1e1e);
+  --jf-border-2: var(--border2, #2a2a2a);
+  --jf-lime: var(--lime, #76e4df);
+  --jf-lime-dim: var(--lime-dim, rgba(118, 228, 223, 0.14));
+  --jf-lime-border: var(--lime-border, rgba(140, 234, 229, 0.38));
+  --jf-white: var(--white, #f0f0ec);
+  --jf-dim: var(--dim, #888);
+  --jf-muted: var(--muted, #555);
+  --jf-font-display: var(--font-display, "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif);
+  --jf-font-mono: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace);
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--void);
+  color: var(--jf-white);
+  font-family: var(--jf-font-display);
+  overflow-x: hidden;
+}
+
+html:not([data-theme="light"]) .jf-page {
+  background:
+    radial-gradient(90% 75% at 8% 0%, rgba(118, 228, 223, 0.14), transparent 45%),
+    radial-gradient(70% 62% at 95% 4%, rgba(118, 228, 223, 0.08), transparent 44%),
+    linear-gradient(180deg, rgba(20, 20, 19, 0.99) 0%, rgba(8, 9, 9, 1) 100%);
+}
+
+#demo-job-root {
+  --tiffany: var(--jf-lime);
+  --tiffany-dim: var(--jf-lime-dim);
+  --tiffany-border: var(--jf-lime-border);
+  --void: var(--jf-void);
+  --card: var(--jf-card);
+  --card2: var(--jf-card-2);
+  --border: var(--jf-border);
+  --white: var(--jf-white);
+  --dim: var(--jf-dim);
+  --muted: var(--jf-muted);
+  --font-display: var(--jf-font-display);
+  --font-mono: var(--jf-font-mono);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  isolation: isolate;
+}
+
+#demo-job-root,
+#demo-job-root *,
+#demo-job-root *::before,
+#demo-job-root *::after {
+  box-sizing: border-box;
+}
+
+#demo-job-root * {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(118, 228, 223, 0.24) rgba(255, 255, 255, 0.04);
+}
+
+#demo-job-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 86%);
+  pointer-events: none;
+}
+
+.jf-root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--void);
+  color: var(--white);
+  font-family: var(--font-display);
+}
+
+html:not([data-theme="light"]) .jf-root {
+  background:
+    radial-gradient(90% 70% at 12% 0%, rgba(118, 228, 223, 0.1), transparent 42%),
+    linear-gradient(180deg, rgba(18, 19, 19, 0.94), rgba(8, 9, 9, 0.98));
+}
+
+.jf-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  display: grid;
+  grid-template-columns: minmax(13rem, auto) minmax(0, 1fr);
+  gap: 1rem 1.5rem;
+  align-items: center;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+}
+
+html:not([data-theme="light"]) .jf-header {
+  background:
+    linear-gradient(180deg, rgba(16, 18, 18, 0.96), rgba(11, 12, 12, 0.92)),
+    radial-gradient(80% 120% at 0% 0%, rgba(118, 228, 223, 0.1), transparent 52%);
+  border-bottom: 1px solid rgba(118, 228, 223, 0.12);
+}
+
+.jf-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.jf-logo {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--lime), rgba(118, 228, 223, 0.72));
+  color: var(--void);
+  box-shadow: 0 16px 36px rgba(118, 228, 223, 0.22);
+}
+
+.jf-brand h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.jf-brand span {
+  color: var(--lime);
+}
+
+.jf-search-bar {
+  display: grid;
+  grid-template-columns: minmax(16rem, 1.35fr) minmax(13rem, 0.8fr) auto;
+  gap: 0.8rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.jf-input-group {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.jf-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.05rem;
+  height: 1.05rem;
+  color: rgba(240, 240, 236, 0.42);
+  pointer-events: none;
+}
+
+.jf-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0.9rem 1rem 0.9rem 2.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+  color: var(--white);
+  font: 600 0.94rem/1.2 var(--font-display);
+  outline: none;
+  caret-color: var(--lime);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.jf-input::placeholder {
+  color: rgba(240, 240, 236, 0.4);
+}
+
+.jf-input:focus {
+  border-color: var(--lime-border);
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: 0 0 0 3px var(--lime-dim), 0 14px 32px rgba(118, 228, 223, 0.08);
+}
+
+.jf-btn {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font: 700 0.86rem/1 var(--font-display);
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.jf-btn:hover {
+  transform: translateY(-1px);
+}
+
+.jf-btn:disabled {
+  opacity: 0.46;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.jf-btn-outline {
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(255, 255, 255, 0.11);
+  color: var(--white);
+}
+
+.jf-btn-outline:hover:not(:disabled) {
+  border-color: var(--lime-border);
+  background: rgba(118, 228, 223, 0.1);
+  color: var(--lime);
+}
+
+.jf-btn-primary {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--void);
+}
+
+.jf-btn-primary:hover:not(:disabled) {
+  box-shadow: 0 0 0 1px var(--lime), 0 10px 34px rgba(118, 228, 223, 0.2);
+}
+
+.jf-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--dim);
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.jf-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--white);
+}
+
+.jf-mobile-filter-btn {
+  position: relative;
+  display: none;
+  width: 52px;
+  padding-inline: 0;
+}
+
+.jf-badge {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.35rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--void);
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.jf-stats {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 0.15rem;
+  color: rgba(240, 240, 236, 0.46);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.jf-status-row {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.jf-dym {
+  width: fit-content;
+  margin-top: 0.35rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 0;
+  background: transparent;
+  color: var(--lime);
+  font: 700 0.75rem/1 var(--font-display);
+  cursor: pointer;
+}
+
+.jf-suggestions {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  right: 0;
+  z-index: 80;
+  overflow: hidden;
+  border: 1px solid rgba(118, 228, 223, 0.18);
+  border-radius: 16px;
+  background: rgba(14, 15, 15, 0.98);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.5);
+}
+
+.jf-suggestion-item {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: transparent;
+  color: var(--dim);
+  font: 600 0.86rem/1.2 var(--font-display);
+  text-align: left;
+  cursor: pointer;
+}
+
+.jf-suggestion-item:last-child {
+  border-bottom: 0;
+}
+
+.jf-suggestion-item:hover {
+  background: rgba(118, 228, 223, 0.1);
+  color: var(--white);
+}
+
+.jf-suggestion-item span span {
+  color: var(--lime);
+}
+
+.jf-main {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+}
+
+.jf-main:has(.jf-sidebar) {
+  grid-template-columns: 280px minmax(0, 1fr);
+}
+
+.jf-sidebar {
+  width: 280px;
+  border-right: 1px solid rgba(118, 228, 223, 0.12);
+  background:
+    linear-gradient(180deg, rgba(15, 17, 17, 0.96), rgba(9, 10, 10, 0.98)),
+    radial-gradient(120% 100% at 0% 0%, rgba(118, 228, 223, 0.08), transparent 48%);
+}
+
+.jf-sidebar-inner {
+  position: sticky;
+  top: 112px;
+  max-height: calc(100vh - 112px);
+  overflow: auto;
+  padding: 1.25rem 1.35rem 2rem;
+}
+
+.jf-filter-group {
+  margin-bottom: 1.35rem;
+}
+
+.jf-filter-title {
+  margin-bottom: 0.72rem;
+  color: rgba(240, 240, 236, 0.42);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.jf-filter-option--active {
+  color: var(--white);
+}
+
+.jf-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.72rem;
+  margin-bottom: 0.66rem;
+  color: var(--dim);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+
+.jf-checkbox-label:hover {
+  color: var(--white);
+}
+
+.jf-checkbox {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--void);
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.jf-checkbox.checked {
+  border-color: var(--lime);
+  background: var(--lime);
+  color: var(--void);
+}
+
+.jf-content {
+  grid-column: 1;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.jf-main:has(.jf-sidebar) .jf-content {
+  grid-column: 2;
+}
+
+.jf-sort-bar {
+  width: 100%;
+  position: sticky;
+  top: 112px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem clamp(1rem, 2.2vw, 1.5rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 9, 9, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.jf-page-indicator,
+.jf-pagination__label {
+  color: var(--dim);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.jf-page-indicator b {
+  color: var(--white);
+}
+
+.jf-select-wrapper {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+  padding: 0 0.72rem;
+}
+
+.jf-select {
+  min-width: 9rem;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--white);
+  font: 700 0.82rem/1 var(--font-display);
+  cursor: pointer;
+}
+
+.jf-select option {
+  background: var(--card);
+  color: var(--white);
+}
+
+.jf-job-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  gap: 0.95rem;
+  padding: clamp(1rem, 2.2vw, 1.5rem);
+}
+
+.jf-job-card {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.9rem, 2vw, 1.3rem);
+  overflow: hidden;
+  min-height: 118px;
+  padding: clamp(1rem, 1.8vw, 1.3rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(22, 23, 23, 0.98), rgba(13, 14, 14, 0.99)),
+    radial-gradient(100% 120% at 0% 0%, rgba(118, 228, 223, 0.05), transparent 46%);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jf-job-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(118, 228, 223, 0.1), transparent 34%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.jf-job-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--lime-border);
+  box-shadow: 0 16px 34px rgba(118, 228, 223, 0.12);
+}
+
+.jf-job-card:hover::before {
+  opacity: 1;
+}
+
+.jf-job-view {
+  align-self: center;
+}
+
+.jf-featured-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  color: #d4a853;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.jf-job-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  background:
+    radial-gradient(100% 100% at 30% 20%, rgba(255, 255, 255, 0.08), transparent 60%),
+    rgba(255, 255, 255, 0.045);
+  color: rgba(240, 240, 236, 0.64);
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.jf-job-info {
+  min-width: 0;
+}
+
+.jf-job-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.26rem;
+  color: var(--white);
+  font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.jf-job-company {
+  margin-bottom: 0.58rem;
+  color: rgba(240, 240, 236, 0.58);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.jf-job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.65rem;
+  color: rgba(240, 240, 236, 0.44);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.jf-job-meta div {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.jf-job-meta svg {
+  color: rgba(118, 228, 223, 0.55);
+}
+
+.jf-title-sparkle,
+.jf-spin--accent {
+  color: var(--lime);
+}
+
+.jf-job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.jf-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0.3rem 0.58rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.jf-tag-primary {
+  border: 1px solid var(--lime-border);
+  background: var(--lime-dim);
+  color: var(--lime);
+}
+
+.jf-tag-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(240, 240, 236, 0.58);
+}
+
+.jf-tag--skill {
+  padding: 0.38rem 0.7rem;
+  font-size: 0.74rem;
+}
+
+.jf-pagination {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 2.2vw, 1.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(13, 14, 14, 0.9), rgba(8, 9, 9, 0.98));
+}
+
+.jf-pagination .jf-btn:last-child {
+  justify-self: end;
+}
+
+.jf-error {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.85rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--lime-border);
+  border-radius: 14px;
+  background: rgba(118, 228, 223, 0.08);
+  color: rgba(240, 240, 236, 0.82);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jf-error svg {
+  color: var(--lime);
+}
+
+.jf-empty {
+  display: flex;
+  min-height: 420px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.jf-empty-icon {
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.jf-modal-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(8, 9, 9, 0.76);
+  backdrop-filter: blur(10px);
+}
+
+.jf-modal,
+.jf-mobile-drawer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(18, 19, 19, 0.98), rgba(10, 11, 11, 0.99));
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.64);
+}
+
+.jf-modal {
+  width: min(720px, 100%);
+  max-height: 90%;
+  border-radius: 24px;
+}
+
+.jf-mobile-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(360px, 88vw);
+  border-radius: 0;
+}
+
+.jf-modal-header,
+.jf-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.jf-drawer-title,
+.jf-modal-title {
+  margin: 0;
+  color: var(--white);
+  font-weight: 800;
+}
+
+.jf-drawer-title {
+  font-size: 1.1rem;
+}
+
+.jf-modal-title {
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.jf-modal-subtitle {
+  color: var(--dim);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.jf-modal-job-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.jf-job-icon--accent {
+  background: var(--lime);
+  color: var(--void);
+}
+
+.jf-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.jf-modal-action {
+  flex: 1;
+  padding: 1rem;
+}
+
+.jf-btn--compact {
+  min-height: 38px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.76rem;
+}
+
+.jf-modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.jf-modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.jf-modal-content {
+  flex: 1;
+  overflow: auto;
+  padding: 1.5rem;
+}
+
+.jf-info-box {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.045);
+  padding: 1rem;
+}
+
+.jf-info-label {
+  margin-bottom: 0.35rem;
+  color: var(--lime);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.jf-info-val,
+.jf-section-title {
+  color: var(--white);
+  font-weight: 800;
+}
+
+.jf-info-val {
+  font-size: 1rem;
+}
+
+.jf-section-title {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.jf-paragraph {
+  margin: 0 0 1.3rem;
+  color: var(--dim);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.jf-toast {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  transform: translateX(-50%);
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--lime-border);
+  border-radius: 999px;
+  background: rgba(13, 14, 14, 0.98);
+  color: var(--lime);
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.5);
+}
+
+.jf-hidden {
+  display: none !important;
+}
+
+@keyframes jf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.jf-spin {
+  animation: jf-spin 1s linear infinite;
+}
+
+.jf-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.jf-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.jf-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(118, 228, 223, 0.24);
+}
+
+@media (max-width: 980px) {
+  .jf-header {
+    grid-template-columns: 1fr;
+  }
+
+  .jf-stats {
+    grid-column: auto;
+  }
+
+  .jf-search-bar {
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.7fr) auto;
+  }
+
+  .jf-sidebar {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .jf-header {
+    position: relative;
+  }
+
+  .jf-search-bar {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .jf-hide-mobile {
+    display: none !important;
+  }
+
+  .jf-show-mobile,
+  .jf-mobile-filter-btn {
+    display: inline-flex !important;
+  }
+
+  .jf-main {
+    display: block;
+  }
+
+  .jf-sidebar {
+    display: none;
+  }
+
+  .jf-sort-bar {
+    position: static;
+  }
+
+  .jf-job-card {
+    grid-template-columns: 50px minmax(0, 1fr);
+    align-items: start;
+    min-height: 0;
+  }
+
+  .jf-job-card > .jf-btn {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .jf-job-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+  }
+
+  .jf-pagination {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    text-align: center;
+  }
+
+  .jf-pagination .jf-btn:last-child {
+    justify-self: stretch;
+  }
+
+  .jf-modal-header,
+  .jf-modal-content,
+  .jf-modal-footer {
+    padding: 1rem;
+  }
+}
+
+/* ================================================================
+   LIGHT THEME OVERRIDES — scoped to .jf-page / #demo-job-root
+   ================================================================ */
+html[data-theme="light"] .jf-page {
+  --jf-lime: #078f8b;
+  --jf-lime-dim: rgba(7, 143, 139, 0.11);
+  --jf-lime-border: rgba(7, 143, 139, 0.28);
+  --jf-void: #f0efea;
+  --jf-card: #ffffff;
+  --jf-card-2: #f5f4f0;
+  --jf-border: #e0ddd4;
+  --jf-border-2: #d2cec3;
+  --jf-white: #121210;
+  --jf-dim: #6f6c65;
+  --jf-muted: #5a5852;
+}
+
+html[data-theme="light"] #demo-job-root {
+  --lime: #078f8b;
+  --lime-dim: rgba(7, 143, 139, 0.11);
+  --lime-border: rgba(7, 143, 139, 0.28);
+  --tiffany: #078f8b;
+  --void: #f0efea;
+  --card: #ffffff;
+  --card2: #f5f4f0;
+  --border: #e0ddd4;
+  --white: #121210;
+  --dim: #6f6c65;
+  --muted: #5a5852;
+}
+
+html[data-theme="light"] .jf-page,
+html[data-theme="light"] .jf-root {
+  background: var(--void);
+  color: var(--white);
+}
+
+html[data-theme="light"] #demo-job-root::before {
+  background: none;
+}
+
+html[data-theme="light"] #demo-job-root * {
+  scrollbar-color: rgba(7, 143, 139, 0.2) rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="light"] .jf-header {
+  background: #ffffff;
+  border-bottom-color: #e0ddd4;
+}
+
+html[data-theme="light"] .jf-logo {
+  background: linear-gradient(135deg, #078f8b, rgba(7, 143, 139, 0.72));
+  box-shadow: 0 8px 20px rgba(7, 143, 139, 0.16);
+  color: #ffffff;
+}
+
+html[data-theme="light"] .jf-input {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: #e0ddd4;
+  color: #121210;
+}
+
+html[data-theme="light"] .jf-input::placeholder {
+  color: rgba(18, 18, 16, 0.38);
+}
+
+html[data-theme="light"] .jf-icon {
+  color: rgba(18, 18, 16, 0.42);
+}
+
+html[data-theme="light"] .jf-filter-title {
+  color: rgba(18, 18, 16, 0.42);
+}
+
+html[data-theme="light"] .jf-stats {
+  color: rgba(18, 18, 16, 0.46);
+}
+
+html[data-theme="light"] .jf-job-company {
+  color: rgba(18, 18, 16, 0.58);
+}
+
+html[data-theme="light"] .jf-job-meta {
+  color: rgba(18, 18, 16, 0.44);
+}
+
+html[data-theme="light"] .jf-job-icon {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: #e0ddd4;
+  color: #5a5852;
+}
+
+html[data-theme="light"] .jf-tag-secondary {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: #e0ddd4;
+  color: #5a5852;
+}
+
+html[data-theme="light"] .jf-error {
+  background: rgba(7, 143, 139, 0.08);
+  border-color: rgba(7, 143, 139, 0.28);
+  color: #121210;
+}
+
+html[data-theme="light"] .jf-input:focus {
+  border-color: rgba(7, 143, 139, 0.36);
+  background: rgba(0, 0, 0, 0.02);
+  box-shadow: 0 0 0 3px rgba(7, 143, 139, 0.1);
+}
+
+html[data-theme="light"] .jf-btn-outline {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: #e0ddd4;
+  color: #121210;
+}
+
+html[data-theme="light"] .jf-btn-outline:hover:not(:disabled) {
+  border-color: rgba(7, 143, 139, 0.32);
+  background: rgba(7, 143, 139, 0.08);
+  color: #078f8b;
+}
+
+html[data-theme="light"] .jf-btn-primary {
+  color: #ffffff;
+}
+
+html[data-theme="light"] .jf-btn-icon:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .jf-suggestions {
+  background: #ffffff;
+  border-color: rgba(7, 143, 139, 0.18);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .jf-suggestion-item {
+  border-bottom-color: #f1f0ec;
+}
+
+html[data-theme="light"] .jf-suggestion-item:hover {
+  background: rgba(7, 143, 139, 0.06);
+}
+
+html[data-theme="light"] .jf-sidebar {
+  background: #ffffff;
+  border-right-color: #e0ddd4;
+}
+
+html[data-theme="light"] .jf-sort-bar {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom-color: #e0ddd4;
+}
+
+html[data-theme="light"] .jf-select-wrapper {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: #e0ddd4;
+}
+
+html[data-theme="light"] .jf-select option {
+  background: #ffffff;
+  color: #121210;
+}
+
+html[data-theme="light"] .jf-job-card {
+  background: #ffffff;
+  border-color: #e0ddd4;
+}
+
+html[data-theme="light"] .jf-job-card::before {
+  background: linear-gradient(90deg, rgba(7, 143, 139, 0.06), transparent 34%);
+}
+
+html[data-theme="light"] .jf-job-card:hover {
+  border-color: rgba(7, 143, 139, 0.32);
+  box-shadow: 0 8px 24px rgba(7, 143, 139, 0.08);
+}
+
+html[data-theme="light"] .jf-job-meta svg {
+  color: rgba(7, 143, 139, 0.6);
+}
+
+html[data-theme="light"] .jf-tag-secondary {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: #e0ddd4;
+  color: #5a5852;
+}
+
+html[data-theme="light"] .jf-checkbox {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: #d2cec3;
+}
+
+html[data-theme="light"] .jf-checkbox.checked {
+  background: #078f8b;
+  border-color: #078f8b;
+  color: #ffffff;
+}
+
+html[data-theme="light"] .jf-pagination {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), #f0efea);
+  border-top-color: #e0ddd4;
+}
+
+html[data-theme="light"] .jf-modal,
+html[data-theme="light"] .jf-mobile-drawer {
+  background: #ffffff;
+  border-color: #e0ddd4;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] .jf-modal-overlay {
+  background: rgba(18, 18, 16, 0.42);
+}
+
+html[data-theme="light"] .jf-modal-header,
+html[data-theme="light"] .jf-modal-footer {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+html[data-theme="light"] .jf-modal-header {
+  border-bottom-color: #e0ddd4;
+}
+
+html[data-theme="light"] .jf-modal-footer {
+  border-top-color: #e0ddd4;
+}
+
+html[data-theme="light"] .jf-info-box {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: #e0ddd4;
+}
+
+html[data-theme="light"] .jf-toast {
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .jf-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(7, 143, 139, 0.2);
+}
+
+html[data-theme="light"] .jf-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+

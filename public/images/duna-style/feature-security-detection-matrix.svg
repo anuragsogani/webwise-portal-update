@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Detection engineering coverage matrix</title>
+  <desc id="desc">AiRAT matrix of detection rule coverage across severity tiers and log sources.</desc>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <text x="280" y="80" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="500" fill="#1a1a18">Detection engineering</text>
+  <text x="280" y="104" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#898683">Severity / source coverage %</text>
+  <text x="360" y="148" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#c45c4a">source</text>
+  <text x="200" y="176" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">endpoint</text>
+  <text x="280" y="176" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">identity</text>
+  <text x="360" y="176" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">cloud</text>
+  <text x="120" y="300" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#46838c" transform="rotate(-90 120 300)">severity</text>
+  <text x="148" y="228" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#46838c">high</text>
+  <text x="148" y="308" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#46838c">medium</text>
+  <text x="148" y="388" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#46838c">low</text>
+  <rect x="176" y="200" width="64" height="48" fill="none" stroke="#1a1a18" stroke-width="2"/>
+  <text x="208" y="232" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#1a1a18">94</text>
+  <text x="248" y="232" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#b2afae">72</text>
+  <text x="328" y="232" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#b2afae">68</text>
+  <text x="208" y="312" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#b2afae">81</text>
+  <rect x="256" y="280" width="64" height="48" fill="none" stroke="#1a1a18" stroke-width="2"/>
+  <text x="288" y="312" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#1a1a18">88</text>
+  <text x="368" y="312" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#b2afae">64</text>
+  <text x="208" y="392" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#b2afae">76</text>
+  <text x="288" y="392" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#b2afae">70</text>
+  <rect x="336" y="360" width="64" height="48" fill="none" stroke="#1a1a18" stroke-width="2"/>
+  <text x="368" y="392" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#1a1a18">91</text>
+  <text x="56" y="522" font-family="ui-monospace, monospace" font-size="10" fill="#b2afae">AiRAT &#183; illustrative</text>
+</svg>

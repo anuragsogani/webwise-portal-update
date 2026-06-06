@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Analyst-approved response workflow</title>
+  <desc id="desc">AiRAT chart comparing auto-resolved alerts and analyst escalations across SOC shifts.</desc>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <text x="280" y="88" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="500" fill="#1a1a18">Analyst-approved response</text>
+  <text x="280" y="112" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#898683">In a week with 2,400 alerts</text>
+  <text x="200" y="156" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#46838c">auto-resolved</text>
+  <text x="360" y="156" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#c45c4a">escalated</text>
+  <line x1="80" y1="172" x2="480" y2="172" stroke="#1a1a18" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <line x1="280" y1="172" x2="280" y2="460" stroke="#1a1a18" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="96" y="220" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a18">Shift A</text>
+  <text x="200" y="220" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#46838c">1,040</text>
+  <text x="360" y="220" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#c45c4a">160</text>
+  <text x="96" y="300" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a18">Shift B</text>
+  <text x="200" y="300" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#46838c">780</text>
+  <text x="360" y="300" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#c45c4a">140</text>
+  <text x="96" y="380" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a18">Shift C</text>
+  <text x="200" y="380" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#46838c">520</text>
+  <text x="360" y="380" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#c45c4a">80</text>
+  <text x="280" y="448" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">87% cleared without repeat human triage</text>
+  <text x="56" y="522" font-family="ui-monospace, monospace" font-size="10" fill="#b2afae">AiRAT &#183; illustrative</text>
+</svg>

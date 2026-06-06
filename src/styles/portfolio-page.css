@@ -1,0 +1,158 @@
+/* ═══════════════════════════════════════════════════════════════
+   PORTFOLIO INDEX PAGE  (.pf-*)
+   ═══════════════════════════════════════════════════════════════ */
+
+.pf-main {
+  padding-bottom: 0;
+}
+
+.pf-hero {
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.pf-hero__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+/* Filter chips */
+.pf-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pf-filter-btn {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 0.5px solid var(--border);
+  border-radius: 100px;
+  padding: 0.28rem 0.75rem;
+  color: var(--dim);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.pf-filter-btn:hover {
+  color: var(--white);
+  border-color: var(--border2);
+}
+
+.pf-filter-btn--active {
+  color: var(--lime);
+  border-color: var(--lime-border);
+  background: var(--lime-dim);
+}
+
+/* Table row link */
+.pf-row {
+  cursor: pointer;
+}
+
+.pf-case-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: clamp(1rem, 3vw, 2.25rem);
+  align-items: start;
+}
+
+.pf-preview {
+  position: sticky;
+  top: 88px;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.pf-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  animation: pf-preview-fade 180ms ease-out;
+}
+
+.pf-preview__caption {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  color: var(--dim);
+  line-height: 1.6;
+  display: none;
+}
+
+@keyframes pf-preview-fade {
+  from { opacity: 0.5; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pf-empty {
+  padding: 2rem 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 960px) {
+  .pf-hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pf-case-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-preview {
+    position: static;
+    max-width: 320px;
+  }
+}
+
+/* ── Skeleton loading ─────────────────────────────────────────── */
+@keyframes pf-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.pf-skeleton-cell {
+  display: inline-block;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--surface2, #1a1a1a) 25%,
+    var(--surface3, #252525) 50%,
+    var(--surface2, #1a1a1a) 75%
+  );
+  background-size: 800px 100%;
+  animation: pf-shimmer 1.4s ease-in-out infinite;
+  height: 12px;
+  width: 100%;
+}
+
+.pf-skeleton-cell--wide {
+  width: 60%;
+}
+
+.pf-row--skeleton {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.pf-row--skeleton .sp-table__date,
+.pf-row--skeleton .sp-table__cat,
+.pf-row--skeleton .sp-table__title {
+  display: block;
+}
+
+/* ── Error state ─────────────────────────────────────────────── */
+.pf-error {
+  padding: 2rem 0;
+  color: var(--danger, #f87171);
+  font-size: 0.88rem;
+}

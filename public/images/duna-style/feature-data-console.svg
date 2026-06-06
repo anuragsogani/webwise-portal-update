@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title">
+  <title>AiRAT OpenSearch analytics dashboard</title>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="48" y="48" width="120" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="48" y="64" width="80" height="4" rx="2" fill="#d4d2cc"/>
+  <rect x="48" y="88" width="140" height="72" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="60" y="100" width="48" height="16" rx="4" fill="#2dd4bf" opacity="0.5"/>
+  <rect x="60" y="124" width="64" height="4" rx="2" fill="#d4d2cc"/>
+  <rect x="204" y="88" width="140" height="72" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="216" y="100" width="48" height="16" rx="4" fill="#c8f542" opacity="0.5"/>
+  <rect x="360" y="88" width="152" height="72" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="372" y="100" width="48" height="16" rx="4" fill="#1a1a18" opacity="0.15"/>
+  <rect x="48" y="176" width="464" height="280" rx="10" fill="#fafaf8" stroke="#e8e6e1"/>
+  <path d="M72 420 L120 360 L168 380 L216 300 L264 320 L312 240 L360 260 L408 200 L456 220" stroke="#2dd4bf" stroke-width="3" fill="none"/>
+  <path d="M72 440 L120 400 L168 410 L216 360 L264 370 L312 320 L360 330 L408 280 L456 300" stroke="#c8f542" stroke-width="2" fill="none" opacity="0.7"/>
+</svg>

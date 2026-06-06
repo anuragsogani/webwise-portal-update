@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="6 6 108 108" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">ELK observability bank doodle</title>
+  <desc id="desc">Pastel doodle showing log stacks, trace lines, and a secure banking observability panel.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="14" fill="#d3d7e7"/>
+  <rect x="20" y="20" width="80" height="80" rx="2" fill="#f4f1eb"/>
+  <rect x="28" y="32" width="64" height="46" rx="4" fill="#f8f7f3" stroke="#15161a" stroke-width="1.5"/>
+  <path d="M34 44 H86 M34 52 H86 M34 60 H86" stroke="#15161a" stroke-width="1.1" opacity="0.8"/>
+  <path d="M34 66 L45 60 L53 63 L62 54 L72 57 L82 49" stroke="#15161a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30" y="82" width="16" height="10" rx="1.6" fill="#e7dcbf" stroke="#15161a" stroke-width="1.3"/>
+  <rect x="52" y="82" width="16" height="10" rx="1.6" fill="#dfecdf" stroke="#15161a" stroke-width="1.3"/>
+  <rect x="74" y="82" width="16" height="10" rx="1.6" fill="#e6ddec" stroke="#15161a" stroke-width="1.3"/>
+  <path d="M80 28 L86 34 L80 40" stroke="#15161a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

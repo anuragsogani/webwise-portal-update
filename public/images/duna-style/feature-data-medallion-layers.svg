@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Medallion lake architecture layers</title>
+  <desc id="desc">AiRAT diagram of bronze, silver, and gold medallion data lake layers with governed promotion paths.</desc>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <text x="56" y="72" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="500" fill="#1a1a18">Medallion lake architecture</text>
+  <text x="56" y="92" font-family="ui-monospace, monospace" font-size="11" fill="#898683">Bronze &#183; silver &#183; gold promotion paths</text>
+  <rect x="56" y="120" width="448" height="96" rx="10" fill="#edece7" stroke="#e8e6e1"/>
+  <text x="72" y="152" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#4d4846">Bronze</text>
+  <text x="72" y="172" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Raw ingest &#183; immutable landing</text>
+  <rect x="72" y="184" width="120" height="8" rx="4" fill="#dbd9cd"/>
+  <rect x="204" y="184" width="88" height="8" rx="4" fill="#dbd9cd"/>
+  <rect x="304" y="184" width="176" height="8" rx="4" fill="#dbd9cd"/>
+  <rect x="56" y="232" width="448" height="96" rx="10" fill="#fafaf8" stroke="#e8e6e1"/>
+  <text x="72" y="264" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#1a1a18">Silver</text>
+  <text x="72" y="284" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Validated &#183; deduplicated &#183; conformed</text>
+  <rect x="72" y="296" width="160" height="8" rx="4" fill="#2dd4bf" opacity="0.45"/>
+  <rect x="244" y="296" width="120" height="8" rx="4" fill="#2dd4bf" opacity="0.35"/>
+  <rect x="376" y="296" width="104" height="8" rx="4" fill="#2dd4bf" opacity="0.25"/>
+  <rect x="56" y="344" width="448" height="120" rx="10" fill="#1a1a18"/>
+  <text x="72" y="376" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#c8f542">Gold</text>
+  <text x="72" y="396" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#b2afae">Business metrics &#183; shared definitions</text>
+  <rect x="72" y="412" width="200" height="10" rx="5" fill="#c8f542" opacity="0.7"/>
+  <rect x="72" y="432" width="140" height="10" rx="5" fill="#46838c" opacity="0.8"/>
+  <rect x="224" y="432" width="96" height="10" rx="5" fill="#f7f7f5" opacity="0.25"/>
+  <path d="M280 216v16M280 328v16" stroke="#46838c" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="56" y="522" font-family="ui-monospace, monospace" font-size="10" fill="#b2afae">AiRAT &#183; illustrative</text>
+</svg>

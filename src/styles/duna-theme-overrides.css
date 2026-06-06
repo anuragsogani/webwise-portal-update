@@ -1,0 +1,453 @@
+/*
+ * Duna light-theme overrides for all ported marketing pages.
+ * Scoped to .page-wrap so login/admin/demo shells stay untouched.
+ * Keeps intentional dark bands (closing, tiles, footer, cta-band).
+ */
+
+.page-wrap {
+  background: var(--color-canvas);
+  color: var(--color-body);
+}
+
+/* ── Display & section headings (light bands) ───────────────── */
+.page-wrap :is(
+  .sp-hero__h1,
+  .sp-section-title,
+  .sp-section-title--lg,
+  .sp-section-title--sm,
+  .sp-lede,
+  .sp-card__title,
+  .sp-value-item__title,
+  .sp-label,
+  .sp-table__title,
+  .sp-tile__title,
+  .sp-metric__val,
+  .inner-hero__h1,
+  .hero-h1,
+  .section-title,
+  .ab-hero__h1,
+  .ab-label,
+  .ab-card__title,
+  .ab-lede,
+  .sv-hero__h1,
+  .sv-domain__title,
+  .pf-hero__h1,
+  .pf-card__title,
+  .ct-hero__h1,
+  .me-hero__h1,
+  .te-hero__h1,
+  .gl-hero__h1,
+  .fi-hero__h1,
+  .ins-hero__h1,
+  .ba-hero__title,
+  .ba-hero__h1,
+  .res-category-title,
+  .res-featured-card__title,
+  .res-cluster-title,
+  .hp-work-card__title,
+  .hp-feature__title,
+  .hp-closing__title,
+  .hp-paths__title,
+  .methodology-phase__title,
+  .point-card h3,
+  .scroll-accordion__title
+) {
+  color: var(--color-ink-deep);
+}
+
+/* Headings inside intentional dark sections */
+.page-wrap :is(
+  .sp-closing,
+  .sp-closing-band,
+  .sp-tile,
+  .cta-band,
+  .section--dark,
+  .section--dark-deep,
+  .product-showcase-dark,
+  .product-showcase-sky,
+  .teal-band,
+  .ab-cta
+) :is(.sp-section-title, .sp-hero__h1, .sp-closing__title, h1, h2, h3) {
+  color: var(--color-on-dark);
+}
+
+/* ── Body & secondary text ──────────────────────────────────── */
+.page-wrap :is(
+  .sp-hero__body,
+  .sp-intro,
+  .sp-body,
+  .sp-card__body,
+  .sp-value-item__sub,
+  .inner-hero__body,
+  .hero-sub,
+  .section-lead,
+  .ab-hero__body,
+  .ab-card__body,
+  .pf-card__body,
+  .res-category-desc,
+  .res-featured-card__desc,
+  .res-cluster-desc,
+  .hp-work-card__body,
+  .hp-feature__body,
+  .hp-closing__body,
+  .scroll-accordion__body,
+  .point-card p
+) {
+  color: var(--color-body);
+}
+
+.page-wrap :is(
+  .sp-intro :where(strong, b),
+  .sp-body :where(strong, b),
+  .sp-card__body :where(strong, b),
+  .sp-hero__body :where(strong, b),
+  .sp-value-item__sub :where(strong, b),
+  .sp-closing__body :where(strong, b),
+  .sp-faq__a :where(strong, b),
+  .inner-section ul :where(strong, b),
+  .inner-hero ul :where(strong, b)
+) {
+  color: var(--color-body-strong);
+}
+
+/* ── Eyebrows & mono labels ─────────────────────────────────── */
+.page-wrap :is(
+  .sp-eyebrow,
+  .sp-label,
+  .sp-section__label,
+  .ab-label,
+  .inner-hero__eyebrow,
+  .eyebrow,
+  .res-type-pill,
+  .res-category-tag,
+  .res-read-time,
+  .pf-filter-btn,
+  .sp-table__date,
+  .sp-table__cat,
+  .sp-value-item__num,
+  .sp-chip
+) {
+  font-family: var(--font-mono) !important;
+  letter-spacing: var(--tracking-mono);
+  text-transform: none;
+}
+
+.page-wrap .sp-eyebrow {
+  color: var(--color-muted) !important;
+}
+
+/* ── Cards & surfaces on canvas ─────────────────────────────── */
+.page-wrap :is(
+  .sp-card,
+  .ab-card,
+  .sv-domain,
+  .pf-card,
+  .me-card,
+  .te-card,
+  .gl-card,
+  .fi-card,
+  .ins-card,
+  .ba-card,
+  .res-category-card,
+  .res-featured-card,
+  .res-cluster-card,
+  .hp-work-card,
+  .point-card,
+  .scroll-accordion__item--active,
+  .testimonial-card,
+  .diff-card,
+  .client-grid__cells
+) {
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-none);
+  box-shadow: none;
+}
+
+.page-wrap .client-grid__cells {
+  background: var(--color-surface-soft);
+}
+
+.page-wrap .client-grid__cells:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--color-hairline-strong);
+}
+
+.page-wrap .client-grid__name {
+  color: var(--color-body-strong);
+}
+
+/* ── Links on light canvas ──────────────────────────────────── */
+.page-wrap :is(
+  .sp-text-link,
+  .ab-text-link,
+  .inner-text-link,
+  .sv-case-link,
+  .pf-row,
+  .res-read-arrow
+) {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: var(--tracking-button);
+  color: var(--color-ink);
+}
+
+.page-wrap .sp-text-link,
+.page-wrap .ab-text-link {
+  font-family: var(--font-display);
+  font-size: var(--text-button);
+  letter-spacing: var(--tracking-button);
+  text-transform: none;
+}
+
+/* ── Primary actions (lime) ─────────────────────────────────── */
+.page-wrap :is(
+  .sp-closing__primary,
+  .sp-btn--primary,
+  .sp-btn,
+  .inner-btn--primary,
+  .ab-cta__primary,
+  .ct-submit,
+  .dp-btn--primary,
+  .hp-work-card__button,
+  .hp-feature__cta,
+  .res-cta__btn
+) {
+  background: var(--color-primary) !important;
+  color: var(--color-on-accent) !important;
+  border: 1px solid transparent !important;
+  border-radius: var(--radius-sm) !important;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: var(--tracking-button);
+}
+
+.page-wrap :is(
+  .sp-closing__secondary,
+  .sp-btn--secondary,
+  .inner-btn--secondary,
+  .btn-ghost
+) {
+  background: transparent !important;
+  color: var(--color-ink) !important;
+  border: 1px solid var(--color-hairline-strong) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.page-wrap .sp-closing__secondary:hover {
+  color: var(--color-ink) !important;
+  border-color: var(--color-ink) !important;
+}
+
+/* ── Dividers ───────────────────────────────────────────────── */
+.page-wrap :is(
+  .sp-rule,
+  .ab-divider,
+  .inner-divider,
+  .sp-divider,
+  .scroll-accordion__list,
+  .scroll-accordion__item,
+  .sp-value-item,
+  .sp-table__head,
+  .sp-table__row
+) {
+  border-color: var(--color-hairline) !important;
+}
+
+/* ── FAQ ────────────────────────────────────────────────────── */
+.page-wrap :is(.sp-faq__q, .fi-faq__q) {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: var(--text-title-md);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.page-wrap :is(.sp-faq__a, .fi-faq__a) {
+  color: var(--color-body-strong);
+}
+
+/* ── Inner hero (editorial pages) ───────────────────────────── */
+.page-wrap .inner-hero,
+.page-wrap .inner-hero--airat {
+  background: var(--color-canvas);
+  border-bottom: 1px solid var(--color-hairline);
+  text-align: left;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-section-fluid) max(var(--space-md), var(--page-pad));
+}
+
+.page-wrap .inner-hero .hero-h1,
+.page-wrap .inner-hero .inner-hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display-xl);
+  line-height: 1.05;
+  color: var(--color-ink-deep);
+  max-width: var(--max-read);
+}
+
+.page-wrap .inner-hero .hero-sub,
+.page-wrap .inner-hero .inner-hero__body {
+  font-size: var(--text-body-lg);
+  color: var(--color-body-strong);
+  max-width: var(--max-read-tight);
+  line-height: 1.5;
+}
+
+.page-wrap .inner-section {
+  border-bottom-color: var(--color-hairline);
+}
+
+.page-wrap .section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display-lg);
+  line-height: 1.1;
+  color: var(--color-ink-deep);
+}
+
+.page-wrap :is(.sp-section-title, .sp-section-title--lg, .sp-section-title--sm) {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--color-ink-deep);
+}
+
+.page-wrap .sp-section-title {
+  font-size: var(--text-display-lg);
+  letter-spacing: var(--tracking-display-lg);
+  line-height: 1.1;
+}
+
+.page-wrap .sp-section-title--lg {
+  font-size: var(--text-display-xl);
+  letter-spacing: var(--tracking-display-xl);
+  line-height: 1.05;
+}
+
+.page-wrap .sp-section-title--sm {
+  font-size: var(--text-display-sm);
+  letter-spacing: var(--tracking-display-sm);
+  line-height: 1.2;
+}
+
+/* ── Shared page hero (centered product pattern) ──────────── */
+.page-wrap .sp-hero {
+  text-align: left;
+  align-items: flex-start;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: max(1rem, var(--page-pad));
+}
+
+.page-wrap .sp-hero--split {
+  text-align: left;
+  align-items: start;
+}
+
+.page-wrap .sp-main {
+  padding-inline: max(1rem, var(--page-pad));
+}
+
+/* ── Portfolio filters ──────────────────────────────────────── */
+.page-wrap .pf-filter-btn:hover {
+  color: var(--color-ink);
+  border-color: var(--color-hairline-strong);
+}
+
+.page-wrap .pf-filter-btn--active {
+  color: var(--color-on-accent);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ── Scroll accordion (about / methodology) ─────────────────── */
+.page-wrap .scroll-accordion__trigger {
+  color: var(--color-ink);
+}
+
+.page-wrap .scroll-accordion__num {
+  color: var(--color-muted);
+}
+
+.page-wrap .scroll-accordion__item--active .scroll-accordion__num {
+  color: var(--color-ink);
+}
+
+.page-wrap .scroll-accordion__item--active {
+  border-bottom-color: var(--color-hairline-strong);
+}
+
+.page-wrap .scroll-accordion__item--active::before {
+  background: var(--color-primary);
+}
+
+/* ── Closing bands stay dark (legacy sp-closing; prefer .cta-band) ─ */
+.page-wrap :is(.sp-closing-band, .ab-cta) {
+  background: var(--color-surface-dark);
+  color: var(--color-on-dark);
+  border-radius: var(--radius-none);
+  margin-inline: 0;
+  padding-inline: max(1rem, var(--page-pad));
+}
+
+/* ── Product tiles (dark bands) ─────────────────────────────── */
+.page-wrap .sp-tile {
+  background: var(--color-surface-dark);
+  border-color: var(--color-hairline-dark);
+}
+
+.page-wrap .sp-tile__body {
+  color: var(--color-on-dark-muted);
+}
+
+.page-wrap .sp-tile__content .sp-text-link {
+  color: var(--color-on-dark);
+}
+
+/* ── Book call FAB → Duna dark chip ──────────────────────────── */
+.page-wrap .bc-fab {
+  background: var(--color-surface-dark);
+  box-shadow: var(--shadow-product);
+  animation: none;
+}
+
+.page-wrap .bc-fab:hover {
+  background: var(--color-surface-dark-elevated);
+  box-shadow: var(--shadow-product);
+  transform: translateY(-1px);
+}
+
+.page-wrap .bc-fab__primary,
+.page-wrap .bc-fab__secondary,
+.page-wrap .bc-fab__arrow {
+  color: var(--color-on-dark);
+}
+
+.page-wrap .bc-fab__secondary {
+  color: var(--color-on-dark-muted);
+}
+
+/* ── Grids: breathing room ──────────────────────────────────── */
+.page-wrap .sp-grid-2,
+.page-wrap .sp-grid-3 {
+  gap: var(--space-lg);
+}
+
+.page-wrap .sp-card {
+  padding: var(--space-lg);
+}
+
+.page-wrap .res-category-grid,
+.page-wrap .res-featured-grid,
+.page-wrap .res-clusters-grid {
+  gap: var(--space-lg);
+}
+
+.page-wrap .hp-latest-grid {
+  gap: var(--space-xl);
+}

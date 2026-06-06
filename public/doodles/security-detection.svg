@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="6 6 108 108" role="img" aria-labelledby="title desc">
+  <title id="title">Security Detection Doodle</title>
+  <desc id="desc">A pastel doodle card showing alert streams entering a magnifier with a check mark.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="16" fill="#dbc2c7"/>
+  <path d="M22 26 C40 25 78 25 96 26 C96 52 96 73 96 90 C77 90 40 89 22 88 C22 71 22 49 22 26 Z" fill="#f7f2eb"/>
+  <path d="M22 42 H48 M22 49 H48 M22 56 H48" stroke="#101114" stroke-width="2.3" stroke-linecap="round"/>
+  <circle cx="58" cy="55" r="19" stroke="#101114" stroke-width="2.7" fill="none"/>
+  <path d="M49 55 L54 60 L64 50" stroke="#101114" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M69 67 L86 84" stroke="#101114" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M68 66 L74 61 L89 76 L83 81 Z" stroke="#101114" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
+</svg>

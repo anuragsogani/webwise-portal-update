@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="6 6 108 108" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence Chain Doodle</title>
+  <desc id="desc">A pastel doodle card with connected chain links and audit check marks.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="16" fill="#d5c5cb"/>
+  <path d="M20 24 C40 23 82 23 99 24 C99 49 99 73 99 92 C78 92 39 91 20 90 C20 72 20 48 20 24 Z" fill="#f7f2eb"/>
+  <circle cx="43" cy="55" r="10" stroke="#101114" stroke-width="2.2" fill="none"/>
+  <circle cx="57" cy="55" r="10" stroke="#101114" stroke-width="2.2" fill="none"/>
+  <path d="M49 55 H51" stroke="#101114" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="71" cy="55" r="10" stroke="#101114" stroke-width="2.2" fill="none"/>
+  <path d="M63 55 H65" stroke="#101114" stroke-width="2.2" stroke-linecap="round"/>
+  <rect x="78" y="31" width="16" height="16" rx="2" fill="#efe7dc" stroke="#101114" stroke-width="1.6"/>
+  <path d="M81 39 L84 42 L89 36" stroke="#101114" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 77 H88" stroke="#101114" stroke-width="1.8" stroke-dasharray="3 3" stroke-linecap="round"/>
+</svg>

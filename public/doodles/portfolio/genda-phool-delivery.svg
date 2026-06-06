@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="6 6 108 108" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Genda Phool delivery doodle</title>
+  <desc id="desc">Pastel doodle showing marigold flowers, a delivery route, and a scooter bag.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="14" fill="#d7c6ce"/>
+  <rect x="20" y="20" width="80" height="80" rx="2" fill="#f4f1eb"/>
+  <circle cx="36" cy="40" r="10" fill="#f4cd66" stroke="#15161a" stroke-width="1.8"/>
+  <circle cx="36" cy="40" r="5" fill="#f6e3a7" stroke="#15161a" stroke-width="1.2"/>
+  <circle cx="58" cy="34" r="8" fill="#f0b54b" stroke="#15161a" stroke-width="1.6"/>
+  <circle cx="58" cy="34" r="4" fill="#f6e3a7" stroke="#15161a" stroke-width="1.1"/>
+  <path d="M28 56 C40 52 55 54 67 60" stroke="#15161a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="3 3"/>
+  <circle cx="69" cy="61" r="2.2" fill="#15161a"/>
+  <circle cx="74" cy="80" r="7" stroke="#15161a" stroke-width="1.9"/>
+  <circle cx="92" cy="80" r="7" stroke="#15161a" stroke-width="1.9"/>
+  <path d="M71 72 H88 L94 80" stroke="#15161a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="84" y="62" width="10" height="8" rx="1.4" fill="#efd8de" stroke="#15161a" stroke-width="1.4"/>
+  <path d="M64 82 H71" stroke="#15161a" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M32 84 C36 76 45 73 54 74" stroke="#15161a" stroke-width="1.7" stroke-linecap="round"/>
+</svg>

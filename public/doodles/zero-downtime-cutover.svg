@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="6 6 108 108" role="img" aria-labelledby="title desc">
+  <title id="title">Zero Downtime Cutover Doodle</title>
+  <desc id="desc">A pastel doodle card with continuity loop arrows and staged migration boxes.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="16" fill="#cfd0dd"/>
+  <path d="M22 26 C40 25 79 25 98 26 C98 49 98 72 98 91 C79 91 40 90 22 89 C22 72 22 49 22 26 Z" fill="#f7f2eb"/>
+  <rect x="30" y="42" width="20" height="16" rx="2.5" fill="#efe7dc" stroke="#101114" stroke-width="1.7"/>
+  <rect x="70" y="42" width="20" height="16" rx="2.5" fill="#efe7dc" stroke="#101114" stroke-width="1.7"/>
+  <path d="M52 50 H67 M63 46 L69 50 L63 54" stroke="#101114" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 76 C30 69 35 63 43 64" stroke="#101114" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M43 61 L46 64 L42 66" stroke="#101114" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 80 C60 87 55 93 47 92" stroke="#101114" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M47 95 L44 92 L48 90" stroke="#101114" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

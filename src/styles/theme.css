@@ -1,0 +1,27 @@
+@import "./tokens.css";
+
+/* Light-only theme for the Duna revamp */
+html,
+body {
+  background: var(--color-canvas);
+  color: var(--color-body);
+}
+
+.page-wrap {
+  min-height: 100vh;
+  background: var(--color-canvas);
+  color: var(--color-body);
+}
+
+a {
+  color: var(--color-ink);
+}
+
+a:hover {
+  opacity: 0.78;
+}
+
+/* Override dark-theme remnants in ported page CSS */
+[data-theme="dark"] {
+  color-scheme: light;
+}

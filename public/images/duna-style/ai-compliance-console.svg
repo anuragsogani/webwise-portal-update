@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none" role="img" aria-labelledby="title">
+  <title>AI compliance workflow console</title>
+  <rect width="640" height="640" fill="#f7f7f5"/>
+  <rect x="32" y="32" width="576" height="576" rx="12" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="56" y="56" width="160" height="528" rx="8" fill="#f3f2ef"/>
+  <rect x="72" y="80" width="96" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="72" y="104" width="128" height="32" rx="6" fill="#c8f542" opacity="0.35"/>
+  <rect x="72" y="152" width="128" height="24" rx="4" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="72" y="192" width="128" height="24" rx="4" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="240" y="56" width="344" height="48" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="256" y="72" width="120" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="240" y="120" width="344" height="200" rx="8" fill="#1a1a18"/>
+  <rect x="256" y="136" width="140" height="6" rx="3" fill="#c8f542"/>
+  <rect x="256" y="160" width="280" height="4" rx="2" fill="#666"/>
+  <rect x="256" y="180" width="312" height="64" rx="6" fill="#2a2a28" stroke="#444"/>
+  <rect x="240" y="336" width="168" height="120" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="256" y="352" width="80" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="256" y="372" width="120" height="8" rx="4" fill="#2dd4bf"/>
+  <rect x="424" y="336" width="160" height="120" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="440" y="352" width="72" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="440" y="372" width="96" height="8" rx="4" fill="#c8f542"/>
+  <rect x="240" y="472" width="344" height="112" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="256" y="488" width="100" height="6" rx="3" fill="#1a1a18"/>
+  <path d="M256 520h300M256 544h240M256 568h180" stroke="#e8e6e1" stroke-width="2"/>
+</svg>

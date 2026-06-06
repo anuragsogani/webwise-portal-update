@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">AI and LLM systems icon</title>
+  <desc id="desc">Abstract icon showing reasoning flow, connected nodes, and orchestration loop.</desc>
+  <rect x="28" y="28" width="456" height="456" rx="96" fill="#D4E5DE"/>
+
+  <g fill="none" stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M166 178c26-30 64-48 106-48 74 0 134 58 134 130 0 42-20 80-52 104"/>
+    <path d="M344 332c-26 30-64 48-106 48-74 0-134-58-134-130 0-42 20-80 52-104"/>
+
+    <circle cx="160" cy="186" r="10" fill="#111111"/>
+    <circle cx="352" cy="326" r="10" fill="#111111"/>
+    <circle cx="256" cy="256" r="36"/>
+    <path d="M238 256l18 18 28-30"/>
+
+    <path d="M156 146l14 0"/>
+    <path d="M342 366l14 0"/>
+  </g>
+</svg>

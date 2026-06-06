@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title">
+  <title>AiRAT governed RAG console</title>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="48" y="48" width="200" height="200" rx="10" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="64" y="64" width="96" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="64" y="80" width="168" height="4" rx="2" fill="#d4d2cc"/>
+  <rect x="64" y="100" width="168" height="56" rx="6" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="72" y="112" width="120" height="4" rx="2" fill="#e8e6e1"/>
+  <rect x="72" y="124" width="140" height="4" rx="2" fill="#e8e6e1"/>
+  <rect x="72" y="136" width="96" height="4" rx="2" fill="#c8f542"/>
+  <rect x="272" y="48" width="240" height="200" rx="10" fill="#1a1a18"/>
+  <rect x="288" y="64" width="120" height="6" rx="3" fill="#c8f542"/>
+  <rect x="288" y="84" width="200" height="4" rx="2" fill="#555"/>
+  <rect x="288" y="104" width="208" height="48" rx="6" fill="#2a2a28" stroke="#444"/>
+  <rect x="296" y="116" width="160" height="4" rx="2" fill="#aaa"/>
+  <rect x="296" y="128" width="120" height="4" rx="2" fill="#888"/>
+  <rect x="48" y="272" width="464" height="240" rx="10" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="64" y="288" width="140" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="64" y="312" width="432" height="32" rx="6" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="72" y="324" width="64" height="8" rx="4" fill="#2dd4bf"/>
+  <rect x="64" y="360" width="432" height="32" rx="6" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="72" y="372" width="48" height="8" rx="4" fill="#c8f542"/>
+</svg>

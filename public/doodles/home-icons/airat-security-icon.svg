@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Security and detection icon</title>
+  <desc id="desc">Abstract icon showing incoming signals, investigation lens, and verification check.</desc>
+  <rect x="28" y="28" width="456" height="456" rx="96" fill="#E6D5D8"/>
+
+  <g fill="none" stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="92" y1="198" x2="176" y2="198"/>
+    <line x1="92" y1="242" x2="162" y2="242"/>
+    <circle cx="76" cy="198" r="8" fill="#111111"/>
+    <circle cx="76" cy="242" r="8" fill="#111111"/>
+
+    <circle cx="246" cy="234" r="64"/>
+    <line x1="288" y1="278" x2="336" y2="326"/>
+
+    <circle cx="346" cy="184" r="36"/>
+    <path d="M330 184l12 12 20-22"/>
+  </g>
+</svg>

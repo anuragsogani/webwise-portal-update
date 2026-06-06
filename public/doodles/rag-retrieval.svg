@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="6 6 108 108" role="img" aria-labelledby="title desc">
+  <title id="title">RAG Retrieval Doodle</title>
+  <desc id="desc">A pastel doodle card with a profile stroke connected to a retrieval graph.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="16" fill="#b8cbc4"/>
+  <path d="M66 25 C52 28 42 41 42 57 C42 74 52 87 67 91 C82 95 96 88 102 74 C107 62 106 48 99 38" stroke="#101114" stroke-width="2.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M47 75 C38 75 30 80 24 90" stroke="#101114" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+  <path d="M49 81 C39 82 32 86 27 94" stroke="#101114" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+  <path d="M57 54 L68 54 L78 44" stroke="#f7f2eb" stroke-width="3.8" stroke-linecap="round"/>
+  <path d="M68 54 L69 65 M68 54 L83 64 M68 54 L53 56" stroke="#f7f2eb" stroke-width="3.8" stroke-linecap="round"/>
+  <circle cx="68" cy="54" r="6.2" fill="#f7f2eb"/>
+  <circle cx="78" cy="44" r="3.4" fill="#f7f2eb"/>
+  <circle cx="83" cy="64" r="3.4" fill="#f7f2eb"/>
+  <circle cx="69" cy="65" r="3.4" fill="#f7f2eb"/>
+  <circle cx="53" cy="56" r="3.4" fill="#f7f2eb"/>
+</svg>

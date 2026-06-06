@@ -1,0 +1,285 @@
+/*
+ * Cross-page layout rhythm — section stacks, container alignment,
+ * homepage grids, and inner-page spacing overrides.
+ */
+
+#main-content,
+main:not(#main-content) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Homepage hero ─────────────────────────────────────────── */
+.hero-band__inner {
+  padding-bottom: var(--space-md);
+}
+
+.hero-band .announcement-pill {
+  margin-bottom: var(--space-xs);
+}
+
+/* ── Logo strip ────────────────────────────────────────────── */
+.logo-strip .section-head .eyebrow {
+  max-width: 36rem;
+}
+
+.logo-row__list {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-xl) var(--space-lg);
+}
+
+.logo-row__item {
+  min-width: 0;
+}
+
+.logo-row__name {
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+/* ── Stats + value props ───────────────────────────────────── */
+.stat-row {
+  width: 100%;
+}
+
+.stat-block__detail {
+  max-width: none;
+}
+
+.section > .container.value-prop-row {
+  margin-top: 0;
+}
+
+/* ── Feature modules (sibling containers) ──────────────────── */
+.section > .container.feature-module {
+  padding-block: var(--space-xl);
+}
+
+.section > .container.feature-module + .container.feature-module {
+  border-top: 1px solid var(--color-hairline);
+  padding-top: var(--space-xxl);
+}
+
+.feature-module__header--copy-only {
+  max-width: none;
+}
+
+.product-showcase-dark__grid--copy-only {
+  max-width: none;
+  width: 100%;
+}
+
+.sub-feature-row {
+  margin-top: var(--space-md);
+}
+
+/* ── Trust split inside warm section ───────────────────────── */
+.section > .container.feature-split {
+  padding-block: 0;
+  width: 100%;
+}
+
+/* ── News cards without thumbs ─────────────────────────────── */
+.news-card--no-thumb {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-hairline);
+  background: var(--color-canvas-warm);
+}
+
+/* ── Inner page mains ──────────────────────────────────────── */
+.sp-main,
+.ab-main,
+.sv-main,
+.pf-main,
+.ct-main,
+.me-main,
+.te-main,
+.rs-main,
+.gl-main,
+.fi-main,
+.ins-main,
+.ba-main,
+.bc-main,
+.bi-main,
+.cs-main,
+.sd-main,
+.inner-main,
+.notfound-main {
+  padding-bottom: var(--space-section-fluid);
+}
+
+/* Blog index — legacy .bi-* used --white (dark-theme text) on light canvas */
+.bi-main :is(
+  .bi-hero__h1,
+  .bi-domain__title,
+  .bi-feature__title,
+  .bi-sidebar-row__title,
+  .bi-pubs__title,
+  .bi-table__title
+) {
+  color: var(--color-ink-deep);
+}
+
+.bi-table__row:hover .bi-table__title {
+  color: var(--color-ink);
+}
+
+.bi-pubs__search {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  border-color: var(--color-hairline-strong);
+}
+
+.bi-pubs__chip:hover {
+  color: var(--color-ink-deep);
+}
+
+.bi-unsub-banner {
+  color: var(--color-body-strong);
+}
+
+.bi-unsub-banner button:hover {
+  color: var(--color-ink);
+}
+
+.bi-newsletter {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-pad);
+  padding-bottom: var(--space-lg);
+}
+
+/* ── Shared page system — light theme text + rhythm ────────── */
+.sp-section-title,
+.sp-section-title--lg,
+.sp-section-title--sm,
+.sp-hero__h1,
+.sp-card__title,
+.sp-value-item__title,
+.sp-label,
+.sp-table__title,
+.sp-lede,
+.sp-faq__q,
+.fi-faq__q {
+  color: var(--color-ink-deep);
+}
+
+.sp-intro :where(strong, b),
+.sp-body :where(strong, b),
+.sp-card__body :where(strong, b),
+.sp-hero__body :where(strong, b),
+.sp-value-item__sub :where(strong, b),
+.sp-closing__body :where(strong, b),
+.sp-faq__a :where(strong, b),
+.fi-faq__a :where(strong, b),
+.inner-section ul :where(strong, b),
+.inner-hero ul :where(strong, b) {
+  color: var(--color-body-strong);
+}
+
+.sp-section {
+  gap: var(--space-xl);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.sp-section + .sp-section,
+.sp-section + .sp-rule,
+.sp-rule + .sp-section {
+  margin-top: 0;
+}
+
+.sp-hero + .sp-rule,
+.sp-rule + .sp-hero {
+  margin-top: 0;
+}
+
+.sp-grid-2,
+.sp-grid-3 {
+  gap: var(--space-lg);
+}
+
+.sp-card {
+  padding: var(--space-lg);
+}
+
+.sp-value-item {
+  padding: var(--space-lg) 0;
+}
+
+/* Inner pages using .inner-section stack */
+.inner-section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.inner-hero + .inner-section,
+.inner-section + .inner-section {
+  margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+  .logo-row__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .stat-row {
+    gap: var(--space-xxl);
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    gap: var(--space-xl);
+  }
+
+  .logo-row__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg) var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-row__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ── About page (.ab-*) ─────────────────────────────────────── */
+.ab-hero__h1,
+.ab-label,
+.ab-card__title,
+.ab-lede,
+.ab-section__intro {
+  color: var(--color-ink-deep);
+}
+
+.ab-hero__body,
+.ab-card__body,
+.ab-discipline .ab-card__body {
+  color: var(--color-body);
+}
+
+.ab-section {
+  gap: var(--space-xl);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.ab-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+@media (max-width: 860px) {
+  .ab-section {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+.ab-grid-2 {
+  gap: var(--space-lg);
+}
+
+.ab-stats-row {
+  gap: var(--space-xl);
+}

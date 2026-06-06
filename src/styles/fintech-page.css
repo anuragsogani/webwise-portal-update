@@ -1,0 +1,97 @@
+.fi-main {
+  position: relative;
+  overflow: hidden;
+  --fi-mx: 0;
+  --fi-my: 0;
+}
+
+.fi-main > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.fi-float-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fi-float {
+  position: absolute;
+  display: block;
+  width: clamp(38px, 4.2vw, 62px);
+  height: clamp(38px, 4.2vw, 62px);
+  opacity: 0.34;
+  filter: drop-shadow(0 7px 12px rgba(0, 0, 0, 0.2));
+  transition: transform 220ms ease-out;
+  transform: translate(
+    calc(var(--fi-mx) * var(--fi-parallax-x, 8px)),
+    calc(var(--fi-my) * var(--fi-parallax-y, 8px))
+  );
+}
+
+.fi-float__motion {
+  display: block;
+  animation-name: fi-float-drift, fi-float-fall;
+  animation-timing-function: ease-in-out, linear;
+  animation-iteration-count: infinite, infinite;
+}
+
+.fi-float__motion svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.fi-float--1 { left: 4%; top: 8%; --fi-parallax-x: 8px;  --fi-parallax-y: 10px; }
+.fi-float--2 { right: 7%; top: 13%; --fi-parallax-x: 10px; --fi-parallax-y: 8px; }
+.fi-float--3 { left: 9%; top: 31%; --fi-parallax-x: 12px; --fi-parallax-y: 9px; }
+.fi-float--4 { right: 11%; top: 38%; --fi-parallax-x: 9px; --fi-parallax-y: 11px; }
+.fi-float--5 { left: 6%; top: 56%; --fi-parallax-x: 8px; --fi-parallax-y: 9px; }
+.fi-float--6 { right: 5%; top: 61%; --fi-parallax-x: 11px; --fi-parallax-y: 8px; }
+.fi-float--7 { left: 12%; top: 79%; --fi-parallax-x: 10px; --fi-parallax-y: 12px; }
+.fi-float--8 { right: 9%; top: 84%; --fi-parallax-x: 8px; --fi-parallax-y: 10px; }
+
+.fi-float--1 .fi-float__motion { animation-duration: 7.5s, 26s; animation-delay: 0s, -6s; }
+.fi-float--2 .fi-float__motion { animation-duration: 8.5s, 29s; animation-delay: -1s, -10s; }
+.fi-float--3 .fi-float__motion { animation-duration: 9.5s, 27s; animation-delay: -2.3s, -15s; }
+.fi-float--4 .fi-float__motion { animation-duration: 8s, 31s; animation-delay: -0.7s, -3s; }
+.fi-float--5 .fi-float__motion { animation-duration: 10s, 28s; animation-delay: -3.2s, -21s; }
+.fi-float--6 .fi-float__motion { animation-duration: 7.8s, 30s; animation-delay: -4.4s, -18s; }
+.fi-float--7 .fi-float__motion { animation-duration: 9.2s, 25s; animation-delay: -2.1s, -9s; }
+.fi-float--8 .fi-float__motion { animation-duration: 8.8s, 32s; animation-delay: -5.2s, -24s; }
+
+@keyframes fi-float-drift {
+  0% { transform: translate3d(0, 0, 0) rotate(-3deg) scale(1); }
+  25% { transform: translate3d(4px, -8px, 0) rotate(3deg) scale(1.02); }
+  50% { transform: translate3d(-3px, 6px, 0) rotate(-2deg) scale(0.99); }
+  75% { transform: translate3d(5px, -5px, 0) rotate(2deg) scale(1.01); }
+  100% { transform: translate3d(0, 0, 0) rotate(-3deg) scale(1); }
+}
+
+@keyframes fi-float-fall {
+  0% { margin-top: 0; }
+  50% { margin-top: 22px; }
+  100% { margin-top: 0; }
+}
+
+@media (max-width: 860px) {
+  .fi-float {
+    width: 38px;
+    height: 38px;
+    opacity: 0.24;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fi-float {
+    transition: none;
+    transform: none;
+  }
+  .fi-float__motion {
+    animation: none;
+    opacity: 0.18;
+  }
+}

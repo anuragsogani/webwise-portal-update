@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" fill="none" role="img" aria-labelledby="title">
+  <title>Compliance controls dashboard</title>
+  <rect width="320" height="320" fill="#f7f7f5"/>
+  <rect x="16" y="16" width="288" height="288" rx="10" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="32" y="32" width="128" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="32" y="56" width="96" height="48" rx="6" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="40" y="68" width="48" height="12" rx="4" fill="#c8f542" opacity="0.5"/>
+  <rect x="40" y="84" width="64" height="4" rx="2" fill="#d4d2cc"/>
+  <rect x="144" y="56" width="96" height="48" rx="6" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="152" y="68" width="48" height="12" rx="4" fill="#2dd4bf" opacity="0.5"/>
+  <rect x="256" y="56" width="32" height="48" rx="6" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="32" y="120" width="256" height="160" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="48" y="136" width="88" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="48" y="160" width="224" height="8" rx="4" fill="#c8f542" opacity="0.4"/>
+  <rect x="48" y="180" width="200" height="8" rx="4" fill="#2dd4bf" opacity="0.35"/>
+  <rect x="48" y="200" width="176" height="8" rx="4" fill="#e8e6e1"/>
+  <rect x="48" y="220" width="152" height="8" rx="4" fill="#e8e6e1"/>
+  <rect x="48" y="248" width="96" height="16" rx="4" fill="#1a1a18"/>
+</svg>

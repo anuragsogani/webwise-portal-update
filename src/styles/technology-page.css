@@ -1,0 +1,78 @@
+/* ═══════════════════════════════════════════════════════════════
+   TECHNOLOGY PAGE  (.te-*)
+   ═══════════════════════════════════════════════════════════════ */
+
+.te-main {
+  padding-bottom: 0;
+}
+
+.te-stack-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.te-stack-group__label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tech-stack-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tech-stack-chip__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.tech-stack-chip__label {
+  letter-spacing: 0.03em;
+}
+
+/* FAQ */
+.te-faq {
+  display: flex;
+  flex-direction: column;
+}
+
+.te-faq__item {
+  padding: 1.1rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.te-faq__item:first-child {
+  border-top: 0.5px solid var(--border);
+}
+
+.te-faq__q {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.te-faq__a {
+  font-family: var(--font-prose);
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
+  color: var(--dim);
+  margin: 0;
+}
+
+.te-faq__a :where(strong, b) {
+  font-weight: var(--fw-prose-strong);
+  color: var(--white);
+}
+
+.te-faq__a :where(em, i) {
+  font-style: italic;
+}

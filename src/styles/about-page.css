@@ -1,0 +1,546 @@
+/* ═══════════════════════════════════════════════════════════════
+   ABOUT PAGE  (.ab-*)
+   Anthropic company-page layout:
+     centred hero → left-label + right-content sections
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── SHELL ──────────────────────────────────────────────────── */
+.ab-main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+  --ab-copy: clamp(1.02rem, 1.12vw, 1.12rem);
+  --ab-small-copy: clamp(0.96rem, 1.02vw, 1.03rem);
+  --ab-heading-serif: clamp(2.3rem, 5.9vw, 4.35rem);
+}
+
+/* ── DIVIDER ────────────────────────────────────────────────── */
+.ab-divider {
+  border: none;
+  border-top: 0.5px solid var(--border);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO  -  centred column (Anthropic style)
+   ══════════════════════════════════════════════════════════════ */
+.ab-hero {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(4.4rem, 10vw, 7.4rem) 0 clamp(3.4rem, 7vw, 5.2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.ab-hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--ab-heading-serif);
+  font-weight: 400;
+  line-height: 1.08;
+  color: var(--white);
+  margin: 0;
+  max-width: 18ch;
+}
+
+.ab-hero__body {
+  font-size: var(--ab-copy);
+  line-height: 1.82;
+  color: var(--dim);
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION ROW  -  left label + right content
+   Mirrors Anthropic: narrow fixed-width label, wide right body
+   ══════════════════════════════════════════════════════════════ */
+.ab-section {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: clamp(2.1rem, 4.2vw, 3.9rem);
+  padding: clamp(3rem, 5.4vw, 4.6rem) 0;
+  align-items: start;
+}
+
+/* Left column  -  section label */
+.ab-section__label {
+  padding-top: 0.15rem; /* optical alignment with right body text */
+}
+
+.ab-label {
+  font-family: var(--font-ui);
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.35;
+}
+
+/* Right column body */
+.ab-section__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.ab-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.72rem, 3.5vw, 2.65rem);
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--white);
+  margin: 0;
+  max-width: 26ch;
+}
+
+/* Large paragraph intro  -  the bold "lede" in the Purpose section */
+.ab-lede {
+  font-family: var(--font-display);
+  font-size: clamp(1.22rem, 2.35vw, 1.62rem);
+  font-weight: 400;
+  line-height: 1.56;
+  color: var(--white);
+  max-width: 44ch;
+  margin: 0;
+}
+
+/* Regular intro paragraph inside right column */
+.ab-section__intro {
+  font-size: var(--ab-copy);
+  line-height: 1.86;
+  color: var(--dim);
+  max-width: 66ch;
+  margin: 0;
+}
+
+/* Customers block: tighter stack under two-column section shell */
+.ab-section--clients {
+  align-items: start;
+  padding-top: clamp(2.85rem, 5.2vw, 3.65rem);
+  padding-bottom: clamp(3.1rem, 5.8vw, 4.25rem);
+}
+
+.ab-section--clients .ab-section__body {
+  gap: 0;
+}
+
+.ab-section--clients .ab-section__label {
+  padding-top: 0.5rem;
+}
+
+.client-showcase--about {
+  width: 100%;
+}
+
+.client-showcase--about .client-showcase__head {
+  margin-bottom: clamp(1.35rem, 2.4vw, 1.9rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1.75rem, 3.5vw, 3rem);
+}
+
+/* Left column is the section title (same pattern as “Quick answers”); body is lead + CTA only */
+.client-showcase--about .client-showcase__head--about-solo {
+  grid-template-columns: 1fr;
+}
+
+.client-showcase--about .client-showcase__head--about-solo .client-showcase__aside {
+  gap: 0.75rem;
+  padding-top: 0.15rem;
+  max-width: 42ch;
+}
+
+.client-showcase--about .client-showcase__head--about-solo .client-showcase__lead {
+  max-width: 42ch;
+  font-size: clamp(0.94rem, 1.35vw, 1.05rem);
+}
+
+.client-showcase--about .client-grid__logo {
+  width: 2.65rem;
+  height: 2.65rem;
+}
+
+@media (max-width: 900px) {
+  .client-showcase--about .client-grid__logo {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   2-COLUMN GRIDS
+   ══════════════════════════════════════════════════════════════ */
+.ab-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/* ── Generic card (Purpose principles, etc.) ─────────────────── */
+.ab-card {
+  padding: 1.65rem 1.65rem 1.65rem 0;
+  border-top: 0.5px solid var(--border);
+}
+
+.ab-card:nth-child(2n) {
+  padding-left: 1.65rem;
+  padding-right: 0;
+  border-left: 0.5px solid var(--border);
+}
+
+.ab-card__title {
+  font-family: var(--font-ui);
+  font-size: clamp(1.04rem, 1.18vw, 1.16rem);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.65rem;
+  line-height: 1.35;
+}
+
+.ab-card__body {
+  font-size: var(--ab-small-copy);
+  line-height: 1.84;
+  color: var(--dim);
+  margin: 0;
+  max-width: 54ch;
+}
+
+/* ── Discipline card (Team section) ────────────────────────────*/
+.ab-discipline {
+  padding: 1.65rem 1.65rem 1.65rem 0;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.88rem;
+}
+
+.ab-discipline:nth-child(2n) {
+  padding-left: 1.65rem;
+  padding-right: 0;
+  border-left: 0.5px solid var(--border);
+}
+
+/* Use the richer TeamRoleHoverVisual in About cards, with local layout + hover wiring */
+.ab-discipline .team-visual {
+  margin: 0 0 0.45rem;
+  width: 100%;
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ab-discipline .team-visual__frame {
+  height: clamp(150px, 28vw, 176px);
+}
+
+.ab-discipline .team-visual__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(55% 52% at 52% 44%, rgba(118, 228, 223, 0.2), rgba(118, 228, 223, 0) 70%),
+    radial-gradient(40% 35% at 72% 26%, rgba(250, 232, 178, 0.16), rgba(250, 232, 178, 0) 78%);
+  transition: opacity 0.35s ease;
+}
+
+.ab-discipline .team-visual__hint {
+  font-size: 8px;
+  letter-spacing: 0.14em;
+}
+
+.ab-discipline:hover .team-visual__centerpiece,
+.ab-discipline:focus-within .team-visual__centerpiece {
+  filter: saturate(1.08) brightness(1.03);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.ab-discipline:hover .team-doodle,
+.ab-discipline:focus-within .team-doodle {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+}
+
+.ab-discipline:hover .team-artifact,
+.ab-discipline:focus-within .team-artifact {
+  opacity: 0.96;
+  transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+}
+
+.ab-discipline:hover .team-visual__frame::after,
+.ab-discipline:focus-within .team-visual__frame::after {
+  opacity: 1;
+}
+
+.ab-discipline:hover .team-visual__hint,
+.ab-discipline:focus-within .team-visual__hint {
+  color: var(--dim);
+}
+
+.ab-discipline:hover .team-visual__hint-dot,
+.ab-discipline:focus-within .team-visual__hint-dot {
+  opacity: 0.95;
+}
+
+/* ── Value items  -  numbered, 2-col ─────────────────────────── */
+.ab-value {
+  padding: 1.65rem 1.65rem 1.65rem 0;
+  border-top: 0.5px solid var(--border);
+}
+
+.ab-value:nth-child(2n) {
+  padding-left: 1.65rem;
+  padding-right: 0;
+  border-left: 0.5px solid var(--border);
+}
+
+.ab-value__num {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.ab-value__title {
+  font-family: var(--font-ui);
+  font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.ab-value__body {
+  font-size: var(--ab-small-copy);
+  line-height: 1.85;
+  color: var(--dim);
+  margin: 0;
+  max-width: 54ch;
+}
+
+/* ── Stats row ─────────────────────────────────────────────── */
+.ab-section--stats .ab-section__body {
+  display: block;
+}
+
+.ab-stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 3.5rem;
+}
+
+.ab-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ab-stat__val {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--white);
+}
+
+.ab-stat__label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── Case studies list ─────────────────────────────────────── */
+.ab-case-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ab-case-row {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 1.35rem 0;
+  border-top: 0.5px solid var(--border);
+  transition: background 0.12s;
+}
+
+.ab-case-row:last-child {
+  border-bottom: 0.5px solid var(--border);
+}
+
+.ab-case-row:hover {
+  background: none;
+}
+
+.ab-case-row__meta {
+  margin-bottom: 0.3rem;
+}
+
+.ab-case-row__domain {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+
+.ab-case-row__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.12rem, 2vw, 1.36rem);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.45rem;
+  transition: color 0.15s;
+  line-height: 1.3;
+}
+
+.ab-case-row:hover .ab-case-row__title {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.ab-case-row__body {
+  font-size: var(--ab-small-copy);
+  line-height: 1.85;
+  color: var(--dim);
+  margin-bottom: 0.8rem;
+  max-width: 66ch;
+}
+
+.ab-case-row__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.ab-chip {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 0.5px solid var(--border);
+  border-radius: 100px;
+  padding: 0.2rem 0.6rem;
+  color: var(--muted);
+}
+
+.ab-case-all {
+  display: inline-block;
+  margin-top: 1.25rem;
+}
+
+/* ── Shared text link ──────────────────────────────────────── */
+.ab-text-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lime);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--lime-border);
+  padding-bottom: 1px;
+  transition: border-color 0.15s;
+}
+
+.ab-text-link:hover {
+  border-color: var(--lime);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CLOSING CTA  -  centred (mirrors Anthropic "Want to help us")
+   ══════════════════════════════════════════════════════════════ */
+.ab-closing {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(3.8rem, 8vw, 6.2rem) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.ab-closing__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.6vw, 2.45rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.2;
+  margin: 0;
+  max-width: 20ch;
+}
+
+.ab-closing__body {
+  font-size: var(--ab-copy);
+  line-height: 1.8;
+  color: var(--dim);
+  margin: 0;
+  max-width: 58ch;
+}
+
+.ab-closing__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ab-closing__footnote {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  /* Collapse left-label + right to stacked */
+  .ab-section {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .ab-section__label {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Single column grids */
+  .ab-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  /* Remove left-border on even items when single col */
+  .ab-card:nth-child(2n),
+  .ab-discipline:nth-child(2n),
+  .ab-value:nth-child(2n) {
+    padding-left: 0;
+    border-left: none;
+  }
+  .ab-stats-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+  }
+}
+
+/* Light theme */
+html[data-theme="light"] .ab-case-row:hover {
+  background: #f4f4f4;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ab-case-row,
+  .ab-case-row__title,
+  .ab-text-link { transition: none; }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title">
+  <title>AiRAT SIEM and XDR operations console</title>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="24" y="24" width="120" height="512" fill="#f3f2ef" stroke="#e8e6e1"/>
+  <rect x="40" y="48" width="88" height="8" rx="4" fill="#d4d2cc"/>
+  <rect x="40" y="72" width="72" height="6" rx="3" fill="#e8e6e1"/>
+  <rect x="40" y="96" width="80" height="6" rx="3" fill="#c8f542"/>
+  <rect x="160" y="48" width="360" height="32" rx="6" fill="#f3f2ef"/>
+  <rect x="160" y="96" width="168" height="120" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="176" y="112" width="80" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="176" y="128" width="120" height="4" rx="2" fill="#d4d2cc"/>
+  <rect x="176" y="148" width="136" height="24" rx="4" fill="#fff" stroke="#e8e6e1"/>
+  <rect x="184" y="156" width="48" height="8" rx="4" fill="#c8f542"/>
+  <rect x="344" y="96" width="176" height="120" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="360" y="112" width="64" height="6" rx="3" fill="#1a1a18"/>
+  <path d="M360 140h144M360 160h120M360 180h96" stroke="#e8e6e1" stroke-width="2"/>
+  <rect x="160" y="232" width="360" height="280" rx="8" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="176" y="248" width="100" height="6" rx="3" fill="#1a1a18"/>
+  <rect x="176" y="272" width="328" height="8" rx="4" fill="#2dd4bf" opacity="0.35"/>
+  <rect x="176" y="292" width="280" height="8" rx="4" fill="#c8f542" opacity="0.45"/>
+  <rect x="176" y="312" width="240" height="8" rx="4" fill="#e8e6e1"/>
+</svg>

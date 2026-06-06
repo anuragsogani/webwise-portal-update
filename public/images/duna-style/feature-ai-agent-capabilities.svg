@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Production-safe agent capabilities and guardrails</title>
+  <desc id="desc">AiRAT grid comparing production agent capabilities with safety guardrails for logging, review, and halt conditions.</desc>
+  <rect width="560" height="560" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="512" height="512" fill="#fff" stroke="#e8e6e1"/>
+  <text x="280" y="72" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="500" fill="#1a1a18">Production-safe agents</text>
+  <text x="280" y="92" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#898683">Capabilities shipped with guardrails attached</text>
+  <rect x="56" y="112" width="448" height="176" rx="10" fill="#fafaf8" stroke="#e8e6e1"/>
+  <text x="72" y="140" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#46838c">Agent capabilities</text>
+  <circle cx="120" cy="196" r="28" fill="#46838c"/>
+  <text x="120" y="202" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#f7f7f5">code</text>
+  <text x="120" y="240" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#898683">generate</text>
+  <circle cx="220" cy="196" r="28" fill="#46838c"/>
+  <text x="220" y="202" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#f7f7f5">search</text>
+  <text x="220" y="240" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#898683">retrieve</text>
+  <circle cx="320" cy="196" r="28" fill="#46838c"/>
+  <text x="320" y="202" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#f7f7f5">workflow</text>
+  <text x="320" y="240" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#898683">orchestrate</text>
+  <circle cx="420" cy="196" r="28" fill="#46838c"/>
+  <text x="420" y="202" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#f7f7f5">API</text>
+  <text x="420" y="240" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#898683">integrate</text>
+  <rect x="56" y="304" width="448" height="176" rx="10" fill="#1a1a18"/>
+  <text x="72" y="332" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#c8f542">Safety guardrails</text>
+  <circle cx="120" cy="388" r="28" fill="#2dd4bf"/>
+  <text x="120" y="394" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#1a1a18">review</text>
+  <text x="120" y="432" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#928e8b">human gate</text>
+  <circle cx="220" cy="388" r="28" fill="#2dd4bf"/>
+  <text x="220" y="394" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#1a1a18">logs</text>
+  <text x="220" y="432" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#928e8b">traceable</text>
+  <circle cx="320" cy="388" r="28" fill="#2dd4bf"/>
+  <text x="320" y="394" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#1a1a18">bounds</text>
+  <text x="320" y="432" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#928e8b">scoped tools</text>
+  <circle cx="420" cy="388" r="28" fill="#c8f542"/>
+  <text x="420" y="394" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#1a1a18">halt</text>
+  <text x="420" y="432" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#928e8b">on risk</text>
+  <text x="56" y="522" font-family="ui-monospace, monospace" font-size="10" fill="#b2afae">AiRAT &#183; illustrative</text>
+</svg>

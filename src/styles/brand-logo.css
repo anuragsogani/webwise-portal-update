@@ -1,0 +1,10 @@
+.brand-logo {
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.brand-logo--lg {
+  width: 4rem;
+  height: 4rem;
+}

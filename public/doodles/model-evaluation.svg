@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="6 6 108 108" role="img" aria-labelledby="title desc">
+  <title id="title">Model Evaluation Doodle</title>
+  <desc id="desc">A pastel doodle card showing a graph node cluster and evaluation checklist.</desc>
+  <rect x="6" y="6" width="108" height="108" rx="16" fill="#bdd0c7"/>
+  <path d="M24 25 C41 24 79 24 96 25 C97 49 97 72 96 92 C78 92 41 92 24 91 C24 72 24 49 24 25 Z" fill="#f7f2eb"/>
+  <circle cx="56" cy="52" r="7" fill="#f7f2eb" stroke="#101114" stroke-width="1.8"/>
+  <circle cx="44" cy="42" r="4" fill="#f7f2eb" stroke="#101114" stroke-width="1.4"/>
+  <circle cx="70" cy="43" r="4" fill="#f7f2eb" stroke="#101114" stroke-width="1.4"/>
+  <circle cx="44" cy="62" r="4" fill="#f7f2eb" stroke="#101114" stroke-width="1.4"/>
+  <circle cx="69" cy="64" r="4" fill="#f7f2eb" stroke="#101114" stroke-width="1.4"/>
+  <path d="M48 45 L53 49 L65 44 M48 60 L53 56 L65 61 M56 59 L56 66" stroke="#101114" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="78" y="33" width="16" height="20" rx="2.2" fill="#efe7dc" stroke="#101114" stroke-width="1.6"/>
+  <path d="M81 39 L84 42 L89 36 M81 46 H91" stroke="#101114" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
