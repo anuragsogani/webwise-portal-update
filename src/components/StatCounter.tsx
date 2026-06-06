@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 type StatCounterProps = {
   target: number;
+  prefix?: string;
   suffix?: string;
   decimals?: number;
   durationMs?: number;
@@ -15,6 +16,7 @@ function formatStat(value: number, decimals: number) {
 
 export default function StatCounter({
   target,
+  prefix = "",
   suffix = "",
   decimals = 0,
   durationMs = 1400,
@@ -68,6 +70,7 @@ export default function StatCounter({
 
   return (
     <span ref={ref} className={className}>
+      {prefix}
       {formatStat(value, decimals)}
       {suffix}
     </span>

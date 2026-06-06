@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import AiratShell from "../components/AiratShell";
+import CtaBand from "../components/CtaBand";
 import NewsletterSignup from "../components/NewsletterSignup";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
@@ -338,6 +339,11 @@ export default function BlogIndexPage() {
           <NewsletterSignup />
         </section>
 
+        <CtaBand
+          title="Talk to AiRAT about your system"
+          body="Bring a concrete scenario — search latency, SOC evidence gaps, or RAG drift."
+          primary={{ label: "Explore services", to: "/services" }}
+        />
       </main>
 
       <SiteFooter />

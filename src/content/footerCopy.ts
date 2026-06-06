@@ -31,7 +31,7 @@ export const FOOTER_COLUMNS: readonly FooterColumn[] = [
     heading: "Products",
     links: [
       { label: "All products", to: "/products" },
-      { label: "Managed SOC & XDR", to: "/products/soc" },
+      { label: "Autonomous SOC Platform", to: "/products/soc" },
       { label: "Detection & Response", to: "/products/adr" },
       { label: "Cyber Audit & GRC", to: "/products/audit" },
       { label: "Cloud Defender", to: "/products/cspm" },
@@ -42,19 +42,20 @@ export const FOOTER_COLUMNS: readonly FooterColumn[] = [
     links: [
       { label: "Case studies", to: "/portfolio" },
       { label: "Multi-tenant XDR · MSSPs", to: "/portfolio/hawkeye-multi-tenant-cybersecurity-platform" },
-      { label: "Technology stack", to: "/technology-expertise" },
       { label: "FinTech & Banking", to: "/industries/fintech" },
     ],
   },
   {
     heading: "Resources",
     links: [
+      { label: "Resources hub", to: "/resources" },
       { label: "Trust", to: "/resources/trust" },
       { label: "Insights", to: "/blog" },
+      { label: "Glossary", to: "/glossary" },
+      { label: "Methodology", to: "/methodology" },
       { label: "AI & LLM systems", to: "/blog/category/ai-llm" },
       { label: "Security & SOC", to: "/blog/category/cyber-soc" },
       { label: "Data & search", to: "/blog/category/data-search" },
-      { label: "Glossary", to: "/glossary" },
     ],
   },
   {
@@ -62,6 +63,7 @@ export const FOOTER_COLUMNS: readonly FooterColumn[] = [
     links: [
       { label: "About", to: "/about" },
       { label: "Contact", to: "/contact" },
+      { label: "Technology", to: "/technology-expertise" },
     ],
   },
   {

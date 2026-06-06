@@ -6,7 +6,7 @@ type Props = { name: string; icon?: string };
 export default function TechStackChip({ name, icon }: Props) {
   return (
     <span className="tech-stack-chip sp-chip">
-      {icon ? <SimpleIconImg slug={icon} size={16} className="tech-stack-chip__icon" /> : null}
+      {icon ? <SimpleIconImg slug={icon} size={20} className="tech-stack-chip__icon" /> : null}
       <span className="tech-stack-chip__label">{name}</span>
     </span>
   );

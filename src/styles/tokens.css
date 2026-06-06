@@ -1,6 +1,6 @@
 /*
  * Duna typography system
- * Display & UI: GT America (Inter fallback until licensed files are self-hosted)
+ * Display & UI: Archivo (GT America open substitute; GT America when self-hosted)
  * Body: Inter
  * Eyebrows & labels: JetBrains Mono (Fragment Mono substitute)
  */
@@ -45,10 +45,10 @@
   --color-error: #c64545;
 
   /* Typography families */
-  --font-display: "GT America", "GT America Regular", "GT America Trial Rg", Inter, "Helvetica Neue",
-    Helvetica, Arial, sans-serif;
-  --font-ui: "GT America", "GT America Medium", "GT America Trial Md", Inter, "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
+  --font-display: "Archivo", "GT America", "GT America Regular", "GT America Trial Rg", Inter,
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-ui: "Archivo", "GT America", "GT America Medium", "GT America Trial Md", Inter,
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "Fragment Mono", "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
 

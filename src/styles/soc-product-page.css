@@ -1,0 +1,196 @@
+/* SOC product page — layout only; uses site light theme tokens */
+
+.soc-tagline {
+  margin-top: var(--space-md);
+}
+
+.soc-scroll-band {
+  scroll-margin-top: var(--nav-block-height, 4rem);
+}
+
+.soc-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.soc-metric {
+  display: grid;
+  gap: var(--space-xs);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-hairline-strong);
+}
+
+.soc-metric__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display-md);
+  line-height: 1.1;
+  color: var(--color-ink-deep);
+}
+
+.soc-metric__counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+.soc-metric__label {
+  font-family: var(--font-ui);
+  font-size: var(--text-title-sm);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.soc-metric__detail {
+  margin: 0;
+  color: var(--color-body);
+}
+
+.soc-contrast {
+  font-family: var(--font-display);
+  font-size: var(--text-title-md);
+  font-weight: 500;
+  color: var(--color-accent-teal, #46838c);
+}
+
+.soc-feature-image {
+  width: 100%;
+  max-width: none;
+}
+
+.feature-module__body--visual-only {
+  grid-template-columns: 1fr;
+}
+
+.soc-subsection {
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+  padding-top: clamp(3rem, 7vw, 4.5rem);
+  border-top: 1px solid var(--color-hairline-strong);
+}
+
+.soc-ai-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+.soc-role-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.soc-role-list .feature-module__service {
+  border-bottom: none;
+  padding: 0;
+}
+
+.soc-outcome-compare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  text-align: center;
+  border: 1px solid var(--color-hairline-strong);
+  background: var(--color-surface-soft);
+  min-height: 100%;
+}
+
+.soc-outcome-compare__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: var(--tracking-display-lg);
+  color: var(--color-ink-deep);
+}
+
+.soc-outcome-compare__num--before {
+  color: var(--color-muted);
+  text-decoration: line-through;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.soc-outcome-compare__label {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-caption-upper);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.soc-outcome-compare__arrow {
+  font-size: 1.5rem;
+  color: var(--color-accent-teal, #46838c);
+}
+
+.soc-dual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 3.5rem);
+}
+
+.soc-checklist {
+  list-style: none;
+  margin: var(--space-md) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem 1rem;
+}
+
+.soc-checklist li {
+  font-size: var(--text-body-sm);
+  color: var(--color-body);
+}
+
+.soc-checklist li::before {
+  content: "✓ ";
+  color: var(--color-accent-teal, #46838c);
+}
+
+.soc-context-result {
+  margin-top: var(--space-md);
+  color: var(--color-body-strong);
+}
+
+.soc-action-chips {
+  margin-top: var(--space-md);
+}
+
+.soc-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-hairline);
+}
+
+@media (max-width: 1024px) {
+  .soc-metrics-row,
+  .soc-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .soc-ai-row,
+  .soc-dual-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .soc-metrics-row,
+  .soc-role-list,
+  .soc-checklist,
+  .soc-why-grid {
+    grid-template-columns: 1fr;
+  }
+}

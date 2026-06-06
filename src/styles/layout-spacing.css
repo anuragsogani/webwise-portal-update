@@ -120,6 +120,10 @@ main:not(#main-content) {
   color: var(--color-ink-deep);
 }
 
+.bi-main :is(.bi-table__cat, .bi-sidebar-row__cat) {
+  color: var(--color-body-secondary);
+}
+
 .bi-table__row:hover .bi-table__title {
   color: var(--color-ink);
 }
@@ -131,6 +135,10 @@ main:not(#main-content) {
 }
 
 .bi-pubs__chip:hover {
+  color: var(--color-ink-deep);
+}
+
+.bi-pubs__chip--active {
   color: var(--color-ink-deep);
 }
 

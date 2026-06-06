@@ -28,10 +28,10 @@ export const FEATURED_PRODUCT_SLIDES: readonly FeaturedProductSlide[] = [
   {
     id: "soc",
     eyebrow: "Featured product",
-    title: "Managed CSOC & XDR",
+    title: "Autonomous Security Operations Platform",
     summary:
-      "24/7 managed detection and response — multi-agent triage, threat hunting, and MDR with correlated timelines across endpoint, network, and cloud.",
-    ctaLabel: "Explore product",
+      "From millions of events to actionable decisions — automatically. Unify your stack, correlate threats, and let AI analysts investigate, prioritize, and respond 24×7.",
+    ctaLabel: "See platform",
     ctaTo: "/products/soc",
     lottieSrc: "/lottie/product-soc.json",
     lottieFallbackSrc: "/doodles/home-icons/airat-security-icon.svg",
@@ -108,12 +108,12 @@ export type ProductDetail = {
 export const PRODUCTS: readonly ProductDetail[] = [
   {
     id: "soc",
-    title: "Managed CSOC & XDR",
-    seoTitle: "Managed CSOC & XDR | 24/7 SOC Operations | AiRAT",
+    title: "Autonomous Security Operations Platform",
+    seoTitle: "Autonomous Security Operations Platform | AiRAT SOC",
     seoDescription:
-      "Managed security operations center and XDR: 24/7 monitoring, multi-agent triage, threat hunting, MDR, and SOAR with human-gated response.",
+      "Unify your security stack, correlate threats across your environment, and let AI-powered analysts investigate, prioritize, and respond 24×7. From millions of events to actionable decisions — automatically.",
     lead:
-      "Noise in. Resolution out. We operate and engineer your security operations center with human-gated automation, deep correlation, and hunt-ready telemetry — so analysts focus on decisions only humans should make.",
+      "Unify your security stack, correlate threats across your entire environment, and let AI-powered analysts investigate, prioritize, and respond 24×7.",
     workflow: [
       { step: "01", title: "Discover & benchmark", body: "Assess alert volume, tool sprawl, and risk profile to size the right operating model." },
       { step: "02", title: "Onboard & integrate", body: "Connect telemetry, tune detections, and agree SLAs, escalation paths, and evidence standards." },
@@ -253,12 +253,12 @@ export type ProductTile = {
 export const PRODUCT_TILES: readonly ProductTile[] = [
   {
     id: "soc",
-    title: "Managed CSOC & XDR",
+    title: "Autonomous Security Operations Platform",
     body:
-      "24/7 security operations with multi-agent triage, correlated timelines, and human-gated response — so analysts focus on what only humans should decide.",
-    metaType: "SOC / XDR",
-    metaSignal: "24/7 analyst-approved response",
-    ctaLabel: "Explore product",
+      "Unify telemetry, correlate attack paths, and let AI SOC analysts triage, investigate, and respond — from 2,000 alerts to 12 prioritized incidents.",
+    metaType: "AI-powered SOC",
+    metaSignal: "< 5 min MTTR · 100+ integrations",
+    ctaLabel: "See platform",
   },
   {
     id: "adr",

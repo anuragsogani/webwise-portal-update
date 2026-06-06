@@ -195,9 +195,9 @@ export default function HomePage() {
                   </RevealOnScroll>
                 </div>
 
-                <div className="feature-module__body">
+                <div className="feature-module__body feature-module__body--rotator">
                   {pathIndex < HOME_ROTATOR_VISUALS.length ? (
-                    <RevealOnScroll delay={2} className="feature-module-rotator reveal--slow">
+                    <RevealOnScroll delay={2} className="feature-module-rotator-reveal reveal--slow">
                       <FeatureModuleRotator
                         services={path.services}
                         visuals={HOME_ROTATOR_VISUALS[pathIndex]!}

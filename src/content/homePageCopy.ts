@@ -670,16 +670,19 @@ export const HOME_INSIGHTS_SECTION = {
   lead: "Long-form writing on production RAG, OpenSearch migrations, SOC evidence, GEO, and AI search visibility  -  same standards as our delivery work.",
 } as const;
 
-/** ── FINAL CTA ── */
-export const CTA_EYEBROW = "Start here";
-export const CTA_TITLE_BEFORE = "One concrete scenario.";
+/** ── FINAL CTA (pre-footer email capture) ── */
+export const CTA_EYEBROW = "Get started";
+export const CTA_TITLE_BEFORE = "Leave your email — we'll reach out.";
 export const CTA_TITLE_EM = "";
 export const CTA_TITLE_AFTER = "";
 export const CTA_SUB =
-  "Bring a real scenario  -  SOC alert volume, stalled AI rollout, search latency, or compliance evidence gaps. In a 30-minute strategy call we align on what 'done' means and whether AiRAT is the right team.";
+  "Share your work email and we'll follow up with a tailored note on security, AI, or data programmes — usually within one business day.";
+export const CTA_FORM_BUTTON = "Get in touch";
+export const CTA_FORM_NOTE = "No spam. We only use your email to respond to this request.";
+export const CTA_FORM_SUCCESS = "Thanks — we'll be in touch shortly.";
 export const CTA_PRIMARY_LABEL = "Explore services";
 export const CTA_SECONDARY_LABEL = "Read case studies";
-export const CTA_DETAIL = "No pitch. No commitment. Strategy calls are free.";
+export const CTA_DETAIL = CTA_FORM_NOTE;
 
 /** Cross-page story links before footer */
 export const HOME_STORY_LINKS = [

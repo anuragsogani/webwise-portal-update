@@ -55,31 +55,6 @@ export const SITE_NAV_ITEMS: readonly NavItem[] = [
           },
         ],
       },
-      {
-        heading: "How we work",
-        links: [
-          {
-            label: "All services",
-            description: "Full catalogue across security, AI, and data platforms",
-            to: "/services",
-          },
-          {
-            label: "Integrations",
-            description: "SIEM, cloud, data, and AI tooling we connect in your estate",
-            to: "/integrations",
-          },
-          {
-            label: "Methodology",
-            description: "Discovery through production SLOs — not slide milestones",
-            to: "/methodology",
-          },
-          {
-            label: "Technology stack",
-            description: "OpenSearch, Elastic, Kafka, and cloud-native tooling",
-            to: "/technology-expertise",
-          },
-        ],
-      },
     ],
   },
   {
@@ -91,8 +66,8 @@ export const SITE_NAV_ITEMS: readonly NavItem[] = [
         heading: "Products",
         links: [
           {
-            label: "Managed CSOC & XDR",
-            description: "24/7 detection, triage, and threat hunting with correlated timelines",
+            label: "Autonomous SOC Platform",
+            description: "AI analysts, attack graphs, and unified visibility across your security stack",
             to: "/products/soc",
           },
           {
@@ -105,11 +80,6 @@ export const SITE_NAV_ITEMS: readonly NavItem[] = [
             description: "Risk maturity, regulatory alignment, and audit-ready evidence",
             to: "/products/audit",
           },
-        ],
-      },
-      {
-        heading: "Platform",
-        links: [
           {
             label: "Agentic Cloud Defender",
             description: "Multicloud misconfiguration detection and drift control",
@@ -120,34 +90,12 @@ export const SITE_NAV_ITEMS: readonly NavItem[] = [
             description: "Managed SOC, ADR, audit, and cloud security accelerators",
             to: "/products",
           },
-          {
-            label: "Case studies",
-            description: "Shipped platforms across security, AI, and search",
-            to: "/portfolio",
-          },
         ],
       },
     ],
   },
   { type: "link", label: "Case studies", to: "/portfolio" },
   { type: "link", label: "Demo", to: "/demo" },
-  {
-    type: "dropdown",
-    label: "Resources",
-    links: [
-      { label: "Resources hub", to: "/resources" },
-      { label: "Insights", to: "/blog" },
-      { label: "Glossary", to: "/glossary" },
-      { label: "Methodology", to: "/methodology" },
-    ],
-  },
-  {
-    type: "dropdown",
-    label: "Company",
-    links: [
-      { label: "About", to: "/about" },
-      { label: "Contact", to: "/contact" },
-      { label: "Technology", to: "/technology-expertise" },
-    ],
-  },
+  { type: "link", label: "Insights", to: "/blog" },
+  { type: "link", label: "About us", to: "/about" },
 ] as const;

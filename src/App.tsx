@@ -26,6 +26,7 @@ import TechnologyExpertisePage from "./pages/TechnologyExpertisePage";
 import TermsPage from "./pages/TermsPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import SocProductPage from "./pages/SocProductPage";
 import IntegrationsPage from "./pages/IntegrationsPage";
 import TrustPage from "./pages/TrustPage";
 import { authApi } from "./api/auth";
@@ -100,6 +101,7 @@ export default function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/products" element={<ProductsPage />} />
+      <Route path="/products/soc" element={<SocProductPage />} />
       <Route path="/products/:productId" element={<ProductDetailPage />} />
       <Route path="/integrations" element={<IntegrationsPage />} />
       <Route path="/services/aeo-geo" element={<GeoAeoServicePage />} />

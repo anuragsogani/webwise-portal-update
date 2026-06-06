@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { Components } from "react-markdown";
 import AiratShell from "../components/AiratShell";
+import CtaBand from "../components/CtaBand";
 import NewsletterSignup from "../components/NewsletterSignup";
 import SocialShare from "../components/SocialShare";
 import SiteFooter from "../components/SiteFooter";
@@ -35,7 +36,7 @@ function ArticleInlineCta({ category }: { category: string }) {
   return (
     <aside className="ba-inline-cta" aria-label="Talk to AiRAT">
       <p className="ba-inline-cta__copy">{INLINE_CTA_COPY[category] || DEFAULT_CTA}</p>
-      <Link className="ba-inline-cta__link sp-text-link" to="/services">
+      <Link className="btn btn--primary ba-inline-cta__link" to="/services">
         Explore services →
       </Link>
     </aside>
@@ -633,19 +634,15 @@ export default function BlogArticlePage() {
 
             {/* Newsletter signup */}
             <NewsletterSignup />
-
-            {/* Bottom CTA */}
-            <div className="ba-cta">
-              <p className="ba-cta__copy">
-                Talk to AiRAT about your system. Bring a concrete scenario  -  search latency, SOC evidence gaps, or RAG drift.
-              </p>
-              <div className="ba-cta__links">
-                <Link to="/services" className="sp-closing__primary">Explore services →</Link>
-              </div>
-            </div>
           </article>
 
         </div>
+
+        <CtaBand
+          title="Talk to AiRAT about your system"
+          body="Bring a concrete scenario — search latency, SOC evidence gaps, or RAG drift."
+          primary={{ label: "Explore services", to: "/services" }}
+        />
       </main>
 
       <SiteFooter />

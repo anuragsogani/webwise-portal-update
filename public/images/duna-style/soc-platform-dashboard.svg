@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">SOC executive dashboard and AI analyst activity</title>
+  <desc id="desc">Security operations dashboard with threat overview, active incidents, risk scores, compliance status, and AI analyst activity.</desc>
+  <rect width="1200" height="675" fill="#f7f7f5"/>
+  <rect x="24" y="24" width="1152" height="627" fill="#fff" stroke="#e8e6e1"/>
+  <text x="56" y="72" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="500" fill="#1a1a18">Security intelligence at a glance</text>
+  <text x="56" y="96" font-family="ui-monospace, monospace" font-size="11" fill="#898683">Executive SOC dashboard &#183; live posture</text>
+  <rect x="56" y="120" width="140" height="500" fill="#fafaf8" stroke="#e8e6e1"/>
+  <rect x="72" y="140" width="72" height="8" fill="#e8e6e1"/>
+  <rect x="72" y="160" width="56" height="6" fill="#f0efec"/>
+  <rect x="72" y="188" width="108" height="28" fill="#fff" stroke="#46838c" stroke-width="1.5"/>
+  <text x="84" y="206" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#46838c">Overview</text>
+  <text x="72" y="240" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Incidents</text>
+  <text x="72" y="262" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Attack surface</text>
+  <text x="72" y="284" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Cloud posture</text>
+  <text x="72" y="306" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#898683">Compliance</text>
+  <rect x="216" y="120" width="928" height="40" fill="#fafaf8" stroke="#e8e6e1"/>
+  <text x="232" y="146" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#1a1a18">Security Intelligence</text>
+  <text x="880" y="146" font-family="ui-monospace, monospace" font-size="10" fill="#46838c">LIVE &#183; 24x7 AI analysts</text>
+  <rect x="216" y="176" width="210" height="96" fill="#fff" stroke="#e8e6e1"/>
+  <text x="232" y="200" font-family="ui-monospace, monospace" font-size="10" fill="#898683">ACTIVE INCIDENTS</text>
+  <text x="232" y="240" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="500" fill="#1a1a18">12</text>
+  <text x="290" y="240" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#46838c">-87% noise</text>
+  <rect x="446" y="176" width="210" height="96" fill="#fff" stroke="#e8e6e1"/>
+  <text x="462" y="200" font-family="ui-monospace, monospace" font-size="10" fill="#898683">MTTR</text>
+  <text x="462" y="240" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="500" fill="#1a1a18">&lt; 5m</text>
+  <rect x="676" y="176" width="210" height="96" fill="#fff" stroke="#e8e6e1"/>
+  <text x="692" y="200" font-family="ui-monospace, monospace" font-size="10" fill="#898683">RISK SCORE</text>
+  <text x="692" y="240" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="500" fill="#1a1a18">72</text>
+  <rect x="906" y="176" width="238" height="96" fill="#fff" stroke="#e8e6e1"/>
+  <text x="922" y="200" font-family="ui-monospace, monospace" font-size="10" fill="#898683">COMPLIANCE</text>
+  <text x="922" y="240" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="500" fill="#1a1a18">94%</text>
+  <rect x="216" y="292" width="560" height="260" fill="#fff" stroke="#e8e6e1"/>
+  <text x="232" y="318" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#1a1a18">Threat overview &#183; investigation timeline</text>
+  <polyline points="260,500 320,460 380,470 440,420 500,430 560,380 620,360 680,340 740,320" fill="none" stroke="#46838c" stroke-width="2"/>
+  <polyline points="260,520 320,490 380,480 440,450 500,460 560,410 620,390 680,370 740,350" fill="none" stroke="#1a1a18" stroke-width="1.5" opacity="0.35"/>
+  <rect x="232" y="530" width="40" height="8" fill="#46838c" opacity="0.5"/>
+  <rect x="232" y="546" width="40" height="8" fill="#1a1a18" opacity="0.2"/>
+  <text x="280" y="538" font-family="ui-monospace, monospace" font-size="9" fill="#898683">Incidents</text>
+  <text x="280" y="554" font-family="ui-monospace, monospace" font-size="9" fill="#898683">AI triage</text>
+  <rect x="796" y="292" width="348" height="260" fill="#fff" stroke="#e8e6e1"/>
+  <text x="812" y="318" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#1a1a18">AI analyst activity</text>
+  <rect x="812" y="336" width="316" height="44" fill="#fafaf8" stroke="#e8e6e1"/>
+  <text x="824" y="356" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#1a1a18">L2 Investigation &#183; correlated 14 alerts</text>
+  <text x="824" y="372" font-family="ui-monospace, monospace" font-size="9" fill="#898683">2 min ago</text>
+  <rect x="812" y="392" width="316" height="44" fill="#fafaf8" stroke="#e8e6e1"/>
+  <text x="824" y="412" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#1a1a18">Threat Hunter &#183; lateral movement pattern</text>
+  <text x="824" y="428" font-family="ui-monospace, monospace" font-size="9" fill="#898683">8 min ago</text>
+  <rect x="812" y="448" width="316" height="44" fill="#c8f542" opacity="0.35" stroke="#1a1a18"/>
+  <text x="824" y="468" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#1a1a18">Response &#183; isolate endpoint recommended</text>
+  <text x="824" y="484" font-family="ui-monospace, monospace" font-size="9" fill="#898683">awaiting approval</text>
+  <text x="56" y="640" font-family="ui-monospace, monospace" font-size="10" fill="#b2afae">AiRAT &#183; illustrative</text>
+</svg>
