@@ -577,6 +577,7 @@ export const HOME_CLIENT_STRIP = {
     { name: "EADX" },
     { name: "Kort" },
     { name: "Genda Phool" },
+    { name: "GuardHawk" },
   ],
 } as const;
 

@@ -52,6 +52,7 @@ export const SIMPLE_ICON_BRAND_HEX: Readonly<Record<string, string>> = {
   mongodb: "#47A248",
   logstash: "#005571",
   looker: "#4285F4",
+  europeanunion: "#003399",
 
   /* CDN 404 / restricted  -  hex from Simple Icons dataset or public brand specs */
   openai: "#412991",

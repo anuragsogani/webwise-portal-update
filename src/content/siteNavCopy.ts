@@ -71,8 +71,8 @@ export const SITE_NAV_ITEMS: readonly NavItem[] = [
             to: "/products/soc",
           },
           {
-            label: "Detection & Response",
-            description: "Agentic AI and application runtime protection in one stack",
+            label: "Agent Detection & Response",
+            description: "Visibility, governance, and threat detection for AI agents, MCP, and copilots",
             to: "/products/adr",
           },
           {
@@ -81,8 +81,8 @@ export const SITE_NAV_ITEMS: readonly NavItem[] = [
             to: "/products/audit",
           },
           {
-            label: "Agentic Cloud Defender",
-            description: "Multicloud misconfiguration detection and drift control",
+            label: "Cloud Security & Governance",
+            description: "CSPM, DevSecOps, identity governance, compliance, and cost intelligence",
             to: "/products/cspm",
           },
           {

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AiratShell from "../components/AiratShell";
 import CtaBand from "../components/CtaBand";
+import FeatureModuleRotator from "../components/FeatureModuleRotator";
 import RevealOnScroll from "../components/RevealOnScroll";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
@@ -11,6 +12,7 @@ import {
   SOC_HERO,
   SOC_METRICS,
   SOC_PRODUCT_SEO,
+  SOC_INTELLIGENCE_ROTATOR_VISUALS,
   SOC_SCROLL_ONE,
   SOC_SCROLL_THREE,
   SOC_SCROLL_TWO,
@@ -20,11 +22,40 @@ import { getSiteBaseUrl } from "../lib/siteBaseUrl";
 import "../styles/homepage.css";
 import "../styles/soc-product-page.css";
 
-const ROLE_ICONS: Record<string, string> = {
-  shield: "🛡",
-  search: "🔍",
-  target: "🎯",
-  bolt: "⚡",
+const ROLE_ICONS: Record<string, JSX.Element> = {
+  shield: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6l-8-3Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  search: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="m16.5 16.5 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
+  target: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="1" fill="currentColor" />
+    </svg>
+  ),
+  bolt: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M13 2 5 14h6l-1 8 8-12h-6l1-8Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
 };
 
 export default function SocProductPage() {
@@ -154,31 +185,18 @@ export default function SocProductPage() {
                 <p className="body-md">{intelligence.lead}</p>
               </div>
             </div>
-            <div className="feature-module__body">
-              <div className="feature-module__visual">
-                <img
-                  className="feature-module__image soc-feature-image"
-                  src={intelligence.visual.src}
-                  alt={intelligence.visual.alt}
-                  width={intelligence.visual.width}
-                  height={intelligence.visual.height}
-                  loading="lazy"
-                  decoding="async"
+            <div className="feature-module__body feature-module__body--rotator">
+              <RevealOnScroll delay={2} className="feature-module-rotator-reveal reveal--slow">
+                <FeatureModuleRotator
+                  services={intelligence.capabilities.map((c) => ({
+                    title: c.title,
+                    description: c.body,
+                  }))}
+                  visuals={SOC_INTELLIGENCE_ROTATOR_VISUALS}
+                  listLabel="Intelligence capabilities"
+                  idPrefix="soc-intel"
                 />
-              </div>
-              <div className="feature-module__services">
-                <ul className="feature-module__service-list">
-                  {intelligence.capabilities.map((c, i) => (
-                    <li
-                      key={c.title}
-                      className={`feature-module__service${i === 0 ? " feature-module__service--highlight" : ""}`}
-                    >
-                      <span className="title-sm">{c.title}</span>
-                      <p className="body-sm">{c.body}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </RevealOnScroll>
             </div>
           </div>
 
@@ -193,16 +211,14 @@ export default function SocProductPage() {
             <div className="soc-ai-row">
               <ul className="feature-module__service-list soc-role-list">
                 {aiSoc.roles.map((r) => (
-                  <li key={r.title} className="feature-module__service feature-module__service--highlight">
-                    <span className="title-sm">
-                      <span aria-hidden="true">{ROLE_ICONS[r.icon] ?? "◆"} </span>
-                      {r.title}
-                    </span>
-                    <p className="body-sm">{r.body}</p>
+                  <li key={r.title} className="feature-module__service feature-module__service--highlight soc-role-card">
+                    <span className="soc-role-card__icon">{ROLE_ICONS[r.icon] ?? ROLE_ICONS.shield}</span>
+                    <span className="title-sm soc-role-card__title">{r.title}</span>
+                    <p className="body-sm soc-role-card__body">{r.body}</p>
                   </li>
                 ))}
               </ul>
-              <div className="soc-outcome-compare" aria-label="Alert reduction outcome">
+              <div className="soc-outcome-compare soc-outcome-compare--stats" aria-label="Alert reduction outcome">
                 <div>
                   <span className="soc-outcome-compare__num soc-outcome-compare__num--before">
                     {aiSoc.outcomeBefore}

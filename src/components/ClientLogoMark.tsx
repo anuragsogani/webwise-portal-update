@@ -32,16 +32,15 @@ export default function ClientLogoMark({ item, size = "md" }: Props) {
   }, [domain, faviconSz]);
 
   const wrapClass = size === "lg" ? "client-logo-mark client-logo-mark--lg" : "client-logo-mark";
-  const imgPx = size === "lg" ? 48 : 40;
+  const wideClass = item.logoWide ? " client-logo-mark--wide" : "";
+  const colorClass = item.logoColor ? " client-logo-mark--brand" : "";
 
   if (logoSrc && !localFailed) {
     return (
       <img
-        className={`${wrapClass} client-logo-mark--img`}
+        className={`${wrapClass} client-logo-mark--img${wideClass}${colorClass}`}
         src={logoSrc}
         alt=""
-        width={imgPx}
-        height={imgPx}
         loading="lazy"
         decoding="async"
         onError={() => setLocalFailed(true)}
@@ -60,11 +59,9 @@ export default function ClientLogoMark({ item, size = "md" }: Props) {
   return (
     <img
       key={attempt}
-      className={`${wrapClass} client-logo-mark--img`}
+      className={`${wrapClass} client-logo-mark--img${wideClass}${colorClass}`}
       src={urls[attempt]!}
       alt=""
-      width={imgPx}
-      height={imgPx}
       loading="lazy"
       decoding="async"
       onError={() => setAttempt((a) => a + 1)}

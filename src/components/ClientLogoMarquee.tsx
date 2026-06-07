@@ -9,7 +9,10 @@ export default function ClientLogoMarquee() {
       <div className="client-marquee__viewport">
         <div className="client-marquee__track">
           {items.map((item, index) => (
-            <div key={`${item.name}-${index}`} className="client-marquee__item">
+            <div
+              key={`${item.name}-${index}`}
+              className={`client-marquee__item${item.logoWide ? " client-marquee__item--wide" : ""}`}
+            >
               <ClientLogoMark item={item} size="lg" />
               <span className="sr-only">{item.name}</span>
             </div>

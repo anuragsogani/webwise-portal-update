@@ -3,9 +3,9 @@
 export const SLIDE_DURATION_MS = 5000;
 
 export const PRODUCTS_SEO = {
-  title: "Products | Managed SOC, XDR, Agentic Cloud Defender, ADR & Audit | AiRAT",
+  title: "Products | Autonomous SOC, ADR, Cloud Security & GRC | AiRAT",
   description:
-    "Managed CSOC and XDR, The Agentic Cloud Defender, cyber audit and GRC, plus agentic and application detection and response. SIEM migration, SOC-as-a-Service, and compliance accelerators for regulated enterprises.",
+    "Autonomous SOC, Agent Detection & Response, Cloud Security & Governance, and Cyber Audit & GRC. Unified platforms for detection, cloud posture, agent security, and compliance.",
 } as const;
 
 /** Particle silhouette synced with featured product title (5s carousel). */
@@ -40,10 +40,10 @@ export const FEATURED_PRODUCT_SLIDES: readonly FeaturedProductSlide[] = [
   {
     id: "adr",
     eyebrow: "Featured product",
-    title: "Detection & Response — Agents & Applications",
+    title: "Agent Detection & Response (ADR)",
     summary:
-      "Agentic AI security for enterprise agents and MCP workloads, plus runtime application and API protection — one stack for modern attack surfaces.",
-    ctaLabel: "Explore product",
+      "Secure every agent. Govern every decision. Continuous visibility, threat detection, and response for AI agents, MCP servers, copilots, and autonomous workflows.",
+    ctaLabel: "See platform",
     ctaTo: "/products/adr",
     lottieSrc: "/lottie/product-adr.json",
     lottieFallbackSrc: "/doodles/home-icons/airat-ai-systems-icon.svg",
@@ -64,10 +64,10 @@ export const FEATURED_PRODUCT_SLIDES: readonly FeaturedProductSlide[] = [
   {
     id: "cspm",
     eyebrow: "Featured product",
-    title: "The Agentic Cloud Defender.",
+    title: "Cloud Security & Governance Platform",
     summary:
-      "Multicloud misconfiguration detection, compliance mapping, and drift control — identity, workload, and data-plane visibility.",
-    ctaLabel: "Explore product",
+      "Secure every cloud. Govern every resource. Unified visibility, posture management, DevSecOps, identity governance, compliance, and cost intelligence across multi-cloud estates.",
+    ctaLabel: "See platform",
     ctaTo: "/products/cspm",
     lottieSrc: "/lottie/product-cspm.json",
     lottieFallbackSrc: "/doodles/platform-devops.svg",
@@ -136,51 +136,31 @@ export const PRODUCTS: readonly ProductDetail[] = [
   },
   {
     id: "adr",
-    title: "Detection & Response — Agents & Applications",
-    seoTitle: "Agentic & Application ADR | AI Agent Security | AiRAT",
+    title: "Agent Detection & Response (ADR)",
+    seoTitle: "Agent Detection & Response (ADR) | Agent Security & Governance | AiRAT",
     seoDescription:
-      "Detection and response for enterprise AI agents and production applications: agentic telemetry, runtime ADR, red teaming, and SIEM-ready alerts.",
+      "Secure every agent. Govern every decision. Continuous visibility, governance, threat detection, and response for AI agents, MCP servers, copilots, and RAG systems.",
     lead:
-      "Modern breaches start in agent workflows and production APIs. We deploy detection for both — high-fidelity telemetry for AI agents and in-runtime protection for applications — integrated with your SOC stack.",
+      "As organizations adopt AI agents, MCP servers, autonomous workflows, and enterprise copilots, a new attack surface emerges. ADR provides continuous visibility, governance, threat detection, and response for the entire AI workforce.",
     workflow: [
-      { step: "01", title: "Map attack surfaces", body: "Inventory agents, MCP integrations, and critical apps/APIs in scope." },
-      { step: "02", title: "Instrument & test", body: "Deploy sensors, run red-team scenarios, and validate detection tiers." },
-      { step: "03", title: "Detect & triage", body: "Online two-tier detection with analyst-ready context in your SOC tools." },
-      { step: "04", title: "Prevent & harden", body: "Shift-left guardrails, credential controls, and continuous posture reviews." },
+      { step: "01", title: "Discover & classify", body: "Inventory agents, workflows, MCP integrations, models, and copilots in scope." },
+      { step: "02", title: "Define governance", body: "Set roles, boundaries, approved tools, policies, and compliance requirements." },
+      { step: "03", title: "Monitor & detect", body: "Continuous prompt, tool, and behavior analysis with real-time threat detection." },
+      { step: "04", title: "Respond & audit", body: "Isolate, suspend, revoke access, escalate incidents, and preserve audit trails." },
     ],
     outcomes: [
-      "Agent sessions observable end-to-end",
-      "Application attacks blocked at runtime with context",
-      "High-fidelity alerts your SIEM can trust",
+      "Complete visibility across the AI workforce",
+      "Governance and compliance for every agent decision",
+      "Threat detection built for agent behavior, not endpoints alone",
     ],
     capabilities: [
-      "Unified ADR strategy across agents and applications",
-      "Pre-deployment red teaming and hard-example generation",
-      "Two-tier online detection: fast triage plus deep reasoning",
-      "Shift-left prevention for credential and policy violations",
+      "Agent Detection & Response (ADR) platform",
+      "AI workforce visibility across agents, MCP, and copilots",
+      "Prompt and interaction security with output validation",
+      "Agent governance, policy enforcement, and audit trails",
+      "Runtime protection with risk-based inspection",
+      "Automated and analyst-driven agent response",
     ],
-    agenticAdr: {
-      title: "Agentic detection & response",
-      lead:
-        "Secure AI agents operating through tool protocols and enterprise integrations — with observability EDR cannot provide on its own.",
-      capabilities: [
-        "High-fidelity agentic telemetry: prompts, tool calls, and causal chains",
-        "Systematic pre-deployment testing and explorer workflows",
-        "Scalable two-tier detection without runaway inference cost",
-        "Credential exposure and policy violation prevention layers",
-      ],
-    },
-    applicationAdr: {
-      title: "Application detection & response",
-      lead:
-        "Detect and respond to attacks on applications and APIs from inside the runtime — before exploits succeed.",
-      capabilities: [
-        "In-app sensors for behavioral detection, not signature-only matching",
-        "Zero-day and novel exploit classes blocked at the framework layer",
-        "Alerts enriched with stack trace, payload, and vulnerable code context",
-        "Native integration with SIEM, XDR, SOAR, and CNAPP workflows",
-      ],
-    },
   },
   {
     id: "audit",
@@ -212,30 +192,30 @@ export const PRODUCTS: readonly ProductDetail[] = [
   },
   {
     id: "cspm",
-    title: "The Agentic Cloud Defender.",
-    seoTitle: "The Agentic Cloud Defender | AiRAT",
+    title: "Cloud Security & Governance Platform",
+    seoTitle: "Cloud Security & Governance Platform | CSPM, DevSecOps & Cost Intelligence | AiRAT",
     seoDescription:
-      "The Agentic Cloud Defender: multicloud misconfiguration detection, compliance mapping, identity posture, and drift control integrated with SOC workflows.",
+      "Secure every cloud. Govern every resource. Unified cloud visibility, posture management, DevSecOps, identity governance, compliance monitoring, and cost intelligence.",
     lead:
-      "Multicloud complexity creates blind spots faster than manual reviews can catch. We continuously assess posture, prioritize exploitable misconfigurations, and map fixes to your compliance targets.",
+      "Gain complete visibility across cloud infrastructure, applications, identities, code repositories, and services. Detect risks, eliminate misconfigurations, optimize costs, and strengthen compliance from one platform.",
     workflow: [
-      { step: "01", title: "Discover estates", body: "Map accounts, workloads, identities, and data flows across clouds." },
-      { step: "02", title: "Assess posture", body: "Baseline misconfigurations and map findings to frameworks you must meet." },
-      { step: "03", title: "Remediate & engineer", body: "Prioritize fixes by exploitability and implement guardrails in pipelines." },
-      { step: "04", title: "Monitor drift", body: "Continuous posture monitoring with SOC-ready cloud incident context." },
+      { step: "01", title: "Discover estates", body: "Map accounts, workloads, identities, code repos, and data flows across clouds." },
+      { step: "02", title: "Assess posture", body: "Continuous CSPM validation against security baselines and compliance frameworks." },
+      { step: "03", title: "Secure & optimize", body: "Shift-left DevSecOps, identity governance, and cost intelligence in one workflow." },
+      { step: "04", title: "Govern & report", body: "Executive dashboards for risk, compliance, identity exposure, and spend optimization." },
     ],
     outcomes: [
-      "Unified posture view across AWS, Azure, GCP, and hybrid estates",
-      "Misconfiguration remediation ranked by exploitability",
-      "Drift detection tied to identity and workload context",
+      "Unified visibility across multi-cloud and hybrid estates",
+      "Continuous posture and compliance — not point-in-time scans",
+      "Security, governance, and cost intelligence in one view",
     ],
     capabilities: [
-      "The Agentic Cloud Defender across multicloud estates",
-      "Misconfiguration detection for IAM, network, storage, and workloads",
-      "Benchmark and regulatory control mapping (CIS-style frameworks)",
-      "Identity posture and excessive permission analysis",
-      "Container and Kubernetes configuration audit",
-      "Integration with SOC workflows for cloud-origin incidents",
+      "Cloud Security Posture Management (CSPM)",
+      "DevSecOps and infrastructure-as-code validation",
+      "Identity and access governance with least-privilege analysis",
+      "Compliance mapping for ISO, SOC 2, PCI, GDPR, HIPAA, NIST, and CIS",
+      "Cloud cost intelligence and optimization recommendations",
+      "Executive cloud intelligence dashboard",
     ],
   },
 ] as const;
@@ -262,12 +242,12 @@ export const PRODUCT_TILES: readonly ProductTile[] = [
   },
   {
     id: "adr",
-    title: "Detection & Response — Agents & Applications",
+    title: "Agent Detection & Response (ADR)",
     body:
-      "Agentic AI security for enterprise agents plus runtime protection for applications and APIs — integrated with your existing SOC workflows.",
-    metaType: "ADR",
-    metaSignal: "Agent + application coverage",
-    ctaLabel: "Explore product",
+      "Secure every agent. Govern every decision. Visibility, governance, threat detection, and response for AI agents, MCP servers, copilots, and autonomous workflows.",
+    metaType: "Agent security",
+    metaSignal: "8+ visibility domains · 24×7 monitoring",
+    ctaLabel: "See platform",
   },
   {
     id: "audit",
@@ -280,12 +260,12 @@ export const PRODUCT_TILES: readonly ProductTile[] = [
   },
   {
     id: "cspm",
-    title: "The Agentic Cloud Defender.",
+    title: "Cloud Security & Governance Platform",
     body:
-      "Multicloud misconfiguration detection, compliance mapping, and drift control across identity, workloads, and data planes.",
-    metaType: "Agentic cloud defender",
-    metaSignal: "Exploitability-ranked fixes",
-    ctaLabel: "Explore product",
+      "Secure every cloud. Govern every resource. CSPM, DevSecOps, identity governance, compliance, and cost intelligence — unified across multi-cloud estates.",
+    metaType: "Cloud security & governance",
+    metaSignal: "Posture · DevSecOps · Cost intel",
+    ctaLabel: "See platform",
   },
 ] as const;
 
@@ -293,7 +273,7 @@ export const PRODUCT_TILE_ICONS = [
   { src: "/images/duna-style/feature-security-console.svg", alt: "Managed CSOC and XDR" },
   { src: "/images/duna-style/feature-ai-console.svg", alt: "Agent and application detection and response" },
   { src: "/images/duna-style/trust-compliance-console.svg", alt: "Cyber audit and GRC assurance" },
-  { src: "/images/duna-style/ai-compliance-console.svg", alt: "The Agentic Cloud Defender" },
+  { src: "/images/duna-style/feature-service-cloud-native.svg", alt: "Cloud Security & Governance Platform" },
 ] as const;
 
 export type CyberService = {
@@ -330,14 +310,14 @@ export const CYBER_SERVICES: readonly CyberService[] = [
   },
   {
     id: "cloud-engineering",
-    title: "Cloud Security Engineering",
-    summary: "Architecture, hardening, and posture operations for multicloud.",
+    title: "Cloud Security & Governance",
+    summary: "Posture management, DevSecOps, identity governance, and cost intelligence for multicloud.",
     linkTo: "/products/cspm",
   },
   {
     id: "agentic-app-sec",
-    title: "Agentic & Application Security",
-    summary: "ADR for AI agents and production applications/APIs.",
+    title: "Agentic AI Security",
+    summary: "Agent Detection & Response for AI agents, MCP servers, and copilots.",
     linkTo: "/products/adr",
   },
 ] as const;
@@ -374,9 +354,9 @@ export const CYBER_SOLUTIONS: readonly CyberSolution[] = [
   },
   {
     id: "cspm-assessment",
-    title: "The Agentic Cloud Defender — Multicloud Posture Assessment",
-    oneLiner: "Baseline posture, prioritized fixes, and continuous monitoring design.",
-    outcomes: ["Exploitability-ranked backlog", "Control mapping to your frameworks", "SOC integration for cloud alerts"],
+    title: "Cloud Security & Governance Assessment",
+    oneLiner: "Baseline posture, DevSecOps gaps, identity exposure, and cost optimization opportunities.",
+    outcomes: ["Exploitability-ranked remediation backlog", "Compliance mapping to your frameworks", "Unified security and cost intelligence roadmap"],
     relatedProductId: "cspm",
   },
   {
@@ -411,8 +391,8 @@ export const CYBER_SOLUTIONS: readonly CyberSolution[] = [
 
 export const PRODUCTS_HERO = {
   badge: "Products",
-  headline: "Security operations and posture — built to run in production.",
-  body: "Managed SOC and XDR, The Agentic Cloud Defender, audit-ready GRC, and modern detection and response for agents and applications. Each product ships with agreed SLAs — not slide-deck promises.",
+  headline: "Devices → Cloud → Detection → Response",
+  body: "Autonomous SOC, Cloud Security & Governance, Agent Detection & Response, and audit-ready GRC — unified platforms for outcomes, not integrations.",
 } as const;
 
 export const PRODUCTS_NAV_SECTIONS = [
@@ -423,7 +403,7 @@ export const PRODUCTS_NAV_SECTIONS = [
 
 export const PRODUCTS_CLOSING = {
   title: "Ready to scope your security stack?",
-  body: "Tell us your priority — SOC overload, agentic cloud defender gaps, audit season, or agentic AI rollout — and we will map the right product and accelerator.",
+  body: "Tell us your priority — SOC overload, cloud posture and cost, audit season, or agentic AI rollout — and we will map the right product and accelerator.",
   cta: "Book a strategy call",
   ctaTo: "/contact",
 } as const;
@@ -439,16 +419,16 @@ export const PRODUCTS_FAQ = [
     a: "A managed SOC provides 24/7 monitoring, triage, and response operations. XDR extends detection by correlating endpoint, network, cloud, and identity telemetry into a single timeline. AiRAT delivers both as an integrated operating model so analysts see context, not tool silos.",
   },
   {
-    q: "What does application detection and response (ADR) cover?",
-    a: "Application ADR uses in-runtime sensors to detect and block attacks on production applications and APIs — including novel exploits — with alerts enriched by code-level context. It complements network and endpoint controls rather than replacing them.",
+    q: "What is Agent Detection & Response (ADR)?",
+    a: "Agent Detection & Response (ADR) provides continuous visibility, governance, threat detection, and response for AI agents, MCP servers, autonomous workflows, copilots, and RAG systems — a security model built for the AI workforce, not traditional endpoints alone.",
   },
   {
     q: "How is agentic AI security different from traditional EDR?",
     a: "Enterprise AI agents expose reasoning, prompts, tool calls, and MCP sessions that classic endpoint tools do not fully observe. Agentic detection adds high-fidelity telemetry, pre-deployment testing, and scalable two-tier detection designed for agent workloads.",
   },
   {
-    q: "What is The Agentic Cloud Defender and how does it relate to cloud security engineering?",
-    a: "The Agentic Cloud Defender continuously finds misconfigurations and drift across multicloud estates. AiRAT pairs posture assessments with engineering hardening so findings become remediated controls — not dashboard noise.",
+    q: "What is the Cloud Security & Governance Platform?",
+    a: "A unified platform for cloud visibility, security posture management (CSPM), DevSecOps, identity and access governance, compliance monitoring, and cost intelligence — so security, governance, and spend are managed together, not in separate tools.",
   },
   {
     q: "What do we receive from a compliance audit readiness engagement?",

@@ -116,6 +116,10 @@ export type ClientMarqueeItem = {
   readonly name: string;
   /** On-site mark from `/public/clients_logos/` (preferred over remote favicons) */
   readonly logoSrc?: string;
+  /** Wide horizontal marks need a larger marquee slot (e.g. wordmark logos) */
+  readonly logoWide?: boolean;
+  /** Keep brand colors instead of monochrome treatment */
+  readonly logoColor?: boolean;
   readonly domain?: string;
   readonly initials?: string;
 };
@@ -127,6 +131,13 @@ export const ABOUT_CLIENT_MARQUEE_ITEMS = [
   { name: "MSAZN", domain: "msazn.com", logoSrc: "/clients_logos/msazn.png" },
   { name: "Kort", domain: "kort.io", logoSrc: "/clients_logos/kort.png" },
   { name: "Aithentic", domain: "aithentic.com", logoSrc: "/clients_logos/aithentic.png" },
+  {
+    name: "GuardHawk",
+    domain: "guardhawk.com",
+    logoSrc: "/clients_logos/guardhawk.png",
+    logoWide: true,
+    logoColor: true,
+  },
   { name: "Tier-1 pension fund", initials: "Asia" },
   {
     name: "Athena Security Group",

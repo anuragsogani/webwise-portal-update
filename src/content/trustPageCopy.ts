@@ -169,8 +169,8 @@ export const TRUST_NEXT_UP = {
       to: "/products/soc",
     },
     {
-      title: "Detection & Response",
-      description: "Save time with automated case management",
+      title: "Agent Detection & Response",
+      description: "Visibility, governance, and threat detection for AI agents",
       to: "/products/adr",
     },
     {
@@ -179,8 +179,8 @@ export const TRUST_NEXT_UP = {
       to: "/products/audit",
     },
     {
-      title: "Cloud Defender",
-      description: "Translate your regulatory programs into code",
+      title: "Cloud Security & Governance",
+      description: "CSPM, DevSecOps, identity governance, compliance, and cost intelligence",
       to: "/products/cspm",
     },
     {

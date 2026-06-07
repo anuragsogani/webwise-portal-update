@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" role="img" aria-label="PCI DSS">
+  <rect width="32" height="32" rx="8" fill="#eef0f8"/>
+  <rect x="6" y="10" width="20" height="12" rx="3" fill="#2b4c9c"/>
+  <text x="16" y="18.5" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="7" font-weight="700" fill="#ffffff">PCI</text>
+</svg>

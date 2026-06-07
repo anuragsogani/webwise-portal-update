@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -66,7 +66,10 @@ function buildDrawerLinks() {
 
 function MegaMenuColumns({ item }: { item: NavMegaItem }) {
   return (
-    <div className="nav-mega__inner">
+    <div
+      className="nav-mega__inner"
+      style={{ "--mega-cols": item.columns.length } as CSSProperties}
+    >
       {item.columns.map((col) => (
         <div key={col.heading} className="nav-mega__col">
           <p className="nav-mega__heading">{col.heading}</p>

@@ -394,13 +394,14 @@
 }
 
 .nav-mega__surface {
-  width: min(36rem, calc(100vw - 2rem));
+  width: fit-content;
+  max-width: min(36rem, calc(100vw - 2rem));
   padding: var(--space-xl);
 }
 
 .nav-mega__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(var(--mega-cols, 1), minmax(14rem, 1fr));
   gap: var(--space-xl);
 }
 

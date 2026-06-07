@@ -27,6 +27,8 @@ import TermsPage from "./pages/TermsPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import SocProductPage from "./pages/SocProductPage";
+import AdrProductPage from "./pages/AdrProductPage";
+import CspmProductPage from "./pages/CspmProductPage";
 import IntegrationsPage from "./pages/IntegrationsPage";
 import TrustPage from "./pages/TrustPage";
 import { authApi } from "./api/auth";
@@ -102,6 +104,8 @@ export default function App() {
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/products/soc" element={<SocProductPage />} />
+      <Route path="/products/adr" element={<AdrProductPage />} />
+      <Route path="/products/cspm" element={<CspmProductPage />} />
       <Route path="/products/:productId" element={<ProductDetailPage />} />
       <Route path="/integrations" element={<IntegrationsPage />} />
       <Route path="/services/aeo-geo" element={<GeoAeoServicePage />} />

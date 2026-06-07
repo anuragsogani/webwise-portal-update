@@ -1,3 +1,7 @@
+import type { HomeVisual } from "./homePageVisuals";
+
+const DUNA = "/images/duna-style";
+
 export const SOC_PRODUCT_SEO = {
   title: "Autonomous Security Operations Platform | AiRAT SOC",
   description:
@@ -89,7 +93,7 @@ export const SOC_SCROLL_TWO = {
       { title: "Risk Prioritization", body: "Focus on incidents with real business impact." },
     ],
     visual: {
-      src: "/images/duna-style/soc-attack-graph.svg",
+      src: `${DUNA}/soc-attack-graph.svg`,
       alt: "Attack graph showing user, endpoint, identity, cloud resource, and database connected in a highlighted attack chain with risk score",
       width: 1200,
       height: 675,
@@ -146,6 +150,40 @@ export const SOC_SCROLL_TWO = {
     ],
   },
 } as const;
+
+/** Intelligence engine rotator — one visual per capability (matches homepage FeatureModuleRotator) */
+export const SOC_INTELLIGENCE_ROTATOR_VISUALS: readonly HomeVisual[] = [
+  {
+    src: `${DUNA}/soc-attack-graph.svg`,
+    alt: "Attack graph showing user, endpoint, identity, cloud resource, and database connected in a highlighted attack chain with risk score",
+    width: 1200,
+    height: 675,
+  },
+  {
+    src: `${DUNA}/feature-security-siem-timeline.svg`,
+    alt: "SIEM correlated incident timeline showing endpoint, identity, and cloud signals converging on one event",
+    width: 560,
+    height: 560,
+  },
+  {
+    src: `${DUNA}/feature-security-detection-matrix.svg`,
+    alt: "Detection coverage matrix highlighting root signals across severity tiers and log sources",
+    width: 560,
+    height: 560,
+  },
+  {
+    src: `${DUNA}/feature-security-evidence-trails.svg`,
+    alt: "Threat intelligence enrichment trail with IOC reputation, behavior, and context events",
+    width: 560,
+    height: 560,
+  },
+  {
+    src: `${DUNA}/feature-security-response-workflow.svg`,
+    alt: "Risk prioritization chart ranking incidents by business impact and response urgency",
+    width: 560,
+    height: 560,
+  },
+] as const;
 
 export const SOC_SCROLL_THREE = {
   dashboard: {

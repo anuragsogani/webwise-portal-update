@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" role="img" aria-label="ISO 27001">
+  <rect width="32" height="32" rx="8" fill="#eef4f5"/>
+  <circle cx="16" cy="16" r="10" stroke="#46838c" stroke-width="1.5"/>
+  <text x="16" y="19.5" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="7.5" font-weight="700" fill="#1a1a18">ISO</text>
+</svg>

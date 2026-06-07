@@ -63,6 +63,113 @@
   grid-template-columns: 1fr;
 }
 
+/* True 1×2 split — intro + list | visual (product pages) */
+.feature-module--split .feature-module__body {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.feature-module--split .feature-module__copy {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  min-width: 0;
+}
+
+.feature-module--split .feature-module__intro {
+  display: grid;
+  gap: var(--space-md);
+  order: unset;
+}
+
+/* homepage.css sets intro order:2 on reverse — keep intro above list in split columns */
+.feature-module--split.feature-module--reverse .feature-module__intro {
+  order: unset;
+}
+
+.feature-module--split .feature-module__intro .body-md,
+.feature-module--split .feature-module__intro .soc-contrast {
+  margin: 0;
+}
+
+.feature-module--split .feature-module__visual {
+  align-self: start;
+}
+
+.feature-module--split.feature-module--reverse .feature-module__visual {
+  order: 1;
+  align-self: center;
+}
+
+.feature-module--split.feature-module--reverse .feature-module__copy {
+  order: 2;
+}
+
+.feature-module--split .soc-role-list {
+  margin: 0;
+  width: 100%;
+}
+
+.feature-module--split .soc-role-list .feature-module__service--highlight {
+  height: 100%;
+}
+
+.feature-module--split .soc-role-card {
+  height: 100%;
+}
+
+/* Compact capability panel — split columns (ADR runtime, etc.) */
+.feature-module--split .soc-outcome-compare--panel {
+  align-self: center;
+  min-height: auto;
+  justify-content: flex-start;
+  align-items: stretch;
+  text-align: left;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: var(--radius-lg);
+  width: 100%;
+}
+
+.feature-module--split .soc-outcome-compare--panel .soc-outcome-compare__eyebrow {
+  margin: 0 0 var(--space-md);
+}
+
+.feature-module--split .soc-outcome-compare--panel .soc-checklist {
+  margin: 0;
+  gap: var(--space-sm);
+}
+
+.soc-pillar-label {
+  margin: var(--space-md) 0 0;
+  font-family: var(--font-ui);
+  font-size: var(--text-title-sm);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.soc-pillar-label:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .feature-module--split .feature-module__body {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-module--split.feature-module--reverse .feature-module__visual,
+  .feature-module--split.feature-module--reverse .feature-module__copy {
+    order: unset;
+  }
+
+  .feature-module--split.feature-module--reverse .feature-module__visual {
+    align-self: start;
+  }
+
+  .feature-module--split .soc-outcome-compare--panel {
+    align-self: stretch;
+  }
+}
+
 .soc-subsection {
   margin-top: clamp(3rem, 7vw, 4.5rem);
   padding-top: clamp(3rem, 7vw, 4.5rem);
@@ -73,18 +180,51 @@
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: clamp(2rem, 5vw, 3.5rem);
-  align-items: start;
+  align-items: stretch;
 }
 
 .soc-role-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-md);
+  align-items: stretch;
 }
 
 .soc-role-list .feature-module__service {
   border-bottom: none;
-  padding: 0;
+}
+
+.soc-role-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  height: 100%;
+  align-content: start;
+}
+
+.soc-role-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-md);
+  background: rgba(70, 131, 140, 0.12);
+  color: var(--color-accent-teal, #46838c);
+}
+
+.soc-role-card__title {
+  margin: 0;
+}
+
+.soc-role-card__body {
+  margin: 0;
+}
+
+.soc-role-list .soc-role-card:first-child,
+.soc-role-list .soc-role-card:last-child {
+  padding: var(--space-lg);
 }
 
 .soc-outcome-compare {
@@ -97,7 +237,12 @@
   text-align: center;
   border: 1px solid var(--color-hairline-strong);
   background: var(--color-surface-soft);
-  min-height: 100%;
+  border-radius: var(--radius-lg);
+  min-height: auto;
+}
+
+.soc-outcome-compare--stats {
+  align-self: stretch;
 }
 
 .soc-outcome-compare__num {
@@ -161,9 +306,106 @@
   color: var(--color-body-strong);
 }
 
+.soc-checklist--stack {
+  grid-template-columns: 1fr;
+}
+
+.soc-outcome-compare .soc-checklist {
+  text-align: left;
+  width: 100%;
+}
+
 .soc-action-chips {
   margin-top: var(--space-md);
 }
+
+.compliance-framework-list {
+  margin-top: var(--space-md);
+}
+
+.compliance-framework-list__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.25rem;
+}
+
+.compliance-framework-list__item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.compliance-framework-list__mark {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.compliance-framework-list__mark--fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-hairline-strong);
+}
+
+.compliance-framework-list__label {
+  font-family: var(--font-ui);
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: var(--color-body-strong);
+  line-height: 1.35;
+}
+
+.compliance-framework-list__others {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-hairline);
+}
+
+.compliance-framework-list__others-label {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-ui);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.compliance-framework-list__others-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.compliance-framework-list__others-list li {
+  font-size: var(--text-body-sm);
+  color: var(--color-body);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.compliance-framework-list__others-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-muted);
+}
+
 
 .soc-why-grid {
   display: grid;
@@ -190,7 +432,8 @@
   .soc-metrics-row,
   .soc-role-list,
   .soc-checklist,
-  .soc-why-grid {
+  .soc-why-grid,
+  .compliance-framework-list__grid {
     grid-template-columns: 1fr;
   }
 }
