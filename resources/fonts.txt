@@ -1,0 +1,212 @@
+Fonts Used:
+"Times New Roman"
+sans-serif
+"GT America Regular", "GT America Regular Placeholder", sans-serif
+"GT America Trial Md", "GT America Trial Md Placeholder", sans-serif
+"GT America Trial Rg", "GT America Trial Rg Placeholder", sans-serif
+"GT America Medium", "GT America Medium Placeholder", sans-serif
+Elements Font Details:
+<HTML>
+Font Family: "Times New Roman"
+Font Size: 16px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<HEAD>
+Font Family: "Times New Roman"
+Font Size: 16px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<META>
+Font Family: "Times New Roman"
+Font Size: 16px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<SCRIPT>
+Font Family: "Times New Roman"
+Font Size: 16px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<TITLE>
+Font Family: "Times New Roman"
+Font Size: 16px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<LINK>
+Font Family: "Times New Roman"
+Font Size: 16px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<STYLE>
+Font Family: "Times New Roman"
+Font Size: 16px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<BODY>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<SCRIPT>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<DIV>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<STYLE>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<A>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 238)
+Font Style: normal
+Font Weight: 400
+<svg>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 238)
+Font Style: normal
+Font Weight: 400
+<use>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 238)
+Font Style: normal
+Font Weight: 400
+<P>
+Font Family: "GT America Regular", "GT America Regular Placeholder", sans-serif
+Font Size: 16px
+Font Color: rgb(41, 36, 33)
+Font Style: normal
+Font Weight: 400
+<IMG>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<H1>
+Font Family: "GT America Regular", "GT America Regular Placeholder", sans-serif
+Font Size: 72px
+Font Color: rgb(34, 34, 33)
+Font Style: normal
+Font Weight: 400
+<BR>
+Font Family: "GT America Regular", "GT America Regular Placeholder", sans-serif
+Font Size: 20px
+Font Color: rgb(26, 24, 22)
+Font Style: normal
+Font Weight: 400
+<UL>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<LI>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<H2>
+Font Family: "GT America Regular", "GT America Regular Placeholder", sans-serif
+Font Size: 44px
+Font Color: rgb(27, 6, 36)
+Font Style: normal
+Font Weight: 400
+<P>
+Font Family: "GT America Trial Md", "GT America Trial Md Placeholder", sans-serif
+Font Size: 80px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 500
+<H4>
+Font Family: "GT America Regular", "GT America Regular Placeholder", sans-serif
+Font Size: 32px
+Font Color: rgb(41, 36, 33)
+Font Style: normal
+Font Weight: 400
+<SPAN>
+Font Family: "GT America Regular", "GT America Regular Placeholder", sans-serif
+Font Size: 32px
+Font Color: rgb(41, 36, 33)
+Font Style: normal
+Font Weight: 400
+<P>
+Font Family: "GT America Trial Rg", "GT America Trial Rg Placeholder", sans-serif
+Font Size: 14px
+Font Color: rgb(23, 16, 13)
+Font Style: normal
+Font Weight: 400
+<H3>
+Font Family: "GT America Regular", "GT America Regular Placeholder", sans-serif
+Font Size: 40px
+Font Color: rgb(39, 39, 37)
+Font Style: normal
+Font Weight: 400
+<H5>
+Font Family: "GT America Regular", "GT America Regular Placeholder", sans-serif
+Font Size: 22px
+Font Color: rgb(41, 36, 33)
+Font Style: normal
+Font Weight: 400
+<P>
+Font Family: "GT America Medium", "GT America Medium Placeholder", sans-serif
+Font Size: 20px
+Font Color: rgb(255, 255, 255)
+Font Style: normal
+Font Weight: 400
+<A>
+Font Family: "GT America Regular", "GT America Regular Placeholder", sans-serif
+Font Size: 16px
+Font Color: rgb(255, 255, 255)
+Font Style: normal
+Font Weight: 400
+<LINK>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<g>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<path>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<defs>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400
+<clipPath>
+Font Family: sans-serif
+Font Size: 12px
+Font Color: rgb(0, 0, 0)
+Font Style: normal
+Font Weight: 400

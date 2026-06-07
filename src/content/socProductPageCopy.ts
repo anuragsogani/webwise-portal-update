@@ -1,6 +1,7 @@
 import type { HomeVisual } from "./homePageVisuals";
 
 const DUNA = "/images/duna-style";
+const CSOC = "/images/csoc";
 
 export const SOC_PRODUCT_SEO = {
   title: "Autonomous Security Operations Platform | AiRAT SOC",
@@ -16,6 +17,11 @@ export const SOC_HERO = {
   tagline: "Monitor. Analyze. Investigate. Respond.",
   primaryCta: { label: "Request Demo", to: "/contact?intent=soc-demo" },
   secondaryCta: { label: "See Platform Tour", to: "/demo" },
+  background: {
+    src: `${CSOC}/csoc_background_trim.png`,
+    width: 1672,
+    height: 940,
+  },
 } as const;
 
 export const SOC_METRICS = [
@@ -70,12 +76,12 @@ export const SOC_SCROLL_ONE = {
       tools: ["Kubernetes", "Docker", "OpenSearch", "Elastic", "Prometheus"],
     },
   ],
-  visual: {
-    src: "/images/duna-style/soc-integration-hub.svg",
-    alt: "Integration workflow diagram showing vendor logos ingested, normalized, correlated, and routed through the intelligence engine to automated response",
-    width: 560,
-    height: 940,
-  },
+    visual: {
+      src: `${CSOC}/csoc_intigrations_trim.png`,
+      alt: "Integration ecosystem diagram showing cloud platforms, security tools, network security, identity, observability, data sources, ITSM, and threat intelligence unified through the CSOC Intelligence Engine",
+      width: 1536,
+      height: 1024,
+    },
 } as const;
 
 export const SOC_SCROLL_TWO = {
@@ -129,6 +135,12 @@ export const SOC_SCROLL_TWO = {
       "Organizational Structure",
     ],
     result: "Every alert is analyzed with complete environmental context before reaching your team.",
+    visual: {
+      src: `${CSOC}/csoc_contextlayer_trim.png`,
+      alt: "Context engine diagram showing unified context sources feeding a security knowledge graph that powers attack path analysis, AI investigation, threat correlation, risk prioritization, and autonomous response",
+      width: 1672,
+      height: 941,
+    },
   },
   automation: {
     eyebrow: "Automated response",
@@ -154,34 +166,34 @@ export const SOC_SCROLL_TWO = {
 /** Intelligence engine rotator — one visual per capability (matches homepage FeatureModuleRotator) */
 export const SOC_INTELLIGENCE_ROTATOR_VISUALS: readonly HomeVisual[] = [
   {
-    src: `${DUNA}/soc-attack-graph.svg`,
-    alt: "Attack graph showing user, endpoint, identity, cloud resource, and database connected in a highlighted attack chain with risk score",
-    width: 1200,
-    height: 675,
+    src: `${CSOC}/csoc_chain_1_trim.png`,
+    alt: "Attack path analysis chain showing how a threat moves across identity, endpoint, cloud, and database systems",
+    width: 1627,
+    height: 967,
   },
   {
-    src: `${DUNA}/feature-security-siem-timeline.svg`,
-    alt: "SIEM correlated incident timeline showing endpoint, identity, and cloud signals converging on one event",
-    width: 560,
-    height: 560,
+    src: `${CSOC}/csoc_chain_2_trim.png`,
+    alt: "Incident correlation chain showing related alerts converging into a single investigative timeline",
+    width: 1619,
+    height: 970,
   },
   {
-    src: `${DUNA}/feature-security-detection-matrix.svg`,
-    alt: "Detection coverage matrix highlighting root signals across severity tiers and log sources",
-    width: 560,
-    height: 560,
+    src: `${CSOC}/csoc_chain_3_trim.png`,
+    alt: "Detection engineering chain showing coverage across sources and severity levels",
+    width: 1536,
+    height: 959,
   },
   {
-    src: `${DUNA}/feature-security-evidence-trails.svg`,
-    alt: "Threat intelligence enrichment trail with IOC reputation, behavior, and context events",
-    width: 560,
-    height: 560,
+    src: `${CSOC}/csoc_chain_4_trim.png`,
+    alt: "Evidence trails chain showing the sequence of signals, decisions, and response actions in an incident",
+    width: 1511,
+    height: 656,
   },
   {
-    src: `${DUNA}/feature-security-response-workflow.svg`,
-    alt: "Risk prioritization chart ranking incidents by business impact and response urgency",
-    width: 560,
-    height: 560,
+    src: `${CSOC}/csoc_chain_5_trim.png`,
+    alt: "Risk prioritization chain showing how threats are ranked and routed to response workflows",
+    width: 1562,
+    height: 671,
   },
 ] as const;
 

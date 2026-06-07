@@ -82,56 +82,67 @@ export default function SocProductPage() {
 
       <main id="main-content">
         {/* Scroll 1 — Hero, metrics, unified visibility */}
-        <section className="hero-band section soc-scroll-band" aria-labelledby="soc-hero-title">
-          <div className="container hero-band__inner">
-            <nav className="page-breadcrumb" aria-label="Breadcrumb">
-              <Link to="/products" className="page-breadcrumb__link">
-                ← All products
-              </Link>
-            </nav>
-            <p className="eyebrow">{SOC_HERO.eyebrow}</p>
-            <h1 id="soc-hero-title" className="display-2xl hero-band__title">
-              {SOC_HERO.title}
-            </h1>
-            <p className="body-lg hero-band__lead">{SOC_HERO.lead}</p>
-            <p className="eyebrow soc-tagline">{SOC_HERO.tagline}</p>
-            <div className="hero-band__actions">
-              <Link to={SOC_HERO.primaryCta.to} className="btn btn--primary">
-                {SOC_HERO.primaryCta.label}
-              </Link>
-              <Link to={SOC_HERO.secondaryCta.to} className="btn btn--secondary">
-                {SOC_HERO.secondaryCta.label}
-              </Link>
-            </div>
+        <section className="soc-first-scroll section soc-scroll-band" aria-labelledby="soc-hero-title">
+          <div className="soc-first-scroll__bg" aria-hidden="true">
+            <img
+              src={SOC_HERO.background.src}
+              alt=""
+              width={SOC_HERO.background.width}
+              height={SOC_HERO.background.height}
+              fetchPriority="high"
+              decoding="async"
+            />
+            <div className="soc-first-scroll__fade" />
           </div>
-        </section>
-
-        <section className="section section--warm soc-scroll-band" aria-label="Platform metrics">
-          <div className="container soc-metrics-row" role="list">
-            {SOC_METRICS.map((m, i) => (
-              <RevealOnScroll
-                key={m.label}
-                className="soc-metric"
-                delay={(i + 1) as 1 | 2 | 3 | 4 | 5}
-                as="article"
-                role="listitem"
-              >
-                <span className="soc-metric__value">
-                  {"counter" in m && m.counter ? (
-                    <StatCounter
-                      className="soc-metric__counter"
-                      target={m.counter.target}
-                      prefix={"prefix" in m.counter ? m.counter.prefix : ""}
-                      suffix={m.counter.suffix}
-                    />
-                  ) : (
-                    m.fallback
-                  )}
-                </span>
-                <span className="soc-metric__label">{m.label}</span>
-                <p className="body-sm soc-metric__detail">{m.detail}</p>
-              </RevealOnScroll>
-            ))}
+          <div className="container soc-first-scroll__body">
+            <div className="hero-band__inner soc-first-scroll__copy">
+              <nav className="page-breadcrumb" aria-label="Breadcrumb">
+                <Link to="/products" className="page-breadcrumb__link">
+                  ← All products
+                </Link>
+              </nav>
+              <p className="eyebrow">{SOC_HERO.eyebrow}</p>
+              <h1 id="soc-hero-title" className="display-2xl hero-band__title">
+                {SOC_HERO.title}
+              </h1>
+              <p className="body-lg hero-band__lead">{SOC_HERO.lead}</p>
+              <div className="hero-band__actions">
+                <Link to={SOC_HERO.primaryCta.to} className="btn btn--primary">
+                  {SOC_HERO.primaryCta.label}
+                </Link>
+                <Link to={SOC_HERO.secondaryCta.to} className="btn btn--secondary">
+                  {SOC_HERO.secondaryCta.label}
+                </Link>
+              </div>
+            </div>
+            <div className="soc-hero-metrics" aria-label="Platform metrics">
+              <div className="soc-metrics-row" role="list">
+                {SOC_METRICS.map((m, i) => (
+                  <RevealOnScroll
+                    key={m.label}
+                    className="soc-metric"
+                    delay={(i + 1) as 1 | 2 | 3 | 4 | 5}
+                    as="article"
+                    role="listitem"
+                  >
+                    <span className="soc-metric__value">
+                      {"counter" in m && m.counter ? (
+                        <StatCounter
+                          className="soc-metric__counter"
+                          target={m.counter.target}
+                          prefix={"prefix" in m.counter ? m.counter.prefix : ""}
+                          suffix={m.counter.suffix}
+                        />
+                      ) : (
+                        m.fallback
+                      )}
+                    </span>
+                    <span className="soc-metric__label">{m.label}</span>
+                    <p className="body-sm soc-metric__detail">{m.detail}</p>
+                  </RevealOnScroll>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -146,28 +157,22 @@ export default function SocProductPage() {
                 <p className="body-md">{SOC_SCROLL_ONE.lead}</p>
               </div>
             </div>
-            <div className="feature-module__body">
-              <div className="feature-module__services">
-                <ul className="feature-module__service-list">
-                  {SOC_SCROLL_ONE.integrationGroups.map((g) => (
-                    <li key={g.category} className="feature-module__service">
-                      <span className="title-sm">{g.category}</span>
-                      <p className="body-sm">{g.tools.join(" · ")}</p>
-                    </li>
-                  ))}
-                </ul>
+
+            {/* Replace the left text list with a full visual block that explains integrations */}
+            <div className="feature-module__body feature-module__body--visual-only">
+              <div className="feature-module__visual">
+                <RevealOnScroll className="feature-module__visual-inner" direction="fade" threshold={0.12}>
+                  <img
+                    className="feature-module__image soc-feature-image"
+                    src={SOC_SCROLL_ONE.visual.src}
+                    alt={SOC_SCROLL_ONE.visual.alt}
+                    width={SOC_SCROLL_ONE.visual.width}
+                    height={SOC_SCROLL_ONE.visual.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </RevealOnScroll>
               </div>
-              <RevealOnScroll className="feature-module__visual" direction="fade" threshold={0.12}>
-                <img
-                  className="feature-module__image soc-feature-image"
-                  src={SOC_SCROLL_ONE.visual.src}
-                  alt={SOC_SCROLL_ONE.visual.alt}
-                  width={SOC_SCROLL_ONE.visual.width}
-                  height={SOC_SCROLL_ONE.visual.height}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </RevealOnScroll>
             </div>
           </div>
         </section>
@@ -186,7 +191,7 @@ export default function SocProductPage() {
               </div>
             </div>
             <div className="feature-module__body feature-module__body--rotator">
-              <RevealOnScroll delay={2} className="feature-module-rotator-reveal reveal--slow">
+              <RevealOnScroll delay={2} className="feature-module-rotator-reveal reveal--slow soc-intel-rotator">
                 <FeatureModuleRotator
                   services={intelligence.capabilities.map((c) => ({
                     title: c.title,
@@ -236,88 +241,49 @@ export default function SocProductPage() {
             </div>
           </div>
 
-          <div className="container soc-dual-grid soc-subsection">
-            <div>
+          <div className="container soc-context-section soc-subsection">
+            <div className="feature-module__top-copy">
               <p className="eyebrow">{context.eyebrow}</p>
               <h2 className="display-lg">{context.title}</h2>
               <p className="body-md">{context.lead}</p>
-              <ul className="soc-checklist">
-                {context.sources.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
               <p className="body-sm soc-context-result">{context.result}</p>
             </div>
-            <div>
-              <p className="eyebrow">{automation.eyebrow}</p>
-              <h2 className="display-lg">{automation.title}</h2>
-              <p className="body-md">{automation.lead}</p>
-              <ul className="feature-module__service-list">
-                {automation.modes.map((m) => (
-                  <li key={m.title} className="feature-module__service">
-                    <span className="title-sm">{m.title}</span>
-                    <p className="body-sm">{m.body}</p>
-                  </li>
-                ))}
-              </ul>
-              <div className="chip-list soc-action-chips">
-                {automation.actions.map((a) => (
-                  <span key={a} className="chip">
-                    {a}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Scroll 3 — Dashboard, why choose, CTA */}
-        <section className="section soc-scroll-band" aria-labelledby="soc-dashboard-title">
-          <div className="container feature-module">
-            <div className="feature-module__top">
-              <div className="feature-module__top-copy">
-                <p className="eyebrow">{dashboard.eyebrow}</p>
-                <h2 id="soc-dashboard-title" className="display-lg feature-module__title">
-                  {dashboard.title}
-                </h2>
-                <p className="body-md">{dashboard.lead}</p>
-                <div className="chip-list">
-                  {dashboard.highlights.map((h) => (
-                    <span key={h} className="chip chip--lime">
-                      {h}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="feature-module__body feature-module__body--visual-only">
-              <div className="feature-module__visual">
-                <img
-                  className="feature-module__image soc-feature-image"
-                  src={dashboard.visual.src}
-                  alt={dashboard.visual.alt}
-                  width={dashboard.visual.width}
-                  height={dashboard.visual.height}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
+            <RevealOnScroll className="soc-context-visual" direction="fade" threshold={0.12}>
+              <img
+                className="feature-module__image soc-feature-image"
+                src={context.visual.src}
+                alt={context.visual.alt}
+                width={context.visual.width}
+                height={context.visual.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </RevealOnScroll>
           </div>
 
           <div className="container soc-subsection">
-            <p className="eyebrow">{why.eyebrow}</p>
-            <h2 className="display-lg">{why.title}</h2>
-            <div className="soc-why-grid">
-              {why.items.map((item) => (
-                <article key={item.title} className="value-prop">
-                  <h3 className="value-prop__title">{item.title}</h3>
-                  <p className="value-prop__body">{item.body}</p>
-                </article>
+            <p className="eyebrow">{automation.eyebrow}</p>
+            <h2 className="display-lg">{automation.title}</h2>
+            <p className="body-md">{automation.lead}</p>
+            <ul className="feature-module__service-list">
+              {automation.modes.map((m) => (
+                <li key={m.title} className="feature-module__service">
+                  <span className="title-sm">{m.title}</span>
+                  <p className="body-sm">{m.body}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="chip-list soc-action-chips">
+              {automation.actions.map((a) => (
+                <span key={a} className="chip">
+                  {a}
+                </span>
               ))}
             </div>
           </div>
         </section>
+
+        {/* Scroll 3 removed (Executive dashboard) as requested — next section continues below */}
 
         <CtaBand
           title={cta.title}

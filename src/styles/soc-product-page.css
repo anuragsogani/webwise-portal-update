@@ -1,7 +1,291 @@
+./* Hide page-floating decorative floats on SOC product page for clean layout */
+body:has(.soc-first-scroll) .industry-tile__floats,
+body:has(.soc-first-scroll) .fi-float-layer,
+body:has(.soc-first-scroll) .service-float,
+body:has(.soc-first-scroll) .svc-float-layer,
+body:has(.soc-first-scroll) .service-stack-hero-doodle {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Large screens: keep copy left-aligned, visuals centered */
+@media (min-width: 900px) {
+  .feature-module__top-copy {
+    text-align: left;
+    margin-inline: 0;
+  }
+
+  .feature-module__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+  }
+}
+
+/* Ensure large visuals scale nicely and remain centered within container */
+.feature-module__visual .feature-module__image {
+  border-radius: 12px;
+  background: var(--color-surface-soft);
+  padding: 1rem;
+}
+
+/* SOC page overrides: remove extra visual padding so content aligns with container edges */
+.soc-scroll-band .feature-module__visual {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.soc-scroll-band .feature-module__body {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: center;
+}
+
+/* Tighten container padding specifically for the integrations (visibility) section */
+.soc-scroll-band[aria-labelledby="soc-visibility-title"] > .container.feature-module {
+  padding-block: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Make copy column fill its grid cell and align flush with container left */
+.soc-scroll-band .feature-module__top-copy,
+.soc-scroll-band .feature-module__copy {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  align-self: start;
+}
+
+/* CSS crop fallback: crop visuals to fill the visual column and align with copy */
+.soc-scroll-band .feature-module__visual {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+}
+
+.soc-scroll-band .feature-module__visual .feature-module__image,
+.soc-scroll-band .feature-module__visual img {
+  width: 100%;
+  height: clamp(360px, 48vh, 720px);
+  object-fit: cover;
+  object-position: center center;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .soc-scroll-band .feature-module__visual .feature-module__image,
+  .soc-scroll-band .feature-module__visual img {
+    height: clamp(220px, 36vh, 420px);
+    border-radius: 6px;
+  }
+}
+
+.soc-scroll-band .feature-module__top-copy,
+.soc-scroll-band .feature-module__copy {
+  margin-inline: 0;
+  padding-inline: 0;
+  max-width: 56rem;
+}
+
+/* Reduce left gutter for very wide images so they don't feel cramped */
+@media (min-width: 1400px) {
+  .feature-module {
+    max-width: 1400px;
+    margin-inline: auto;
+  }
+}
+
 /* SOC product page — layout only; uses site light theme tokens */
 
+/* First viewport: hero copy + KPI bar, background behind (no tall art block) */
+.soc-first-scroll {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  margin-top: calc(-1 * (var(--nav-block-height) + env(safe-area-inset-top, 0px)));
+  background: var(--color-canvas);
+}
+
+.soc-first-scroll.section {
+  gap: 0;
+  padding-block: calc(var(--nav-block-height) + env(safe-area-inset-top, 0px)) clamp(0.75rem, 1.8vh, 1.25rem);
+}
+
+.soc-first-scroll__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.soc-first-scroll__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.soc-first-scroll__fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.72) 42%,
+    var(--color-canvas) 78%
+  );
+}
+
+.soc-first-scroll__body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex: 1;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-content: stretch;
+  gap: clamp(0.5rem, 1.2vh, 0.85rem);
+  min-height: calc(100dvh - var(--nav-block-height) - env(safe-area-inset-top, 0px) - clamp(1.5rem, 3.6vh, 2.5rem));
+}
+
+.soc-first-scroll__copy.hero-band__inner {
+  gap: clamp(0.35rem, 0.9vh, 0.65rem);
+}
+
+.soc-first-scroll__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.soc-first-scroll__copy .hero-band__title {
+  font-size: clamp(1.75rem, 3.8vw, 2.65rem);
+  line-height: 1.06;
+  max-width: min(14.5em, 92vw);
+}
+
+.soc-first-scroll__copy .hero-band__lead {
+  font-size: clamp(0.875rem, 1.35vw, 1rem);
+  line-height: 1.4;
+  max-width: min(34rem, 92vw);
+}
+
+.soc-first-scroll__copy .hero-band__actions {
+  margin-top: 0;
+  gap: var(--space-sm);
+}
+
+.soc-first-scroll__copy .btn {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+}
+
+.soc-hero-metrics {
+  align-self: stretch;
+  padding-top: clamp(0.65rem, 1.4vh, 0.95rem);
+  border-top: 1px solid var(--color-hairline-strong);
+}
+
+.soc-first-scroll .soc-metrics-row {
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.soc-first-scroll .soc-metric {
+  gap: 0.15rem;
+}
+
+.soc-first-scroll .soc-metric__value {
+  font-size: clamp(1.2rem, 2.1vw, 1.75rem);
+}
+
+.soc-first-scroll .soc-metric__label {
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+}
+
+.soc-first-scroll .soc-metric__detail {
+  font-size: clamp(0.68rem, 1vw, 0.78rem);
+  line-height: 1.3;
+}
+
+@media (max-height: 860px) {
+  .soc-first-scroll__copy .hero-band__title {
+    font-size: clamp(1.55rem, 3.4vw, 2.25rem);
+  }
+
+  .soc-first-scroll__copy .hero-band__lead {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .soc-first-scroll__copy.hero-band__inner {
+    gap: 0.3rem;
+  }
+
+  .soc-first-scroll .soc-metric__value {
+    font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  }
+
+  .soc-first-scroll .soc-metric__label {
+    font-size: 0.78rem;
+  }
+
+  .soc-first-scroll .soc-metric__detail {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-height: 720px) {
+  .soc-first-scroll.section {
+    padding-bottom: 0.65rem;
+  }
+
+  .soc-first-scroll__copy .btn {
+    padding: 0.45rem 0.95rem;
+    font-size: 0.82rem;
+  }
+
+  .soc-hero-metrics {
+    padding-top: 0.55rem;
+  }
+
+  .soc-first-scroll .soc-metrics-row {
+    gap: 0.5rem;
+  }
+}
+
 .soc-tagline {
-  margin-top: var(--space-md);
+  margin-top: 0;
+}
+
+.soc-context-section {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.soc-context-section .feature-module__top-copy {
+  display: grid;
+  gap: var(--space-md);
+  max-width: min(42rem, 100%);
+}
+
+.soc-context-visual {
+  width: 100%;
 }
 
 .soc-scroll-band {
@@ -19,6 +303,11 @@
   gap: var(--space-xs);
   padding-top: var(--space-md);
   border-top: 1px solid var(--color-hairline-strong);
+}
+
+.soc-hero-metrics .soc-metric {
+  padding-top: 0;
+  border-top: none;
 }
 
 .soc-metric__value {
@@ -422,6 +711,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .soc-first-scroll .soc-metrics-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .soc-ai-row,
   .soc-dual-grid {
     grid-template-columns: 1fr;
@@ -436,4 +729,261 @@
   .compliance-framework-list__grid {
     grid-template-columns: 1fr;
   }
+
+  .soc-first-scroll .soc-metrics-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
+
+/* ---------------------------------------------------------------------------
+   Hero refinements — center copy, elevate KPI bar, improve visual impact
+   -------------------------------------------------------------------------*/
+.soc-first-scroll__copy {
+  align-items: center;
+  text-align: center;
+}
+
+.soc-first-scroll__copy .hero-band__title {
+  font-weight: 500;
+  letter-spacing: var(--tracking-display-md);
+  color: var(--color-ink-deep);
+}
+
+.soc-first-scroll__fade {
+  /* let the scenic art show through a bit more while still softening text edge */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.0) 0%,
+    rgba(255, 255, 255, 0.6) 42%,
+    var(--color-canvas) 82%
+  );
+}
+
+.soc-hero-metrics {
+  align-self: center;
+  width: min(1100px, 96%);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 40px rgba(12, 14, 15, 0.06);
+  border-radius: 12px;
+  padding: clamp(0.65rem, 1.5vh, 1rem);
+  margin: clamp(0.75rem, 2vh, 1.25rem) auto 0;
+  border-top: none;
+  z-index: 3;
+}
+
+.soc-first-scroll .soc-metrics-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  align-items: center;
+}
+
+.soc-first-scroll .soc-metric {
+  text-align: center;
+  padding: 0.45rem 0;
+  gap: 0.25rem;
+  border-top: none;
+}
+
+.soc-first-scroll .soc-metric__value {
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-ink-deep);
+  display: block;
+}
+
+.soc-first-scroll .soc-metric__label {
+  display: block;
+  margin-top: 0.15rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.soc-first-scroll .soc-metric__detail {
+  margin: 0.25rem 0 0;
+  color: var(--color-body);
+  font-size: 0.82rem;
+}
+
+/* ensure floating call widget doesn't overlap KPI bar */
+.soc-first-scroll {
+  padding-bottom: clamp(3rem, 5vh, 4rem);
+}
+
+@media (max-width: 900px) {
+  .soc-first-scroll .soc-metrics-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .soc-hero-metrics {
+    width: calc(100% - 2rem);
+    padding: 0.6rem;
+  }
+}
+
+/* ==========================================================================
+   UNIFIED LAYOUT SYSTEM — consistent container width across all SOC sections
+   ========================================================================== */
+
+/* Remove scroll-snap — the warm section bundles multiple subsections and is
+   too tall for mandatory snap. Width consistency is the priority here. */
+#main-content {
+  scroll-snap-type: none;
+}
+
+/* Single source of truth for container width */
+.soc-scroll-band > .container,
+.soc-scroll-band .container {
+  width: min(calc(100% - var(--space-xl) * 2), var(--max-width));
+  margin-inline: auto;
+}
+
+/* Top copy row: no extra width cap — inherits container width */
+.soc-scroll-band .feature-module__top {
+  width: 100%;
+  margin-bottom: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.soc-scroll-band .feature-module__top-copy,
+.soc-scroll-band .feature-module__copy {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Visual-only block: FORCE single-column so image fills the full container width.
+   The homepage.css .feature-module__body rule sets display:grid with 2 columns;
+   we must override both display and the column template here. */
+.soc-scroll-band .feature-module__body--visual-only {
+  display: block !important;   /* collapse the 2-column grid to a simple block */
+  width: 100%;
+  margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
+.soc-scroll-band .feature-module__body--visual-only .feature-module__visual,
+.soc-scroll-band .feature-module__body--visual-only .feature-module__visual-inner {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-surface-soft, #f5f4f0);
+}
+
+/* Diagrams (integration / context): show full image without cropping */
+.soc-scroll-band .feature-module__body--visual-only .feature-module__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 13rem);
+  object-fit: contain;
+  margin: 0;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  border-radius: 12px;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Two-column body (used by intelligence engine rotator, AI SOC) */
+.soc-scroll-band .feature-module__body:not(.feature-module__body--visual-only):not(.feature-module__body--rotator) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+  width: 100%;
+}
+
+/* Intelligence engine: make the right image read as a big showcase panel */
+.soc-intel-rotator .feature-module-rotator__grid {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: stretch;
+}
+
+.soc-intel-rotator .feature-module-rotator__visual {
+  padding: clamp(0.8rem, 1.6vw, 1.15rem);
+  border-radius: 16px;
+  background: var(--color-surface-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soc-intel-rotator .feature-module-rotator__image {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: contain;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 12px;
+}
+
+.soc-intel-rotator .feature-module-rotator__services {
+  display: flex;
+  align-items: stretch;
+}
+
+.soc-intel-rotator .feature-module-rotator__list {
+  flex: 1;
+}
+
+.soc-intel-rotator .feature-module-rotator__trigger--active {
+  min-height: 114px;
+}
+
+@media (max-width: 900px) {
+  .soc-intel-rotator .feature-module-rotator__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .soc-intel-rotator .feature-module-rotator__image {
+    min-height: 280px;
+  }
+}
+
+/* Context image block: also a diagram — use contain */
+.soc-scroll-band .soc-context-visual {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-surface-soft);
+}
+
+.soc-scroll-band .soc-context-visual img,
+.soc-scroll-band .soc-context-section img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 14rem);
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  box-shadow: none;
+}
+
+/* Tighten subsection spacing inside the warm band */
+.soc-subsection {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--color-hairline-strong);
+}
+
+/* CSS crop: keep the rotator visuals aligned */
+.soc-scroll-band .feature-module__visual img:not(.soc-feature-image) {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .soc-scroll-band .feature-module__body:not(.feature-module__body--visual-only):not(.feature-module__body--rotator) {
+    grid-template-columns: 1fr;
+  }
+
+  .soc-scroll-band .feature-module__body--visual-only .feature-module__image,
+  .soc-scroll-band .soc-context-visual img,
+  .soc-scroll-band .soc-context-section img {
+    max-height: calc(50vh);
+  }
+}
+
