@@ -113,7 +113,7 @@ export default function FeatureModuleRotator({
                   onClick={() => select(index)}
                 >
                   <span className="title-sm feature-module-rotator__title">{service.title}</span>
-                  {isActive && service.description ? (
+                  {service.description ? (
                     <span id={panelId} className="body-sm feature-module-rotator__description">
                       {service.description}
                     </span>

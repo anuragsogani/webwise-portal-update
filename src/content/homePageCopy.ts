@@ -339,8 +339,8 @@ export type SolutionPathService = {
 
 export const SOLUTION_PATHS_SECTION = {
   eyebrow: "What we build",
-  title: "Three delivery domains.",
-  lead: "Most programmes cross boundaries  -  we still name the entry point so you know which conversation to start.",
+  title: "Four operations. One delivery model.",
+  lead: "Security, AI, data, and platform — engineered as intelligent operations that detect, govern, and scale. Each starts with the business pressure, not the tool.",
   exploreLabel: "Explore",
   paths: [
     {

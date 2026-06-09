@@ -1,17 +1,212 @@
-/* SOC product page — layout only; uses site light theme tokens */
+/* ---------------------------------------------------------------------------
+   SOC Product Page — layout, panel system, component overrides
+   Does NOT override any global design-system tokens.
+   --------------------------------------------------------------------------- */
 
-.soc-tagline {
-  margin-top: var(--space-md);
+/* ── Suppress global floating decorations on this page ───────────────────── */
+body:has(.soc-first-scroll) .industry-tile__floats,
+body:has(.soc-first-scroll) .fi-float-layer,
+body:has(.soc-first-scroll) .service-float,
+body:has(.soc-first-scroll) .svc-float-layer,
+body:has(.soc-first-scroll) .service-stack-hero-doodle {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
+
+/* ── Scroll panel system ──────────────────────────────────────────────────── */
+/* Each major section fills at least one viewport and centers its content.    */
+/* The hero panel manages its own height; all others inherit from here.       */
+
+.soc-scroll-panel {
+  min-height: 100dvh;
+  justify-content: center; /* vertically center within the flex column (.section) */
+  scroll-snap-align: start;
+  scroll-margin-top: 0;
+}
+
+/* Hero already controls its own padding — don't double-stack from .section   */
+.soc-scroll-panel.soc-first-scroll {
+  justify-content: flex-start; /* body grid handles internal layout */
+}
+
+/* Non-hero panels: tighter block padding so content stays within the panel   */
+.soc-scroll-panel:not(.soc-first-scroll) {
+  /* tighten panel vertical padding so each section fits more content in a single viewport */
+  padding-block: clamp(var(--space-md), 2vh, 1rem);
+}
+
+/* Enable proximity-based scroll snap on the SOC page */
+body:has(.soc-scroll-panel) {
+  scroll-snap-type: y proximity;
+}
+
+/* ── Shared SOC scroll-band settings ─────────────────────────────────────── */
 
 .soc-scroll-band {
   scroll-margin-top: var(--nav-block-height, 4rem);
 }
 
+/* Remove the old forced disable of scroll-snap */
+#main-content {
+  scroll-snap-type: unset;
+}
+
+/* Container width: single source of truth for all SOC sections */
+.soc-scroll-band > .container,
+.soc-scroll-band .container {
+  width: min(calc(100% - var(--space-xl) * 2), var(--max-width));
+  margin-inline: auto;
+}
+
+/* ── Feature module alignment overrides ──────────────────────────────────── */
+
+.soc-scroll-band .feature-module__top {
+  width: 100%;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.soc-scroll-band .feature-module__top-copy,
+.soc-scroll-band .feature-module__copy {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  align-self: start;
+}
+
+@media (min-width: 900px) {
+  .soc-scroll-band .feature-module__top-copy,
+  .soc-scroll-band .feature-module__copy {
+    max-width: 56rem;
+  }
+}
+
+/* Visual column — transparent, no extra padding */
+.soc-scroll-band .feature-module__visual {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+}
+
+/* ── PANEL 1: Hero ────────────────────────────────────────────────────────── */
+
+.soc-first-scroll {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  margin-top: calc(-1 * (var(--nav-block-height) + env(safe-area-inset-top, 0px)));
+  background: var(--color-canvas);
+}
+
+.soc-first-scroll.section {
+  gap: 0;
+  padding-block: calc(var(--nav-block-height) + env(safe-area-inset-top, 0px)) clamp(3rem, 5vh, 4rem);
+}
+
+.soc-first-scroll__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.soc-first-scroll__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.soc-first-scroll__fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.0) 0%,
+    rgba(255, 255, 255, 0.6) 42%,
+    var(--color-canvas) 82%
+  );
+}
+
+.soc-first-scroll__body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex: 1;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-content: stretch;
+  gap: clamp(0.5rem, 1.2vh, 0.85rem);
+  min-height: calc(100dvh - var(--nav-block-height) - env(safe-area-inset-top, 0px) - clamp(3rem, 5vh, 4rem));
+}
+
+/* Hero copy block */
+.soc-first-scroll__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.soc-first-scroll__copy.hero-band__inner {
+  gap: clamp(0.5rem, 1.1vh, 0.75rem);
+}
+
+.soc-first-scroll__copy .hero-band__title {
+  font-size: clamp(1.75rem, 3.8vw, 2.65rem);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: var(--tracking-display-md);
+  color: var(--color-ink-deep);
+  max-width: min(14.5em, 92vw);
+}
+
+.soc-first-scroll__copy .hero-band__lead {
+  font-size: clamp(0.875rem, 1.35vw, 1rem);
+  line-height: 1.4;
+  max-width: min(34rem, 92vw);
+}
+
+.soc-first-scroll__copy .hero-band__actions {
+  margin-top: 0;
+  gap: var(--space-sm);
+}
+
+.soc-first-scroll__copy .btn {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+/* KPI metrics card */
+.soc-hero-metrics {
+  align-self: center;
+  width: min(1100px, 96%);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 40px rgba(12, 14, 15, 0.06);
+  border-radius: 12px;
+  padding: clamp(0.65rem, 1.5vh, 1rem);
+  margin: clamp(0.75rem, 2vh, 1.25rem) auto 0;
+  border-top: none;
+  z-index: 3;
+}
+
 .soc-metrics-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  align-items: center;
 }
 
 .soc-metric {
@@ -21,6 +216,15 @@
   border-top: 1px solid var(--color-hairline-strong);
 }
 
+/* Inside the hero KPI card, remove borders — card provides the container */
+.soc-hero-metrics .soc-metric {
+  padding-top: 0;
+  border-top: none;
+  text-align: center;
+  padding-block: 0.45rem;
+  gap: 0.25rem;
+}
+
 .soc-metric__value {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
@@ -28,6 +232,12 @@
   letter-spacing: var(--tracking-display-md);
   line-height: 1.1;
   color: var(--color-ink-deep);
+}
+
+.soc-first-scroll .soc-metric__value {
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  display: block;
 }
 
 .soc-metric__counter {
@@ -42,152 +252,367 @@
   color: var(--color-ink);
 }
 
+.soc-first-scroll .soc-metric__label {
+  display: block;
+  margin-top: 0.15rem;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+}
+
 .soc-metric__detail {
   margin: 0;
   color: var(--color-body);
 }
 
-.soc-contrast {
-  font-family: var(--font-display);
-  font-size: var(--text-title-md);
-  font-weight: 500;
-  color: var(--color-accent-teal, #46838c);
+.soc-first-scroll .soc-metric__detail {
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
 }
 
-.soc-feature-image {
-  width: 100%;
-  max-width: none;
+/* Short-viewport adjustments */
+@media (max-height: 860px) {
+  .soc-first-scroll__copy .hero-band__title {
+    font-size: clamp(1.55rem, 3.4vw, 2.25rem);
+  }
+  .soc-first-scroll__copy .hero-band__lead {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+  .soc-first-scroll__copy.hero-band__inner {
+    gap: 0.3rem;
+  }
+  .soc-first-scroll .soc-metric__value {
+    font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  }
+  .soc-first-scroll .soc-metric__label {
+    font-size: 0.78rem;
+  }
+  .soc-first-scroll .soc-metric__detail {
+    font-size: 0.65rem;
+  }
 }
 
-.feature-module__body--visual-only {
-  grid-template-columns: 1fr;
-}
-
-/* True 1×2 split — intro + list | visual (product pages) */
-.feature-module--split .feature-module__body {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: start;
-}
-
-.feature-module--split .feature-module__copy {
-  display: grid;
-  gap: clamp(1.25rem, 2.5vw, 2rem);
-  min-width: 0;
-}
-
-.feature-module--split .feature-module__intro {
-  display: grid;
-  gap: var(--space-md);
-  order: unset;
-}
-
-/* homepage.css sets intro order:2 on reverse — keep intro above list in split columns */
-.feature-module--split.feature-module--reverse .feature-module__intro {
-  order: unset;
-}
-
-.feature-module--split .feature-module__intro .body-md,
-.feature-module--split .feature-module__intro .soc-contrast {
-  margin: 0;
-}
-
-.feature-module--split .feature-module__visual {
-  align-self: start;
-}
-
-.feature-module--split.feature-module--reverse .feature-module__visual {
-  order: 1;
-  align-self: center;
-}
-
-.feature-module--split.feature-module--reverse .feature-module__copy {
-  order: 2;
-}
-
-.feature-module--split .soc-role-list {
-  margin: 0;
-  width: 100%;
-}
-
-.feature-module--split .soc-role-list .feature-module__service--highlight {
-  height: 100%;
-}
-
-.feature-module--split .soc-role-card {
-  height: 100%;
-}
-
-/* Compact capability panel — split columns (ADR runtime, etc.) */
-.feature-module--split .soc-outcome-compare--panel {
-  align-self: center;
-  min-height: auto;
-  justify-content: flex-start;
-  align-items: stretch;
-  text-align: left;
-  padding: clamp(1.5rem, 3vw, 2rem);
-  border-radius: var(--radius-lg);
-  width: 100%;
-}
-
-.feature-module--split .soc-outcome-compare--panel .soc-outcome-compare__eyebrow {
-  margin: 0 0 var(--space-md);
-}
-
-.feature-module--split .soc-outcome-compare--panel .soc-checklist {
-  margin: 0;
-  gap: var(--space-sm);
-}
-
-.soc-pillar-label {
-  margin: var(--space-md) 0 0;
-  font-family: var(--font-ui);
-  font-size: var(--text-title-sm);
-  font-weight: 500;
-  color: var(--color-ink);
-}
-
-.soc-pillar-label:first-child {
-  margin-top: 0;
+@media (max-height: 720px) {
+  .soc-first-scroll.section {
+    padding-bottom: 0.65rem;
+  }
+  .soc-first-scroll__copy .btn {
+    padding: 0.45rem 0.95rem;
+    font-size: 0.82rem;
+  }
+  .soc-hero-metrics {
+    padding-top: 0.55rem;
+  }
+  .soc-metrics-row {
+    gap: 0.5rem;
+  }
 }
 
 @media (max-width: 900px) {
-  .feature-module--split .feature-module__body {
-    grid-template-columns: 1fr;
+  .soc-first-scroll .soc-metrics-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .feature-module--split.feature-module--reverse .feature-module__visual,
-  .feature-module--split.feature-module--reverse .feature-module__copy {
-    order: unset;
-  }
-
-  .feature-module--split.feature-module--reverse .feature-module__visual {
-    align-self: start;
-  }
-
-  .feature-module--split .soc-outcome-compare--panel {
-    align-self: stretch;
+  .soc-hero-metrics {
+    width: calc(100% - 2rem);
+    padding: 0.6rem;
   }
 }
 
-.soc-subsection {
-  margin-top: clamp(3rem, 7vw, 4.5rem);
-  padding-top: clamp(3rem, 7vw, 4.5rem);
-  border-top: 1px solid var(--color-hairline-strong);
+/* ── PANEL 2: Unified Visibility ─────────────────────────────────────────── */
+
+/* Visual-only block: force single-column so image spans full container */
+.soc-scroll-band .feature-module__body--visual-only {
+  display: block !important;
+  width: 100%;
+  margin-top: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.soc-scroll-band .feature-module__body--visual-only .feature-module__visual,
+.soc-scroll-band .feature-module__body--visual-only .feature-module__visual-inner {
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;           /* clips image to rounded corners — no extra card padding needed */
+  background: transparent;
+}
+
+/* Diagram fills the card edge-to-edge; the container border-radius handles corners */
+.soc-scroll-band .feature-module__body--visual-only .feature-module__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* give a bit more vertical room and avoid cropping by using contain */
+  max-height: calc(100dvh - 12rem); /* nav + section padding + header text */
+  object-fit: contain; /* ensure whole diagram is visible */
+  object-position: center center;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Visibility panel: minimal block padding — this is an image-first section */
+.soc-scroll-panel[aria-labelledby="soc-visibility-title"] {
+  padding-block: clamp(var(--space-md), 2vh, 1.25rem);
+}
+
+.soc-scroll-panel[aria-labelledby="soc-visibility-title"] .feature-module__top {
+  margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+@media (max-width: 900px) {
+  .soc-scroll-band .feature-module__body--visual-only .feature-module__image {
+    max-height: 50vh;
+  }
+}
+
+/* ── PANEL 3: Intelligence Engine (rotator) ──────────────────────────────── */
+
+/* Two-column grid: narrow list left, large visual right */
+.soc-intel-rotator .feature-module-rotator__grid {
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1.58fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: start;  /* visual column sets height; list flows naturally */
+}
+
+/* Explicitly place the visual in the large right column, list in the narrow left column */
+.soc-intel-rotator .feature-module-rotator__visual {
+  order: 2;  /* right / wide column */
+  overflow: visible;
+  padding: clamp(0.75rem, 1.5vw, 1.25rem);
+  border-radius: 12px;
+  background: var(--color-surface-soft);
+  display: block;
+}
+
+.soc-intel-rotator .feature-module-rotator__services {
+  order: 1;  /* left / narrow column */
+}
+
+/* Image: always shows at full width of its column, natural height, never cropped */
+.soc-intel-rotator .feature-module-rotator__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;       /* no artificial cropping */
+  object-fit: contain;
+  object-position: center center;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 6px;
+}
+
+/* Block any ancestor overflow:hidden from clipping the visual */
+.soc-scroll-band .feature-module__body--rotator {
+  overflow: visible;
+}
+
+/* List: natural flex column — no forced equal heights, no empty gaps */
+.soc-intel-rotator .feature-module-rotator__services {
+  display: block;
+  overflow: visible;
+}
+
+.soc-intel-rotator .feature-module-rotator__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.soc-intel-rotator .feature-module-rotator__item {
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.soc-intel-rotator .feature-module-rotator__item:last-child {
+  border-bottom: none;
+}
+
+/* Triggers: natural height, no forced stretching */
+.soc-intel-rotator .feature-module-rotator__trigger {
+  width: 100%;
+  height: auto;
+  padding: 0.7rem var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+.soc-intel-rotator .feature-module-rotator__trigger--active {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+}
+
+.soc-intel-rotator .feature-module-rotator__trigger--inactive {
+  padding: 0.6rem var(--space-sm);
+}
+
+.soc-intel-rotator .feature-module-rotator__title {
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+}
+
+/* Reduce section heading so the full section feels compact */
+.section[aria-labelledby="soc-intel-title"] .feature-module__title {
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  line-height: 1.1;
+}
+.section[aria-labelledby="soc-intel-title"] .body-md {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.section[aria-labelledby="soc-intel-title"] .eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 900px) {
+  .soc-intel-rotator .feature-module-rotator__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Stacked layout: 1 row of 5 tiles, visual below */
+.soc-intel-rotator--stacked .feature-module-rotator__grid {
+  display: grid;
+  grid-template-areas:
+    "services"
+    "visual";
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  align-items: start;
+}
+
+.soc-intel-rotator--stacked .feature-module-rotator__services {
+  grid-area: services;
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.soc-intel-rotator--stacked .feature-module-rotator__list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.5rem, 1vw, 1rem);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.soc-intel-rotator--stacked .feature-module-rotator__item {
+  border: none;
+  min-width: 0;
+  height: 100%;
+}
+
+.soc-intel-rotator--stacked .feature-module-rotator__trigger {
+  width: 100%;
+  height: 100%;
+  min-height: 6.75rem;
+  white-space: normal;
+  padding: 0.7rem 0.9rem;
+  background: var(--color-surface-soft);
+  border-radius: 12px;
+  box-shadow: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  overflow: visible;
+}
+
+.soc-intel-rotator--stacked .feature-module-rotator__trigger--active {
+  background: var(--editorial-tile-bg, #e8e4dc);
+  box-shadow: 0 6px 18px rgba(12, 14, 15, 0.06);
+}
+
+.soc-intel-rotator--stacked .feature-module-rotator__visual {
+  grid-area: visual;
+  width: 100%;
+  margin-top: 0;
+  padding: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
+.soc-intel-rotator--stacked .feature-module-rotator__image {
+  width: 100%;
+  height: auto;
+  max-height: 68vh;
+  object-fit: contain;
+}
+
+.soc-intel-rotator--stacked .feature-module-rotator__title {
+  line-height: 1.15;
+  font-size: 0.9rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.soc-intel-rotator--stacked .feature-module-rotator__description {
+  display: block;
+  overflow: visible;
+  line-height: 1.3;
+  margin-top: 0.3rem;
+  max-height: none;
+  white-space: normal;
+  width: 100%;
+  font-size: 0.76rem;
+}
+
+@media (max-width: 1099px) {
+  .soc-intel-rotator--stacked .feature-module-rotator__list {
+    grid-template-columns: repeat(5, minmax(140px, 1fr));
+    overflow-x: auto;
+  }
+}
+
+/* ── PANEL 4: AI SOC Analysts ─────────────────────────────────────────────── */
+
+.soc-ai-stack {
+  display: grid;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+  width: 100%;
+}
+
+.soc-ai-visual {
+  width: 100%;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+.soc-ai-visual .soc-feature-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 8rem);
+  object-fit: contain;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .soc-ai-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(2rem, 5vw, 3.5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: stretch;
+  margin-top: clamp(1.25rem, 2.5vw, 2rem);
 }
 
+/* 2×2 role card grid */
 .soc-role-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-md);
   align-items: stretch;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .soc-role-list .feature-module__service {
@@ -222,11 +647,7 @@
   margin: 0;
 }
 
-.soc-role-list .soc-role-card:first-child,
-.soc-role-list .soc-role-card:last-child {
-  padding: var(--space-lg);
-}
-
+/* Alert-reduction widget */
 .soc-outcome-compare {
   display: flex;
   flex-direction: column;
@@ -238,7 +659,6 @@
   border: 1px solid var(--color-hairline-strong);
   background: var(--color-surface-soft);
   border-radius: var(--radius-lg);
-  min-height: auto;
 }
 
 .soc-outcome-compare--stats {
@@ -276,164 +696,228 @@
   color: var(--color-accent-teal, #46838c);
 }
 
-.soc-dual-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 5vw, 3.5rem);
-}
-
-.soc-checklist {
-  list-style: none;
-  margin: var(--space-md) 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.35rem 1rem;
-}
-
-.soc-checklist li {
-  font-size: var(--text-body-sm);
-  color: var(--color-body);
-}
-
-.soc-checklist li::before {
-  content: "✓ ";
-  color: var(--color-accent-teal, #46838c);
-}
-
-.soc-context-result {
-  margin-top: var(--space-md);
-  color: var(--color-body-strong);
-}
-
-.soc-checklist--stack {
-  grid-template-columns: 1fr;
-}
-
-.soc-outcome-compare .soc-checklist {
-  text-align: left;
-  width: 100%;
-}
-
-.soc-action-chips {
-  margin-top: var(--space-md);
-}
-
-.compliance-framework-list {
-  margin-top: var(--space-md);
-}
-
-.compliance-framework-list__grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem 1.25rem;
-}
-
-.compliance-framework-list__item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  min-width: 0;
-}
-
-.compliance-framework-list__mark {
-  flex-shrink: 0;
-  width: 1.75rem;
-  height: 1.75rem;
-  object-fit: contain;
-  border-radius: var(--radius-sm);
-}
-
-.compliance-framework-list__mark--fallback {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--color-muted);
-  background: var(--color-surface-soft);
-  border: 1px solid var(--color-hairline-strong);
-}
-
-.compliance-framework-list__label {
-  font-family: var(--font-ui);
-  font-size: var(--text-body-sm);
-  font-weight: 500;
-  color: var(--color-body-strong);
-  line-height: 1.35;
-}
-
-.compliance-framework-list__others {
-  margin-top: var(--space-lg);
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--color-hairline);
-}
-
-.compliance-framework-list__others-label {
-  margin: 0 0 var(--space-sm);
-  font-family: var(--font-ui);
-  font-size: var(--text-caption);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-.compliance-framework-list__others-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0.35rem;
-}
-
-.compliance-framework-list__others-list li {
-  font-size: var(--text-body-sm);
-  color: var(--color-body);
-  padding-left: 1rem;
-  position: relative;
-}
-
-.compliance-framework-list__others-list li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--color-muted);
-}
-
-
-.soc-why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-xl);
-  margin-top: var(--space-xl);
-  padding-top: var(--space-xl);
-  border-top: 1px solid var(--color-hairline);
-}
-
 @media (max-width: 1024px) {
-  .soc-metrics-row,
-  .soc-why-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .soc-ai-row,
-  .soc-dual-grid {
+  .soc-ai-row {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
-  .soc-metrics-row,
-  .soc-role-list,
-  .soc-checklist,
-  .soc-why-grid,
-  .compliance-framework-list__grid {
+  .soc-role-list {
     grid-template-columns: 1fr;
   }
+}
+
+/* ── PANEL 5: Context Layer ───────────────────────────────────────────────── */
+
+/* Stacked context layout: copy on top, full-width image below */
+.soc-context-stack {
+  display: grid;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  width: 100%;
+}
+
+.soc-context-copy {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+  max-width: min(68rem, 100%);
+}
+
+.soc-context-visual {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.soc-context-visual img,
+.soc-context-stack img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 6rem);
+  object-fit: contain;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: none;
+  margin-inline: 0;
+}
+
+/* Teal accent text for the contrast/highlight copy */
+.soc-contrast {
+  font-family: var(--font-display);
+  font-size: var(--text-title-md);
+  font-weight: 500;
+  color: var(--color-accent-teal, #46838c);
+}
+
+.soc-context-copy .eyebrow,
+.soc-context-copy .display-lg,
+.soc-context-copy .body-md {
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .soc-context-visual img,
+  .soc-context-stack img {
+    max-height: 44vh;
+  }
+  .soc-context-copy .eyebrow,
+  .soc-context-copy .display-lg,
+  .soc-context-copy .body-md {
+    white-space: normal;
+  }
+}
+
+/* ── PANEL 6: Automated Response ─────────────────────────────────────────── */
+
+/* Split: intro + chips left, mode cards right */
+.soc-automation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.soc-automation-intro {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.soc-action-chips {
+  margin-top: var(--space-sm);
+}
+
+/* Stacked mode cards */
+.soc-mode-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-md);
+  align-self: center;
+}
+
+.soc-mode-card {
+  position: relative;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-hairline-strong);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: var(--space-md);
+  row-gap: var(--space-xs);
+  align-items: start;
+}
+
+.soc-mode-card__step {
+  grid-row: 1 / 3;
+  align-self: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+
+.soc-mode-card__title {
+  margin: 0;
+  color: var(--color-ink-deep);
+  grid-column: 2;
+}
+
+.soc-mode-card__body {
+  margin: 0;
+  color: var(--color-body);
+  grid-column: 2;
+}
+
+/* Highlighted "Full Autonomous" card — teal accent */
+.soc-mode-card--featured {
+  border-color: var(--color-accent-teal, #46838c);
+  background: rgba(70, 131, 140, 0.06);
+}
+
+.soc-mode-card--featured .soc-mode-card__step {
+  color: var(--color-accent-teal, #46838c);
+}
+
+@media (max-width: 900px) {
+  .soc-automation-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── PANEL 7: Why Teams Choose Us ────────────────────────────────────────── */
+
+.soc-why-grid {
+  list-style: none;
+  margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.soc-why-card {
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline-strong);
+  display: grid;
+  gap: var(--space-sm);
+  align-content: start;
+  /* Subtle hover lift */
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.soc-why-card:hover {
+  box-shadow: 0 4px 16px rgba(12, 14, 15, 0.08);
+  transform: translateY(-2px);
+}
+
+.soc-why-card__title {
+  margin: 0;
+  color: var(--color-ink-deep);
+}
+
+.soc-why-card__body {
+  margin: 0;
+  color: var(--color-body);
+}
+
+@media (max-width: 1024px) {
+  .soc-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .soc-why-grid,
+  .soc-metrics-row {
+    grid-template-columns: 1fr;
+  }
+  .soc-first-scroll .soc-metrics-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ── Shared utility ───────────────────────────────────────────────────────── */
+
+/* Full-width images that don't need extra padding/radius */
+.soc-feature-image {
+  width: 100%;
+  max-width: none;
+}
+
+/* Chip list */
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
 }

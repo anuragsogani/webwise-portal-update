@@ -2,7 +2,7 @@
 
 /** Scenic backgrounds — user landscape + sky band */
 export const HOME_SCENE = {
-  hero: "/images/scenes/hero-landscape.png",
+  hero: "/images/scenes/hero_image.png",
   footer: "/images/trust/data-encryption.png",
   sky: "/images/scenes/sky-clouds.png",
 } as const;

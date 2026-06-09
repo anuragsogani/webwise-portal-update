@@ -1,0 +1,80 @@
+/* ════════════════════════════════════════════════════════════════
+   Operational Intelligence Fabric — Cognition Field
+   Duna-inspired · editorial · architectural · lime accent only.
+   Light surfaces, fine ink lines, lime activation. No blue/purple.
+   ════════════════════════════════════════════════════════════════ */
+
+.oif {
+  --oif-ink: #1a1816;
+  --oif-edge: rgba(26, 24, 22, 0.09);
+  --oif-edge-active: rgba(174, 236, 29, 0.5);
+  --oif-node: rgba(26, 24, 22, 0.3);
+  --oif-accent: #aeec1d;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ── Dotted wave terrain (depth via opacity buckets) ──────────── */
+.oif-dots-far {
+  fill: rgba(26, 24, 22, 0.16);
+}
+.oif-dots-near {
+  fill: rgba(26, 24, 22, 0.42);
+}
+/* lime traces only the wave crests */
+.oif-dots-lime {
+  fill: var(--oif-accent);
+  opacity: 0.92;
+}
+
+/* ── Core ─────────────────────────────────────────────────────── */
+.oif-core__halo {
+  fill: url(#oif-halo);
+}
+.oif-core__ring {
+  fill: none;
+  stroke: rgba(26, 24, 22, 0.45);
+  stroke-width: 0.5;
+  vector-effect: non-scaling-stroke;
+}
+.oif-core__ripple {
+  fill: none;
+  stroke: var(--oif-accent);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.oif-core__diamond-bg {
+  fill: #f7f7f5;
+}
+.oif-core__diamond {
+  fill: none;
+  stroke: var(--oif-accent);
+  stroke-width: 1.4;
+}
+.oif-core__dot {
+  fill: var(--oif-accent);
+}
+
+/* ── Service markers riding the wave (Security · AI · Data · Platform) ── */
+.oif-svc { animation: oif-svc-cycle 5.6s ease-in-out infinite; }
+.oif-svc__ring { fill: none; stroke: var(--oif-accent); stroke-width: 1; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.oif-svc__dot { fill: var(--oif-accent); }
+.oif-svc__label { font-family: var(--font-mono, "JetBrains Mono", ui-monospace, monospace); font-size: 13px; letter-spacing: 0.16em; fill: rgba(26, 24, 22, 0.55); }
+@keyframes oif-svc-cycle {
+  0%, 100% { opacity: 0.32; }
+  45%, 60% { opacity: 1; }
+}
+.oif-svc .oif-svc__ring { animation: oif-svc-ring 5.6s ease-out infinite; animation-delay: inherit; }
+@keyframes oif-svc-ring {
+  0%, 42% { transform: scale(0.6); opacity: 0; }
+  48% { opacity: 0.6; }
+  72% { transform: scale(3.4); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oif-svc, .oif-svc__ring { animation: none; }
+}

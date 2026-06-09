@@ -391,8 +391,155 @@ export const CYBER_SOLUTIONS: readonly CyberSolution[] = [
 
 export const PRODUCTS_HERO = {
   badge: "Products",
-  headline: "Devices → Cloud → Detection → Response",
-  body: "Autonomous SOC, Cloud Security & Governance, Agent Detection & Response, and audit-ready GRC — unified platforms for outcomes, not integrations.",
+  headline: "One intelligence core. Integrated from day one.",
+  body: "The Autonomous CSOC is the core — connect the security tools you already run, then layer in Endpoint, Cloud, and Agent platforms that share one data model and one response fabric. No bolt-ons. No integration projects.",
+} as const;
+
+/** Core-and-layers model for the redesigned products landing page. */
+export type ProductRole = "core" | "layer";
+
+export type ProductMetric = { readonly value: string; readonly label: string };
+
+export type ProductShowcase = {
+  readonly id: string;
+  readonly role: ProductRole;
+  readonly kicker: string;
+  readonly title: string;
+  /** short display name used in prose */
+  readonly shortName: string;
+  /** label inside the core diagram */
+  readonly diagramLabel: string;
+  readonly oneLiner: string;
+  /** a hard data pointer, not theory */
+  readonly metric: ProductMetric;
+  /** concrete capability checklist */
+  readonly capabilities: readonly string[];
+  /** single hard outcome line */
+  readonly outcome: string;
+  readonly accent: string;
+  readonly to: string;
+  readonly ctaLabel: string;
+};
+
+export const PRODUCT_SHOWCASE: readonly ProductShowcase[] = [
+  {
+    id: "soc",
+    role: "core",
+    kicker: "The intelligence core",
+    title: "Autonomous CSOC Platform",
+    shortName: "CSOC",
+    diagramLabel: "CSOC",
+    oneLiner:
+      "Connect the security tools you already run and AiRAT's own platforms into one plane — every signal correlated, triaged, and actioned by AI analysts with a human on every response.",
+    metric: { value: "2,000 → 12", label: "daily alerts to prioritized incidents" },
+    capabilities: [
+      "100+ tool & data integrations",
+      "SIEM · UEBA · open-XDR correlation",
+      "Multi-agent triage with reasoning traces",
+      "Threat hunting & MITRE ATT&CK mapping",
+      "SOAR automation, human-approved",
+      "Board-ready evidence & SLA reporting",
+    ],
+    outcome: "One correlated picture, investigated 24×7 — not four disconnected consoles.",
+    accent: "#aeec1d",
+    to: "/products/soc",
+    ctaLabel: "See the platform",
+  },
+  {
+    id: "xdr",
+    role: "layer",
+    kicker: "Endpoint plane · integrates day one",
+    title: "Endpoint Operations & Security Platform",
+    shortName: "Endpoint",
+    diagramLabel: "Endpoint",
+    oneLiner:
+      "Manage, patch, enforce policy, run privileged remote operations, and prove compliance for every endpoint — from one command center.",
+    metric: { value: "1 control plane", label: "thousands of endpoints, zero direct access" },
+    capabilities: [
+      "Software & patch lifecycle automation",
+      "Privileged remote operations centre",
+      "Zero-trust device comms (mTLS)",
+      "Security policy enforcement",
+      "Fleet automation, rollback & recovery",
+      "Deployment & compliance tracking",
+    ],
+    outcome: "Faster remediation, smaller exposure windows, consistent baselines on every device.",
+    accent: "#46838c",
+    to: "/products/endpoint",
+    ctaLabel: "See the platform",
+  },
+  {
+    id: "cspm",
+    role: "layer",
+    kicker: "Cloud plane · integrates day one",
+    title: "Cloud Security & Governance Platform",
+    shortName: "Cloud",
+    diagramLabel: "Cloud",
+    oneLiner:
+      "Secure every cloud, govern every resource — posture, identity, compliance, and cost intelligence in one continuous view that feeds the core.",
+    metric: { value: "7+ frameworks", label: "ISO · SOC 2 · PCI · GDPR · NIST · CIS" },
+    capabilities: [
+      "Cloud posture management (CSPM)",
+      "DevSecOps & IaC validation",
+      "Identity & least-privilege governance",
+      "Continuous compliance mapping",
+      "Cloud cost intelligence",
+      "Multi-cloud & hybrid visibility",
+    ],
+    outcome: "Continuous posture and cost intelligence across every cloud — not point-in-time scans.",
+    accent: "#c79a3e",
+    to: "/products/cspm",
+    ctaLabel: "See the platform",
+  },
+  {
+    id: "adr",
+    role: "layer",
+    kicker: "Agent plane · integrates day one",
+    title: "Agent Detection & Response",
+    shortName: "Agents",
+    diagramLabel: "Agents",
+    oneLiner:
+      "Secure the AI workforce — agents, MCP servers, copilots — with visibility, governance, and response built for agent behavior, streamed into the core.",
+    metric: { value: "8+ domains", label: "agent visibility, governance & response" },
+    capabilities: [
+      "AI workforce inventory & visibility",
+      "Prompt & interaction security",
+      "Agent governance & policy enforcement",
+      "Runtime protection & inspection",
+      "Automated & analyst-driven response",
+      "Full agent audit trails",
+    ],
+    outcome: "Every agent decision visible, governed, and auditable.",
+    accent: "#17100d",
+    to: "/products/adr",
+    ctaLabel: "See the platform",
+  },
+] as const;
+
+export const PRODUCTS_MODEL = {
+  eyebrow: "The model",
+  title: "Bring the stack you already run. We make it intelligent.",
+  body: "SIEM, EDR, firewalls, identity, ticketing, threat intel — the CSOC ingests the tools you already run and turns scattered telemetry into correlated, decision-ready intelligence. Then Endpoint, Cloud, and Agent platforms layer on top, sharing the same data model from day one.",
+  stats: [
+    { value: "100+", label: "integrations" },
+    { value: "1", label: "unified data plane" },
+    { value: "0", label: "rip-and-replace" },
+  ],
+} as const;
+
+/** Hard proof stats for the CSOC core block. */
+export const PRODUCTS_CORE_STATS = [
+  { value: "87%", label: "alert noise eliminated" },
+  { value: "12×", label: "faster investigation" },
+  { value: "< 5 min", label: "mean time to respond" },
+  { value: "99.95%", label: "platform uptime" },
+] as const;
+
+export const PRODUCTS_CORE_CTA = {
+  title: "Start with the core. The layers come with it.",
+  body: "Tell us where the pressure is — alert overload, cloud posture, agentic AI rollout, or audit season — and we'll stand up the SOC core with the layers you need, integrated from day one.",
+  cta: "Book a strategy call",
+  ctaTo: "/contact",
 } as const;
 
 export const PRODUCTS_NAV_SECTIONS = [
