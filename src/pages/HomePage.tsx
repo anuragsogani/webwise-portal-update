@@ -17,36 +17,24 @@ import {
   HERO_BADGE,
   HERO_H1_LINKS,
   HERO_H1_LINE3,
-  HERO_SECONDARY_CTA_LABEL,
-  HERO_TERTIARY_CTA_LABEL,
   HOME_AI_SHOWCASE,
   HOME_CLIENTS_SECTION,
   HOME_FAQ,
   HOME_STATEMENT,
-  OUTCOME_TAGS,
   SOLUTION_PATHS_SECTION,
 } from "../content/homePageCopy";
-import FeatureModuleRotator from "../components/FeatureModuleRotator";
-import {
-  HOME_AI_SERVICE_VISUALS,
-  HOME_DATA_SERVICE_VISUALS,
-  HOME_PATH_VISUALS,
-  HOME_SCENE,
-  HOME_SECURITY_SERVICE_VISUALS,
-} from "../content/homePageVisuals";
+import PillarVisual from "../components/PillarVisual";
+import { SERVICES_PILLARS } from "../content/servicesPageCopy";
+import { HOME_SCENE } from "../content/homePageVisuals";
 import "../styles/homepage.css";
+import "../styles/services-page.css";
 
-const HOME_ROTATOR_VISUALS = [
-  HOME_SECURITY_SERVICE_VISUALS,
-  HOME_AI_SERVICE_VISUALS,
-  HOME_DATA_SERVICE_VISUALS,
-] as const;
-const HOME_ROTATOR_LABELS = [
-  "Security capability highlights",
-  "AI capability highlights",
-  "Data and analytics capability highlights",
-] as const;
-const HOME_ROTATOR_ID_PREFIXES = ["security-service", "ai-service", "data-service"] as const;
+const PILLAR_ACCENTS: Record<string, string> = {
+  security: "#46838c",
+  ai: "#9bd40f",
+  data: "#c79a3e",
+  platform: "#17100d",
+};
 
 export default function HomePage() {
   return (
@@ -94,36 +82,30 @@ export default function HomePage() {
                 </span>
               </h1>
             </RevealOnScroll>
-            <RevealOnScroll delay={3}>
-              <div className="hero-band__tags">
-                {OUTCOME_TAGS.map((tag) => (
-                  <span key={tag.text} className="badge-pill">
-                    {tag.text}
-                  </span>
-                ))}
-              </div>
-            </RevealOnScroll>
-            <RevealOnScroll delay={4}>
-              <div className="hero-band__actions">
-                <Link to="/contact" className="btn btn--primary">
-                  Book a strategy call
+            <RevealOnScroll delay={4} className="hero-scene__cta">
+              <Link to="/contact" className="btn btn--primary">
+                Book a strategy call
+              </Link>
+              <div className="hero-scene__sublinks">
+                <Link to="/services" className="btn btn--secondary hero-scene__sublink">
+                  Explore services →
                 </Link>
-                <Link to="/portfolio" className="btn btn--secondary">
-                  {HERO_SECONDARY_CTA_LABEL}
-                </Link>
-                <Link to="/services" className="text-link">
-                  {HERO_TERTIARY_CTA_LABEL} →
+                <Link to="/products" className="btn btn--secondary hero-scene__sublink">
+                  Explore products →
                 </Link>
               </div>
             </RevealOnScroll>
           </div>
-          <RevealOnScroll direction="fade" delay={5} className="hero-scene__logos">
+        </section>
+
+        <RevealOnScroll direction="fade" delay={5} className="hero-scene__logos-band">
+          <div className="hero-scene__logos">
             <div className="container hero-scene__logos-inner">
               <p className="hero-scene__logos-label">{HOME_CLIENTS_SECTION.lead}</p>
               <ClientLogoMarquee />
             </div>
-          </RevealOnScroll>
-        </section>
+          </div>
+        </RevealOnScroll>
 
         <OutcomesBand />
 
@@ -172,73 +154,36 @@ export default function HomePage() {
             </RevealOnScroll>
           </div>
 
-          {SOLUTION_PATHS_SECTION.paths.map((path, pathIndex) => {
-            const isReverse = pathIndex % 2 === 1;
-            const copyDirection = isReverse ? "right" : "left";
-            const imageDirection = isReverse ? "left" : "right";
-
-            return (
-              <div
-                key={path.title}
-                className={`container feature-module${isReverse ? " feature-module--reverse" : ""}`}
+          <RevealOnScroll className="container home-ops-grid" as="div">
+            {SERVICES_PILLARS.map((pillar) => (
+              <Link
+                key={pillar.id}
+                to={`/services#pillar-${pillar.id}`}
+                className="home-ops-card"
+                data-accent={pillar.id}
+                style={{ ["--ops-accent" as string]: PILLAR_ACCENTS[pillar.id] } as React.CSSProperties}
               >
-                <div className="feature-module__top">
-                  <RevealOnScroll className="feature-module__top-copy" direction={copyDirection}>
-                    <p className="eyebrow">{path.metaType}</p>
-                    <h3 className="display-lg feature-module__title">{path.title}</h3>
-                    <p className="body-md">{path.body}</p>
-                  </RevealOnScroll>
-                  <RevealOnScroll direction="up" delay={1}>
-                    <Link to={path.to} className="btn btn--explore">
-                      {SOLUTION_PATHS_SECTION.exploreLabel} →
-                    </Link>
-                  </RevealOnScroll>
+                <div className="home-ops-card__visual">
+                  <PillarVisual id={pillar.id} />
                 </div>
+                <div className="home-ops-card__copy">
+                  <span className="home-ops-card__label label-mono">{pillar.label}</span>
+                  <h3 className="title-md home-ops-card__title">{pillar.headline}</h3>
+                  <p className="body-sm">{pillar.subhead}</p>
+                  <span className="home-ops-card__cta">Explore →</span>
+                </div>
+              </Link>
+            ))}
+          </RevealOnScroll>
 
-                <div className="feature-module__body feature-module__body--rotator">
-                  {pathIndex < HOME_ROTATOR_VISUALS.length ? (
-                    <RevealOnScroll delay={2} className="feature-module-rotator-reveal reveal--slow">
-                      <FeatureModuleRotator
-                        services={path.services}
-                        visuals={HOME_ROTATOR_VISUALS[pathIndex]!}
-                        listLabel={HOME_ROTATOR_LABELS[pathIndex]}
-                        idPrefix={HOME_ROTATOR_ID_PREFIXES[pathIndex]}
-                      />
-                    </RevealOnScroll>
-                  ) : (
-                    <>
-                      {HOME_PATH_VISUALS[pathIndex] ? (
-                        <RevealOnScroll direction={imageDirection} delay={2} className="feature-module__visual reveal--slow">
-                          <img
-                            className="feature-module__image"
-                            src={HOME_PATH_VISUALS[pathIndex]!.src}
-                            alt={HOME_PATH_VISUALS[pathIndex]!.alt}
-                            width={HOME_PATH_VISUALS[pathIndex]!.width}
-                            height={HOME_PATH_VISUALS[pathIndex]!.height}
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </RevealOnScroll>
-                      ) : null}
-                      <RevealOnScroll delay={3} className="feature-module__services">
-                        <ul className="feature-module__service-list">
-                          {path.services.map((service) => (
-                            <li
-                              key={service.title}
-                              className={`feature-module__service${"highlight" in service && service.highlight ? " feature-module__service--highlight" : ""}`}
-                            >
-                              <h4 className="title-sm">{service.title}</h4>
-                              {service.description ? <p className="body-sm">{service.description}</p> : null}
-                            </li>
-                          ))}
-                        </ul>
-                      </RevealOnScroll>
-                    </>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+          <div className="container home-ops-foot">
+            <Link to="/services" className="btn btn--secondary">
+              View all services →
+            </Link>
+            <Link to="/products" className="btn btn--secondary">
+              Explore products →
+            </Link>
+          </div>
         </section>
 
         <section className="section section--soft" id="case-studies">
@@ -280,7 +225,9 @@ export default function HomePage() {
         <section className="section section--soft home-statement-band home-statement-band--pre-faq">
           <div className="container section-head section-head--center">
             <RevealOnScroll>
-              <p className="display-lg home-statement home-statement--single-line">{HOME_STATEMENT}</p>
+              <p className="display-lg home-statement home-statement--single-line">
+                <span className="services-closing-title">{HOME_STATEMENT}</span>
+              </p>
             </RevealOnScroll>
           </div>
         </section>

@@ -109,16 +109,12 @@ export const SOC_SCROLL_TWO = {
     eyebrow: "AI SOC analysts",
     title: "Your 24×7 security operations team",
     lead: "AI agents continuously investigate alerts, validate findings, gather evidence, and provide actionable recommendations.",
-    roles: [
-      { icon: "shield", title: "L1 Triage Analyst", body: "Filters noise and validates alerts." },
-      { icon: "search", title: "L2 Investigation Analyst", body: "Performs deep investigations and correlation." },
-      { icon: "target", title: "Threat Hunter", body: "Searches historical activity and hidden attack patterns." },
-      { icon: "bolt", title: "Response Coordinator", body: "Generates remediation plans and response actions." },
-    ],
-    outcomeBefore: "2,000",
-    outcomeBeforeLabel: "Alerts",
-    outcomeAfter: "12",
-    outcomeAfterLabel: "Prioritized incidents",
+    visual: {
+      src: `${CSOC}/csoc_ai_soc.png`,
+      alt: "AI SOC analysts workflow diagram showing alerts transformed into prioritized incidents by autonomous operations",
+      width: 1600,
+      height: 983,
+    },
   },
   context: {
     eyebrow: "Context layer",
@@ -136,7 +132,7 @@ export const SOC_SCROLL_TWO = {
     ],
     result: "Every alert is analyzed with complete environmental context before reaching your team.",
     visual: {
-      src: `${CSOC}/csoc_contextlayer_trim.png`,
+      src: `${CSOC}/csoc_contextlayer.png`,
       alt: "Context engine diagram showing unified context sources feeding a security knowledge graph that powers attack path analysis, AI investigation, threat correlation, risk prioritization, and autonomous response",
       width: 1672,
       height: 941,
@@ -184,16 +180,16 @@ export const SOC_INTELLIGENCE_ROTATOR_VISUALS: readonly HomeVisual[] = [
     height: 959,
   },
   {
-    src: `${CSOC}/csoc_chain_4_trim.png`,
-    alt: "Evidence trails chain showing the sequence of signals, decisions, and response actions in an incident",
-    width: 1511,
-    height: 656,
+    src: `${CSOC}/csoc_chain_4.png`,
+    alt: "Threat intel enrichment chain showing raw signals enriched into high-confidence intelligence",
+    width: 1668,
+    height: 943,
   },
   {
-    src: `${CSOC}/csoc_chain_5_trim.png`,
+    src: `${CSOC}/csoc_chain_5.png`,
     alt: "Risk prioritization chain showing how threats are ranked and routed to response workflows",
-    width: 1562,
-    height: 671,
+    width: 1672,
+    height: 941,
   },
 ] as const;
 

@@ -29,6 +29,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import SocProductPage from "./pages/SocProductPage";
 import AdrProductPage from "./pages/AdrProductPage";
 import CspmProductPage from "./pages/CspmProductPage";
+import EndpointProductPage from "./pages/EndpointProductPage";
 import IntegrationsPage from "./pages/IntegrationsPage";
 import TrustPage from "./pages/TrustPage";
 import { authApi } from "./api/auth";
@@ -90,11 +91,12 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
 const lazySuspense = <div className="section" style={{ minHeight: "40vh" }} />;
 
 export default function App() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    if (hash) return; // hash targets are scrolled into view by the page
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <Routes>
@@ -106,6 +108,7 @@ export default function App() {
       <Route path="/products/soc" element={<SocProductPage />} />
       <Route path="/products/adr" element={<AdrProductPage />} />
       <Route path="/products/cspm" element={<CspmProductPage />} />
+      <Route path="/products/endpoint" element={<EndpointProductPage />} />
       <Route path="/products/:productId" element={<ProductDetailPage />} />
       <Route path="/integrations" element={<IntegrationsPage />} />
       <Route path="/services/aeo-geo" element={<GeoAeoServicePage />} />

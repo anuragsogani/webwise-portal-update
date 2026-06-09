@@ -73,7 +73,7 @@ export default function SocProductPage() {
   }, []);
 
   const { intelligence, aiSoc, context, automation } = SOC_SCROLL_TWO;
-  const { dashboard, why, cta } = SOC_SCROLL_THREE;
+  const { why, cta } = SOC_SCROLL_THREE;
 
   return (
     <AiratShell>
@@ -81,8 +81,12 @@ export default function SocProductPage() {
       <SiteHeader />
 
       <main id="main-content">
-        {/* Scroll 1 — Hero, metrics, unified visibility */}
-        <section className="soc-first-scroll section soc-scroll-band" aria-labelledby="soc-hero-title">
+
+        {/* ── PANEL 1: Hero + KPI metrics ──────────────────────────── */}
+        <section
+          className="soc-scroll-panel soc-first-scroll section soc-scroll-band"
+          aria-labelledby="soc-hero-title"
+        >
           <div className="soc-first-scroll__bg" aria-hidden="true">
             <img
               src={SOC_HERO.background.src}
@@ -94,6 +98,7 @@ export default function SocProductPage() {
             />
             <div className="soc-first-scroll__fade" />
           </div>
+
           <div className="container soc-first-scroll__body">
             <div className="hero-band__inner soc-first-scroll__copy">
               <nav className="page-breadcrumb" aria-label="Breadcrumb">
@@ -115,6 +120,7 @@ export default function SocProductPage() {
                 </Link>
               </div>
             </div>
+
             <div className="soc-hero-metrics" aria-label="Platform metrics">
               <div className="soc-metrics-row" role="list">
                 {SOC_METRICS.map((m, i) => (
@@ -123,7 +129,6 @@ export default function SocProductPage() {
                     className="soc-metric"
                     delay={(i + 1) as 1 | 2 | 3 | 4 | 5}
                     as="article"
-                    role="listitem"
                   >
                     <span className="soc-metric__value">
                       {"counter" in m && m.counter ? (
@@ -146,7 +151,11 @@ export default function SocProductPage() {
           </div>
         </section>
 
-        <section className="section soc-scroll-band" aria-labelledby="soc-visibility-title">
+        {/* ── PANEL 2: Unified Visibility ──────────────────────────── */}
+        <section
+          className="soc-scroll-panel section soc-scroll-band"
+          aria-labelledby="soc-visibility-title"
+        >
           <div className="container feature-module">
             <div className="feature-module__top">
               <div className="feature-module__top-copy">
@@ -157,11 +166,13 @@ export default function SocProductPage() {
                 <p className="body-md">{SOC_SCROLL_ONE.lead}</p>
               </div>
             </div>
-
-            {/* Replace the left text list with a full visual block that explains integrations */}
             <div className="feature-module__body feature-module__body--visual-only">
               <div className="feature-module__visual">
-                <RevealOnScroll className="feature-module__visual-inner" direction="fade" threshold={0.12}>
+                <RevealOnScroll
+                  className="feature-module__visual-inner"
+                  direction="fade"
+                  threshold={0.12}
+                >
                   <img
                     className="feature-module__image soc-feature-image"
                     src={SOC_SCROLL_ONE.visual.src}
@@ -177,8 +188,11 @@ export default function SocProductPage() {
           </div>
         </section>
 
-        {/* Scroll 2 — Intelligence, AI SOC, context, automation */}
-        <section className="section section--warm soc-scroll-band" aria-labelledby="soc-intel-title">
+        {/* ── PANEL 3: Intelligence Engine ─────────────────────────── */}
+        <section
+          className="soc-scroll-panel section section--warm soc-scroll-band"
+          aria-labelledby="soc-intel-title"
+        >
           <div className="container feature-module feature-module--reverse">
             <div className="feature-module__top">
               <div className="feature-module__top-copy">
@@ -191,7 +205,10 @@ export default function SocProductPage() {
               </div>
             </div>
             <div className="feature-module__body feature-module__body--rotator">
-              <RevealOnScroll delay={2} className="feature-module-rotator-reveal reveal--slow soc-intel-rotator">
+              <RevealOnScroll
+                delay={2}
+                className="feature-module-rotator-reveal reveal--slow soc-intel-rotator soc-intel-rotator--stacked"
+              >
                 <FeatureModuleRotator
                   services={intelligence.capabilities.map((c) => ({
                     title: c.title,
@@ -204,49 +221,49 @@ export default function SocProductPage() {
               </RevealOnScroll>
             </div>
           </div>
+        </section>
 
-          <div className="container feature-module soc-subsection">
+        {/* ── PANEL 4: AI SOC Analysts ─────────────────────────────── */}
+        <section
+          className="soc-scroll-panel section section--warm soc-scroll-band"
+          aria-labelledby="soc-ai-title"
+        >
+          <div className="container feature-module">
             <div className="feature-module__top">
               <div className="feature-module__top-copy">
                 <p className="eyebrow">{aiSoc.eyebrow}</p>
-                <h2 className="display-lg feature-module__title">{aiSoc.title}</h2>
+                <h2 id="soc-ai-title" className="display-lg feature-module__title">
+                  {aiSoc.title}
+                </h2>
                 <p className="body-md">{aiSoc.lead}</p>
               </div>
             </div>
-            <div className="soc-ai-row">
-              <ul className="feature-module__service-list soc-role-list">
-                {aiSoc.roles.map((r) => (
-                  <li key={r.title} className="feature-module__service feature-module__service--highlight soc-role-card">
-                    <span className="soc-role-card__icon">{ROLE_ICONS[r.icon] ?? ROLE_ICONS.shield}</span>
-                    <span className="title-sm soc-role-card__title">{r.title}</span>
-                    <p className="body-sm soc-role-card__body">{r.body}</p>
-                  </li>
-                ))}
-              </ul>
-              <div className="soc-outcome-compare soc-outcome-compare--stats" aria-label="Alert reduction outcome">
-                <div>
-                  <span className="soc-outcome-compare__num soc-outcome-compare__num--before">
-                    {aiSoc.outcomeBefore}
-                  </span>
-                  <span className="soc-outcome-compare__label">{aiSoc.outcomeBeforeLabel}</span>
-                </div>
-                <span className="soc-outcome-compare__arrow" aria-hidden="true">
-                  →
-                </span>
-                <div>
-                  <span className="soc-outcome-compare__num">{aiSoc.outcomeAfter}</span>
-                  <span className="soc-outcome-compare__label">{aiSoc.outcomeAfterLabel}</span>
-                </div>
-              </div>
+            <div className="soc-ai-stack">
+              <RevealOnScroll className="soc-ai-visual" direction="fade" threshold={0.12}>
+                <img
+                  className="feature-module__image soc-feature-image"
+                  src={aiSoc.visual.src}
+                  alt={aiSoc.visual.alt}
+                  width={aiSoc.visual.width}
+                  height={aiSoc.visual.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </RevealOnScroll>
             </div>
           </div>
+        </section>
 
-          <div className="container soc-context-section soc-subsection">
-            <div className="feature-module__top-copy">
+        {/* ── PANEL 5: Context Layer ───────────────────────────────── */}
+        <section
+          className="soc-scroll-panel section section--warm soc-scroll-band"
+          aria-labelledby="soc-context-title"
+        >
+          <div className="container soc-context-stack">
+            <div className="soc-context-copy">
               <p className="eyebrow">{context.eyebrow}</p>
-              <h2 className="display-lg">{context.title}</h2>
+              <h2 id="soc-context-title" className="display-lg">{context.title}</h2>
               <p className="body-md">{context.lead}</p>
-              <p className="body-sm soc-context-result">{context.result}</p>
             </div>
             <RevealOnScroll className="soc-context-visual" direction="fade" threshold={0.12}>
               <img
@@ -260,31 +277,62 @@ export default function SocProductPage() {
               />
             </RevealOnScroll>
           </div>
+        </section>
 
-          <div className="container soc-subsection">
-            <p className="eyebrow">{automation.eyebrow}</p>
-            <h2 className="display-lg">{automation.title}</h2>
-            <p className="body-md">{automation.lead}</p>
-            <ul className="feature-module__service-list">
-              {automation.modes.map((m) => (
-                <li key={m.title} className="feature-module__service">
-                  <span className="title-sm">{m.title}</span>
-                  <p className="body-sm">{m.body}</p>
+        {/* ── PANEL 6: Automated Response ──────────────────────────── */}
+        <section
+          className="soc-scroll-panel section soc-scroll-band"
+          aria-labelledby="soc-automation-title"
+        >
+          <div className="container soc-automation-grid">
+            <div className="soc-automation-intro">
+              <p className="eyebrow">{automation.eyebrow}</p>
+              <h2 id="soc-automation-title" className="display-lg">{automation.title}</h2>
+              <p className="body-md">{automation.lead}</p>
+              <div className="chip-list soc-action-chips">
+                {automation.actions.map((a) => (
+                  <span key={a} className="chip">{a}</span>
+                ))}
+              </div>
+            </div>
+            <ul className="soc-mode-cards" aria-label="Automation modes">
+              {automation.modes.map((m, i) => (
+                <li key={m.title} className={`soc-mode-card${i === automation.modes.length - 1 ? " soc-mode-card--featured" : ""}`}>
+                  <span className="soc-mode-card__step" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="title-sm soc-mode-card__title">{m.title}</span>
+                  <p className="body-sm soc-mode-card__body">{m.body}</p>
                 </li>
               ))}
             </ul>
-            <div className="chip-list soc-action-chips">
-              {automation.actions.map((a) => (
-                <span key={a} className="chip">
-                  {a}
-                </span>
-              ))}
-            </div>
           </div>
         </section>
 
-        {/* Scroll 3 removed (Executive dashboard) as requested — next section continues below */}
+        {/* ── PANEL 7: Why Teams Choose Us ─────────────────────────── */}
+        <section
+          className="soc-scroll-panel section section--soft soc-scroll-band"
+          aria-labelledby="soc-why-title"
+        >
+          <div className="container">
+            <div className="feature-module__top">
+              <div className="feature-module__top-copy">
+                <p className="eyebrow">{why.eyebrow}</p>
+                <h2 id="soc-why-title" className="display-lg feature-module__title">
+                  {why.title}
+                </h2>
+              </div>
+            </div>
+            <ul className="soc-why-grid" aria-label="Key outcomes">
+              {why.items.map((item) => (
+                <li key={item.title} className="soc-why-card">
+                  <h3 className="title-sm soc-why-card__title">{item.title}</h3>
+                  <p className="body-sm soc-why-card__body">{item.body}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
+        {/* ── CTA Band ─────────────────────────────────────────────── */}
         <CtaBand
           title={cta.title}
           body={cta.lead}
@@ -292,6 +340,7 @@ export default function SocProductPage() {
           primary={cta.primary}
           secondary={cta.secondary}
         />
+
       </main>
 
       <SiteFooter />
