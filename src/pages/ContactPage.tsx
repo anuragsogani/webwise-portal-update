@@ -87,12 +87,12 @@ function validateEmail(v: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 }
 
-function getContactFormEndpoint(): string | undefined {
+import { getApiBaseUrl } from "../lib/apiBaseUrl";
+
+function getContactFormEndpoint(): string {
   const explicit = (import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined)?.trim();
   if (explicit) return explicit;
-  const base = (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, "");
-  if (base) return `${base}/contact`;
-  return undefined;
+  return `${getApiBaseUrl()}/contact`;
 }
 
 export default function ContactPage() {
@@ -146,75 +146,55 @@ export default function ContactPage() {
     setGlobalError("");
 
     const endpoint = getContactFormEndpoint();
+    const urlParams = new URLSearchParams(window.location.search);
+    const intent = urlParams.get("intent") ?? primaryPain;
+    const source = urlParams.get("source") ?? "contact-page";
 
-    if (endpoint) {
-      try {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, company, urgency, message, companyType, country, siemTool, primaryPain }),
-        });
-        if (res.status === 429) {
-          setStatus("error");
-          setGlobalError(ERR.tooMany);
-          return;
-        }
-        if (res.status === 503) {
-          setStatus("error");
-          setGlobalError(ERR.unavailable);
-          return;
-        }
-        if (!res.ok) {
-          setStatus("error");
-          setGlobalError(ERR.sendFailed);
-          return;
-        }
-        trackEvent("contact_form_submit", {
-          transport: "api",
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name, email, company, urgency, message,
           company_type: companyType,
-          country,
+          country_code: country,
           siem_tool: siemTool,
-          intent: primaryPain,
-        });
-        setStatus("success");
-        setName("");
-        setEmail("");
-        setCompany("");
-        setUrgency("");
-        setMessage("");
-        setCompanyType("");
-        setCountry("");
-        setSiemTool("");
-        setPrimaryPain("");
-        setTouched({});
-        setFieldErrors({});
-      } catch {
+          primary_pain: primaryPain,
+          source,
+          intent,
+          page_url: window.location.href,
+        }),
+      });
+      if (res.status === 429) {
+        setStatus("error");
+        setGlobalError(ERR.tooMany);
+        return;
+      }
+      if (res.status === 503) {
+        setStatus("error");
+        setGlobalError(ERR.unavailable);
+        return;
+      }
+      if (!res.ok) {
         setStatus("error");
         setGlobalError(ERR.sendFailed);
+        return;
       }
-      return;
+      trackEvent("contact_form_submit", {
+        company_type: companyType,
+        country,
+        siem_tool: siemTool,
+        intent,
+        source,
+      });
+      setStatus("success");
+      setName(""); setEmail(""); setCompany(""); setUrgency(""); setMessage("");
+      setCompanyType(""); setCountry(""); setSiemTool(""); setPrimaryPain("");
+      setTouched({}); setFieldErrors({});
+    } catch {
+      setStatus("error");
+      setGlobalError(ERR.sendFailed);
     }
-
-    await new Promise((r) => setTimeout(r, 900));
-    trackEvent("contact_form_submit", {
-      transport: "demo",
-      company_type: companyType,
-      country,
-      siem_tool: siemTool,
-      intent: primaryPain,
-    });
-    setStatus("success");
-    setName("");
-    setEmail("");
-    setCompany("");
-    setUrgency("");
-    setMessage("");
-    setCompanyType("");
-    setCountry("");
-    setSiemTool("");
-    setPrimaryPain("");
-    setTouched({});
-    setFieldErrors({});
   }
 
   return (

@@ -1,4 +1,7 @@
-/** GA4 when `VITE_GA_MEASUREMENT_ID` is set; otherwise no-ops. */
+/**
+ * GA4 when `VITE_GA_MEASUREMENT_ID` is set; otherwise no-ops.
+ * All trackEvent calls also fire first-party analytics to /api/events.
+ */
 
 const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined;
 
@@ -43,9 +46,18 @@ export function trackEvent(
   name: string,
   params?: Record<string, string | number | boolean | undefined>,
 ): void {
-  if (!GA_ID || !window.gtag) return;
-  const cleaned = params
-    ? Object.fromEntries(Object.entries(params).filter(([, v]) => v !== undefined))
-    : undefined;
-  window.gtag("event", name, cleaned);
+  // GA4
+  if (GA_ID && window.gtag) {
+    const cleaned = params
+      ? Object.fromEntries(Object.entries(params).filter(([, v]) => v !== undefined))
+      : undefined;
+    window.gtag("event", name, cleaned);
+  }
+  // First-party
+  import("./firstPartyAnalytics").then(({ trackFpEvent }) => {
+    const meta = params
+      ? (Object.fromEntries(Object.entries(params).filter(([, v]) => v !== undefined)) as Record<string, unknown>)
+      : undefined;
+    trackFpEvent(name, meta);
+  }).catch(() => {});
 }

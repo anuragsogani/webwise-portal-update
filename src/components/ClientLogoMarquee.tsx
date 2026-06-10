@@ -11,7 +11,7 @@ export default function ClientLogoMarquee() {
           {items.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
-              className={`client-marquee__item${item.logoWide ? " client-marquee__item--wide" : ""}`}
+              className={`client-marquee__item${"logoWide" in item && item.logoWide ? " client-marquee__item--wide" : ""}`}
             >
               <ClientLogoMark item={item} size="lg" />
               <span className="sr-only">{item.name}</span>

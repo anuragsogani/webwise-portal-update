@@ -32,7 +32,7 @@ function CsocFunnelImpl() {
       {/* raw alert field */}
       <g className="cf-field">
         {ALERT_ROWS.map((y) =>
-          ALERT_COLS.map((x, ci) => (
+          ALERT_COLS.map((x) => (
             <rect key={`${x}-${y}`} className="cf-alert" x={x} y={y} width="4" height="4" rx="1" style={{ animationDelay: `${((x + y) % 9) * 0.32}s` }} />
           )),
         )}

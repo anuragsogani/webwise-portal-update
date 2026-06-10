@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import type { ServiceBlock } from "../content/servicesPageCopy";
 import { SERVICE_STACK_EYEBROWS, SERVICE_STACK_TAGS } from "../content/servicesStackUi";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+import ServiceStackHeroDoodle from "./ServiceStackHeroDoodle";
 
 type Props = {
   services: readonly ServiceBlock[];

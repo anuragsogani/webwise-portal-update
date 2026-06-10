@@ -10,9 +10,11 @@ function getContactFormEndpoint(): string {
 }
 
 /** Capture a work email from the pre-footer Get started form. */
-export async function submitLeadEmail(email: string): Promise<void> {
+export async function submitLeadEmail(email: string, source?: string): Promise<void> {
   const trimmed = email.trim();
   const endpoint = getContactFormEndpoint();
+  const page_url = typeof window !== "undefined" ? window.location.href : "";
+  const resolvedSource = source ?? "cta-get-started";
 
   const response = await fetch(endpoint, {
     method: "POST",
@@ -21,7 +23,8 @@ export async function submitLeadEmail(email: string): Promise<void> {
       name: "Website lead",
       email: trimmed,
       message: "Follow-up requested via Get started form (pre-footer).",
-      source: "cta-get-started",
+      source: resolvedSource,
+      page_url,
     }),
   });
 

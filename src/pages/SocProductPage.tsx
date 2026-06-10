@@ -22,42 +22,6 @@ import { getSiteBaseUrl } from "../lib/siteBaseUrl";
 import "../styles/homepage.css";
 import "../styles/soc-product-page.css";
 
-const ROLE_ICONS: Record<string, JSX.Element> = {
-  shield: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6l-8-3Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ),
-  search: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.5" />
-      <path d="m16.5 16.5 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-  target: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="12" cy="12" r="1" fill="currentColor" />
-    </svg>
-  ),
-  bolt: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M13 2 5 14h6l-1 8 8-12h-6l1-8Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ),
-};
-
 export default function SocProductPage() {
   useEffect(() => {
     const base = getSiteBaseUrl();
