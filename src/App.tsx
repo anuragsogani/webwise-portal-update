@@ -12,6 +12,7 @@ import GlossaryIndexPage from "./pages/GlossaryIndexPage";
 import GlossaryPage from "./pages/GlossaryPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import AdminAnalyticsPage from "./pages/AdminAnalyticsPage";
 import MethodologyPage from "./pages/MethodologyPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import PortfolioCaseStudyPage from "./pages/PortfolioCaseStudyPage";
@@ -151,6 +152,14 @@ export default function App() {
       <Route path="/demo/androiddemo" element={<Suspense fallback={lazySuspense}><AndroidDemo /></Suspense>} />
       <Route path="/demo/alertspage" element={<Suspense fallback={lazySuspense}><AlertsPage /></Suspense>} />
       <Route path="/demo/airatdashboard" element={<Suspense fallback={lazySuspense}><AiratDashboard /></Suspense>} />
+      <Route
+        path="/admin/analytics"
+        element={
+          <PrivateRoute>
+            <AdminAnalyticsPage />
+          </PrivateRoute>
+        }
+      />
       <Route
         path="/admin/manage-blogs"
         element={

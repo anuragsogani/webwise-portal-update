@@ -3,7 +3,8 @@ import {
   LayoutDashboard, 
   PlusCircle, 
   LogOut,
-  ChevronRight
+  ChevronRight,
+  BarChart2,
 } from "lucide-react";
 import { authApi } from "../api/auth";
 import BrandLogo from "./BrandLogo";
@@ -19,6 +20,11 @@ export default function AdminSidebar() {
 
   const navItems = [
     {
+      label: "Analytics & Leads",
+      path: "/admin/analytics",
+      icon: <BarChart2 size={18} />
+    },
+    {
       label: "Manage Blogs",
       path: "/admin/manage-blogs",
       icon: <LayoutDashboard size={18} />
@@ -27,7 +33,7 @@ export default function AdminSidebar() {
       label: "Create Post",
       path: "/admin/create-blog",
       icon: <PlusCircle size={18} />
-    }
+    },
   ];
 
   return (
