@@ -75,7 +75,7 @@ export default function CtaGetStarted({
             {CTA_FORM_SUCCESS}
           </p>
         ) : (
-          <form className="cta-get-started__form" onSubmit={handleSubmit} noValidate>
+          <form className="cta-get-started__form" onSubmit={handleSubmit} noValidate data-form-name="cta-get-started">
             <label htmlFor="cta-email" className="sr-only">
               Work email
             </label>
@@ -93,7 +93,7 @@ export default function CtaGetStarted({
               required
               autoComplete="email"
             />
-            <button type="submit" className="btn btn--primary" disabled={loading}>
+            <button type="submit" className="btn btn--primary" disabled={loading} data-track="prefooter-get-started" data-track-category="form-cta">
               {loading ? "Sending…" : ctaLabel}
             </button>
             {error ? (

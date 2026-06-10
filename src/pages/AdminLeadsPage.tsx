@@ -17,6 +17,8 @@ interface Lead {
   email: string;
   company: string;
   urgency: string;
+  message: string;
+  website: string;
   company_type: string;
   country: string;
   city: string;
@@ -28,6 +30,7 @@ interface Lead {
   page_url: string;
   delivery_status: string;
   error_type: string;
+  error_message: string;
   client_ip: string;
 }
 
@@ -161,15 +164,15 @@ export default function AdminLeadsPage() {
         ) : (
           <div className="adm-table-scroll">
             <table className="adm-table">
-              <thead>
+                  <thead>
                 <tr>
                   <th>Date</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Company</th>
+                  <th>Message</th>
                   <th>Source</th>
                   <th>Country</th>
-                  <th>SIEM</th>
                   <th>Status</th>
                   <th></th>
                 </tr>
@@ -197,13 +200,20 @@ export default function AdminLeadsPage() {
                         </a>
                       </td>
                       <td>{lead.company || "—"}</td>
+                      <td style={{ maxWidth: 200 }}>
+                        {lead.message ? (
+                          <span style={{ fontSize: 12, color: "var(--adm-muted)", display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: 200 }}
+                            title={lead.message}>
+                            {lead.message.slice(0, 80)}{lead.message.length > 80 ? "…" : ""}
+                          </span>
+                        ) : <span style={{ color: "var(--adm-dim)" }}>—</span>}
+                      </td>
                       <td>
                         <span className="adm-badge adm-badge--info">{lead.source || "—"}</span>
                       </td>
                       <td style={{ fontSize: 12, color: "var(--adm-muted)" }}>
                         {[lead.city, lead.country].filter(Boolean).join(", ") || "—"}
                       </td>
-                      <td style={{ fontSize: 12, color: "var(--adm-muted)" }}>{lead.siem_tool || "—"}</td>
                       <td>
                         <span className={`adm-badge adm-badge--${lead.delivery_status || "dim"}`}>
                           {lead.delivery_status || "—"}
@@ -257,24 +267,36 @@ export default function AdminLeadsPage() {
               <button className="adm-btn adm-btn--ghost adm-btn--sm" onClick={() => setSelected(null)}>✕</button>
             </div>
             <div className="adm-modal__body">
-              <div className="adm-form-grid">
+              {/* Message — most important field, shown first */}
+              {selected.message && (
+                <div style={{ marginBottom: 20 }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 6 }}>
+                    Message / What's Breaking
+                  </div>
+                  <div style={{
+                    background: "rgba(0,229,255,0.04)",
+                    border: "1px solid rgba(0,229,255,0.15)",
+                    borderRadius: 6,
+                    padding: "12px 16px",
+                    fontSize: 13.5,
+                    color: "#e8e8f8",
+                    lineHeight: 1.6,
+                    whiteSpace: "pre-wrap",
+                  }}>
+                    {selected.message}
+                  </div>
+                </div>
+              )}
+
+              {/* Core contact fields */}
+              <div className="adm-form-grid" style={{ marginBottom: 16 }}>
                 {[
                   ["Name", selected.name],
                   ["Email", selected.email],
                   ["Company", selected.company],
-                  ["Company Type", selected.company_type],
-                  ["Source", selected.source],
-                  ["Intent", selected.intent],
-                  ["Country", selected.country],
-                  ["City", selected.city],
-                  ["Organization/ISP", selected.org],
-                  ["SIEM Tool", selected.siem_tool],
-                  ["Primary Pain", selected.primary_pain],
-                  ["Urgency", selected.urgency],
-                  ["Delivery", selected.delivery_status],
-                  ["IP", selected.client_ip],
+                  ["Website", selected.website],
                   ["Submitted", new Date(selected.created_at).toLocaleString()],
-                  ["Error", selected.error_type],
+                  ["Delivery Status", selected.delivery_status],
                 ].map(([k, v]) => (
                   <div key={k}>
                     <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 3 }}>{k}</div>
@@ -282,17 +304,68 @@ export default function AdminLeadsPage() {
                   </div>
                 ))}
               </div>
+
+              <div className="adm-divider" />
+
+              {/* Context / qualification fields */}
+              <div style={{ marginBottom: 8, fontSize: 11, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "1px" }}>
+                Context &amp; Qualification
+              </div>
+              <div className="adm-form-grid" style={{ marginBottom: 16 }}>
+                {[
+                  ["Company Type", selected.company_type],
+                  ["Urgency", selected.urgency],
+                  ["SIEM / Tool", selected.siem_tool],
+                  ["Primary Pain", selected.primary_pain],
+                  ["Intent", selected.intent],
+                  ["Source", selected.source],
+                ].map(([k, v]) => (
+                  <div key={k}>
+                    <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 3 }}>{k}</div>
+                    <div style={{ fontSize: 13, color: v ? "#fff" : "var(--adm-dim)" }}>{v || "—"}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="adm-divider" />
+
+              {/* Geo & tech fields */}
+              <div style={{ marginBottom: 8, fontSize: 11, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "1px" }}>
+                Geo &amp; Technical
+              </div>
+              <div className="adm-form-grid">
+                {[
+                  ["Country", selected.country],
+                  ["City", selected.city],
+                  ["Organization/ISP", selected.org],
+                  ["Client IP", selected.client_ip],
+                ].map(([k, v]) => (
+                  <div key={k}>
+                    <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 3 }}>{k}</div>
+                    <div style={{ fontSize: 12, color: v ? "var(--adm-muted)" : "var(--adm-dim)", fontFamily: "var(--adm-mono)" }}>{v || "—"}</div>
+                  </div>
+                ))}
+              </div>
+
               {selected.page_url && (
                 <div style={{ marginTop: 16 }}>
-                  <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 3 }}>Source Page</div>
-                  <a
-                    href={selected.page_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontSize: 12, color: "var(--adm-accent)", display: "flex", alignItems: "center", gap: 4, wordBreak: "break-all" }}
-                  >
+                  <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 4 }}>Source Page</div>
+                  <a href={selected.page_url} target="_blank" rel="noopener noreferrer"
+                    style={{ fontSize: 12, color: "var(--adm-accent)", display: "flex", alignItems: "center", gap: 4, wordBreak: "break-all" }}>
                     <ExternalLink size={12} /> {selected.page_url}
                   </a>
+                </div>
+              )}
+
+              {selected.error_type && (
+                <div style={{ marginTop: 16 }}>
+                  <div className="adm-alert adm-alert--error" style={{ marginBottom: 0 }}>
+                    <AlertCircle size={14} />
+                    <div>
+                      <strong>Delivery Error:</strong> {selected.error_type}
+                      {selected.error_message && <div style={{ marginTop: 4, fontSize: 12 }}>{selected.error_message}</div>}
+                    </div>
+                  </div>
                 </div>
               )}
             </div>

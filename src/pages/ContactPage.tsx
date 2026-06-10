@@ -257,7 +257,7 @@ export default function ContactPage() {
                 </div>
               )}
 
-              <form className="contact-form" onSubmit={handleSubmit} noValidate>
+              <form className="contact-form" onSubmit={handleSubmit} noValidate data-form-name="contact-form">
                 <div className="contact-form__row">
                   <div className="contact-field">
                     <label htmlFor="ct-name" className="contact-field__label">
@@ -442,7 +442,7 @@ export default function ContactPage() {
                   </div>
                 </details>
 
-                <button type="submit" className="btn btn--primary" disabled={status === "sending"}>
+                <button type="submit" className="btn btn--primary" disabled={status === "sending"} data-track="contact-form-submit" data-track-category="form-cta">
                   {status === "sending" ? CONTACT_FORM.submitSending : CONTACT_FORM.submitLabel}
                 </button>
               </form>

@@ -17,7 +17,7 @@ export default function BookCallFab() {
   }
 
   return (
-    <button type="button" className="bc-fab" onClick={handleClick} aria-label="Book a 30-minute strategy call">
+    <button type="button" className="bc-fab" onClick={handleClick} aria-label="Book a 30-minute strategy call" data-track="fab-book-a-call" data-track-category="fab-cta">
       <span className="bc-fab__text">
         <span className="bc-fab__primary">Book a call</span>
         <span className="bc-fab__secondary">30 min · No obligation</span>

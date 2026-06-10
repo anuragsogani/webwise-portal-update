@@ -304,7 +304,7 @@ export default function SiteHeader() {
           })}
         </nav>
 
-        <Link to="/contact" className="btn btn--dark top-nav__cta">
+        <Link to="/contact" className="btn btn--dark top-nav__cta" data-track="nav-book-strategy-call" data-track-category="nav-cta">
           Book a strategy call
         </Link>
 
@@ -345,7 +345,7 @@ export default function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <Link to="/contact" className="btn btn--dark">
+          <Link to="/contact" className="btn btn--dark" data-track="mobile-nav-book-strategy-call" data-track-category="nav-cta">
             Book a strategy call
           </Link>
         </nav>

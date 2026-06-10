@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { initGa, trackPageView } from "../lib/analytics";
-import { trackFpPageView } from "../lib/firstPartyAnalytics";
+import { trackFpPageView, initAutoTracking } from "../lib/firstPartyAnalytics";
 
-/** Route-aware GA4 + first-party page views on every route change. */
+/** Route-aware GA4 + first-party analytics on every route change. Auto-tracking initialised once. */
 export default function GoogleAnalytics() {
   const location = useLocation();
 
   useEffect(() => {
     initGa();
+    initAutoTracking(); // sets up click, scroll, time-on-page, form, outbound listeners
   }, []);
 
   useEffect(() => {

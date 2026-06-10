@@ -41,7 +41,7 @@ export default function NewsletterSignup() {
       {submitted ? (
         <p className="ns-success" role="status">You're on the list. We'll be in touch when we publish.</p>
       ) : (
-        <form className="ns-form" onSubmit={handleSubmit} noValidate>
+        <form className="ns-form" onSubmit={handleSubmit} noValidate data-form-name="newsletter-signup">
           <label htmlFor="ns-email" className="sr-only">Email address</label>
           <input
             id="ns-email"
@@ -53,7 +53,7 @@ export default function NewsletterSignup() {
             required
             autoComplete="email"
           />
-          <button type="submit" className="ns-btn" disabled={loading}>
+          <button type="submit" className="ns-btn" disabled={loading} data-track="newsletter-subscribe" data-track-category="form-cta">
             {loading ? "Subscribing…" : "Get notified"}
           </button>
           {error && <p className="ns-error" role="alert">{error}</p>}
