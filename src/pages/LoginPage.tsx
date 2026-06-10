@@ -16,7 +16,7 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const from = (location.state as any)?.from?.pathname || "/admin/create-blog";
+  const from = (location.state as any)?.from?.pathname || "/admin";
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();

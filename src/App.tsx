@@ -13,6 +13,13 @@ import GlossaryPage from "./pages/GlossaryPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import AdminAnalyticsPage from "./pages/AdminAnalyticsPage";
+import AdminDashboardPage from "./pages/AdminDashboardPage";
+import AdminBlogsPage from "./pages/AdminBlogsPage";
+import AdminBlogEditorPage from "./pages/AdminBlogEditorPage";
+import AdminCaseStudiesPage from "./pages/AdminCaseStudiesPage";
+import AdminCaseStudyEditorPage from "./pages/AdminCaseStudyEditorPage";
+import AdminLeadsPage from "./pages/AdminLeadsPage";
+import AdminSubscribersPage from "./pages/AdminSubscribersPage";
 import MethodologyPage from "./pages/MethodologyPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import PortfolioCaseStudyPage from "./pages/PortfolioCaseStudyPage";
@@ -54,8 +61,9 @@ const AssetsPage = lazy(() => import("./pages/AssetsPage"));
 const AndroidDemo = lazy(() => import("./pages/AndroidDemo"));
 const AlertsPage = lazy(() => import("./pages/AlertsPage"));
 const AiratDashboard = lazy(() => import("./pages/AiratDashboard"));
-const BlogManagementPage = lazy(() => import("./pages/BlogManagementPage"));
-const BlogEditorPage = lazy(() => import("./pages/BlogEditorPage"));
+// Legacy pages kept for reference (routes now handled by AdminBlogsPage/AdminBlogEditorPage)
+// const BlogManagementPage = lazy(() => import("./pages/BlogManagementPage"));
+// const BlogEditorPage = lazy(() => import("./pages/BlogEditorPage"));
 
 const mockStats = {
   totalThreats: 150,
@@ -152,30 +160,20 @@ export default function App() {
       <Route path="/demo/androiddemo" element={<Suspense fallback={lazySuspense}><AndroidDemo /></Suspense>} />
       <Route path="/demo/alertspage" element={<Suspense fallback={lazySuspense}><AlertsPage /></Suspense>} />
       <Route path="/demo/airatdashboard" element={<Suspense fallback={lazySuspense}><AiratDashboard /></Suspense>} />
-      <Route
-        path="/admin/analytics"
-        element={
-          <PrivateRoute>
-            <AdminAnalyticsPage />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/admin/manage-blogs"
-        element={
-          <PrivateRoute>
-            <Suspense fallback={lazySuspense}><BlogManagementPage /></Suspense>
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/admin/create-blog"
-        element={
-          <PrivateRoute>
-            <Suspense fallback={lazySuspense}><BlogEditorPage /></Suspense>
-          </PrivateRoute>
-        }
-      />
+      {/* ── Admin ── */}
+      <Route path="/admin" element={<PrivateRoute><AdminDashboardPage /></PrivateRoute>} />
+      <Route path="/admin/analytics" element={<PrivateRoute><AdminAnalyticsPage /></PrivateRoute>} />
+      <Route path="/admin/blogs" element={<PrivateRoute><AdminBlogsPage /></PrivateRoute>} />
+      <Route path="/admin/blogs/new" element={<PrivateRoute><AdminBlogEditorPage /></PrivateRoute>} />
+      <Route path="/admin/blogs/:id/edit" element={<PrivateRoute><AdminBlogEditorPage /></PrivateRoute>} />
+      <Route path="/admin/case-studies" element={<PrivateRoute><AdminCaseStudiesPage /></PrivateRoute>} />
+      <Route path="/admin/case-studies/new" element={<PrivateRoute><AdminCaseStudyEditorPage /></PrivateRoute>} />
+      <Route path="/admin/case-studies/:slug/edit" element={<PrivateRoute><AdminCaseStudyEditorPage /></PrivateRoute>} />
+      <Route path="/admin/leads" element={<PrivateRoute><AdminLeadsPage /></PrivateRoute>} />
+      <Route path="/admin/subscribers" element={<PrivateRoute><AdminSubscribersPage /></PrivateRoute>} />
+      {/* Legacy blog management — keep old URLs working */}
+      <Route path="/admin/manage-blogs" element={<PrivateRoute><AdminBlogsPage /></PrivateRoute>} />
+      <Route path="/admin/create-blog" element={<PrivateRoute><AdminBlogEditorPage /></PrivateRoute>} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

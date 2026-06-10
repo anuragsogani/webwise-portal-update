@@ -189,11 +189,41 @@ export async function deleteBlog(id: string) {
   const token = localStorage.getItem("airat_token");
   const response = await fetch(apiUrl(`/blogs/${id}`), {
     method: "DELETE",
-    headers: {
-      "Authorization": `Bearer ${token}`
-    },
+    headers: { "Authorization": `Bearer ${token}` },
   });
   if (!response.ok) throw new Error("Failed to delete blog");
+  return response.json();
+}
+
+export async function getBlogById(id: string): Promise<Blog> {
+  const token = localStorage.getItem("airat_token");
+  const response = await fetch(apiUrl(`/blogs/admin/${id}`), {
+    headers: { "Authorization": `Bearer ${token}` },
+  });
+  if (!response.ok) throw new Error("Blog not found");
+  return response.json();
+}
+
+export async function updateBlog(id: string, data: BlogCreateRequest): Promise<Blog> {
+  const token = localStorage.getItem("airat_token");
+  const response = await fetch(apiUrl(`/blogs/${id}`), {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`,
+    },
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) {
+    let detail = "Failed to update blog post";
+    try {
+      const payload = await response.json();
+      detail = Array.isArray(payload?.detail)
+        ? payload.detail.map((e: any) => e.msg).join(", ")
+        : payload?.detail || detail;
+    } catch { /* ignore */ }
+    throw new Error(detail);
+  }
   return response.json();
 }
 
