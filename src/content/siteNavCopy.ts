@@ -1,5 +1,8 @@
 /** Primary nav — Duna-style mega menus + compact dropdowns */
 
+import { PRODUCT_TILES } from "./productsPageCopy";
+import { SERVICES_PILLARS } from "./servicesPageCopy";
+
 export type NavMegaLink = {
   readonly label: string;
   readonly description: string;
@@ -36,24 +39,12 @@ export const SITE_NAV_ITEMS: readonly NavItem[] = [
     to: "/services",
     columns: [
       {
-        heading: "Delivery",
-        links: [
-          {
-            label: "Security & XDR",
-            description: "SIEM, detection engineering, and evidence your auditors can follow",
-            to: "/services#cyber",
-          },
-          {
-            label: "AI & LLM systems",
-            description: "RAG pipelines, agents, and evaluation harnesses for production",
-            to: "/services#ai",
-          },
-          {
-            label: "Data & search",
-            description: "Medallion lakes, streaming, and OpenSearch-scale analytics",
-            to: "/services#data",
-          },
-        ],
+        heading: "Services",
+        links: SERVICES_PILLARS.map((pillar) => ({
+          label: pillar.label,
+          description: pillar.subhead,
+          to: `/services#pillar-${pillar.id}`,
+        })),
       },
     ],
   },
@@ -64,33 +55,11 @@ export const SITE_NAV_ITEMS: readonly NavItem[] = [
     columns: [
       {
         heading: "Products",
-        links: [
-          {
-            label: "Autonomous SOC Platform",
-            description: "AI analysts, attack graphs, and unified visibility across your security stack",
-            to: "/products/soc",
-          },
-          {
-            label: "Agent Detection & Response",
-            description: "Visibility, governance, and threat detection for AI agents, MCP, and copilots",
-            to: "/products/adr",
-          },
-          {
-            label: "Cyber Audit & GRC",
-            description: "Risk maturity, regulatory alignment, and audit-ready evidence",
-            to: "/products/audit",
-          },
-          {
-            label: "Cloud Security & Governance",
-            description: "CSPM, DevSecOps, identity governance, compliance, and cost intelligence",
-            to: "/products/cspm",
-          },
-          {
-            label: "All products",
-            description: "Managed SOC, ADR, audit, and cloud security accelerators",
-            to: "/products",
-          },
-        ],
+        links: PRODUCT_TILES.map((tile) => ({
+          label: tile.title,
+          description: tile.body,
+          to: `/products#product-${tile.id}`,
+        })),
       },
     ],
   },

@@ -128,12 +128,17 @@ export function trackFpEvent(
   enqueue(buildPayload(eventType, meta));
 }
 
+/** Returns true for paths that should never be tracked (admin/internal). */
+function _isInternalPath(path: string): boolean {
+  return /^\/(admin|login)(\/|$|\?)/.test(path);
+}
+
 /** Track a page view. Called from GoogleAnalytics.tsx on each route change. */
 export function trackFpPageView(path: string): void {
   if (typeof window === "undefined") return;
-  // Reset scroll/time trackers on each page view
   _resetScrollTracking();
   _resetTimeTracking();
+  if (_isInternalPath(path)) return; // never track admin/login pages
   enqueue(buildPayload("page_view", undefined, path));
 }
 
@@ -152,7 +157,7 @@ function _resetScrollTracking() {
 }
 
 function _onScroll() {
-  if (_scrollRafPending) return;
+  if (_scrollRafPending || _isAdminPage()) return;
   _scrollRafPending = true;
   requestAnimationFrame(() => {
     _scrollRafPending = false;
@@ -181,6 +186,7 @@ function _resetTimeTracking() {
 }
 
 function _flushTimeOnPage() {
+  if (_isAdminPage()) return;
   const elapsed = Math.round(
     (document.visibilityState === "visible"
       ? _totalVisibleMs + (Date.now() - _visibilityStart)
@@ -254,7 +260,12 @@ function _resolveTrackTarget(
   return null;
 }
 
+function _isAdminPage(): boolean {
+  return typeof window !== "undefined" && _isInternalPath(window.location.pathname);
+}
+
 function _onDocumentClick(e: MouseEvent) {
+  if (_isAdminPage()) return; // ignore all clicks on admin pages
   const resolved = _resolveTrackTarget(e.target);
   if (!resolved) return;
 
@@ -278,6 +289,7 @@ function _onDocumentClick(e: MouseEvent) {
 const _formStarted = new WeakSet<HTMLElement>();
 
 function _onFormFocusin(e: FocusEvent) {
+  if (_isAdminPage()) return;
   const form = (e.target as HTMLElement)?.closest?.("form");
   if (!form || _formStarted.has(form as HTMLElement)) return;
   _formStarted.add(form as HTMLElement);
@@ -289,6 +301,7 @@ function _onFormFocusin(e: FocusEvent) {
 }
 
 function _onFormSubmit(e: Event) {
+  if (_isAdminPage()) return;
   const form = e.target as HTMLFormElement;
   const formName = form.getAttribute("data-form-name") ||
     form.id ||
@@ -300,6 +313,7 @@ function _onFormSubmit(e: Event) {
 // ─ Copy tracking ─
 
 function _onCopy() {
+  if (_isAdminPage()) return;
   const selected = window.getSelection?.()?.toString?.() ?? "";
   if (selected.length < 5) return;
   enqueue(buildPayload("content_copy", { chars: selected.length }));

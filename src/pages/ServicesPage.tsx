@@ -38,7 +38,15 @@ export default function ServicesPage() {
   // scroll to a pillar when arriving with /services#pillar-<id>
   useEffect(() => {
     if (!hash) return;
-    const id = hash.slice(1);
+    const legacyAliases: Record<string, string> = {
+      cyber: "pillar-security",
+      security: "pillar-security",
+      ai: "pillar-ai",
+      data: "pillar-data",
+      platform: "pillar-platform",
+    };
+    const raw = hash.slice(1);
+    const id = legacyAliases[raw] ?? raw;
     let tries = 0;
     const tick = () => {
       const el = document.getElementById(id);

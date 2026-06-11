@@ -406,10 +406,10 @@ body:has(.soc-first-scroll) .top-nav.top-nav--menu-open:not(.top-nav--scrolled) 
   right: 0;
   display: flex;
   justify-content: center;
-  padding: 0.65rem 1rem 0;
-  margin-top: -0.35rem;
+  padding: 0 1rem;
   z-index: 110;
-  pointer-events: auto;
+  /* Only the panel surface captures pointer events — not the full viewport band */
+  pointer-events: none;
 }
 
 .nav-dropdown--mega {
@@ -417,9 +417,21 @@ body:has(.soc-first-scroll) .top-nav.top-nav--menu-open:not(.top-nav--scrolled) 
 }
 
 .nav-mega__surface {
+  position: relative;
   width: fit-content;
   max-width: min(36rem, calc(100vw - 2rem));
   padding: var(--space-xl);
+  pointer-events: auto;
+}
+
+/* Invisible bridge so cursor can travel from trigger to panel without closing */
+.nav-mega__surface::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.85rem;
+  height: 0.85rem;
 }
 
 .nav-mega__inner {

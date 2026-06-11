@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import CtaBand from "../components/CtaBand";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import AiratShell from "../components/AiratShell";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
@@ -22,6 +22,23 @@ import "../styles/homepage.css";
 import "../styles/products-page.css";
 
 export default function ProductsPage() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const id = hash.slice(1);
+    let tries = 0;
+    const tick = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else if (tries++ < 10) {
+        requestAnimationFrame(tick);
+      }
+    };
+    requestAnimationFrame(tick);
+  }, [hash]);
+
   useEffect(() => {
     const base = getSiteBaseUrl();
     const rmBc = injectJsonLdScript(
@@ -85,7 +102,7 @@ export default function ProductsPage() {
         </section>
 
         {/* CSOC core feature block */}
-        <section className="section" aria-labelledby="products-core-heading">
+        <section id="product-soc" className="section" aria-labelledby="products-core-heading">
           <div className="container">
             <div className="product-core" style={{ "--pc-accent": core.accent } as React.CSSProperties}>
               <div className="product-core__main">
@@ -135,7 +152,7 @@ export default function ProductsPage() {
           </div>
           <RevealOnScroll className="container products-layers" as="div">
             {layers.map((l, i) => (
-              <article key={l.id} className="player-card" style={{ "--pl-accent": l.accent } as React.CSSProperties}>
+              <article key={l.id} id={`product-${l.id}`} className="player-card" style={{ "--pl-accent": l.accent } as React.CSSProperties}>
                 <div className="player-card__head">
                   <span className="player-card__kicker">{l.kicker}</span>
                   <span className="player-card__index">{`0${i + 2}`}</span>

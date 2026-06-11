@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type MouseEvent } from "react";
 import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -14,6 +14,7 @@ function isActive(pathname: string, to: string) {
   if (to === "/blog") return pathname === "/blog" || pathname.startsWith("/blog/");
   if (to === "/portfolio") return pathname === "/portfolio" || pathname.startsWith("/portfolio/");
   if (to === "/products") return pathname === "/products" || pathname.startsWith("/products/");
+  if (to === "/services") return pathname === "/services" || pathname.startsWith("/services/");
   if (to === "/resources") return pathname === "/resources" || pathname.startsWith("/glossary");
   if (to === "/demo") return pathname === "/demo" || pathname.startsWith("/demo/");
   if (to.includes("#")) {
@@ -64,7 +65,7 @@ function buildDrawerLinks() {
   return links;
 }
 
-function MegaMenuColumns({ item }: { item: NavMegaItem }) {
+function MegaMenuColumns({ item, onNavigate }: { item: NavMegaItem; onNavigate: () => void }) {
   return (
     <div
       className="nav-mega__inner"
@@ -76,7 +77,7 @@ function MegaMenuColumns({ item }: { item: NavMegaItem }) {
           <ul className="nav-mega__list">
             {col.links.map((link) => (
               <li key={drawerLinkKey(link.label, link.to)}>
-                <Link to={link.to} className="nav-mega__link" role="menuitem">
+                <Link to={link.to} className="nav-mega__link" role="menuitem" onClick={onNavigate}>
                   <span className="nav-mega__link-title">{link.label}</span>
                   <span className="nav-mega__link-desc">{link.description}</span>
                 </Link>
@@ -113,8 +114,21 @@ export default function SiteHeader() {
 
   const scheduleCloseMenu = useCallback(() => {
     cancelCloseMenu();
-    closeTimerRef.current = window.setTimeout(() => setOpenMenu(null), 140);
+    closeTimerRef.current = window.setTimeout(() => setOpenMenu(null), 80);
   }, [cancelCloseMenu]);
+
+  /** Don't close when pointer moves between trigger and portaled flyout panel. */
+  const handleMenuLeave = useCallback(
+    (event: MouseEvent) => {
+      const related = event.relatedTarget;
+      if (related instanceof Node) {
+        if (headerRef.current?.contains(related)) return;
+        if (flyoutRef.current?.contains(related)) return;
+      }
+      scheduleCloseMenu();
+    },
+    [scheduleCloseMenu],
+  );
 
   const openMenuByLabel = useCallback(
     (label: string) => {
@@ -234,7 +248,7 @@ export default function SiteHeader() {
                   key={item.label}
                   className={`nav-dropdown nav-dropdown--mega${navItemActive(pathname, item) ? " nav-dropdown--active" : ""}${isOpen ? " nav-dropdown--open" : ""}`}
                   onMouseEnter={() => openMenuByLabel(item.label)}
-                  onMouseLeave={scheduleCloseMenu}
+                  onMouseLeave={handleMenuLeave}
                 >
                   <div className="nav-dropdown__trigger-group">
                     <Link
@@ -269,7 +283,7 @@ export default function SiteHeader() {
                 key={dropdown.label}
                 className={`nav-dropdown${navItemActive(pathname, dropdown) ? " nav-dropdown--active" : ""}${isOpen ? " nav-dropdown--open" : ""}`}
                 onMouseEnter={() => openMenuByLabel(dropdown.label)}
-                onMouseLeave={scheduleCloseMenu}
+                onMouseLeave={handleMenuLeave}
               >
                 <button
                   type="button"
@@ -288,12 +302,12 @@ export default function SiteHeader() {
                   role="menu"
                   aria-hidden={!isOpen}
                   onMouseEnter={() => openMenuByLabel(dropdown.label)}
-                  onMouseLeave={scheduleCloseMenu}
+                  onMouseLeave={handleMenuLeave}
                 >
                   <div className="nav-dropdown__surface nav-glass">
                     <p className="nav-dropdown__heading">{dropdown.label}</p>
                     {dropdown.links.map((link) => (
-                      <Link key={link.to} to={link.to} className="nav-dropdown__link" role="menuitem">
+                      <Link key={link.to} to={link.to} className="nav-dropdown__link" role="menuitem" onClick={closeMenu}>
                         {link.label}
                       </Link>
                     ))}
@@ -329,10 +343,10 @@ export default function SiteHeader() {
             style={{ top: flyoutTop }}
             role="menu"
             onMouseEnter={() => openMenuByLabel(openMegaItem.label)}
-            onMouseLeave={scheduleCloseMenu}
+            onMouseLeave={handleMenuLeave}
           >
             <div className="nav-mega__surface nav-glass">
-              <MegaMenuColumns item={openMegaItem} />
+              <MegaMenuColumns item={openMegaItem} onNavigate={closeMenu} />
             </div>
           </div>,
           document.body,

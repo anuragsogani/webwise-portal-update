@@ -14,16 +14,19 @@ declare global {
   }
 }
 
-/** Define `gtag` and load gtag.js once (SPA-friendly: page views sent separately). */
+/** Ensure GA4 is ready (index.html loads gtag; this is a no-op fallback for dev). */
 export function initGa(): void {
   if (!GA_ID || typeof window === "undefined" || booted) return;
   booted = true;
+
+  if (window.gtag) return;
+
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag(...args: unknown[]) {
     window.dataLayer!.push(args);
   };
   window.gtag("js", new Date());
-  window.gtag("config", GA_ID, { send_page_view: false });
+  window.gtag("config", GA_ID);
 
   const s = document.createElement("script");
   s.async = true;
@@ -35,7 +38,8 @@ export function trackPageView(pathWithSearch: string): void {
   if (!GA_ID || !window.gtag) return;
   const path = pathWithSearch.startsWith("/") ? pathWithSearch : `/${pathWithSearch}`;
   const page_location = `${window.location.origin}${path}`;
-  window.gtag("event", "page_view", {
+  // GA4 recommended SPA pattern: update config on route change (sends page_view).
+  window.gtag("config", GA_ID, {
     page_path: path,
     page_location,
     page_title: document.title,

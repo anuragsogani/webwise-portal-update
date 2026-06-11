@@ -32,9 +32,9 @@ export const FOOTER_COLUMNS: readonly FooterColumn[] = [
     links: [
       { label: "All products", to: "/products" },
       { label: "Autonomous SOC Platform", to: "/products/soc" },
-      { label: "Agent Detection & Response", to: "/products/adr" },
-      { label: "Cyber Audit & GRC", to: "/products/audit" },
+      { label: "Endpoint Operations & Security", to: "/products/endpoint" },
       { label: "Cloud Security & Governance", to: "/products/cspm" },
+      { label: "Agent Detection & Response", to: "/products/adr" },
     ],
   },
   {

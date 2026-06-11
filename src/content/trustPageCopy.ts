@@ -164,24 +164,24 @@ export const TRUST_NEXT_UP = {
   title: "Next up",
   items: [
     {
-      title: "Managed SOC & XDR",
+      title: "Autonomous SOC Platform",
       description: "Operate security with measurable outcomes",
       to: "/products/soc",
     },
     {
-      title: "Agent Detection & Response",
-      description: "Visibility, governance, and threat detection for AI agents",
-      to: "/products/adr",
-    },
-    {
-      title: "Cyber Audit & GRC",
-      description: "Manage compliance throughout the customer lifecycle",
-      to: "/products/audit",
+      title: "Endpoint Operations & Security",
+      description: "Fleet discovery, patching, policy enforcement, and privileged operations",
+      to: "/products/endpoint",
     },
     {
       title: "Cloud Security & Governance",
       description: "CSPM, DevSecOps, identity governance, compliance, and cost intelligence",
       to: "/products/cspm",
+    },
+    {
+      title: "Agent Detection & Response",
+      description: "Visibility, governance, and threat detection for AI agents",
+      to: "/products/adr",
     },
     {
       title: "Data & search",

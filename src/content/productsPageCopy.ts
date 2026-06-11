@@ -3,9 +3,9 @@
 export const SLIDE_DURATION_MS = 5000;
 
 export const PRODUCTS_SEO = {
-  title: "Products | Autonomous SOC, ADR, Cloud Security & GRC | AiRAT",
+  title: "Products | Autonomous SOC, Endpoint, Cloud & ADR | AiRAT",
   description:
-    "Autonomous SOC, Agent Detection & Response, Cloud Security & Governance, and Cyber Audit & GRC. Unified platforms for detection, cloud posture, agent security, and compliance.",
+    "Autonomous SOC, Endpoint Operations & Security, Cloud Security & Governance, and Agent Detection & Response. Unified platforms wired to one intelligence core from day one.",
 } as const;
 
 /** Particle silhouette synced with featured product title (5s carousel). */
@@ -38,28 +38,16 @@ export const FEATURED_PRODUCT_SLIDES: readonly FeaturedProductSlide[] = [
     particleForm: "siem",
   },
   {
-    id: "adr",
+    id: "xdr",
     eyebrow: "Featured product",
-    title: "Agent Detection & Response (ADR)",
+    title: "Endpoint Operations & Security Platform",
     summary:
-      "Secure every agent. Govern every decision. Continuous visibility, threat detection, and response for AI agents, MCP servers, copilots, and autonomous workflows.",
+      "One lightweight agent for every endpoint — live discovery, patching, policy enforcement, privileged operations, and zero-trust comms wired into the CSOC core.",
     ctaLabel: "See platform",
-    ctaTo: "/products/adr",
-    lottieSrc: "/lottie/product-adr.json",
-    lottieFallbackSrc: "/doodles/home-icons/airat-ai-systems-icon.svg",
-    particleForm: "adr",
-  },
-  {
-    id: "audit",
-    eyebrow: "Featured product",
-    title: "Cyber Audit & GRC Assurance",
-    summary:
-      "Risk maturity, regulatory alignment, and audit-ready evidence — from health checks through continuous compliance monitoring.",
-    ctaLabel: "Explore product",
-    ctaTo: "/products/audit",
-    lottieSrc: "/lottie/product-audit.json",
-    lottieFallbackSrc: "/doodles/compliance-audit.svg",
-    particleForm: "audit",
+    ctaTo: "/products/endpoint",
+    lottieSrc: "/lottie/product-soc.json",
+    lottieFallbackSrc: "/doodles/home-icons/airat-security-icon.svg",
+    particleForm: "xdr",
   },
   {
     id: "cspm",
@@ -73,9 +61,21 @@ export const FEATURED_PRODUCT_SLIDES: readonly FeaturedProductSlide[] = [
     lottieFallbackSrc: "/doodles/platform-devops.svg",
     particleForm: "cspm",
   },
+  {
+    id: "adr",
+    eyebrow: "Featured product",
+    title: "Agent Detection & Response (ADR)",
+    summary:
+      "Secure every agent. Govern every decision. Continuous visibility, threat detection, and response for AI agents, MCP servers, copilots, and autonomous workflows.",
+    ctaLabel: "See platform",
+    ctaTo: "/products/adr",
+    lottieSrc: "/lottie/product-adr.json",
+    lottieFallbackSrc: "/doodles/home-icons/airat-ai-systems-icon.svg",
+    particleForm: "adr",
+  },
 ] as const;
 
-export const PRODUCT_IDS = ["soc", "adr", "audit", "cspm"] as const;
+export const PRODUCT_IDS = ["soc", "cspm", "adr"] as const;
 export type ProductId = (typeof PRODUCT_IDS)[number];
 
 export type WorkflowStep = {
@@ -163,34 +163,6 @@ export const PRODUCTS: readonly ProductDetail[] = [
     ],
   },
   {
-    id: "audit",
-    title: "Cyber Audit & GRC Assurance",
-    seoTitle: "Cyber Audit & GRC | Compliance Assurance | AiRAT",
-    seoDescription:
-      "GRC consulting, IT security audits, risk maturity, regulatory alignment, and audit-ready evidence for regulated enterprises.",
-    lead:
-      "Compliance is architecture, not a seasonal scramble. We align policies, controls, and evidence chains so audit reviews become repeatable — not rescue missions.",
-    workflow: [
-      { step: "01", title: "Baseline maturity", body: "Health check against policies, controls, and regulatory expectations." },
-      { step: "02", title: "Gap & prioritize", body: "Rank gaps by risk, owner, and audit timeline with remediation plans." },
-      { step: "03", title: "Implement controls", body: "Harden monitoring, access, and change processes with evidence hooks." },
-      { step: "04", title: "Assure & monitor", body: "Evidence packs, continuous compliance monitoring, and audit support." },
-    ],
-    outcomes: [
-      "Audit-ready evidence packs, not manual spreadsheet hunts",
-      "Risk maturity benchmarks with clear remediation paths",
-      "Continuous monitoring of compliance and configuration drift",
-    ],
-    capabilities: [
-      "GRC consulting and cyber risk maturity assessment",
-      "IT security health checks and structured audit programs",
-      "Regulatory alignment for UAE, EU, APAC, and financial-sector frameworks",
-      "Security audit monitoring and compliance change management",
-      "Third-party, privileged, and developer access monitoring",
-      "Supply chain and operational compliance hardening",
-    ],
-  },
-  {
     id: "cspm",
     title: "Cloud Security & Governance Platform",
     seoTitle: "Cloud Security & Governance Platform | CSPM, DevSecOps & Cost Intelligence | AiRAT",
@@ -241,22 +213,13 @@ export const PRODUCT_TILES: readonly ProductTile[] = [
     ctaLabel: "See platform",
   },
   {
-    id: "adr",
-    title: "Agent Detection & Response (ADR)",
+    id: "xdr",
+    title: "Endpoint Operations & Security Platform",
     body:
-      "Secure every agent. Govern every decision. Visibility, governance, threat detection, and response for AI agents, MCP servers, copilots, and autonomous workflows.",
-    metaType: "Agent security",
-    metaSignal: "8+ visibility domains · 24×7 monitoring",
+      "One lightweight agent for every endpoint — live discovery, patching, policy enforcement, privileged operations, and zero-trust comms wired into the CSOC core.",
+    metaType: "Endpoint operations",
+    metaSignal: "1 control plane · admin-only access",
     ctaLabel: "See platform",
-  },
-  {
-    id: "audit",
-    title: "Cyber Audit & GRC Assurance",
-    body:
-      "Risk maturity, regulatory alignment, and audit-ready evidence chains — from health checks through continuous compliance monitoring.",
-    metaType: "GRC / Audit",
-    metaSignal: "Audit-ready evidence packs",
-    ctaLabel: "Explore product",
   },
   {
     id: "cspm",
@@ -267,13 +230,22 @@ export const PRODUCT_TILES: readonly ProductTile[] = [
     metaSignal: "Posture · DevSecOps · Cost intel",
     ctaLabel: "See platform",
   },
+  {
+    id: "adr",
+    title: "Agent Detection & Response (ADR)",
+    body:
+      "Secure every agent. Govern every decision. Visibility, governance, threat detection, and response for AI agents, MCP servers, copilots, and autonomous workflows.",
+    metaType: "Agent security",
+    metaSignal: "8+ visibility domains · 24×7 monitoring",
+    ctaLabel: "See platform",
+  },
 ] as const;
 
 export const PRODUCT_TILE_ICONS = [
-  { src: "/images/duna-style/feature-security-console.svg", alt: "Managed CSOC and XDR" },
-  { src: "/images/duna-style/feature-ai-console.svg", alt: "Agent and application detection and response" },
-  { src: "/images/duna-style/trust-compliance-console.svg", alt: "Cyber audit and GRC assurance" },
+  { src: "/images/duna-style/feature-security-console.svg", alt: "Autonomous SOC platform" },
+  { src: "/images/duna-style/feature-security-console.svg", alt: "Endpoint operations and security platform" },
   { src: "/images/duna-style/feature-service-cloud-native.svg", alt: "Cloud Security & Governance Platform" },
+  { src: "/images/duna-style/feature-ai-console.svg", alt: "Agent Detection & Response" },
 ] as const;
 
 export type CyberService = {
@@ -303,10 +275,10 @@ export const CYBER_SERVICES: readonly CyberService[] = [
     linkTo: "/products/soc",
   },
   {
-    id: "grc",
-    title: "GRC & Compliance Advisory",
-    summary: "Policies, risk maturity, and audit-ready operating models.",
-    linkTo: "/products/audit",
+    id: "endpoint-ops",
+    title: "Endpoint Operations & Security",
+    summary: "Fleet discovery, patching, policy enforcement, and privileged operations from one agent.",
+    linkTo: "/products/endpoint",
   },
   {
     id: "cloud-engineering",
@@ -378,7 +350,7 @@ export const CYBER_SOLUTIONS: readonly CyberSolution[] = [
     title: "Compliance Audit Readiness Accelerator",
     oneLiner: "Evidence chains, control gaps, and remediation plans auditors expect.",
     outcomes: ["Structured evidence packs", "Gap analysis with owners", "Continuous monitoring hooks"],
-    relatedProductId: "audit",
+    relatedProductId: "soc",
   },
   {
     id: "soar-automation",
@@ -557,7 +529,7 @@ export const PRODUCTS_CLOSING = {
 
 export const PRODUCTS_FAQ_SECTION = {
   title: "Products — quick answers",
-  intro: "For security, platform, and procurement leads comparing SOC, ADR, audit, and cloud posture options.",
+  intro: "For security, platform, and procurement leads comparing SOC, endpoint, cloud, and ADR options.",
 } as const;
 
 export const PRODUCTS_FAQ = [
