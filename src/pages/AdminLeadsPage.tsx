@@ -193,30 +193,30 @@ export default function AdminLeadsPage() {
                         {new Date(lead.created_at).toLocaleDateString()}<br />
                         <span style={{ fontSize: 10 }}>{new Date(lead.created_at).toLocaleTimeString()}</span>
                       </td>
-                      <td style={{ fontWeight: 500 }}>{lead.name || "—"}</td>
+                      <td style={{ fontWeight: 500 }}>{lead.name || "-"}</td>
                       <td>
                         <a href={`mailto:${lead.email}`} style={{ color: "var(--adm-accent)", fontSize: 13 }} onClick={(e) => e.stopPropagation()}>
                           {lead.email}
                         </a>
                       </td>
-                      <td>{lead.company || "—"}</td>
+                      <td>{lead.company || "-"}</td>
                       <td style={{ maxWidth: 200 }}>
                         {lead.message ? (
                           <span style={{ fontSize: 12, color: "var(--adm-muted)", display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: 200 }}
                             title={lead.message}>
                             {lead.message.slice(0, 80)}{lead.message.length > 80 ? "…" : ""}
                           </span>
-                        ) : <span style={{ color: "var(--adm-dim)" }}>—</span>}
+                        ) : <span style={{ color: "var(--adm-dim)" }}>-</span>}
                       </td>
                       <td>
-                        <span className="adm-badge adm-badge--info">{lead.source || "—"}</span>
+                        <span className="adm-badge adm-badge--info">{lead.source || "-"}</span>
                       </td>
                       <td style={{ fontSize: 12, color: "var(--adm-muted)" }}>
-                        {[lead.city, lead.country].filter(Boolean).join(", ") || "—"}
+                        {[lead.city, lead.country].filter(Boolean).join(", ") || "-"}
                       </td>
                       <td>
                         <span className={`adm-badge adm-badge--${lead.delivery_status || "dim"}`}>
-                          {lead.delivery_status || "—"}
+                          {lead.delivery_status || "-"}
                         </span>
                       </td>
                       <td>
@@ -262,12 +262,12 @@ export default function AdminLeadsPage() {
           <div className="adm-modal adm-modal--wide" onClick={(e) => e.stopPropagation()}>
             <div className="adm-modal__header">
               <div className="adm-modal__title">
-                Lead Detail — {selected.name || selected.email}
+                Lead Detail - {selected.name || selected.email}
               </div>
               <button className="adm-btn adm-btn--ghost adm-btn--sm" onClick={() => setSelected(null)}>✕</button>
             </div>
             <div className="adm-modal__body">
-              {/* Message — most important field, shown first */}
+              {/* Message - most important field, shown first */}
               {selected.message && (
                 <div style={{ marginBottom: 20 }}>
                   <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 6 }}>
@@ -300,7 +300,7 @@ export default function AdminLeadsPage() {
                 ].map(([k, v]) => (
                   <div key={k}>
                     <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 3 }}>{k}</div>
-                    <div style={{ fontSize: 13, color: v ? "#fff" : "var(--adm-dim)" }}>{v || "—"}</div>
+                    <div style={{ fontSize: 13, color: v ? "#fff" : "var(--adm-dim)" }}>{v || "-"}</div>
                   </div>
                 ))}
               </div>
@@ -322,7 +322,7 @@ export default function AdminLeadsPage() {
                 ].map(([k, v]) => (
                   <div key={k}>
                     <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 3 }}>{k}</div>
-                    <div style={{ fontSize: 13, color: v ? "#fff" : "var(--adm-dim)" }}>{v || "—"}</div>
+                    <div style={{ fontSize: 13, color: v ? "#fff" : "var(--adm-dim)" }}>{v || "-"}</div>
                   </div>
                 ))}
               </div>
@@ -342,7 +342,7 @@ export default function AdminLeadsPage() {
                 ].map(([k, v]) => (
                   <div key={k}>
                     <div style={{ fontSize: 10, fontWeight: 700, color: "var(--adm-muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 3 }}>{k}</div>
-                    <div style={{ fontSize: 12, color: v ? "var(--adm-muted)" : "var(--adm-dim)", fontFamily: "var(--adm-mono)" }}>{v || "—"}</div>
+                    <div style={{ fontSize: 12, color: v ? "var(--adm-muted)" : "var(--adm-dim)", fontFamily: "var(--adm-mono)" }}>{v || "-"}</div>
                   </div>
                 ))}
               </div>

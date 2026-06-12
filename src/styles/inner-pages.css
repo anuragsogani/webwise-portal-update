@@ -1035,7 +1035,7 @@ html[data-theme="light"] .scroll-accordion__item:not(.scroll-accordion__item--ac
   font-size: 0.75rem;
 }
 
-/* FAQ (AEO / AIO) — layout only; accordion chrome lives in components.css */
+/* FAQ (AEO / AIO) - layout only; accordion chrome lives in components.css */
 .faq-section__intro {
   margin-bottom: 1.25rem;
 }

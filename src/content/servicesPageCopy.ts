@@ -1,7 +1,7 @@
 export const SERVICES_SEO = {
   title: "Services | Security, AI, Data & Platform Operations | AiRAT",
   description:
-    "AiRAT engineers intelligent operations across security, AI, data, and platform. We turn fragmented tools and manual workflows into observable, governed systems that scale  -  built in the UAE, India, and Europe.",
+    "AiRAT engineers intelligent operations across security, AI, data, and platform, turning fragmented tools into observable governed systems.",
 } as const;
 
 export const SERVICES_HERO = {
@@ -13,7 +13,7 @@ export const SERVICES_HERO = {
 
 export const SERVICES_PILLARS_SECTION = {
   title: "Four operations. One delivery model.",
-  lead: "We build operational excellence across the systems your business runs on  -  detection, AI, data, and infrastructure.",
+  lead: "We build operational excellence across the systems your business runs on - detection, AI, data, and infrastructure.",
 } as const;
 
 export type ServicePillar = {
@@ -28,7 +28,7 @@ export type ServicePillar = {
   lead: string;
   /** The pressures the buyer feels today */
   challenges: string[];
-  /** Capability chips  -  what we deliver */
+  /** Capability chips - what we deliver */
   deliver: string[];
   /** The business outcome line */
   outcome: string;
@@ -53,7 +53,7 @@ export const SERVICES_PILLARS: ServicePillar[] = [
     id: "security",
     label: "Security Operations",
     headline: "Threats aren't waiting. Neither should your response.",
-    subhead: "Security teams have more tooling than ever  -  and less clarity.",
+    subhead: "Security teams have more tooling than ever - and less clarity.",
     lead: "Visibility stays fragmented, investigations stay manual, and real alerts get buried under noise. Adding tools rarely solves it. Creating operational intelligence does. We turn reactive security programs into intelligent operations that detect, investigate, prioritise, and respond at scale.",
     challenges: [
       "Thousands of alerts arrive, but only a fraction get investigated.",
@@ -81,7 +81,7 @@ export const SERVICES_PILLARS: ServicePillar[] = [
     id: "ai",
     label: "AI Operations",
     headline: "AI is moving faster than your governance.",
-    subhead: "Copilots, agents, and RAG platforms ship at speed  -  with little oversight.",
+    subhead: "Copilots, agents, and RAG platforms ship at speed - with little oversight.",
     lead: "Most teams have little visibility into how AI systems behave once deployed. Without governance, AI quickly becomes an operational and security challenge. We build AI systems that are observable, secure, compliant, and production-ready.",
     challenges: [
       "AI initiatives stay stuck in proof-of-concept mode.",
@@ -110,7 +110,7 @@ export const SERVICES_PILLARS: ServicePillar[] = [
     label: "Data Operations",
     headline: "Most organizations have data. Few have intelligence.",
     subhead: "Decisions still run on fragmented reports and hand-assembled spreadsheets.",
-    lead: "Applications generate data, customers create it, systems depend on it  -  yet teams spend more time preparing data than using it. We build data ecosystems that transform information into operational advantage.",
+    lead: "Applications generate data, customers create it, systems depend on it - yet teams spend more time preparing data than using it. We build data ecosystems that transform information into operational advantage.",
     challenges: [
       "Business decisions rely on inconsistent, contested reporting.",
       "Critical information is scattered across disconnected systems.",
@@ -188,7 +188,7 @@ export const SERVICES_WHY = {
 export const SERVICES_ENGAGEMENT = {
   title: "Flexible expertise. Measurable outcomes.",
   intro:
-    "Engage us the way the problem demands  -  from a focused assessment to embedded delivery  -  with success defined in outcomes, not headcount.",
+    "Engage us the way the problem demands - from a focused assessment to embedded delivery - with success defined in outcomes, not headcount.",
   models: [
     {
       num: "Advisory",
@@ -216,7 +216,7 @@ export const SERVICES_ENGAGEMENT = {
 export const SERVICES_CLOSING = {
   eyebrow: "The difference",
   title: "Operational excellence doesn't happen by accident.",
-  body: "The most successful organizations aren't the ones with the most tools  -  they're the ones that consistently operate complex systems with visibility, governance, and confidence.",
+  body: "The most successful organizations aren't the ones with the most tools - they're the ones that consistently operate complex systems with visibility, governance, and confidence.",
 } as const;
 
 export const SERVICES_FAQ_SECTION = {
@@ -235,10 +235,10 @@ export const SERVICES_FAQ = [
   },
   {
     q: "How do AI engagements stay governable?",
-    a: "We design retrieval boundaries, evaluation harnesses, logging, and human review gates up front so models stay observable and auditable. RAG and agent deployments ship with guardrails appropriate to your data classification  -  not demo prompts frozen in production.",
+    a: "We design retrieval boundaries, evaluation harnesses, logging, and human review gates up front so models stay observable and auditable. RAG and agent deployments ship with guardrails appropriate to your data classification - not demo prompts frozen in production.",
   },
   {
     q: "Which engagements do you decline?",
-    a: "We decline work where success cannot be defined, where shortcuts would compromise safety in regulated environments, or where we cannot put senior engineers on the critical path. We say no early when fit is weak  -  not after months of scoping.",
+    a: "We decline work where success cannot be defined, where shortcuts would compromise safety in regulated environments, or where we cannot put senior engineers on the critical path. We say no early when fit is weak - not after months of scoping.",
   },
 ] as const;

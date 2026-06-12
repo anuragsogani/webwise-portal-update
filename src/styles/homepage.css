@@ -11,7 +11,7 @@
   max-width: min(17em, 92vw);
 }
 
-/* Hero landscape — Duna: scenic art on top, copy on white below */
+/* Hero landscape - Duna: scenic art on top, copy on white below */
 .hero-scene {
   position: relative;
   padding-block: 0;
@@ -19,26 +19,27 @@
   overflow: hidden;
 }
 
-/* .section loads after homepage.css in the bundle — override its top padding */
+/* .section loads after homepage.css in the bundle - override its top padding */
 .hero-scene.section {
-  display: grid;
-  grid-template-areas: "stack";
-  align-items: stretch;
-  min-height: clamp(40rem, 86dvh, 56rem);
+  display: flex;
+  flex-direction: column;
+  /* Full viewport height so hero + logos band all fit on screen at 100% zoom */
+  height: 100dvh;
+  height: 100vh; /* fallback */
+  min-height: 36rem;
+  max-height: 64rem; /* prevent over-scaling on very tall monitors */
   padding-top: 0;
-  padding-bottom: clamp(1rem, 3vw, 1.5rem);
-  gap: clamp(0.75rem, 2vh, 1.25rem);
+  padding-bottom: 0;
+  gap: 0;
   margin-top: calc(-1 * (var(--nav-block-height) + env(safe-area-inset-top, 0px)));
 }
 
 .hero-scene__art {
-  position: relative;
-  grid-area: stack;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
+  /* Absolute background layer - covers the full hero */
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   overflow: hidden;
-  margin-top: 0;
   background: var(--color-canvas);
 }
 
@@ -71,25 +72,23 @@
 
 .hero-scene__inner {
   position: relative;
-  grid-area: stack;
   z-index: 2;
-  align-self: start;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1rem, 3vh, 1.75rem);
+  gap: clamp(0.75rem, 2.5vh, 1.5rem);
   margin-top: 0;
-  padding-top: clamp(7rem, 17vh, 11rem);
-  padding-bottom: clamp(1rem, 3vh, 2rem);
+  padding-top: clamp(6rem, 15vh, 10rem);
+  padding-bottom: clamp(0.75rem, 2vh, 1.5rem);
   padding-inline: clamp(1rem, 3vw, 2rem);
 }
-/* hero CTA: primary, then explore links — sits lower in the scene */
+/* hero CTA: primary, then explore links - sits lower in the scene */
 .hero-scene__cta {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1rem, 2.5vh, 1.5rem);
-  margin-top: clamp(2.5rem, 9vh, 6rem);
+  gap: clamp(0.75rem, 2vh, 1.25rem);
+  margin-top: clamp(1.5rem, 6vh, 4rem);
 }
 .hero-scene__sublinks {
   display: flex;
@@ -104,9 +103,11 @@
 }
 
 .hero-scene__logos-band {
-  position: relative;
+  /* Pushed to the bottom of the flex hero via margin-top: auto */
+  margin-top: auto;
   z-index: 3;
-  padding-block: clamp(1.25rem, 3.5vw, 2.25rem);
+  position: relative;
+  padding-block: clamp(0.75rem, 2vw, 1.25rem);
   pointer-events: auto;
 }
 
@@ -192,7 +193,7 @@
   max-width: 100%;
 }
 
-/* Sky AI showcase — full-width cloud panorama, copy in the clear center */
+/* Sky AI showcase - full-width cloud panorama, copy in the clear center */
 .product-showcase-sky {
   position: relative;
   isolation: isolate;
@@ -354,13 +355,18 @@
 /* ── Client logo running bar (home + about) ── */
 .client-marquee {
   width: 100%;
+  overflow: hidden;
+  contain: layout paint;
   margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 .client-marquee__viewport {
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: clamp(4.5rem, 8vw, 5.75rem);
   overflow: hidden;
-  padding: clamp(0.85rem, 2vw, 1.35rem) 0;
+  contain: strict;
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
@@ -378,6 +384,9 @@
 }
 
 .client-marquee__track {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 0;
   display: flex;
   width: max-content;
   align-items: center;
@@ -392,11 +401,11 @@
 
 @keyframes client-marquee-scroll {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, -50%, 0);
   }
 
   100% {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, -50%, 0);
   }
 }
 
@@ -414,13 +423,13 @@
 }
 
 .client-marquee__item .client-logo-mark--img {
-  filter: grayscale(1);
+  filter: grayscale(1) contrast(0.92) brightness(0.72);
   opacity: 0.72;
 }
 
 .client-marquee__item .client-logo-mark--img.client-logo-mark--brand {
-  filter: none;
-  opacity: 0.92;
+  filter: grayscale(1) contrast(0.92) brightness(0.72);
+  opacity: 0.72;
 }
 
 .client-marquee__item .client-logo-mark--fallback {
@@ -1652,17 +1661,18 @@
     max-width: none;
   }
 
+  /* Tablet step: 3-up → 2-up (will collapse to 1-up at ≤640px) */
   .stat-row,
   .news-grid,
   .testimonial-grid,
   .diff-grid,
   .card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .stat-row--2col,
   .diff-grid--2col {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .product-showcase-dark__grid,
@@ -1714,6 +1724,17 @@
 
   .sub-feature-row,
   .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile step: 2-up → 1-up for grids that were 2-up at tablet */
+  .stat-row,
+  .news-grid,
+  .testimonial-grid,
+  .diff-grid,
+  .card-grid,
+  .stat-row--2col,
+  .diff-grid--2col {
     grid-template-columns: 1fr;
   }
 }

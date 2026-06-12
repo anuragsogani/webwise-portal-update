@@ -76,8 +76,8 @@
   height: auto;
   max-width: 100%;
   max-height: 100%;
-  filter: none;
-  opacity: 1;
+  filter: grayscale(1) contrast(0.92) brightness(0.72);
+  opacity: 0.72;
   transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
 }
 
@@ -92,13 +92,13 @@
 }
 
 .client-logo-mark--brand.client-logo-mark--img {
-  filter: none;
-  opacity: 0.95;
+  filter: grayscale(1) contrast(0.92) brightness(0.72);
+  opacity: 0.72;
 }
 
 .client-grid__cell:hover .client-logo-mark--img {
-  filter: none;
-  opacity: 1;
+  filter: grayscale(1) contrast(0.96) brightness(0.64);
+  opacity: 0.84;
   transform: scale(1.04);
 }
 
@@ -179,7 +179,7 @@ html[data-theme="light"] .client-logo-mark--fallback {
   min-width: 0;
 }
 
-/* Logo slot only — no tile chrome; logos sit on the panel background */
+/* Logo slot only - no tile chrome; logos sit on the panel background */
 .client-grid__logo {
   display: flex;
   align-items: center;

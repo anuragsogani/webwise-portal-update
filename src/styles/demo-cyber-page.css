@@ -350,7 +350,7 @@ html:not([data-theme="light"]) .cyber-ui [class~="bg-[#fafafa]"] {
 }
 
 /* ================================================================
-   LIGHT THEME OVERRIDES — scoped to .cyber-ui
+   LIGHT THEME OVERRIDES - scoped to .cyber-ui
    Inherits XDR utility overrides via @import, adds cyber-specific tokens.
    ================================================================ */
 html[data-theme="light"] .cyber-ui {

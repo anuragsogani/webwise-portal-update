@@ -1,5 +1,5 @@
 /*
- * Duna section-block kit — page composition primitives
+ * Duna section-block kit - page composition primitives
  * See design.md for token mapping and usage.
  */
 
@@ -273,7 +273,7 @@
   overflow-wrap: break-word;
 }
 
-/* Legacy alias — card layout is default on .faq-accordion */
+/* Legacy alias - card layout is default on .faq-accordion */
 .faq-accordion--cards {
   gap: var(--space-xs);
 }

@@ -50,14 +50,14 @@
 }
 
 /* ════════════════════════════════════════════════════════════════
-   SERVICES PAGE — creative layer (4-pillar redesign)
+   SERVICES PAGE - creative layer (4-pillar redesign)
    "Fragmentation → Intelligence": noise resolving into order.
    Built on existing tokens. Square geometry, lime/teal palette.
    Fully prefers-reduced-motion safe.
    ════════════════════════════════════════════════════════════════ */
 
 .services-page {
-  /* per-pillar accents — within brand spirit, warm-canvas friendly */
+  /* per-pillar accents - within brand spirit, warm-canvas friendly */
   --svc-security: #46838c; /* teal token */
   --svc-ai: #9bd40f; /* lime active */
   --svc-data: #c79a3e; /* warm gold, complements canvas */
@@ -83,7 +83,7 @@
   width: 100%;
   height: 100%;
 }
-/* readability scrim — soft glow behind the centred copy, wave shows around */
+/* readability scrim - soft glow behind the centred copy, wave shows around */
 .services-hero::after {
   content: "";
   position: absolute;
@@ -398,7 +398,7 @@
   padding-top: calc(var(--space-lg) + 4px);
 }
 
-/* persistent top accent bar — colour-codes the four operations */
+/* persistent top accent bar - colour-codes the four operations */
 .pillar-nav__item::after {
   content: "";
   position: absolute;
@@ -466,7 +466,7 @@
   transform: none;
 }
 
-/* ── Overview statement — folds the "real world" message in ───── */
+/* ── Overview statement - folds the "real world" message in ───── */
 .svc-statement {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -547,7 +547,7 @@
   flex: none;
 }
 
-/* zig-zag rhythm — alternate the panel side */
+/* zig-zag rhythm - alternate the panel side */
 .pillar-section--reverse .feature-module__intro { order: 2; }
 .pillar-section--reverse .feature-module__visual-slot { order: 1; }
 
@@ -687,7 +687,7 @@
   to { transform: translateX(120%); }
 }
 
-/* ── Quad grid — balanced 4-up for Why-us & Engagement ────────── */
+/* ── Quad grid - balanced 4-up for Why-us & Engagement ────────── */
 .svc-quad {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -839,7 +839,7 @@
 }
 
 /* ════════════════════════════════════════════════════════════════
-   PILLAR LIVE PANELS — bespoke "before → order" visuals
+   PILLAR LIVE PANELS - bespoke "before → order" visuals
    Each adopts --svc-accent from its section.
    ════════════════════════════════════════════════════════════════ */
 .pillar-panel {
@@ -892,7 +892,7 @@
   opacity: 0.85;
 }
 
-/* Security — alert noise collapsing to one incident */
+/* Security - alert noise collapsing to one incident */
 .pv-alert {
   fill: var(--color-surface-soft);
   stroke: var(--color-hairline);
@@ -950,7 +950,7 @@
   text-anchor: middle;
 }
 
-/* AI — request flowing through governance gates */
+/* AI - request flowing through governance gates */
 .pv-track {
   stroke: var(--color-hairline);
   stroke-width: 2;
@@ -1033,7 +1033,7 @@
   93%,100% { opacity: 0; transform: scale(1); }
 }
 
-/* Data — refinement funnel: raw values converge into one trusted figure */
+/* Data - refinement funnel: raw values converge into one trusted figure */
 .pv-stage {
   font-family: var(--font-mono, monospace);
   font-size: 9px;
@@ -1083,7 +1083,7 @@
   fill: var(--color-ink-deep);
 }
 
-/* Platform — ordered scaling lattice */
+/* Platform - ordered scaling lattice */
 .pv-pipe { stroke: var(--color-hairline); stroke-width: 2; }
 .pv-pipe--flow {
   stroke: var(--svc-accent);

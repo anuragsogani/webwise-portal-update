@@ -157,7 +157,7 @@ export const ADR_SCROLL_THREE = {
       "Resource Consumption",
       "Security Events",
     ],
-    result: "See how every component in your AI stack connects — and where risk concentrates.",
+    result: "See how every component in your AI stack connects - and where risk concentrates.",
   },
   response: {
     eyebrow: "Agent response center",

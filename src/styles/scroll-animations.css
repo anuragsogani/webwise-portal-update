@@ -60,7 +60,7 @@
   }
 }
 
-/* Hero loads in view — stagger without waiting for scroll */
+/* Hero loads in view - stagger without waiting for scroll */
 .hero-enter .reveal {
   opacity: 0;
 }

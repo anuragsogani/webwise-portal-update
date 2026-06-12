@@ -1,2 +1,2 @@
-/** Deprecated — superseded by CognitionLayer. */
+/** Deprecated - superseded by CognitionLayer. */
 export {};

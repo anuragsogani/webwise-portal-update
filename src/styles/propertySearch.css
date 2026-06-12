@@ -985,7 +985,7 @@ html:not([data-theme="light"]) .ps-header {
 }
 
 /* ================================================================
-   LIGHT THEME OVERRIDES — scoped to #demo-prop-root / .ps-*
+   LIGHT THEME OVERRIDES - scoped to #demo-prop-root / .ps-*
    ================================================================ */
 html[data-theme="light"] #demo-prop-root {
   --tiffany: #078f8b;

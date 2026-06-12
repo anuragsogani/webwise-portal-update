@@ -1,7 +1,7 @@
 export const CSPM_PRODUCT_SEO = {
   title: "Cloud Security & Governance Platform | CSPM, DevSecOps & Cost Intelligence | AiRAT",
   description:
-    "Secure every cloud. Govern every resource. Unified visibility across infrastructure, identities, code, and services — with posture management, DevSecOps, identity governance, compliance, and cost intelligence.",
+    "Secure every cloud. Govern every resource. Unified visibility across infrastructure, identities, code, and services - with posture management, DevSecOps, identity governance, compliance, and cost intelligence.",
 } as const;
 
 export const CSPM_HERO = {
@@ -36,7 +36,7 @@ export const CSPM_METRICS = [
   },
   {
     label: "Intelligence",
-    detail: "Security, governance, compliance & cost — unified",
+    detail: "Security, governance, compliance & cost - unified",
     fallback: "One Platform",
   },
 ] as const;
@@ -163,7 +163,7 @@ export const CSPM_SCROLL_THREE = {
   },
   dashboard: {
     eyebrow: "Cloud intelligence dashboard",
-    title: "Security, compliance & cost — in one view",
+    title: "Security, compliance & cost - in one view",
     lead: "Transform cloud complexity into actionable intelligence.",
     listLabel: "Executive visibility",
     highlights: [
@@ -185,7 +185,7 @@ export const CSPM_SCROLL_THREE = {
   },
   why: {
     eyebrow: "Why organizations choose this platform",
-    title: "Cloud security, governance, and cost — unified",
+    title: "Cloud security, governance, and cost - unified",
     items: [
       { title: "Reduce Cloud Risk", body: "Identify and remediate security gaps continuously." },
       { title: "Improve Governance", body: "Maintain visibility and control across environments." },
@@ -198,7 +198,7 @@ export const CSPM_SCROLL_THREE = {
   cta: {
     title: "Secure. Govern. Optimize.",
     lead: "Transform cloud complexity into continuous visibility, security, compliance, and operational intelligence.",
-    subtitle: "Cloud Security, Governance, Compliance, and Cost Intelligence — Unified.",
+    subtitle: "Cloud Security, Governance, Compliance, and Cost Intelligence - Unified.",
     primary: { label: "Request Demo", to: "/contact?intent=cspm-demo" },
     secondary: { label: "Talk to a Cloud Security Expert", to: "/contact?intent=cspm-expert" },
   },

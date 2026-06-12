@@ -1,4 +1,4 @@
-/** Shared capability / stack copy  -  used outside the homepage narrative */
+/** Shared capability / stack copy - used outside the homepage narrative */
 
 export const EXPLORE_DOMAIN_LINKS = [
   { label: "Agentic AI Platforms", to: "/portfolio?category=AI" },
@@ -20,19 +20,19 @@ export const HOME_SERVICES = [
     icon: "🤖",
     name: "Agentic AI & RAG Systems",
     tag: "AI · LLMs · Automation",
-    body: "Your teams spend hours searching documents they can't query, waiting on analyses no one has time to run. We build AI agents that retrieve, reason, and act  -  so your teams spend their time on decisions, not data hunting. Custom RAG pipelines, LLM copilots, autonomous decision agents.",
+    body: "Your teams spend hours searching documents they can't query, waiting on analyses no one has time to run. We build AI agents that retrieve, reason, and act - so your teams spend their time on decisions, not data hunting. Custom RAG pipelines, LLM copilots, autonomous decision agents.",
   },
   {
     icon: "🛡️",
     name: "Cybersecurity & SIEM / XDR",
     tag: "Security · Threat Detection",
-    body: "Every alert your SOC reviews costs 15–20 minutes  -  and most alerts are noise. We build AI-native threat platforms that surface only what matters, cutting alert load by up to 87% and automating first-response on the rest.",
+    body: "Every alert your SOC reviews costs 15–20 minutes - and most alerts are noise. We build AI-native threat platforms that surface only what matters, cutting alert load by up to 87% and automating first-response on the rest.",
   },
   {
     icon: "🔍",
     name: "Petabyte-Scale Search",
     tag: "Search · ELK · OpenSearch",
-    body: "When an incident happens, every second of investigation time is risk exposure. We build petabyte-scale search infrastructure that returns answers in milliseconds, not minutes  -  across your entire data estate.",
+    body: "When an incident happens, every second of investigation time is risk exposure. We build petabyte-scale search infrastructure that returns answers in milliseconds, not minutes - across your entire data estate.",
   },
   {
     icon: "🔐",
@@ -44,19 +44,19 @@ export const HOME_SERVICES = [
     icon: "☁️",
     name: "Cloud Infra & DevSecOps",
     tag: "AWS · GCP · Kubernetes",
-    body: "Releases shouldn't depend on who remembers which compliance check ran last. We ship cloud infra and DevSecOps where compliance is continuous and your team deploys with confidence  -  not anxiety.",
+    body: "Releases shouldn't depend on who remembers which compliance check ran last. We ship cloud infra and DevSecOps where compliance is continuous and your team deploys with confidence - not anxiety.",
   },
   {
     icon: "📊",
     name: "Data Engineering & Pipelines",
     tag: "Kafka · Spark · Databricks",
-    body: "Data lives in dozens of systems that don't agree  -  and every broken pipeline becomes an apology to the business. We build real-time pipelines that make your estate queryable, reliable, and actionable across every source.",
+    body: "Data lives in dozens of systems that don't agree - and every broken pipeline becomes an apology to the business. We build real-time pipelines that make your estate queryable, reliable, and actionable across every source.",
   },
   {
     icon: "🧠",
     name: "ML Platform Engineering",
     tag: "MLOps · Model Serving",
-    body: "Models that never leave the notebook don't change revenue or risk. We build ML platforms that move work from notebook to production  -  reliably, repeatably, at enterprise scale.",
+    body: "Models that never leave the notebook don't change revenue or risk. We build ML platforms that move work from notebook to production - reliably, repeatably, at enterprise scale.",
   },
 ] as const;
 
@@ -64,7 +64,7 @@ export const STACK_EYEBROW = "Engineering foundation";
 export const STACK_TITLE = "The stack behind every";
 export const STACK_TITLE_EM = "platform we ship";
 export const STACK_NOTE =
-  "No experimental tools. No vendor lock-in. Every technology is production-proven across enterprise deployments in UAE, India, and Europe. We choose tools that earn their place  -  or we build what doesn't exist yet.";
+  "No experimental tools. No vendor lock-in. Every technology is production-proven across enterprise deployments in UAE, India, Singapore, and Europe. We choose tools that earn their place - or we build what doesn't exist yet.";
 
 export type HomeStackTool = { readonly name: string; readonly role: string; readonly icon?: string };
 

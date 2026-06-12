@@ -1,5 +1,5 @@
 /**
- * Operational Intelligence Fabric — shared types (Dotted Wave Terrain).
+ * Operational Intelligence Fabric - shared types (Dotted Wave Terrain).
  * A dense field of points displaced into a flowing perspective surface.
  */
 

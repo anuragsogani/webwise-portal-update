@@ -1,5 +1,5 @@
 /**
- * CsocFunnel — a live mini-console for the CSOC core: thousands of raw alerts
+ * CsocFunnel - a live mini-console for the CSOC core: thousands of raw alerts
  * on the left funnel through an AI triage node and resolve into a handful of
  * prioritized incidents on the right. Signals shift grey → lime as they pass
  * triage (raw telemetry becoming intelligence). Pure SVG + CSS, reduced-motion

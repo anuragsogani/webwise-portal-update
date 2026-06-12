@@ -28,7 +28,7 @@
   --color-hairline-strong: #dbd9cd;
   --color-hairline-dark: #38322f;
 
-  /* Text — Duna ink ramp */
+  /* Text - Duna ink ramp */
   --color-ink: #222221;
   --color-ink-deep: #17100d;
   --color-body-strong: #292421;
@@ -52,7 +52,7 @@
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "Fragment Mono", "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
 
-  /* Type scale — GT America display + Inter body (Duna reference) */
+  /* Type scale - GT America display + Inter body (Duna reference) */
   --text-display-2xl: clamp(2.5rem, 4.5vw + 1rem, 4.5rem); /* 72px · H1 */
   --text-display-xl: clamp(2.25rem, 3.5vw + 1rem, 4rem); /* 64px */
   --text-display-lg: clamp(1.875rem, 2vw + 1rem, 2.75rem); /* 44px · H2 */
@@ -73,7 +73,7 @@
   --text-button: 1rem; /* 16px · GT America Medium */
   --text-nav: 1rem; /* 16px · 500 */
 
-  /* Tracking — tight on display (essential for GT America feel) */
+  /* Tracking - tight on display (essential for GT America feel) */
   --tracking-display-2xl: -0.04em;
   --tracking-display-xl: -0.035em;
   --tracking-display-lg: -0.03em;
@@ -86,7 +86,7 @@
   --tracking-caption-upper: 0.125em; /* 1.5px at 12px */
   --tracking-mono: 0.02em;
 
-  /* Spacing — 4px base scale (xxs 4 → section 96) */
+  /* Spacing - 4px base scale (xxs 4 → section 96) */
   --space-xxs: 0.25rem; /* 4px */
   --space-xs: 0.5rem; /* 8px */
   --space-sm: 0.75rem; /* 12px */
@@ -94,7 +94,7 @@
   --space-lg: 1.5rem; /* 24px */
   --space-xl: 2rem; /* 32px */
   --space-xxl: 3rem; /* 48px */
-  --space-section: 6rem; /* 96px — vertical rhythm between major bands */
+  --space-section: 6rem; /* 96px - vertical rhythm between major bands */
   --space-section-fluid: clamp(var(--space-xxl), 8vw, var(--space-section));
 
   /* Layout */
@@ -105,7 +105,7 @@
   /* Sticky header in document flow: inner min-height + vertical padding */
   --nav-block-height: calc(var(--nav-height) + 2 * var(--space-sm));
 
-  /* Radius — none (tiles) → sm (utility) → md (Pearl) → lg (cards) → pill / full */
+  /* Radius - none (tiles) → sm (utility) → md (Pearl) → lg (cards) → pill / full */
   --radius-none: 0;
   --radius-xs: 5px;
   --radius-sm: 8px;
@@ -117,7 +117,7 @@
   /* Shadow */
   --shadow-product: 0 8px 30px rgba(26, 24, 22, 0.08);
 
-  /* Legacy aliases — ported pages from webwise-portal */
+  /* Legacy aliases - ported pages from webwise-portal */
   --void: var(--color-canvas);
   --card: var(--color-surface-soft);
   --card2: var(--color-canvas-warm);

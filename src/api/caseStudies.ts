@@ -242,7 +242,7 @@ export async function seedCaseStudies(
   return res.json();
 }
 
-// ─── Hover art fallback map (client-side only — stored in DB per case study) ──
+// ─── Hover art fallback map (client-side only - stored in DB per case study) ──
 
 export const DEFAULT_HOVER_ART = {
   src: "/doodles/security-detection.svg",

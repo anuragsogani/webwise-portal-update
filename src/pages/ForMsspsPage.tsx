@@ -65,7 +65,7 @@ export default function ForMsspsPage() {
 
         {/* PAINS */}
         <section className="apac-section" aria-labelledby="mssp-pain-heading">
-          <h2 id="mssp-pain-heading" className="apac-pain__headline">The MSSP margin problem — and why headcount alone can't solve it.</h2>
+          <h2 id="mssp-pain-heading" className="apac-pain__headline">The MSSP margin problem - and why headcount alone can't solve it.</h2>
           <div className="apac-pain__list">
             {MSSP_PAINS.map((b) => (
               <RevealOnScroll key={b.pain} delay={1} as="div" className="apac-pain__item">
@@ -131,9 +131,9 @@ export default function ForMsspsPage() {
 
         {/* FINAL CTA */}
         <section className="apac-final-cta" aria-labelledby="mssp-final-cta-heading">
-          <h2 id="mssp-final-cta-heading" className="apac-final-cta__headline">Map your alert workflow — 30 minutes.</h2>
+          <h2 id="mssp-final-cta-heading" className="apac-final-cta__headline">Map your alert workflow - 30 minutes.</h2>
           <p className="apac-final-cta__lead">
-            Bring your current SIEM stack, alert volume, and triage bottleneck. We map the automation leverage points — no contract required.
+            Bring your current SIEM stack, alert volume, and triage bottleneck. We map the automation leverage points - no contract required.
           </p>
           <div className="apac-final-cta__actions">
             <MsspCtaButton intent={MSSP_HERO.primaryCtaIntent}>{MSSP_HERO.primaryCta}</MsspCtaButton>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import AiratShell from "../components/AiratShell";
 import CtaBand from "../components/CtaBand";
 import SiteFooter from "../components/SiteFooter";
@@ -11,13 +10,11 @@ import {
   CONTACT_FAQ_SECTION,
   CONTACT_FORM,
   CONTACT_HERO,
-  CONTACT_OUTCOME_CHIPS,
   CONTACT_SEO,
-  CONTACT_STORY_BRIDGE,
-  CONTACT_TRUST_SIGNAL,
 } from "../content/contactPageCopy";
 import { faqsToSchemaPairs } from "../content/faqTypes";
 import { breadcrumbSchema, faqPageSchema, injectJsonLdScript } from "../lib/jsonLd";
+import { getApiBaseUrl } from "../lib/apiBaseUrl";
 import { getSiteBaseUrl } from "../lib/siteBaseUrl";
 import { trackEvent } from "../lib/analytics";
 import "../styles/homepage.css";
@@ -35,59 +32,9 @@ const ERR = {
 
 type FieldErrors = Partial<Record<"name" | "email" | "message", string>>;
 
-const COMPANY_TYPE_OPTIONS = [
-  { value: "", label: "Company type (optional)" },
-  { value: "mssp", label: "MSSP / Managed Security" },
-  { value: "mdr", label: "MDR Provider" },
-  { value: "enterprise-soc", label: "Enterprise SOC" },
-  { value: "fintech", label: "FinTech / Bank" },
-  { value: "cybersecurity-consultancy", label: "Cybersecurity Consultancy" },
-  { value: "other", label: "Other" },
-];
-
-const COUNTRY_OPTIONS = [
-  { value: "", label: "Country (optional)" },
-  { value: "sg", label: "Singapore" },
-  { value: "id", label: "Indonesia" },
-  { value: "my", label: "Malaysia" },
-  { value: "vn", label: "Vietnam" },
-  { value: "in", label: "India" },
-  { value: "ae", label: "UAE" },
-  { value: "au", label: "Australia" },
-  { value: "gb", label: "UK / Europe" },
-  { value: "us", label: "US" },
-  { value: "other", label: "Other" },
-];
-
-const SIEM_OPTIONS = [
-  { value: "", label: "SIEM / XDR tool (optional)" },
-  { value: "splunk", label: "Splunk" },
-  { value: "sentinel", label: "Microsoft Sentinel" },
-  { value: "elastic", label: "Elastic SIEM" },
-  { value: "wazuh", label: "Wazuh" },
-  { value: "qradar", label: "IBM QRadar" },
-  { value: "crowdstrike", label: "CrowdStrike" },
-  { value: "custom", label: "Custom / In-house" },
-  { value: "none", label: "Not using one yet" },
-];
-
-const PRIMARY_PAIN_OPTIONS = [
-  { value: "", label: "Primary pain point (optional)" },
-  { value: "alert-fatigue", label: "Alert fatigue / too much noise" },
-  { value: "evidence-scattered", label: "Evidence scattered across tools" },
-  { value: "compliance-evidence", label: "Compliance evidence / audit readiness" },
-  { value: "ai-pilot-stalled", label: "AI pilot stalled in production" },
-  { value: "rag-llm", label: "RAG / LLM system needed" },
-  { value: "search-latency", label: "Search / data latency" },
-  { value: "soc-automation", label: "SOC automation generally" },
-  { value: "other", label: "Other" },
-];
-
 function validateEmail(v: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 }
-
-import { getApiBaseUrl } from "../lib/apiBaseUrl";
 
 function getContactFormEndpoint(): string {
   const explicit = (import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined)?.trim();
@@ -99,12 +46,7 @@ export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
-  const [urgency, setUrgency] = useState("");
   const [message, setMessage] = useState("");
-  const [companyType, setCompanyType] = useState("");
-  const [country, setCountry] = useState("");
-  const [siemTool, setSiemTool] = useState("");
-  const [primaryPain, setPrimaryPain] = useState("");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof FieldErrors, boolean>>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -147,19 +89,18 @@ export default function ContactPage() {
 
     const endpoint = getContactFormEndpoint();
     const urlParams = new URLSearchParams(window.location.search);
-    const intent = urlParams.get("intent") ?? primaryPain;
     const source = urlParams.get("source") ?? "contact-page";
+    const intent = urlParams.get("intent") ?? "contact";
 
     try {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name, email, company, urgency, message,
-          company_type: companyType,
-          country_code: country,
-          siem_tool: siemTool,
-          primary_pain: primaryPain,
+          name,
+          email,
+          company,
+          message,
           source,
           intent,
           page_url: window.location.href,
@@ -181,16 +122,16 @@ export default function ContactPage() {
         return;
       }
       trackEvent("contact_form_submit", {
-        company_type: companyType,
-        country,
-        siem_tool: siemTool,
-        intent,
         source,
+        intent,
       });
       setStatus("success");
-      setName(""); setEmail(""); setCompany(""); setUrgency(""); setMessage("");
-      setCompanyType(""); setCountry(""); setSiemTool(""); setPrimaryPain("");
-      setTouched({}); setFieldErrors({});
+      setName("");
+      setEmail("");
+      setCompany("");
+      setMessage("");
+      setTouched({});
+      setFieldErrors({});
     } catch {
       setStatus("error");
       setGlobalError(ERR.sendFailed);
@@ -203,46 +144,18 @@ export default function ContactPage() {
       <SiteHeader />
 
       <main id="main-content">
-        <section className="hero-band section">
-          <div className="container hero-band__inner">
-            <p className="eyebrow">{CONTACT_HERO.badge}</p>
-            <h1 className="display-2xl hero-band__title">{CONTACT_HERO.title}</h1>
-            <p className="body-lg hero-band__lead">{CONTACT_HERO.body}</p>
-            <div className="chip-list">
-              {CONTACT_OUTCOME_CHIPS.map((chip) => (
-                <span key={chip} className="chip chip--lime">
-                  {chip}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="contact-simple">
+          <div className="container contact-simple__inner">
+            <header className="contact-simple__head">
+              <p className="eyebrow contact-simple__eyebrow">{CONTACT_HERO.badge}</p>
+              <h1 className="display-2xl contact-simple__title">{CONTACT_HERO.title}</h1>
+              <p className="body-lg contact-simple__lead">{CONTACT_HERO.body}</p>
+            </header>
 
-        <section className="section section--warm">
-          <div className="container form-split">
-            <aside className="form-split__visual">
-              <blockquote className="contact-aside__quote">
-                “{CONTACT_TRUST_SIGNAL.quote}”
-              </blockquote>
-              <cite className="contact-aside__cite">
-                — {CONTACT_TRUST_SIGNAL.attrib}, {CONTACT_TRUST_SIGNAL.org}
-              </cite>
-              <p className="contact-aside__metric">{CONTACT_TRUST_SIGNAL.metric}</p>
-              <p className="contact-aside__bridge">{CONTACT_STORY_BRIDGE}</p>
-              <nav className="contact-aside__links" aria-label="Related pages">
-                <Link to="/portfolio" className="text-link">
-                  Case studies →
-                </Link>
-                <Link to="/services" className="text-link">
-                  Services →
-                </Link>
-              </nav>
-            </aside>
-
-            <div className="form-split__form-wrap">
-              <header>
-                <h2 className="contact-form-panel__title">{CONTACT_FORM.title}</h2>
-                <p className="contact-form-panel__lead">{CONTACT_FORM.lead}</p>
+            <div className="contact-simple__form-shell">
+              <header className="contact-simple__form-head">
+                <h2 className="contact-simple__form-title">{CONTACT_FORM.title}</h2>
+                <p className="contact-simple__form-lead">{CONTACT_FORM.lead}</p>
               </header>
 
               {status === "success" && (
@@ -257,12 +170,10 @@ export default function ContactPage() {
                 </div>
               )}
 
-              <form className="contact-form" onSubmit={handleSubmit} noValidate data-form-name="contact-form">
-                <div className="contact-form__row">
-                  <div className="contact-field">
-                    <label htmlFor="ct-name" className="contact-field__label">
-                      Name
-                    </label>
+              <form className="contact-simple__form" onSubmit={handleSubmit} noValidate data-form-name="contact-form">
+                <div className="contact-simple__row">
+                  <div className="contact-simple__field">
+                    <label htmlFor="ct-name" className="contact-simple__label">Name</label>
                     <input
                       id="ct-name"
                       name="name"
@@ -270,20 +181,18 @@ export default function ContactPage() {
                       autoComplete="name"
                       placeholder="Your name"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(ev) => setName(ev.target.value)}
                       onBlur={() => setTouched((t) => ({ ...t, name: true }))}
                       aria-invalid={touched.name && !!fieldErrors.name}
-                      className="text-input"
+                      className="contact-simple__input"
                     />
                     {touched.name && fieldErrors.name && (
                       <span className="contact-field__error">{fieldErrors.name}</span>
                     )}
                   </div>
 
-                  <div className="contact-field">
-                    <label htmlFor="ct-company" className="contact-field__label">
-                      Company
-                    </label>
+                  <div className="contact-simple__field">
+                    <label htmlFor="ct-company" className="contact-simple__label">Company</label>
                     <input
                       id="ct-company"
                       name="company"
@@ -291,16 +200,14 @@ export default function ContactPage() {
                       autoComplete="organization"
                       placeholder="Company (optional)"
                       value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      className="text-input"
+                      onChange={(ev) => setCompany(ev.target.value)}
+                      className="contact-simple__input"
                     />
                   </div>
                 </div>
 
-                <div className="contact-field">
-                  <label htmlFor="ct-email" className="contact-field__label">
-                    Email
-                  </label>
+                <div className="contact-simple__field">
+                  <label htmlFor="ct-email" className="contact-simple__label">Email</label>
                   <input
                     id="ct-email"
                     name="email"
@@ -308,142 +215,36 @@ export default function ContactPage() {
                     autoComplete="email"
                     placeholder="you@company.com"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(ev) => setEmail(ev.target.value)}
                     onBlur={() => setTouched((t) => ({ ...t, email: true }))}
                     aria-invalid={touched.email && !!fieldErrors.email}
-                    className="text-input"
+                    className="contact-simple__input"
                   />
                   {touched.email && fieldErrors.email && (
                     <span className="contact-field__error">{fieldErrors.email}</span>
                   )}
                 </div>
 
-                <div className="contact-field">
-                  <label htmlFor="ct-msg" className="contact-field__label">
-                    What&apos;s breaking?
-                  </label>
+                <div className="contact-simple__field">
+                  <label htmlFor="ct-msg" className="contact-simple__label">What&apos;s breaking?</label>
                   <textarea
                     id="ct-msg"
                     name="message"
                     rows={5}
                     placeholder="Describe the problem: SOC alert overload, LLM hallucinations, search latency, or audit gap. What does success look like in 90 days?"
                     value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    onChange={(ev) => setMessage(ev.target.value)}
                     onBlur={() => setTouched((t) => ({ ...t, message: true }))}
                     aria-invalid={touched.message && !!fieldErrors.message}
-                    className="text-input"
+                    className="contact-simple__input contact-simple__textarea"
                   />
                   {touched.message && fieldErrors.message && (
                     <span className="contact-field__error">{fieldErrors.message}</span>
                   )}
                 </div>
 
-                <details className="contact-form__optional">
-                  <summary>{CONTACT_FORM.optionalTitle}</summary>
-                  <div className="contact-form__optional-body">
-                    <div className="contact-form__row">
-                      <div className="contact-field">
-                        <label htmlFor="ct-company-type" className="contact-field__label">
-                          Organisation type
-                        </label>
-                        <select
-                          id="ct-company-type"
-                          name="companyType"
-                          value={companyType}
-                          onChange={(e) => setCompanyType(e.target.value)}
-                          className="text-input"
-                        >
-                          {COMPANY_TYPE_OPTIONS.map((o) => (
-                            <option key={o.value} value={o.value}>
-                              {o.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-
-                      <div className="contact-field">
-                        <label htmlFor="ct-country" className="contact-field__label">
-                          Country
-                        </label>
-                        <select
-                          id="ct-country"
-                          name="country"
-                          value={country}
-                          onChange={(e) => setCountry(e.target.value)}
-                          className="text-input"
-                        >
-                          {COUNTRY_OPTIONS.map((o) => (
-                            <option key={o.value} value={o.value}>
-                              {o.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    <div className="contact-form__row">
-                      <div className="contact-field">
-                        <label htmlFor="ct-siem" className="contact-field__label">
-                          Current SIEM / XDR
-                        </label>
-                        <select
-                          id="ct-siem"
-                          name="siemTool"
-                          value={siemTool}
-                          onChange={(e) => setSiemTool(e.target.value)}
-                          className="text-input"
-                        >
-                          {SIEM_OPTIONS.map((o) => (
-                            <option key={o.value} value={o.value}>
-                              {o.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-
-                      <div className="contact-field">
-                        <label htmlFor="ct-pain" className="contact-field__label">
-                          Primary challenge
-                        </label>
-                        <select
-                          id="ct-pain"
-                          name="primaryPain"
-                          value={primaryPain}
-                          onChange={(e) => setPrimaryPain(e.target.value)}
-                          className="text-input"
-                        >
-                          {PRIMARY_PAIN_OPTIONS.map((o) => (
-                            <option key={o.value} value={o.value}>
-                              {o.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    <div className="contact-field">
-                      <label htmlFor="ct-urgency" className="contact-field__label">
-                        Timeline
-                      </label>
-                      <select
-                        id="ct-urgency"
-                        name="urgency"
-                        value={urgency}
-                        onChange={(e) => setUrgency(e.target.value)}
-                        className="text-input"
-                      >
-                        <option value="">Select timeline (optional)</option>
-                        <option value="immediate">Now — production issue or active rollout</option>
-                        <option value="weeks">Within weeks — planning phase</option>
-                        <option value="quarter">This quarter</option>
-                        <option value="exploring">Exploring, no fixed date</option>
-                      </select>
-                    </div>
-                  </div>
-                </details>
-
-                <button type="submit" className="btn btn--primary" disabled={status === "sending"} data-track="contact-form-submit" data-track-category="form-cta">
-                  {status === "sending" ? CONTACT_FORM.submitSending : CONTACT_FORM.submitLabel}
+                <button type="submit" className="btn btn--primary contact-simple__submit" disabled={status === "sending"}>
+                  {status === "sending" ? CONTACT_FORM.submitSending : "Send message"}
                 </button>
               </form>
             </div>

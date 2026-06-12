@@ -1,10 +1,10 @@
 /**
  * Deterministic, allocation-free gradient noise.
- * Smooth and continuous — drives wave deformation and path drift with
+ * Smooth and continuous - drives wave deformation and path drift with
  * zero random jitter. Pure functions, safe to call in a rAF loop.
  */
 
-/** Seedable PRNG (mulberry32) — deterministic geometry across reloads. */
+/** Seedable PRNG (mulberry32) - deterministic geometry across reloads. */
 export function mulberry32(seed: number): () => number {
   let a = seed >>> 0;
   return function () {
@@ -58,7 +58,7 @@ export function noise2D(x: number, y: number, seed = 0): number {
   return lerp(ix0, ix1, sy) * 1.4;
 }
 
-/** Smooth 1D noise via the 2D field — handy for time-based drift. */
+/** Smooth 1D noise via the 2D field - handy for time-based drift. */
 export function noise1D(x: number, seed = 0): number {
   return noise2D(x, x * 0.37 + 11.7, seed);
 }

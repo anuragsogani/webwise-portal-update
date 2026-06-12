@@ -48,12 +48,12 @@ export const PORTFOLIO_INDUSTRY_COPY: Record<
   "AI Platforms": {
     title: "AI Platforms",
     description:
-      "Governed LLM systems, RAG pipelines, and agent workflows built for production — with evaluation harnesses and human review gates.",
+      "Governed LLM systems, RAG pipelines, and agent workflows built for production - with evaluation harnesses and human review gates.",
   },
   "Data & Search": {
     title: "Data & Search",
     description:
-      "Medallion lakes, streaming analytics, and OpenSearch-scale search — tuned for relevance, latency, and operational clarity.",
+      "Medallion lakes, streaming analytics, and OpenSearch-scale search - tuned for relevance, latency, and operational clarity.",
   },
   "Cloud & Observability": {
     title: "Cloud & Observability",

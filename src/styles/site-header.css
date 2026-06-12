@@ -1,4 +1,4 @@
-/* Duna top-nav — light canvas header */
+/* Duna top-nav - light canvas header */
 
 .top-nav {
   position: sticky;
@@ -21,7 +21,7 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* Homepage hero — nav floats over landscape until scroll (menus stay merged) */
+/* Homepage hero - nav floats over landscape until scroll (menus stay merged) */
 .top-nav--over-hero:not(.top-nav--scrolled) {
   background: linear-gradient(
     to bottom,
@@ -219,7 +219,7 @@ body:has(.soc-first-scroll) .top-nav.top-nav--menu-open:not(.top-nav--scrolled) 
   border-bottom: 1px solid var(--color-hairline);
 }
 
-/* Shared Duna glass panel — must NOT sit on a transformed/opacity-animated ancestor */
+/* Shared Duna glass panel - must NOT sit on a transformed/opacity-animated ancestor */
 .nav-glass {
   --nav-menu-title: #f7f7f5;
   --nav-menu-muted: rgba(247, 247, 245, 0.58);
@@ -399,7 +399,7 @@ body:has(.soc-first-scroll) .top-nav.top-nav--menu-open:not(.top-nav--scrolled) 
   color: var(--nav-menu-title, var(--color-on-dark));
 }
 
-/* Duna mega menu — rendered in a body portal so backdrop-filter can sample page content */
+/* Duna mega menu - rendered in a body portal so backdrop-filter can sample page content */
 .nav-mega__flyout {
   position: fixed;
   left: 0;
@@ -408,7 +408,7 @@ body:has(.soc-first-scroll) .top-nav.top-nav--menu-open:not(.top-nav--scrolled) 
   justify-content: center;
   padding: 0 1rem;
   z-index: 110;
-  /* Only the panel surface captures pointer events — not the full viewport band */
+  /* Only the panel surface captures pointer events - not the full viewport band */
   pointer-events: none;
 }
 

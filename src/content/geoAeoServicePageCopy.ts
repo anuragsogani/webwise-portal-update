@@ -12,7 +12,7 @@
 export const GEO_PAGE_SEO = {
   title: "AEO & GEO: Answer Engine & Generative Engine Optimisation | AiRAT",
   description:
-    "AiRAT optimises for AEO (Answer Engine Optimisation) and GEO (Generative Engine Optimisation)  -  structured visibility inside AI Overviews, ChatGPT, Claude, and Perplexity. Built by engineers who build LLM systems.",
+    "AEO and GEO services for structured visibility inside AI Overviews, ChatGPT, Claude, and Perplexity, built by LLM system engineers.",
 } as const;
 
 export const GEO_PAGE_HERO = {

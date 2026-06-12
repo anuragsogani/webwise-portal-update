@@ -1,5 +1,5 @@
 /**
- * OperationalIntelligenceFabric — AiRAT Cognition Field.
+ * OperationalIntelligenceFabric - AiRAT Cognition Field.
  *
  * A self-wiring neural field that perceives and reacts: nodes drift and rewire
  * to nearby neighbours, activation energy propagates across the links like

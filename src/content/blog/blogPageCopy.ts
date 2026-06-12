@@ -2,7 +2,7 @@
 export const BLOG_INDEX_SEO = {
   title: "Insights | AI, Security & Data Engineering Notes | AiRAT",
   description:
-    "Long-form writing on production RAG systems, OpenSearch migrations, SOC automation, data governance, GEO, and AI search visibility  -  for technical leads and enterprise decision-makers who need depth, not buzzwords.",
+    "Long-form writing on production RAG, OpenSearch, SOC automation, data governance, GEO, and AI search visibility for technical leaders.",
 } as const;
 
 export const BLOG_INDEX_HERO = {

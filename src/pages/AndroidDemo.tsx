@@ -665,7 +665,7 @@ function BasketScreen() {
         </div>
 
         <div className="ad-bsk-sum">
-          {[['Subtotal', '₹898'], ['Delivery Fee', '—'], ['Tax', '₹30'], ['Surcharge', '₹70']].map(([k, v]) => (
+          {[['Subtotal', '₹898'], ['Delivery Fee', '-'], ['Tax', '₹30'], ['Surcharge', '₹70']].map(([k, v]) => (
             <div key={k} className="ad-bsk-sr"><span>{k}</span><span>{v}</span></div>
           ))}
           <div className="ad-flex-between" style={{ paddingTop: '0.75rem', borderTop: '1px solid var(--ad-gray-200)' }}>

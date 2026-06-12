@@ -233,7 +233,7 @@ export async function listCategories(): Promise<{ categories: string[] }> {
   return response.json();
 }
 
-/** Known category labels — used as a display-name lookup for well-known slugs. */
+/** Known category labels - used as a display-name lookup for well-known slugs. */
 export const KNOWN_CATEGORY_LABELS: Record<string, string> = {
   "ai-llm": "AI & LLM Systems",
   "cyber-soc": "Security & SOC",

@@ -1,5 +1,4 @@
-import React from "react";
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { absoluteUrl } from "../lib/siteBaseUrl";
 
@@ -12,48 +11,70 @@ interface SEOProps {
   indexable?: boolean;
 }
 
-const DEFAULT_TITLE = "AiRAT - Production security, AI & data platforms";
-const DEFAULT_DESCRIPTION = "AiRAT builds production security, AI, and data platforms for regulated enterprises in UAE, India, and Europe. Senior-led delivery. SLO-anchored outcomes.";
-const DEFAULT_IMAGE = "webwise-portal-update/public/brand-logo-round.png";
+const DEFAULT_TITLE = "AiRAT - Production platforms for security, AI & data";
+const DEFAULT_DESCRIPTION = "AiRAT builds production security, AI, and data platforms for regulated enterprises in UAE, India, Singapore, and Europe. Senior-led delivery. SLO-anchored outcomes.";
+const DEFAULT_IMAGE = "/og/default.png";
 
-export const SEO: React.FC<SEOProps> = ({
+function ensureMeta(attr: "name" | "property", key: string): HTMLMetaElement {
+  const selector = `meta[${attr}="${key}"]`;
+  let el = document.head.querySelector(selector) as HTMLMetaElement | null;
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  return el;
+}
+
+function ensureCanonical(): HTMLLinkElement {
+  let el = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!el) {
+    el = document.createElement("link");
+    el.rel = "canonical";
+    document.head.appendChild(el);
+  }
+  return el;
+}
+
+export const SEO = ({
   title,
   description = DEFAULT_DESCRIPTION,
   image = DEFAULT_IMAGE,
   url,
   type = "website",
   indexable = true,
-}) => {
+}: SEOProps) => {
   const { pathname } = useLocation();
-  const fullTitle = title ? `${title} | AiRAT` : DEFAULT_TITLE;
+  const fullTitle = title ? (/\bAiRAT\b$/i.test(title.trim()) ? title : `${title} | AiRAT`) : DEFAULT_TITLE;
   const canonicalUrl = url || absoluteUrl(pathname);
   const imageUrl = image.startsWith("http") ? image : absoluteUrl(image);
 
-  return (
-    <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      <link rel="canonical" href={canonicalUrl} />
+  useEffect(() => {
+    document.title = fullTitle;
+    ensureMeta("name", "description").content = description;
+    ensureCanonical().href = canonicalUrl;
 
-      {/* Indexability */}
-      {!indexable && <meta name="robots" content="noindex, nofollow" />}
+    ensureMeta("property", "og:type").content = type;
+    ensureMeta("property", "og:url").content = canonicalUrl;
+    ensureMeta("property", "og:title").content = fullTitle;
+    ensureMeta("property", "og:description").content = description;
+    ensureMeta("property", "og:image").content = imageUrl;
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={imageUrl} />
+    ensureMeta("name", "twitter:card").content = "summary_large_image";
+    ensureMeta("name", "twitter:url").content = canonicalUrl;
+    ensureMeta("name", "twitter:title").content = fullTitle;
+    ensureMeta("name", "twitter:description").content = description;
+    ensureMeta("name", "twitter:image").content = imageUrl;
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={canonicalUrl} />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={imageUrl} />
-    </Helmet>
-  );
+    const existingRobots = document.head.querySelector('meta[name="robots"]');
+    if (indexable) {
+      existingRobots?.remove();
+    } else {
+      ensureMeta("name", "robots").content = "noindex, nofollow";
+    }
+  }, [canonicalUrl, description, fullTitle, imageUrl, indexable, type]);
+
+  return null;
 };
 
 export default SEO;

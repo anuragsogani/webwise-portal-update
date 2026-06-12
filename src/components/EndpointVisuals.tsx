@@ -1,5 +1,5 @@
 /**
- * EndpointVisuals — live, on-brand visuals for the Endpoint product page.
+ * EndpointVisuals - live, on-brand visuals for the Endpoint product page.
  *  - AgentMap: one agent feeding six capabilities and the CSOC core.
  *  - LiveQueryConsole: a fleet query streaming results back.
  *  - ActiveResponseFlow: detect → rule → admin gate → respond.

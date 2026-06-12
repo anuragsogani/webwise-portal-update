@@ -1,5 +1,5 @@
 /**
- * ProductsCoreDiagram — the SOC operating core with three integration layers
+ * ProductsCoreDiagram - the SOC operating core with three integration layers
  * wired in. Signals flow from each layer into the core; the core pulses.
  * Pure inline SVG + CSS (products-page.css). Reduced-motion safe.
  */

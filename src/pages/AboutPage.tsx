@@ -14,7 +14,6 @@ import {
   ABOUT_FOOTER_CTA,
   ABOUT_HERO,
   ABOUT_NARRATIVE_SPINE,
-  ABOUT_PARTNERS,
   ABOUT_RAT_STORY,
   ABOUT_SEO,
   ABOUT_TEAM,
@@ -47,18 +46,21 @@ export default function AboutPage() {
   }, []);
 
   const workingValues = [
-    ...ABOUT_PARTNERS.points,
     {
-      title: "Unlike consultancies",
-      body: "We engineer from first principles — you own the architecture, not a slide deck.",
+      title: "Senior-led delivery",
+      body: "The engineers who scope the work stay through build, launch, and handover.",
     },
     {
-      title: "Unlike product vendors",
-      body: "We build to your environment and integrate what you already run.",
+      title: "Embedded with your team",
+      body: "We work inside your tools, rituals, and constraints instead of handing over generic recommendations.",
     },
     {
-      title: "Unlike offshore factories",
-      body: "The engineers who design your platform are the same ones who ship, stabilise, and hand it over.",
+      title: "Measured by outcomes",
+      body: "Success is defined in board-defensible metrics: alert reduction, uptime, latency, audit evidence, or time-to-production.",
+    },
+    {
+      title: "Built to be owned",
+      body: "Runbooks, ownership boundaries, and onboarding docs ship with the platform so your team can run it.",
     },
   ];
 
@@ -110,14 +112,16 @@ export default function AboutPage() {
             <p className="body-lg">{ABOUT_TEAM.lead}</p>
           </div>
           <div className="container">
-            <div className="editorial-tile-grid editorial-tile-grid--2col-centered">
-            {ABOUT_TEAM_ROLES.map((r) => (
+            <div className="editorial-tile-grid about-role-grid">
+            {ABOUT_TEAM_ROLES.map((r, index) => (
               <EditorialTile
                 key={r.role}
                 title={r.role}
                 description={r.description}
-                meta={[{ label: "Featured", value: r.proof }]}
-              />
+                className="about-role-tile"
+              >
+                <span className="about-role-tile__num">{String(index + 1).padStart(2, "0")}</span>
+              </EditorialTile>
             ))}
             </div>
           </div>
@@ -142,7 +146,7 @@ export default function AboutPage() {
             <h2 className="display-lg">How we act on every engagement</h2>
             <p className="body-lg">
               We choose fewer engagements, stay accountable through go-live, and measure success in metrics you can
-              defend to a board — not billable hours.
+              defend to a board - not billable hours.
             </p>
           </div>
           <div className="container diff-grid diff-grid--2col">

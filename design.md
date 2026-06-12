@@ -5,42 +5,42 @@
 
 ---
 
-## Quick glance — allocation decisions
+## Quick glance - allocation decisions
 
 Use this table when deciding **what to ship, where content lives, and who owns it**.
 
 | Question | Decision | Source of truth |
 |---|---|---|
 | Which repo is live? | `webwise-portal` → **airat.in** today | Deploy pipeline |
-| Which repo is the redesign? | `webwise-portal-update` — Duna band layout + AiRAT copy | This doc + `src/content/*` |
+| Which repo is the redesign? | `webwise-portal-update` - Duna band layout + AiRAT copy | This doc + `src/content/*` |
 | Primary conversion CTA | **Book a strategy call** → `/contact` | `SiteHeader`, hero, `cta-band` |
 | Secondary proof CTA | **Read case studies** → `/portfolio` | Hero, footer, case cards |
 | Three delivery domains | Security · AI & LLM · Data & search | `SOLUTION_PATHS_SECTION` in `homePageCopy.ts` |
 | Proof metrics (homepage) | 99.95% uptime · 87% alert noise cut · 12× faster investigation | `IMPACT_METRICS` |
 | GEO / markets in copy | UAE, India, Singapore, Indonesia, Australia, Europe, US | `HOME_META_DESCRIPTION`, FAQ, org schema |
 | AEO / AI discovery | FAQ JSON-LD + `{component.ai-summary-links}` in footer | `HOME_FAQ`, `GetAiSummaryLinks.tsx` |
-| Visual layout reference | [Duna.com](https://duna.com/) section rhythm (square crops, mono eyebrows) | Layout only — **AiRAT-owned SVGs**, not Duna assets |
+| Visual layout reference | [Duna.com](https://duna.com/) section rhythm (square crops, mono eyebrows) | Layout only - **AiRAT-owned SVGs**, not Duna assets |
 | Fonts (update branch) | Archivo (display) · Inter (body) · JetBrains Mono (eyebrows) | `tokens.css` |
 | Fonts (production) | Poppins (display) · Lora (body) | `webwise-portal/tokens.css` |
 
-### Homepage section stack (update branch — target)
+### Homepage section stack (update branch - target)
 
 | # | Block | Duna equivalent | AiRAT content | Visual asset |
 |---|---|---|---|---|
 | 1 | `{component.hero-band}` | Hero + product image | H1 + SLO lead + CTAs | `athena-unified-platform.svg` (1200×675) |
 | 2 | `{component.logo-strip}` | Customer logos | Client grid | `ClientLogoGrid` |
-| 3 | `{component.stat-row}` + value props | 10.6x / 37% / 4.8x | Uptime / alerts / investigation | — |
-| 4 | `{component.testimonial-pullquote}` | Trusted by leaders | Head of Cybersecurity · Dubai | — |
+| 3 | `{component.stat-row}` + value props | 10.6x / 37% / 4.8x | Uptime / alerts / investigation | - |
+| 4 | `{component.testimonial-pullquote}` | Trusted by leaders | Head of Cybersecurity · Dubai | - |
 | 5 | `{component.product-showcase-dark}` | AI built for compliance | AI & LLM systems path | `rag-retrieval.svg` (640×640) |
 | 6 | Three `{component.feature-module}` | Onboard / Decide / Lifecycle | Security · AI · Data paths | hawkeye / socai / opensearch SVGs (448×448) |
 | 7 | `{component.feature-split}` trust | Safe and secure | Industries + compliance | evidence-chain + compliance-audit (320×320) |
 | 8 | News / cases | News grid | Featured case studies | Optional thumbs from portfolio |
-| 9 | `{component.teal-band}` | Teal rest band | Industry trust grid | — |
-| 10 | Testimonials + differentiators + FAQ + `{component.cta-band}` | Closing bands | Prod copy from `homePageCopy.ts` | — |
+| 9 | `{component.teal-band}` | Teal rest band | Industry trust grid | - |
+| 10 | Testimonials + differentiators + FAQ + `{component.cta-band}` | Closing bands | Prod copy from `homePageCopy.ts` | - |
 
 ---
 
-## Gap analysis — production vs update branch
+## Gap analysis - production vs update branch
 
 Synced from [airat.in](https://airat.in/) HTML meta and `webwise-portal` source (June 2026).
 
@@ -48,9 +48,9 @@ Synced from [airat.in](https://airat.in/) HTML meta and `webwise-portal` source 
 |---|---|---|---|
 | **Theme** | Dark Anthropic-style (`--void` #141413, Tiffany teal `#76e4df`) | Light Duna-style (warm canvas, lime `#aeec1d`, teal band) | Intentional redesign |
 | **Hero layout** | Split column + linked words (security/AI/data) | Centered band + announcement pill + hero image | Update adds Duna rhythm |
-| **Hero motion** | HawkeyeParticles + CaseStudySlider | Static hero visual | **Missing in update** — consider porting slider or use case-study thumb in hero image |
-| **Latest work row** | Dynamic 3-tile (services / case / blog) | Static case study grid only | **Partial** — add API-driven tiles like prod |
-| **Metrics animation** | Scroll counter (`stat-counter`) | Static stat blocks | **Missing** — wire IntersectionObserver from prod |
+| **Hero motion** | HawkeyeParticles + CaseStudySlider | Static hero visual | **Missing in update** - consider porting slider or use case-study thumb in hero image |
+| **Latest work row** | Dynamic 3-tile (services / case / blog) | Static case study grid only | **Partial** - add API-driven tiles like prod |
+| **Metrics animation** | Scroll counter (`stat-counter`) | Static stat blocks | **Missing** - wire IntersectionObserver from prod |
 | **Preloader** | Yes | No | Optional |
 | **JSON-LD** | Organization + WebSite + FAQ on home | FAQ visible; verify org schema on deploy | Add `SEO` component parity |
 | **Meta description** | UAE, India, Singapore, Indonesia, Australia, Europe | **Synced** in `homePageCopy.ts` | Done |
@@ -60,38 +60,38 @@ Synced from [airat.in](https://airat.in/) HTML meta and `webwise-portal` source 
 | **Services stack UI** | Interactive stack explorer on `/services` | Ported via legacy aliases in `tokens.css` | Verify on services page |
 | **GEO/AEO service pages** | `/services/aeo-geo`, `/services/ai-visibility` | Routes exist | Content audit recommended |
 | **Footer AI summary** | Not on prod | `{component.ai-summary-links}` | **Update-only AIO feature** |
-| **Product screenshots** | Particle WebGL + doodle icons on paths | Full-width SVG slots (Duna positions) | **Done** — `homePageVisuals.ts` |
+| **Product screenshots** | Particle WebGL + doodle icons on paths | Full-width SVG slots (Duna positions) | **Done** - `homePageVisuals.ts` |
 
 ---
 
 ## Overview
 
-AiRAT’s **update branch** applies [Duna’s](https://duna.com/) structural language — warm near-white canvas, square geometry, mono eyebrows, lime primary CTAs, teal rest bands — to **AiRAT’s production story**: senior-led delivery of security, AI, and data platforms for regulated enterprises.
+AiRAT’s **update branch** applies [Duna’s](https://duna.com/) structural language - warm near-white canvas, square geometry, mono eyebrows, lime primary CTAs, teal rest bands - to **AiRAT’s production story**: senior-led delivery of security, AI, and data platforms for regulated enterprises.
 
 **Brand voice (content):** precise, SLO-anchored, anti-theatre. No acronyms without outcomes.  
-**Visual voice (update UI):** architectural, editorial, infrastructure — not consumer fintech.
+**Visual voice (update UI):** architectural, editorial, infrastructure - not consumer fintech.
 
 Production at [airat.in](https://airat.in/) still runs the prior dark marketing theme until this branch ships.
 
 ### Key characteristics
 
 - Warm canvas (`{colors.canvas}` #ffffff / `{colors.canvas-warm}` #f7f7f5) with warm charcoal ink (`{colors.ink}` #1a1816)
-- Electric lime primary (`{colors.primary}` #aeec1d) — CTAs and badges only, 1–2 per viewport
+- Electric lime primary (`{colors.primary}` #aeec1d) - CTAs and badges only, 1–2 per viewport
 - Teal full-bleed band (`{colors.accent-teal}` #46838c) for industry / trust rests
 - Archivo display (GT America substitute), Inter body, JetBrains Mono eyebrows
 - Square corners on cards and images (`{rounded.none}`); buttons at 8px
-- Real product **doodles** and portfolio SVGs in Duna image slots — not third-party screenshots
+- Real product **doodles** and portfolio SVGs in Duna image slots - not third-party screenshots
 
 ---
 
-## SEO · AEO · GEO · AIO — content & schema
+## SEO · AEO · GEO · AIO - content & schema
 
 ### SEO (search engines)
 
 | Element | Rule | AiRAT home implementation |
 |---|---|---|
 | `<title>` | Brand + primary keyword phrase | `AiRAT - Production platforms for security, AI & data` |
-| Meta description | ≤160 chars, regions + outcome | `HOME_META_DESCRIPTION` — includes APAC + EU |
+| Meta description | ≤160 chars, regions + outcome | `HOME_META_DESCRIPTION` - includes APAC + EU |
 | H1 | One per page, matches intent | Production platforms for security, AI & data |
 | Internal links | Hero links to `/services#cyber`, `#ai`, `#data` | Update: text CTAs + nav |
 | Canonical | `https://airat.in/` | Set in `SEO` / prerender |
@@ -101,20 +101,20 @@ Production at [airat.in](https://airat.in/) still runs the prior dark marketing 
 
 - **Entity clarity:** Organization name **AiRAT**, domains (security, AI, data), regions (UAE, India, APAC, EU) repeated in FAQ, footer, about.
 - **Structured regions:** `areaServed` in Organization JSON-LD: AE, IN, SG, ID, AU, EU, GB, US.
-- **Long-tail blog:** Articles on entity SEO, AI Overviews, GEO — `/blog/category/seo-geo` (see `content/blog/`).
+- **Long-tail blog:** Articles on entity SEO, AI Overviews, GEO - `/blog/category/seo-geo` (see `content/blog/`).
 - **Service pages:** `/services/aeo-geo`, `/services/ai-visibility`, `/services/technical-seo`.
 
 ### AEO (answer engine optimization)
 
-- **`HOME_FAQ`** — five Q&As covering what AiRAT builds, industries, regions, GEO/AEO, differentiation.
-- **`FAQPage` JSON-LD** — inject on home (port from prod `HomePage.tsx`).
+- **`HOME_FAQ`** - five Q&As covering what AiRAT builds, industries, regions, GEO/AEO, differentiation.
+- **`FAQPage` JSON-LD** - inject on home (port from prod `HomePage.tsx`).
 - **Direct answers:** First sentence of each FAQ answer is a complete standalone response (ChatGPT / Perplexity / Gemini extraction).
 
 ### AIO (AI overview / assistant discovery)
 
-- **`{component.ai-summary-links}`** — “Get an AI summary of AiRAT” with pre-filled prompts to Claude, ChatGPT, Gemini (`GetAiSummaryLinks.tsx`).
-- **Article meta pattern:** `Category — X min read` (Fragment Mono) on blog and case cards.
-- **Glossary:** `/glossary`, `/glossary/:term` — definitional pages for XDR, RAG, SIEM, etc.
+- **`{component.ai-summary-links}`** - “Get an AI summary of AiRAT” with pre-filled prompts to Claude, ChatGPT, Gemini (`GetAiSummaryLinks.tsx`).
+- **Article meta pattern:** `Category - X min read` (Fragment Mono) on blog and case cards.
+- **Glossary:** `/glossary`, `/glossary/:term` - definitional pages for XDR, RAG, SIEM, etc.
 
 ---
 
@@ -127,7 +127,7 @@ Production at [airat.in](https://airat.in/) still runs the prior dark marketing 
 
 ### Surface
 - **Canvas** `#ffffff` · **Canvas Warm** `#f7f7f5` · **Surface Soft** `#edece7`
-- **Surface Dark** `#1a1816` — AI showcase, CTA band, footer
+- **Surface Dark** `#1a1816` - AI showcase, CTA band, footer
 
 ### Text
 - **Ink** `#1a1816` · **Body** `#4d4846` · **Muted** `#898683`
@@ -149,7 +149,7 @@ Production at [airat.in](https://airat.in/) still runs the prior dark marketing 
 | `{typography.eyebrow-mono}` | 14px | JetBrains Mono | Section eyebrows |
 | `{typography.label-mono}` | 12px | JetBrains Mono | Meta, case labels |
 
-Negative tracking on display sizes (-0.04em at largest). No bold on hero display — use scale.
+Negative tracking on display sizes (-0.04em at largest). No bold on hero display - use scale.
 
 ---
 
@@ -176,7 +176,7 @@ Negative tracking on display sizes (-0.04em at largest). No bold on hero display
 | Trust split (×2) | `.trust-card__image` | 64×64 display | `/doodles/evidence-chain.svg`, `/doodles/compliance-audit.svg` | Evidence + compliance |
 
 Constants: `src/content/homePageVisuals.ts`  
-Swap assets by editing that file only — HomePage reads from it.
+Swap assets by editing that file only - HomePage reads from it.
 
 ### Portfolio doodle inventory (case study / inner pages)
 
@@ -193,21 +193,21 @@ Swap assets by editing that file only — HomePage reads from it.
 
 ## Components
 
-### Navigation — `{component.top-nav}`
+### Navigation - `{component.top-nav}`
 
 White canvas, ~72px. Brand **AiRAT** left; center: Services, Case studies, Resources ▾, Company ▾; right: **Book a strategy call** → `/contact`.
 
 ### Buttons
 
-- **`button-primary`** — Lime fill, dark ink, 48px height, 8px radius
-- **`button-secondary`** — Hairline outline on canvas
-- **`button-text-link`** — “Explore →” pattern inside feature modules
+- **`button-primary`** - Lime fill, dark ink, 48px height, 8px radius
+- **`button-secondary`** - Hairline outline on canvas
+- **`button-text-link`** - “Explore →” pattern inside feature modules
 
 ### Section blocks (homepage kit)
 
 Documented in **Quick glance** table above. All copy keys live in `src/content/homePageCopy.ts`.
 
-### Footer — `{component.footer}`
+### Footer - `{component.footer}`
 
 Dark charcoal. Columns: Services · Work · Resources · Company. Includes `{component.ai-summary-links}` for AIO.
 
@@ -244,7 +244,7 @@ Dark charcoal. Columns: Services · Work · Resources · Company. Includes `{com
 
 All marketing copy lives in `src/content/*.ts`. **Do not hardcode strings in page TSX** except prod-parity hero links.
 
-### Home — `homePageCopy.ts`
+### Home - `homePageCopy.ts`
 
 | Block | Key constants |
 |---|---|
@@ -262,18 +262,18 @@ All marketing copy lives in `src/content/*.ts`. **Do not hardcode strings in pag
 
 **Not rendered on update home (by design):** `TESTIMONIALS`, `DIFF_*`, `CTA_*` generic band.
 
-### Products — `productsPageCopy.ts` *(ported from prod)*
+### Products - `productsPageCopy.ts` *(ported from prod)*
 
 | Product ID | Title | Route |
 |---|---|---|
 | `soc` | Managed CSOC & XDR | `/products/soc` |
-| `adr` | Detection & Response — Agents & Applications | `/products/adr` |
+| `adr` | Detection & Response - Agents & Applications | `/products/adr` |
 | `audit` | Cyber Audit & GRC Assurance | `/products/audit` |
 | `cspm` | The Agentic Cloud Defender. | `/products/cspm` |
 
 Also: `CYBER_SERVICES`, `CYBER_SOLUTIONS` (accelerators), `PRODUCTS_FAQ` (6 items), `PRODUCTS_HERO`, `PRODUCTS_CLOSING`.
 
-### Services — `servicesPageCopy.ts` *(identical to prod)*
+### Services - `servicesPageCopy.ts` *(identical to prod)*
 
 | Stack ID | Title |
 |---|---|
@@ -286,14 +286,14 @@ Also: `CYBER_SERVICES`, `CYBER_SOLUTIONS` (accelerators), `PRODUCTS_FAQ` (6 item
 
 Hero: *“Name the problem. We size and ship the fix.”*
 
-### Case studies — `portfolioPageCopy.ts` *(identical to prod)*
+### Case studies - `portfolioPageCopy.ts` *(identical to prod)*
 
 | Slug | Title | Category |
 |---|---|---|
 | `hawkeye-multi-tenant-cybersecurity-platform` | csoc Enterprise Cyber Defense | Cybersecurity |
 | `enterprise-xdr-agent-windows-endpoint-protection` | Enterprise XDR Agent | AI Platforms |
 | `dva-institutional-cryptocurrency-trading-platform` | DVA Trading Platform | FinTech |
-| `elk-log-observability-tier1-bank` | ELK Observability — Tier-1 Bank | Cloud & Observability |
+| `elk-log-observability-tier1-bank` | ELK Observability - Tier-1 Bank | Cloud & Observability |
 | `msazn-opensearch-ecommerce-search-uae` | MSAZN OpenSearch E-Commerce | E-Commerce |
 | `genda-phool-hyperlocal-delivery-platform-india` | Genda Phool Hyperlocal | Retail |
 | `safemargin-ai-cyber-insurance-marketplace` | SafeMargin Cyber Insurance | FinTech |
@@ -303,7 +303,7 @@ Hero: *“Name the problem. We size and ship the fix.”*
 
 Home **featured three** match the first csoc, XDR agent, and MSAZN search stories.
 
-### Footer — `footerCopy.ts`
+### Footer - `footerCopy.ts`
 
 Synced with prod: Products column links (`/products`, `/products/soc`), case study label *Multi-tenant XDR · MSSPs*.
 
@@ -341,28 +341,28 @@ Touch targets: buttons and inputs ≥ 48px height.
 ### Do
 - Keep copy synced with production meta and FAQ (`homePageCopy.ts`)
 - Use mono eyebrows on every major section
-- Place visuals via `homePageVisuals.ts` — one file to swap art
+- Place visuals via `homePageVisuals.ts` - one file to swap art
 - Inject FAQ + Organization JSON-LD on homepage before launch
 - Mention **regions and SLOs** in first paragraph of key pages (GEO)
 
 ### Don't
 - Don't use Duna.com copyrighted screenshots or logos
-- Don't spread lime across the page — reserve for primary CTAs
-- Don't round feature cards — square is the brand
+- Don't spread lime across the page - reserve for primary CTAs
+- Don't round feature cards - square is the brand
 - Don't ship update branch without prerender / SEO parity check against prod
 
 ---
 
 ## Known gaps (post this doc)
 
-1. **Animated stat counters** — port from prod `HomePage.tsx` IntersectionObserver block
-2. **Case study slider / HawkeyeParticles** — optional hero motion; prod differentiator
-3. **Dynamic latest-work tiles** — API fetch for case study + latest blog
-4. **Organization JSON-LD** — confirm on update branch home (prod has it)
-5. **Integrations page** — prod has `/integrations` + `integrationsCatalog.ts` (not yet in update)
-6. **OG image** — verify `og-image.png` matches light theme when redesign ships
-7. **Licensed fonts** — Archivo/JetBrains are open substitutes; swap if Grilli Type GT America is licensed later
-8. **Remaining inner pages** — audit `/services`, `/about`, portfolio case pages for Duna band spacing (`duna-light-pages.css`)
+1. **Animated stat counters** - port from prod `HomePage.tsx` IntersectionObserver block
+2. **Case study slider / HawkeyeParticles** - optional hero motion; prod differentiator
+3. **Dynamic latest-work tiles** - API fetch for case study + latest blog
+4. **Organization JSON-LD** - confirm on update branch home (prod has it)
+5. **Integrations page** - prod has `/integrations` + `integrationsCatalog.ts` (not yet in update)
+6. **OG image** - verify `og-image.png` matches light theme when redesign ships
+7. **Licensed fonts** - Archivo/JetBrains are open substitutes; swap if Grilli Type GT America is licensed later
+8. **Remaining inner pages** - audit `/services`, `/about`, portfolio case pages for Duna band spacing (`duna-light-pages.css`)
 
 ---
 

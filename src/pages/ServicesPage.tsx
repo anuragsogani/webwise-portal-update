@@ -81,7 +81,7 @@ export default function ServicesPage() {
       <SiteHeader />
 
       <main id="main-content" className="services-page">
-        {/* Hero — full-bleed interactive cognition field with copy overlaid */}
+        {/* Hero - full-bleed interactive cognition field with copy overlaid */}
         <section className="hero-band section services-hero hero-enter">
           <div className="services-hero__fabric" aria-hidden="true">
             <OperationalIntelligenceFabric />

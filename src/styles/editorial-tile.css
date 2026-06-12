@@ -1,4 +1,4 @@
-/* Anthropic-style editorial tiles — warm oatmeal cards, serif titles, metadata rows */
+/* Anthropic-style editorial tiles - warm oatmeal cards, serif titles, metadata rows */
 
 :root {
   --editorial-tile-bg: #e8e4dc;
@@ -16,7 +16,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* 2×2 grid — two equal columns, centered with side gutters */
+/* 2×2 grid - two equal columns, centered with side gutters */
 .editorial-tile-grid--2col-centered {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   width: min(100%, 52rem);
@@ -179,6 +179,75 @@ a.editorial-tile:hover {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* About page role cards - reference-style numbered tiles */
+.about-role-grid.editorial-tile-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  gap: var(--space-lg);
+}
+
+.about-role-tile.editorial-tile {
+  min-height: clamp(16rem, 24vw, 19rem);
+  padding: clamp(1.4rem, 2.4vw, 1.75rem);
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 0;
+  color: var(--color-ink);
+  box-shadow: none;
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.about-role-tile.editorial-tile:hover {
+  background: var(--color-canvas);
+  border-color: var(--color-ink-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(26, 24, 22, 0.08);
+}
+
+.about-role-tile .editorial-tile__main {
+  gap: var(--space-md);
+}
+
+.about-role-tile__num {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-hairline-strong);
+  background: var(--color-canvas);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-body-secondary);
+}
+
+.about-role-tile .editorial-tile__title {
+  margin-top: 0.2rem;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.about-role-tile .editorial-tile__desc {
+  max-width: 34rem;
+  font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+  line-height: 1.58;
+  color: var(--color-body-secondary);
+}
+
+@media (max-width: 1100px) {
+  .about-role-grid.editorial-tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .about-role-grid.editorial-tile-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .portfolio-industries {

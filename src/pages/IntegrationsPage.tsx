@@ -250,7 +250,7 @@ export default function IntegrationsPage() {
 
         <CtaBand
           title="Need a connector your stack depends on?"
-          body="Tell us what you run today — we will map AiRAT to your SIEM, cloud, and data platforms before build starts."
+          body="Tell us what you run today - we will map AiRAT to your SIEM, cloud, and data platforms before build starts."
           primary={{ label: "Book a strategy call", to: "/contact" }}
         />
       </main>

@@ -1,25 +1,25 @@
-/** AiRAT home (/)  -  marketing + proof structure */
+/** AiRAT home (/) - marketing + proof structure */
 
-export const HOME_DOCUMENT_TITLE = "AiRAT  -  Production platforms for security, AI & data";
+export const HOME_DOCUMENT_TITLE = "AiRAT - Production platforms for security, AI & data";
 
 export const HOME_META_DESCRIPTION =
-  "AiRAT builds production security, AI, and data platforms for regulated enterprises in UAE, India, and Europe. Senior-led delivery. SLO-anchored outcomes. Systems your teams run after go-live.";
+  "AiRAT builds production security, AI, and data platforms for regulated enterprises in UAE, India, Singapore, and Europe. Senior-led delivery. SLO-anchored outcomes.";
 
-export const ORG_SCHEMA_URL = "https://airat.io";
+export const ORG_SCHEMA_URL = "https://airat.in";
 
 export const ORG_SCHEMA_DESCRIPTION =
-  "Production platforms for enterprise security, AI and LLM systems, and data or search estates - delivered in UAE, India, and Europe.";
+  "Production platforms for enterprise security, AI and LLM systems, and data or search estates - delivered in UAE, India, Singapore, and Europe.";
 
-/** Hero  -  badge, H1, lead */
+/** Hero - badge, H1, lead */
 export const HERO_BADGE = "Security · AI & LLM systems · Data & search";
 
 /** H1 split for emphasis on the em element */
 export const HERO_H1_LINE1 = "Production platforms for";
 export const HERO_H1_LINE2_BEFORE = "security, AI & ";
 export const HERO_H1_LINE2_EM = "data";
-export const HERO_H1_LINE3 = " -  where failure has a cost.";
+export const HERO_H1_LINE3 = " - where failure has a cost.";
 
-/** Linked hero words — Duna homepage layout */
+/** Linked hero words - Duna homepage layout */
 export const HERO_H1_LINKS = {
   security: { label: "security", to: "/services#cyber" },
   ai: { label: "AI", to: "/services#ai" },
@@ -34,7 +34,7 @@ export const HOME_AI_SHOWCASE = {
   badge: "Artificial Intelligence",
   title: "AI built for production.",
   body:
-    "AiRAT ships governed RAG pipelines, agent workflows, and evaluation harnesses that survive audit — multiply output without multiplying headcount.",
+    "AiRAT ships governed RAG pipelines, agent workflows, and evaluation harnesses that survive audit - multiply output without multiplying headcount.",
   ctaLabel: "Explore AI services",
   ctaTo: "/services#ai",
 } as const;
@@ -42,19 +42,19 @@ export const HOME_AI_SHOWCASE = {
 /** Duna homepage closing band */
 export const HOME_CLOSING = {
   title: "The next step is a conversation, not a contract.",
-  body: "Tell us what is breaking — SOC throughput, stalled AI, or search under load. We scope problems before we discuss solutions.",
+  body: "Tell us what is breaking - SOC throughput, stalled AI, or search under load. We scope problems before we discuss solutions.",
   primaryLabel: "Explore services",
   primaryTo: "/services",
   secondaryLabel: "Read case studies",
   secondaryTo: "/portfolio",
   tertiaryLabel: "Book a strategy call",
   tertiaryTo: "/contact",
-  note: "No sales script · Plain-language follow-up · UAE, India, EU, AUS, US",
+  note: "No sales script · Plain-language follow-up · UAE, India, Singapore, EU, AUS, US",
 } as const;
 
 /** One sharper paragraph. Under 35 words. High signal. */
 export const HERO_LEAD =
-  "Senior engineers ship SIEM/XDR, governed LLM systems, and petabyte-scale search. Acceptance criteria are SLOs your board can name  -  not slide milestones nobody tracks.";
+  "Senior engineers ship SIEM/XDR, governed LLM systems, and petabyte-scale search. Acceptance criteria are SLOs your board can name - not slide milestones nobody tracks.";
 
 /** Revamped homepage hero (live on airat.in) */
 export const HERO_REVAMP = {
@@ -85,7 +85,7 @@ export const HOME_FEATURE_PILLARS: readonly HomeFeaturePillar[] = [
     id: "visibility",
     eyebrow: "Unified visibility",
     title: "Get complete security & data visibility",
-    body: "SIEM, XDR, OpenSearch, and governed LLM estates in one delivery narrative — AWS, Azure, GCP, Kubernetes, and the on-prem sources your SOC already runs. We integrate before we replace.",
+    body: "SIEM, XDR, OpenSearch, and governed LLM estates in one delivery narrative - AWS, Azure, GCP, Kubernetes, and the on-prem sources your SOC already runs. We integrate before we replace.",
     cta: { label: "View integrations", to: "/integrations" },
     iconSrc: "/doodles/home-icons/airat-security-icon.svg",
   },
@@ -93,7 +93,7 @@ export const HOME_FEATURE_PILLARS: readonly HomeFeaturePillar[] = [
     id: "prioritization",
     eyebrow: "Risk prioritization",
     title: "Fix what matters most",
-    body: "Correlation, detection engineering, and AI triage surface real incidents first — so tier-one time moves from clearing duplicates to decisions your board can defend.",
+    body: "Correlation, detection engineering, and AI triage surface real incidents first - so tier-one time moves from clearing duplicates to decisions your board can defend.",
     cta: { label: "Managed SOC & XDR", to: "/products/soc" },
     badge: { label: "Client outcome", detail: "60% faster MTTD · DTS Solutions" },
     iconSrc: "/doodles/home-icons/airat-security-icon.svg",
@@ -102,7 +102,7 @@ export const HOME_FEATURE_PILLARS: readonly HomeFeaturePillar[] = [
     id: "customize",
     eyebrow: "Open, adaptable delivery",
     title: "Customize to your requirements",
-    body: "We build inside your environment — custom detections, evidence trails, RAG guardrails, and RBAC patterns your security and legal teams sign off on before scale.",
+    body: "We build inside your environment - custom detections, evidence trails, RAG guardrails, and RBAC patterns your security and legal teams sign off on before scale.",
     cta: { label: "How we work", to: "/methodology" },
     iconSrc: "/doodles/home-icons/airat-ai-systems-icon.svg",
   },
@@ -110,7 +110,7 @@ export const HOME_FEATURE_PILLARS: readonly HomeFeaturePillar[] = [
     id: "compliance",
     eyebrow: "Regulatory excellence",
     title: "Automate evidence, simplify audits",
-    body: "Continuous monitoring and audit-ready artefacts for CIS, ISO 27001, SOC 2-aligned programmes, and your own control frameworks — designed in the architecture pass, not as a change request.",
+    body: "Continuous monitoring and audit-ready artefacts for CIS, ISO 27001, SOC 2-aligned programmes, and your own control frameworks - designed in the architecture pass, not as a change request.",
     cta: { label: "Security services", to: "/services/cyber" },
     iconSrc: "/doodles/home-icons/airat-data-analytics-icon.svg",
   },
@@ -118,7 +118,7 @@ export const HOME_FEATURE_PILLARS: readonly HomeFeaturePillar[] = [
 
 export const HOME_TRUSTED_LEADERS_SECTION = {
   title: "Trusted by leaders",
-  lead: "Run security, AI, and data programmes like the world's best teams — without needing a 100+ person engineering org.",
+  lead: "Run security, AI, and data programmes like the world's best teams - without needing a 100+ person engineering org.",
 } as const;
 
 export type TrustedLeaderCharacterVariant =
@@ -138,14 +138,14 @@ export type TrustedLeaderTestimonial = {
   readonly characterVariant: TrustedLeaderCharacterVariant;
 };
 
-/** Five logo clients — Pudding-style pixel characters (male / female alternating) */
+/** Five logo clients - Pudding-style pixel characters (male / female alternating) */
 export const TRUSTED_LEADER_TESTIMONIALS: readonly TrustedLeaderTestimonial[] = [
   {
     id: "dts",
     clientName: "DTS Solutions",
     logoSrc: "/clients_logos/dts-solutions.png",
     quote:
-      "Their engineers understood our threat surface immediately. Mean-time-to-detect dropped in the first month — when something spikes we know it is real.",
+      "Their engineers understood our threat surface immediately. Mean-time-to-detect dropped in the first month - when something spikes we know it is real.",
     name: "Head of Cybersecurity",
     role: "DTS Solutions · UAE",
     characterVariant: "dts",
@@ -175,7 +175,7 @@ export const TRUSTED_LEADER_TESTIMONIALS: readonly TrustedLeaderTestimonial[] = 
     clientName: "Kort",
     logoSrc: "/clients_logos/kort.png",
     quote:
-      "Medallion layers and contracts were agreed before the heavy build — finance and product stopped arguing about which dashboard was correct.",
+      "Medallion layers and contracts were agreed before the heavy build - finance and product stopped arguing about which dashboard was correct.",
     name: "Head of Data Platform",
     role: "Kort · Europe",
     characterVariant: "kort",
@@ -185,7 +185,7 @@ export const TRUSTED_LEADER_TESTIMONIALS: readonly TrustedLeaderTestimonial[] = 
     clientName: "Aithentic",
     logoSrc: "/clients_logos/aithentic.png",
     quote:
-      "Our RAG pipeline lets compliance teams query millions of documents instantly. Work that took days now finishes in seconds — ROI was visible within the first sprint.",
+      "Our RAG pipeline lets compliance teams query millions of documents instantly. Work that took days now finishes in seconds - ROI was visible within the first sprint.",
     name: "VP of Engineering",
     role: "Aithentic · India",
     characterVariant: "aithentic",
@@ -213,7 +213,7 @@ export const HOME_TESTIMONIALS: readonly HomeTestimonial[] = [
     id: "dts",
     clientName: "DTS Solutions",
     quote:
-      "Their engineers understood our threat surface immediately. Mean-time-to-detect dropped in the first month — when something spikes we know it is real.",
+      "Their engineers understood our threat surface immediately. Mean-time-to-detect dropped in the first month - when something spikes we know it is real.",
     name: "Security leadership",
     title: "Head of Cybersecurity",
     company: "DTS Solutions · UAE",
@@ -224,7 +224,7 @@ export const HOME_TESTIMONIALS: readonly HomeTestimonial[] = [
     id: "aithentic",
     clientName: "Aithentic",
     quote:
-      "Our RAG pipeline lets compliance teams query millions of documents instantly. Work that took days now finishes in seconds — ROI was visible within the first sprint.",
+      "Our RAG pipeline lets compliance teams query millions of documents instantly. Work that took days now finishes in seconds - ROI was visible within the first sprint.",
     name: "Engineering leadership",
     title: "VP of Engineering",
     company: "Aithentic · India",
@@ -257,7 +257,7 @@ export const HOME_TESTIMONIALS: readonly HomeTestimonial[] = [
     id: "kort",
     clientName: "Kort",
     quote:
-      "Medallion layers and contracts were agreed before the heavy build — finance and product stopped arguing about which dashboard was correct.",
+      "Medallion layers and contracts were agreed before the heavy build - finance and product stopped arguing about which dashboard was correct.",
     name: "Data leadership",
     title: "Head of Data Platform",
     company: "Kort · Europe",
@@ -290,7 +290,7 @@ export const HOME_TESTIMONIALS: readonly HomeTestimonial[] = [
     id: "masarrati",
     clientName: "Masarrati",
     quote:
-      "Internal workflows finally matched how sales and service teams work — not a generic admin template bolted on in the final sprint.",
+      "Internal workflows finally matched how sales and service teams work - not a generic admin template bolted on in the final sprint.",
     name: "Digital leadership",
     title: "General Manager, Technology",
     company: "Masarrati · UAE",
@@ -301,7 +301,7 @@ export const HOME_TESTIMONIALS: readonly HomeTestimonial[] = [
     id: "eadx",
     clientName: "EADX",
     quote:
-      "Low-latency paths and audit-friendly logging shipped together. Our engineers own the runbooks — not a black-box integrator.",
+      "Low-latency paths and audit-friendly logging shipped together. Our engineers own the runbooks - not a black-box integrator.",
     name: "Engineering leadership",
     title: "Head of Engineering",
     company: "EADX · UAE",
@@ -321,10 +321,10 @@ export const HOME_CLIENTS_MARQUEE = {
   title: "Trusted by named enterprises",
 } as const;
 
-/** Only two tags  -  discipline over decoration */
+/** Only two tags - discipline over decoration */
 export const OUTCOME_TAGS = [
   { text: "SLO-anchored delivery", variant: "lime" as const },
-  { text: "UAE · India · Europe", variant: "lime" as const },
+  { text: "UAE · India · Singapore · Europe", variant: "lime" as const },
 ] as const;
 
 export const HERO_SECONDARY_CTA_LABEL = "Read case studies";
@@ -340,12 +340,12 @@ export type SolutionPathService = {
 export const SOLUTION_PATHS_SECTION = {
   eyebrow: "What we build",
   title: "Four operations. One delivery model.",
-  lead: "Security, AI, data, and platform — engineered as intelligent operations that detect, govern, and scale. Each starts with the business pressure, not the tool.",
+  lead: "Security, AI, data, and platform - engineered as intelligent operations that detect, govern, and scale. Each starts with the business pressure, not the tool.",
   exploreLabel: "Explore",
   paths: [
     {
       title: "Security & detection",
-      body: "SIEM, XDR, detection engineering, and evidence trails your auditors and board can follow  -  without a SOC team drowning in noise.",
+      body: "SIEM, XDR, detection engineering, and evidence trails your auditors and board can follow - without a SOC team drowning in noise.",
       to: "/services#cyber",
       metaType: "Security platform",
       metaSignal: "SIEM · XDR · evidence design",
@@ -353,7 +353,7 @@ export const SOLUTION_PATHS_SECTION = {
         {
           title: "SIEM & correlated timelines",
           description:
-            "Endpoint, identity, and cloud signals land on one incident timeline — so analysts triage context, not disconnected alerts.",
+            "Endpoint, identity, and cloud signals land on one incident timeline - so analysts triage context, not disconnected alerts.",
         },
         {
           title: "Analyst-approved response",
@@ -363,12 +363,12 @@ export const SOLUTION_PATHS_SECTION = {
         {
           title: "Detection engineering",
           description:
-            "Rule coverage mapped across severity and source — tuned with your team, not a vendor default pack shipped once.",
+            "Rule coverage mapped across severity and source - tuned with your team, not a vendor default pack shipped once.",
         },
         {
           title: "Board-ready evidence trails",
           description:
-            "Immutable chains with timestamps and actors — auditors and executives read the same story without a SOC walkthrough.",
+            "Immutable chains with timestamps and actors - auditors and executives read the same story without a SOC walkthrough.",
         },
       ] satisfies readonly SolutionPathService[],
     },
@@ -382,17 +382,17 @@ export const SOLUTION_PATHS_SECTION = {
         {
           title: "RAG & retrieval boundaries",
           description:
-            "Vector indexes, chunking rules, and citation boundaries scoped before production traffic — so answers stay grounded and auditable.",
+            "Vector indexes, chunking rules, and citation boundaries scoped before production traffic - so answers stay grounded and auditable.",
         },
         {
           title: "Production-safe agents",
           description:
-            "Logging, evaluation, and human review gates defined before models touch customer data — not demo prompts in staging.",
+            "Logging, evaluation, and human review gates defined before models touch customer data - not demo prompts in staging.",
         },
         {
           title: "Evaluation harnesses",
           description:
-            "Offline golden sets, regression thresholds, and production drift checks — so model changes ship with evidence, not hope.",
+            "Offline golden sets, regression thresholds, and production drift checks - so model changes ship with evidence, not hope.",
         },
         {
           title: "PII & compliance controls",
@@ -411,7 +411,7 @@ export const SOLUTION_PATHS_SECTION = {
         {
           title: "Medallion lake architecture",
           description:
-            "Bronze, silver, and gold layers with governed promotion paths — so raw ingest becomes trusted analytics without shadow copies.",
+            "Bronze, silver, and gold layers with governed promotion paths - so raw ingest becomes trusted analytics without shadow copies.",
         },
         {
           title: "Streaming & CDC paths",
@@ -421,12 +421,12 @@ export const SOLUTION_PATHS_SECTION = {
         {
           title: "OpenSearch-scale search",
           description:
-            "Index health, query latency, and shard throughput at production scale — for investigators and product teams searching the same catalog.",
+            "Index health, query latency, and shard throughput at production scale - for investigators and product teams searching the same catalog.",
         },
         {
           title: "Agreed gold-layer metrics",
           description:
-            "Finance-approved KPI definitions in one gold layer — so dashboards, regulators, and exec reviews cite the same numbers.",
+            "Finance-approved KPI definitions in one gold layer - so dashboards, regulators, and exec reviews cite the same numbers.",
         },
       ] satisfies readonly SolutionPathService[],
     },
@@ -438,30 +438,30 @@ export const CASES_EYEBROW = "Selected work";
 export const CASES_TITLE = "Shipped. Running. ";
 export const CASES_TITLE_EM = "Measurable.";
 export const CASES_LEAD =
-  "Three platforms in production across security, AI, and search. Every engagement ends with a running system and agreed SLOs  -  not a deck and a handoff.";
+  "Three platforms in production across security, AI, and search. Every engagement ends with a running system and agreed SLOs - not a deck and a handoff.";
 
 export const FEATURED_PROJECTS = [
   {
     domain: "Cybersecurity · UAE Enterprise",
     title: "Multi-Tenant XDR Platform for MSSPs",
     outcomes: ["87% alert reduction", "60% faster MTTD"] as const,
-    body: "A UAE enterprise SOC team was processing 2,000+ daily alerts with three analysts. csoc consolidates 50+ sources into a single timeline and automates response on 87% of alerts  -  so the team focuses on what only humans can decide.",
+    body: "A UAE enterprise SOC team was processing 2,000+ daily alerts with three analysts. csoc consolidates 50+ sources into a single timeline and automates response on 87% of alerts - so the team focuses on what only humans can decide.",
     ctaLabel: "Read the case study",
     to: "/portfolio/hawkeye-multi-tenant-cybersecurity-platform",
   },
   {
     domain: "AI automation · FinTech · India",
-    title: "Enterprise XDR Agent  -  Autonomous Threat Response",
+    title: "Enterprise XDR Agent - Autonomous Threat Response",
     outcomes: ["Autonomous response", "99.95% uptime"] as const,
-    body: "A FTSE 250 FinTech needed threat response that didn't wait for a human. The XDR Agent reasons about threat context, correlates across environments, and executes remediation in milliseconds  -  at 99.95% uptime over fourteen months.",
+    body: "A FTSE 250 FinTech needed threat response that didn't wait for a human. The XDR Agent reasons about threat context, correlates across environments, and executes remediation in milliseconds - at 99.95% uptime over fourteen months.",
     ctaLabel: "Read the case study",
     to: "/portfolio/enterprise-xdr-agent-windows-endpoint-protection",
   },
   {
     domain: "Search & Observability · E-Commerce",
-    title: "DVA  -  Petabyte-Scale Search at 5M Products",
+    title: "DVA - Petabyte-Scale Search at 5M Products",
     outcomes: ["12× faster queries", "4.2s → 0.35s latency"] as const,
-    body: "Search was returning stale results eight minutes after catalog updates. We rebuilt on distributed OpenSearch  -  dropping query latency from 4.2 s to 0.35 s, with a 5 M-product index that stays fresh under peak traffic.",
+    body: "Search was returning stale results eight minutes after catalog updates. We rebuilt on distributed OpenSearch - dropping query latency from 4.2 s to 0.35 s, with a 5 M-product index that stays fresh under peak traffic.",
     ctaLabel: "Read the case study",
     to: "/portfolio/msazn-opensearch-ecommerce-search-uae",
   },
@@ -479,7 +479,7 @@ export const IMPACT_METRICS = [
     decimals: 2,
     label: "Platform uptime SLA",
     detail:
-      "SLAs are defined before we write a line of code  -  not after an incident. Fourteen months at 99.95% across the XDR platform.",
+      "SLAs are defined before we write a line of code - not after an incident. Fourteen months at 99.95% across the XDR platform.",
   },
   {
     target: 87,
@@ -495,7 +495,7 @@ export const IMPACT_METRICS = [
     decimals: 0,
     label: "Faster investigation",
     detail:
-      "OpenSearch infrastructure delivers answers 12× faster than conventional SIEM stacks  -  at petabyte scale, without adding headcount.",
+      "OpenSearch infrastructure delivers answers 12× faster than conventional SIEM stacks - at petabyte scale, without adding headcount.",
   },
 ] as const;
 
@@ -508,7 +508,7 @@ export const TESTI_NOTE = "Named roles withheld where clients require it. Outcom
 export const TESTIMONIALS = [
   {
     quote:
-      "Their engineers understood our threat surface immediately. Mean-time-to-detect dropped 60% in the first month. Fourteen months at 99.95% uptime  -  and when something spikes, we know it's real.",
+      "Their engineers understood our threat surface immediately. Mean-time-to-detect dropped 60% in the first month. Fourteen months at 99.95% uptime - and when something spikes, we know it's real.",
     attrib: "Head of Cybersecurity",
     org: "Enterprise SaaS · Dubai, UAE",
     highlight: "60%",
@@ -537,7 +537,7 @@ export const DIFF_EYEBROW = "How we're different";
 export const DIFF_TITLE = "Engineering without ";
 export const DIFF_TITLE_EM = "the theatre.";
 export const DIFF_UNLIKE_LINES = [
-  { lead: "Unlike consultancies", rest: "we engineer from first principles  -  you own the architecture, not a slide deck." },
+  { lead: "Unlike consultancies", rest: "we engineer from first principles - you own the architecture, not a slide deck." },
   { lead: "Unlike product vendors", rest: "we build to your environment, not a reference architecture that breaks on contact with reality." },
   { lead: "Unlike offshore factories", rest: "the engineers who design your system are the ones who deploy, stabilise, and hand it over." },
 ] as const;
@@ -551,20 +551,20 @@ export const DIFF_CARDS = [
   {
     num: "02",
     title: "Production or we stop",
-    body: "Milestones end in running software and agreed SLOs  -  not recommendations trapped in a presentation nobody owns.",
+    body: "Milestones end in running software and agreed SLOs - not recommendations trapped in a presentation nobody owns.",
   },
   {
     num: "03",
     title: "Security by design",
-    body: "Detection, access control, and evidence trails are in the first design pass  -  not a change request when audit season arrives.",
+    body: "Detection, access control, and evidence trails are in the first design pass - not a change request when audit season arrives.",
   },
 ] as const;
 
 /** One closing line after differentiators (keeps rat metaphor away from hero) */
 export const HOME_BRAND_CLOSER =
-  "We map failure states  -  including ours  -  so the same incident class doesn't cost you twice.";
+  "We map failure states - including ours - so the same incident class doesn't cost you twice.";
 
-/** ── CLIENT LOGO STRIP  -  trust signal below hero ── */
+/** ── CLIENT LOGO STRIP - trust signal below hero ── */
 export const HOME_CLIENT_STRIP = {
   label: "Trusted by",
   clients: [
@@ -581,7 +581,7 @@ export const HOME_CLIENT_STRIP = {
   ],
 } as const;
 
-/** ── HOMEPAGE CLIENTS  -  same narrative as About / Clients section ── */
+/** ── HOMEPAGE CLIENTS - same narrative as About / Clients section ── */
 export const HOME_CLIENTS_SECTION = {
   title: "Our customers",
   lead: "Companies we have delivered production systems for.",
@@ -589,7 +589,7 @@ export const HOME_CLIENTS_SECTION = {
   ctaTo: "/about#clients",
 } as const;
 
-/** ── TRUST  -  operating context / industries ── */
+/** ── TRUST - operating context / industries ── */
 export const TRUST_SECTION_EYEBROW = "Industries we serve";
 export const TRUST_STRIP_HEADING = "Built for environments where failure has a cost.";
 export const TRUST_SECTION_LEAD =
@@ -598,7 +598,7 @@ export const TRUST_SECTION_LEAD =
 export const TRUST_ITEMS = [
   {
     label: "Banking & FinTech",
-    detail: "UAE Central Bank, RBI, and EU regulatory compliance built into architecture  -  not bolted on at audit time.",
+    detail: "UAE Central Bank, RBI, and EU regulatory compliance built into architecture - not bolted on at audit time.",
     to: "/industries/fintech",
   },
   {
@@ -618,7 +618,7 @@ export const TRUST_ITEMS = [
   },
 ] as const;
 
-// ── INTERNAL USE ONLY  -  not rendered on homepage ──────────────────────────────
+// ── INTERNAL USE ONLY - not rendered on homepage ──────────────────────────────
 // These research stats are kept for content strategy reference.
 // Use on blog articles or internal decks, not the homepage.
 export const HOME_RESEARCH_STRIP = {
@@ -632,27 +632,27 @@ export const HOME_RESEARCH_STRIP = {
     },
     {
       stat: "65%",
-      label: "Of Google searches already end without a click  -  AI Overviews accelerate this",
+      label: "Of Google searches already end without a click - AI Overviews accelerate this",
       source: "SparkToro Research",
     },
     {
       stat: "$12.9M",
-      label: "Average annual cost of poor data quality  -  rising faster in regulated industries",
+      label: "Average annual cost of poor data quality - rising faster in regulated industries",
       source: "Gartner Data Quality Research",
     },
     {
       stat: "68%",
-      label: "Of online experiences still begin with a search engine  -  your technical SEO is a revenue line",
+      label: "Of online experiences still begin with a search engine - your technical SEO is a revenue line",
       source: "BrightEdge Research",
     },
   ],
 } as const;
 
-/** ── HOMEPAGE FAQ  -  for AEO and SEO ── */
+/** ── HOMEPAGE FAQ - for AEO and SEO ── */
 export const HOME_FAQ = [
   {
     q: "What does AiRAT build?",
-    a: "AiRAT designs and deploys production security platforms (SIEM/XDR), governed AI and LLM systems (RAG pipelines, agents, evaluation harnesses), and petabyte-scale data and search infrastructure for regulated enterprises in the UAE, India, and Europe.",
+    a: "AiRAT designs and deploys production security platforms (SIEM/XDR), governed AI and LLM systems (RAG pipelines, agents, evaluation harnesses), and petabyte-scale data and search infrastructure for regulated enterprises in the UAE, India, Singapore, and Europe.",
   },
   {
     q: "Which industries does AiRAT serve?",
@@ -660,7 +660,7 @@ export const HOME_FAQ = [
   },
   {
     q: "Where does AiRAT operate?",
-    a: "We deliver production systems for enterprises across the UAE, India, Europe, Australia, and the US, with data residency and compliance constraints designed in from the first architecture review.",
+    a: "We deliver production systems for enterprises across the UAE, India, Singapore, Europe, Australia, and the US, with data residency and compliance constraints designed in from the first architecture review.",
   },
 ] as const;
 
@@ -668,19 +668,19 @@ export const HOME_FAQ = [
 export const HOME_INSIGHTS_SECTION = {
   eyebrow: "From the field",
   title: "Notes on what we're seeing.",
-  lead: "Long-form writing on production RAG, OpenSearch migrations, SOC evidence, GEO, and AI search visibility  -  same standards as our delivery work.",
+  lead: "Long-form writing on production RAG, OpenSearch migrations, SOC evidence, GEO, and AI search visibility - same standards as our delivery work.",
 } as const;
 
 /** ── FINAL CTA (pre-footer email capture) ── */
 export const CTA_EYEBROW = "Get started";
-export const CTA_TITLE_BEFORE = "Leave your email — we'll reach out.";
+export const CTA_TITLE_BEFORE = "Leave your email - we'll reach out.";
 export const CTA_TITLE_EM = "";
 export const CTA_TITLE_AFTER = "";
 export const CTA_SUB =
-  "Share your work email and we'll follow up with a tailored note on security, AI, or data programmes — usually within one business day.";
+  "Share your work email and we'll follow up with a tailored note on security, AI, or data programmes - usually within one business day.";
 export const CTA_FORM_BUTTON = "Get in touch";
 export const CTA_FORM_NOTE = "No spam. We only use your email to respond to this request.";
-export const CTA_FORM_SUCCESS = "Thanks — we'll be in touch shortly.";
+export const CTA_FORM_SUCCESS = "Thanks - we'll be in touch shortly.";
 export const CTA_PRIMARY_LABEL = "Explore services";
 export const CTA_SECONDARY_LABEL = "Read case studies";
 export const CTA_DETAIL = CTA_FORM_NOTE;
@@ -692,7 +692,7 @@ export const HOME_STORY_LINKS = [
   { to: "/contact", label: "Contact AiRAT" },
 ] as const;
 
-/** ── RAT PANEL (minimal  -  kept for brand section) ── */
+/** ── RAT PANEL (minimal - kept for brand section) ── */
 export const RAT_PANEL = {
   eyebrow: "Brand",
   title: "Why the name matters - ",
@@ -712,7 +712,7 @@ export const SHOWCASE_SECTION = {
   titleEm: "decisions",
   titleAfter: " your teams can defend",
   subtitle:
-    "Security consoles, governed AI workflows, and search or lakehouse foundations  -  each layer earns the next so procurement and engineering share one story.",
+    "Security consoles, governed AI workflows, and search or lakehouse foundations - each layer earns the next so procurement and engineering share one story.",
 } as const;
 
 export type ShowcaseVisualVariant = "soc" | "ai" | "data";
@@ -723,17 +723,17 @@ export const SHOWCASE_ROWS: readonly {
   readonly variant: ShowcaseVisualVariant;
 }[] = [
   {
-    name: "Signal  -  consoles analysts actually live in",
-    body: "Multi-tenant SIEM/XDR shells, correlation, and enrichment so tier-one triage happens in one timeline  -  not five tabs. Built for UAE-scale telemetry, European compliance questions, and the MTTR story your CISO has to tell.",
+    name: "Signal - consoles analysts actually live in",
+    body: "Multi-tenant SIEM/XDR shells, correlation, and enrichment so tier-one triage happens in one timeline - not five tabs. Built for UAE-scale telemetry, European compliance questions, and the MTTR story your CISO has to tell.",
     variant: "soc",
   },
   {
-    name: "Reasoning  -  AI workflows with guardrails",
-    body: "RAG, tool use, and evaluation harnesses that survive production  -  not demo prompts. PII boundaries, citations, and human review are designed in before models touch customer data.",
+    name: "Reasoning - AI workflows with guardrails",
+    body: "RAG, tool use, and evaluation harnesses that survive production - not demo prompts. PII boundaries, citations, and human review are designed in before models touch customer data.",
     variant: "ai",
   },
   {
-    name: "Foundation  -  search, lakehouse, and observability",
+    name: "Foundation - search, lakehouse, and observability",
     body: "OpenSearch-grade discovery, lakehouse discipline, and pipelines you can observe when finance asks why costs moved. The substrate that keeps answers fast when catalogs and logs spike.",
     variant: "data",
   },

@@ -402,7 +402,7 @@ html:not([data-theme="light"]) .xdr-demo-page__monitors {
 :is(.xdr-ui, .xdr-ui *)[class~="bg-emerald-500"] { background-color: rgba(123, 227, 191, 0.8); }
 :is(.xdr-ui, .xdr-ui *)[class~="bg-purple-500"] { background-color: rgba(148, 122, 255, 0.7); }
 
-/* var()-based bracket classes — XDR dashboard components */
+/* var()-based bracket classes - XDR dashboard components */
 :is(.xdr-ui, .xdr-ui *)[class*="bg-[var(--xdr-surface-0)"] { background-color: var(--xdr-surface-0); }
 :is(.xdr-ui, .xdr-ui *)[class*="bg-[var(--xdr-surface-1)"] { background-color: var(--xdr-surface-1); }
 :is(.xdr-ui, .xdr-ui *)[class*="bg-[var(--xdr-surface-2)"] { background-color: var(--xdr-surface-2); }
@@ -783,7 +783,7 @@ html:not([data-theme="light"]) .xdr-demo-page__monitors {
 }
 
 /* ================================================================
-   LIGHT THEME OVERRIDES — scoped to .xdr-ui
+   LIGHT THEME OVERRIDES - scoped to .xdr-ui
    Triggered by global data-theme="light" toggle.
    Surface → white/cream, text → dark, accent → dark teal.
    ================================================================ */
@@ -841,7 +841,7 @@ html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="bg-slate-900"] { backgr
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="bg-slate-900/40"] { background-color: rgba(245, 244, 240, 0.5); }
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="bg-slate-900/80"] { background-color: rgba(245, 244, 240, 0.88); }
 
-/* Badge pastel tints — proper light values */
+/* Badge pastel tints - proper light values */
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="bg-blue-50"] { background-color: #edf8f7; }
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="bg-blue-600/20"] { background-color: rgba(7, 143, 139, 0.12); }
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="bg-blue-500"],
@@ -857,7 +857,7 @@ html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="bg-green-50"],
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="bg-emerald-50"] { background-color: #ecfdf5; }
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="bg-emerald-500"] { background-color: #10b981; }
 
-/* Text utilities — flip to dark text on light surfaces */
+/* Text utilities - flip to dark text on light surfaces */
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="text-white"] { color: #121210; }
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="text-white/90"] { color: rgba(18, 18, 16, 0.92); }
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="text-black"] { color: #121210; }
@@ -901,7 +901,7 @@ html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="border-amber-200"] { bo
 /* Divide */
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="divide-slate-100"] > * + * { border-color: #f1f5f9; }
 
-/* Shadows — softer for light mode */
+/* Shadows - softer for light mode */
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="shadow-sm"] { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04); }
 html[data-theme="light"] :is(.xdr-ui, .xdr-ui *)[class~="shadow-md"] { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06); }
 

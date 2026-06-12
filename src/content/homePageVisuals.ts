@@ -1,6 +1,6 @@
-/** Homepage visual slots — Duna layout positions, AiRAT-owned assets */
+/** Homepage visual slots - Duna layout positions, AiRAT-owned assets */
 
-/** Scenic backgrounds — user landscape + sky band */
+/** Scenic backgrounds - user landscape + sky band */
 export const HOME_SCENE = {
   hero: "/images/scenes/hero_image.png",
   footer: "/images/trust/data-encryption.png",
@@ -14,10 +14,10 @@ export type HomeVisual = {
   readonly height: number;
 };
 
-/** Duna-style product UI mockups (original AiRAT art — not third-party assets) */
+/** Duna-style product UI mockups (original AiRAT art - not third-party assets) */
 const DUNA = "/images/duna-style";
 
-/** Feature-module screenshots — Security, AI, Data (max ~28rem wide in CSS) */
+/** Feature-module screenshots - Security, AI, Data (max ~28rem wide in CSS) */
 export const HOME_PATH_VISUALS: readonly HomeVisual[] = [
   {
     src: `${DUNA}/feature-security-siem-timeline.svg`,
@@ -39,7 +39,7 @@ export const HOME_PATH_VISUALS: readonly HomeVisual[] = [
   },
 ] as const;
 
-/** Security & detection feature-module rotator — one visual per service heading */
+/** Security & detection feature-module rotator - one visual per service heading */
 export const HOME_SECURITY_SERVICE_VISUALS: readonly HomeVisual[] = [
   {
     src: `${DUNA}/feature-security-siem-timeline.svg`,
@@ -67,7 +67,7 @@ export const HOME_SECURITY_SERVICE_VISUALS: readonly HomeVisual[] = [
   },
 ] as const;
 
-/** AI & LLM feature-module rotator — one visual per service heading */
+/** AI & LLM feature-module rotator - one visual per service heading */
 export const HOME_AI_SERVICE_VISUALS: readonly HomeVisual[] = [
   {
     src: `${DUNA}/feature-ai-rag-wordcloud.svg`,
@@ -95,7 +95,7 @@ export const HOME_AI_SERVICE_VISUALS: readonly HomeVisual[] = [
   },
 ] as const;
 
-/** Data & search feature-module rotator — one visual per service heading */
+/** Data & search feature-module rotator - one visual per service heading */
 export const HOME_DATA_SERVICE_VISUALS: readonly HomeVisual[] = [
   {
     src: `${DUNA}/feature-data-medallion-layers.svg`,
@@ -147,7 +147,7 @@ export const HOME_TRUST_VISUALS: readonly HomeVisual[] = [
   },
 ] as const;
 
-/** Case study card thumbnails — Duna news-grid pattern */
+/** Case study card thumbnails - Duna news-grid pattern */
 export const HOME_CASE_THUMBS: readonly HomeVisual[] = [
   {
     src: `${DUNA}/feature-security-siem-timeline.svg`,

@@ -57,7 +57,6 @@ export default function SocProductPage() {
               alt=""
               width={SOC_HERO.background.width}
               height={SOC_HERO.background.height}
-              fetchPriority="high"
               decoding="async"
             />
             <div className="soc-first-scroll__fade" />

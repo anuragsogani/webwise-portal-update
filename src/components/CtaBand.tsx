@@ -16,7 +16,7 @@ type Props = {
   className?: string;
 };
 
-/** Full-width dark closing band — headline, body, lime primary action. */
+/** Full-width dark closing band - headline, body, lime primary action. */
 export default function CtaBand({
   title,
   body,

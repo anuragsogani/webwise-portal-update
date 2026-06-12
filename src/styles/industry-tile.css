@@ -1,4 +1,4 @@
-/* Portfolio industry picker — open tic-tac-toe grid (internal lines only, no boxes) */
+/* Portfolio industry picker - open tic-tac-toe grid (internal lines only, no boxes) */
 
 :root {
   --industry-grid-line: var(--color-hairline-strong, #dbd9cd);
@@ -113,17 +113,17 @@
   opacity: 0.48;
 }
 
-/* Vertical divider — column 1 only (no outer right edge on the grid) */
+/* Vertical divider - column 1 only (no outer right edge on the grid) */
 .industry-tile:nth-child(odd) {
   border-right: 1px solid var(--industry-grid-line);
 }
 
-/* Even count: last row is two cells — no bottom edge on the grid */
+/* Even count: last row is two cells - no bottom edge on the grid */
 .industry-tile-grid:has(.industry-tile:nth-child(even):last-child) .industry-tile:nth-last-child(-n+2) {
   border-bottom: none;
 }
 
-/* Odd count: last row is one cell — no bottom edge on the grid */
+/* Odd count: last row is one cell - no bottom edge on the grid */
 .industry-tile-grid:has(.industry-tile:nth-child(odd):last-child) .industry-tile:last-child {
   border-bottom: none;
 }

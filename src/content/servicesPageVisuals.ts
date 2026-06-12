@@ -1,4 +1,4 @@
-/** Services page problem-class visuals — Duna-style AiRAT-owned SVGs */
+/** Services page problem-class visuals - Duna-style AiRAT-owned SVGs */
 
 import type { HomeVisual } from "./homePageVisuals";
 

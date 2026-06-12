@@ -5,12 +5,12 @@ export interface AiSummaryContext {
 }
 
 const BRAND_CONTEXT =
-  "AiRAT — production platforms for enterprise security (SIEM/XDR), AI & LLM systems (RAG, agents), and data/search estates, delivered in UAE, India, APAC, and Europe.";
+  "AiRAT - production platforms for enterprise security (SIEM/XDR), AI & LLM systems (RAG, agents), and data/search estates, delivered in UAE, India, Singapore, APAC, and Europe.";
 
 export function buildAiSummaryPrompt(ctx: AiSummaryContext): string {
   const title = ctx.pageLabel || (ctx.pageTitle || "").replace(/\s*\|\s*AiRAT\s*$/, "").trim();
   const url = ctx.canonicalUrl || (typeof window !== "undefined" ? window.location.href : "https://airat.in");
-  return `Please summarize this page from ${BRAND_CONTEXT} Focus on what the page covers, who it is for, and the key business or technical value. Page: "${title}" — ${url}`;
+  return `Please summarize this page from ${BRAND_CONTEXT} Focus on what the page covers, who it is for, and the key business or technical value. Page: "${title}" - ${url}`;
 }
 
 export const LLM_LINKS = [

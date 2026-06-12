@@ -1,4 +1,4 @@
-/** Primary nav — Duna-style mega menus + compact dropdowns */
+/** Primary nav - Duna-style mega menus + compact dropdowns */
 
 import { PRODUCT_TILES } from "./productsPageCopy";
 import { SERVICES_PILLARS } from "./servicesPageCopy";

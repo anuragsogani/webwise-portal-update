@@ -34,7 +34,7 @@ export async function submitLeadEmail(email: string, source?: string): Promise<v
 
   if (response.ok) return;
 
-  // Fallback when contact endpoint is unavailable — still store the email.
+  // Fallback when contact endpoint is unavailable - still store the email.
   if (response.status === 404 || response.status === 503) {
     await subscribeToInsights(trimmed);
     return;

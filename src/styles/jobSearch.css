@@ -1005,7 +1005,7 @@ html:not([data-theme="light"]) .jf-header {
 }
 
 /* ================================================================
-   LIGHT THEME OVERRIDES — scoped to .jf-page / #demo-job-root
+   LIGHT THEME OVERRIDES - scoped to .jf-page / #demo-job-root
    ================================================================ */
 html[data-theme="light"] .jf-page {
   --jf-lime: #078f8b;

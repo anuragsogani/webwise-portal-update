@@ -151,7 +151,7 @@ export default function PortfolioPage() {
 
         <CtaBand
           title="Ready to discuss your situation?"
-          body="Bring one concrete problem — SOC throughput, stalled AI, or search under load. We scope before we quote."
+          body="Bring one concrete problem - SOC throughput, stalled AI, or search under load. We scope before we quote."
           primary={{ label: "Contact us", to: "/contact" }}
           secondary={{ label: "Explore services →", to: "/services" }}
         />

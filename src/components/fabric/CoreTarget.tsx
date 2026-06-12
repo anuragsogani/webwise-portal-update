@@ -1,5 +1,5 @@
 /**
- * CoreTarget — the central convergence point. Finely spaced concentric rings,
+ * CoreTarget - the central convergence point. Finely spaced concentric rings,
  * a soft halo, expanding ripples and the AiRAT diamond. Subtle, never glowing
  * aggressively. Ripple/pulse via Framer Motion (declarative is cleanest here).
  */

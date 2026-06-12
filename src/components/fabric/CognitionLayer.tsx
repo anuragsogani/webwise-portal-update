@@ -1,5 +1,5 @@
 /**
- * CognitionLayer — static structure for the dotted wave terrain.
+ * CognitionLayer - static structure for the dotted wave terrain.
  * Three <path>s (far / near / crest) whose `d` is driven imperatively by
  * useFabricSimulation. Depth via opacity buckets; lime traces crests only.
  */

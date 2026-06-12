@@ -1,7 +1,7 @@
 export const TECH_SEO = {
-  title: "Engineering Capabilities | AiRAT  -  Production-Proven Technology",
+  title: "Engineering Capabilities | AiRAT - Production-Proven Technology",
   description:
-    "The production-proven tools, patterns, and engineering capabilities behind AiRAT systems. Every stack choice maps to shipped, running outcomes in regulated and high-scale environments across UAE, India, and Europe.",
+    "The production-proven tools, patterns, and engineering capabilities behind AiRAT systems. Every stack choice maps to shipped, running outcomes in regulated and high-scale environments across UAE, India, Singapore, and Europe.",
 } as const;
 
 export const TECH_HERO = {
@@ -15,21 +15,21 @@ export const TECH_INTRO = {
   eyebrow: "How we choose",
   title: "We choose for reliability, not recognition.",
   body:
-    "Reliability under load, compliance defensibility, and long-term operational cost drive every technology decision. If something newer or flashier exists but has no proven production track record in regulated environments, we prototype explicitly  -  we don't ship it as your default. This page is the 'how' chapter: once you know we solve your class of problem, here is what we stake our reputation on.",
+    "Reliability under load, compliance defensibility, and long-term operational cost drive every technology decision. If something newer or flashier exists but has no proven production track record in regulated environments, we prototype explicitly - we don't ship it as your default. This page is the 'how' chapter: once you know we solve your class of problem, here is what we stake our reputation on.",
 } as const;
 
 export const TECH_STORY_BRIDGE =
-  "Stack choices follow outcomes  -  not the other way. If you have not yet reviewed outcomes, start with the case studies, then return here for the engineering patterns behind them.";
+  "Stack choices follow outcomes - not the other way. If you have not yet reviewed outcomes, start with the case studies, then return here for the engineering patterns behind them.";
 
 export const TECH_CAPABILITY_NARRATIVE = [
   {
     title: "Detection engineering that survives audits",
-    body: "SIEM/XDR platforms where detection rules, enrichment pipelines, and evidence trails are designed before the build  -  not retrofitted when audit season arrives. Every alert has context. Every automated action has an immutable log.",
+    body: "SIEM/XDR platforms where detection rules, enrichment pipelines, and evidence trails are designed before the build - not retrofitted when audit season arrives. Every alert has context. Every automated action has an immutable log.",
     domains: ["SIEM", "XDR", "SOAR", "NTA"],
   },
   {
     title: "AI systems that governance teams can sign off",
-    body: "RAG pipelines and LLM workflows with evaluation harnesses, PII handling, human review checkpoints, and drift monitoring designed in from first sprint. Models stay observable and auditable in production  -  not frozen in a demo environment.",
+    body: "RAG pipelines and LLM workflows with evaluation harnesses, PII handling, human review checkpoints, and drift monitoring designed in from first sprint. Models stay observable and auditable in production - not frozen in a demo environment.",
     domains: ["RAG", "LLM evaluation", "MLOps", "Governance"],
   },
   {
@@ -40,7 +40,7 @@ export const TECH_CAPABILITY_NARRATIVE = [
 ] as const;
 
 export const TECH_FAQ_SECTION = {
-  title: "Technology choices  -  how we think",
+  title: "Technology choices - how we think",
   intro: "For architects and platform owners evaluating whether our defaults match your estate.",
 } as const;
 

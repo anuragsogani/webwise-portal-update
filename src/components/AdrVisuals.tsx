@@ -1,5 +1,5 @@
 /**
- * AdrVisuals — live visuals for the Agent Detection & Response page.
+ * AdrVisuals - live visuals for the Agent Detection & Response page.
  *  - AgentWorkforceMap: the AI workforce monitored by a governance core.
  *  - AgentTrace: a live agent session with one tool call blocked by policy.
  *  - GovernFlow: tool call → policy → decision → audit.

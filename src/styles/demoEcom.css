@@ -1,8 +1,8 @@
 /* ================================================================
-   DEMO E-COM — standalone stylesheet
+   DEMO E-COM - standalone stylesheet
    Color theme mirrors the homepage (tokens.css variables)
-   Font: Poppins (--font-display) — same as homepage
-   Accent: --lime (#76e4df) — same teal as homepage CTA
+   Font: Poppins (--font-display) - same as homepage
+   Accent: --lime (#76e4df) - same teal as homepage CTA
    ================================================================ */
 
 /* --- ALIAS: map old --tiffany refs in TSX inline styles → --lime --- */
@@ -234,7 +234,7 @@
   color: var(--muted);
 }
 
-/* Primary action button — matches homepage .btn-primary style */
+/* Primary action button - matches homepage .btn-primary style */
 .ec-add-btn {
   width: 100%;
   padding: 10px 0;
@@ -262,7 +262,7 @@
 }
 
 /* ----------------------------------------------------------------
-   SIDEBAR — DESKTOP
+   SIDEBAR - DESKTOP
    ---------------------------------------------------------------- */
 .ec-sidebar-desktop {
   display: none;
@@ -1958,7 +1958,7 @@ html[data-theme="light"] .ec-sidebar-btn.active .ec-sidebar-btn-icon {
 }
 
 /* ================================================================
-   LIGHT THEME OVERRIDES — scoped to #demo-ecom-root
+   LIGHT THEME OVERRIDES - scoped to #demo-ecom-root
    Triggered by the global data-theme="light" toggle.
    ================================================================ */
 html[data-theme="light"] #demo-ecom-root {

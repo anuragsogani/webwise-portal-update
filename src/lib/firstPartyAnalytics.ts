@@ -1,5 +1,5 @@
 /**
- * First-party analytics — production-grade auto-instrumentation.
+ * First-party analytics - production-grade auto-instrumentation.
  *
  * Auto-tracks (once initAutoTracking() is called):
  *  - Page views (called externally from GoogleAnalytics.tsx)
@@ -323,7 +323,7 @@ function _onCopy() {
 
 /**
  * Call once when the app mounts. Sets up all passive event listeners.
- * Safe to call multiple times — subsequent calls are no-ops.
+ * Safe to call multiple times - subsequent calls are no-ops.
  */
 export function initAutoTracking(): void {
   if (typeof window === "undefined" || _autoTrackingInitialized) return;

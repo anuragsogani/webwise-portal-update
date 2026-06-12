@@ -1,4 +1,4 @@
-/** Trust / Security page — mirrors duna.com/resources/trust (certifications section omitted). */
+/** Trust / Security page - mirrors duna.com/resources/trust (certifications section omitted). */
 
 export const TRUST_PAGE_SEO = {
   title: "Engineered for integrity | Trust | AiRAT",

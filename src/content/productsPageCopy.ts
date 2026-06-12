@@ -1,4 +1,4 @@
-/** Products, cyber services, and solution accelerators — AiRAT-owned copy (no vendor names). */
+/** Products, cyber services, and solution accelerators - AiRAT-owned copy (no vendor names). */
 
 export const SLIDE_DURATION_MS = 5000;
 
@@ -30,7 +30,7 @@ export const FEATURED_PRODUCT_SLIDES: readonly FeaturedProductSlide[] = [
     eyebrow: "Featured product",
     title: "Autonomous Security Operations Platform",
     summary:
-      "From millions of events to actionable decisions — automatically. Unify your stack, correlate threats, and let AI analysts investigate, prioritize, and respond 24×7.",
+      "From millions of events to actionable decisions - automatically. Unify your stack, correlate threats, and let AI analysts investigate, prioritize, and respond 24×7.",
     ctaLabel: "See platform",
     ctaTo: "/products/soc",
     lottieSrc: "/lottie/product-soc.json",
@@ -42,7 +42,7 @@ export const FEATURED_PRODUCT_SLIDES: readonly FeaturedProductSlide[] = [
     eyebrow: "Featured product",
     title: "Endpoint Operations & Security Platform",
     summary:
-      "One lightweight agent for every endpoint — live discovery, patching, policy enforcement, privileged operations, and zero-trust comms wired into the CSOC core.",
+      "One lightweight agent for every endpoint - live discovery, patching, policy enforcement, privileged operations, and zero-trust comms wired into the CSOC core.",
     ctaLabel: "See platform",
     ctaTo: "/products/endpoint",
     lottieSrc: "/lottie/product-soc.json",
@@ -111,7 +111,7 @@ export const PRODUCTS: readonly ProductDetail[] = [
     title: "Autonomous Security Operations Platform",
     seoTitle: "Autonomous Security Operations Platform | AiRAT SOC",
     seoDescription:
-      "Unify your security stack, correlate threats across your environment, and let AI-powered analysts investigate, prioritize, and respond 24×7. From millions of events to actionable decisions — automatically.",
+      "Unify your security stack, correlate threats across your environment, and let AI-powered analysts investigate, prioritize, and respond 24×7. From millions of events to actionable decisions - automatically.",
     lead:
       "Unify your security stack, correlate threats across your entire environment, and let AI-powered analysts investigate, prioritize, and respond 24×7.",
     workflow: [
@@ -178,7 +178,7 @@ export const PRODUCTS: readonly ProductDetail[] = [
     ],
     outcomes: [
       "Unified visibility across multi-cloud and hybrid estates",
-      "Continuous posture and compliance — not point-in-time scans",
+      "Continuous posture and compliance - not point-in-time scans",
       "Security, governance, and cost intelligence in one view",
     ],
     capabilities: [
@@ -207,7 +207,7 @@ export const PRODUCT_TILES: readonly ProductTile[] = [
     id: "soc",
     title: "Autonomous Security Operations Platform",
     body:
-      "Unify telemetry, correlate attack paths, and let AI SOC analysts triage, investigate, and respond — from 2,000 alerts to 12 prioritized incidents.",
+      "Unify telemetry, correlate attack paths, and let AI SOC analysts triage, investigate, and respond - from 2,000 alerts to 12 prioritized incidents.",
     metaType: "AI-powered SOC",
     metaSignal: "< 5 min MTTR · 100+ integrations",
     ctaLabel: "See platform",
@@ -216,7 +216,7 @@ export const PRODUCT_TILES: readonly ProductTile[] = [
     id: "xdr",
     title: "Endpoint Operations & Security Platform",
     body:
-      "One lightweight agent for every endpoint — live discovery, patching, policy enforcement, privileged operations, and zero-trust comms wired into the CSOC core.",
+      "One lightweight agent for every endpoint - live discovery, patching, policy enforcement, privileged operations, and zero-trust comms wired into the CSOC core.",
     metaType: "Endpoint operations",
     metaSignal: "1 control plane · admin-only access",
     ctaLabel: "See platform",
@@ -225,7 +225,7 @@ export const PRODUCT_TILES: readonly ProductTile[] = [
     id: "cspm",
     title: "Cloud Security & Governance Platform",
     body:
-      "Secure every cloud. Govern every resource. CSPM, DevSecOps, identity governance, compliance, and cost intelligence — unified across multi-cloud estates.",
+      "Secure every cloud. Govern every resource. CSPM, DevSecOps, identity governance, compliance, and cost intelligence - unified across multi-cloud estates.",
     metaType: "Cloud security & governance",
     metaSignal: "Posture · DevSecOps · Cost intel",
     ctaLabel: "See platform",
@@ -355,7 +355,7 @@ export const CYBER_SOLUTIONS: readonly CyberSolution[] = [
   {
     id: "soar-automation",
     title: "SOAR Automation & Playbook Factory",
-    oneLiner: "Orchestrated response with human gates — not unattended automation.",
+    oneLiner: "Orchestrated response with human gates - not unattended automation.",
     outcomes: ["Repeatable playbooks per incident class", "Analyst approval on every action", "Immutable action logs"],
     relatedProductId: "soc",
   },
@@ -364,7 +364,7 @@ export const CYBER_SOLUTIONS: readonly CyberSolution[] = [
 export const PRODUCTS_HERO = {
   badge: "Products",
   headline: "One intelligence core. Integrated from day one.",
-  body: "The Autonomous CSOC is the core — connect the security tools you already run, then layer in Endpoint, Cloud, and Agent platforms that share one data model and one response fabric. No bolt-ons. No integration projects.",
+  body: "The Autonomous CSOC is the core - connect the security tools you already run, then layer in Endpoint, Cloud, and Agent platforms that share one data model and one response fabric. No bolt-ons. No integration projects.",
 } as const;
 
 /** Core-and-layers model for the redesigned products landing page. */
@@ -402,7 +402,7 @@ export const PRODUCT_SHOWCASE: readonly ProductShowcase[] = [
     shortName: "CSOC",
     diagramLabel: "CSOC",
     oneLiner:
-      "Connect the security tools you already run and AiRAT's own platforms into one plane — every signal correlated, triaged, and actioned by AI analysts with a human on every response.",
+      "Connect the security tools you already run and AiRAT's own platforms into one plane - every signal correlated, triaged, and actioned by AI analysts with a human on every response.",
     metric: { value: "2,000 → 12", label: "daily alerts to prioritized incidents" },
     capabilities: [
       "100+ tool & data integrations",
@@ -412,7 +412,7 @@ export const PRODUCT_SHOWCASE: readonly ProductShowcase[] = [
       "SOAR automation, human-approved",
       "Board-ready evidence & SLA reporting",
     ],
-    outcome: "One correlated picture, investigated 24×7 — not four disconnected consoles.",
+    outcome: "One correlated picture, investigated 24×7 - not four disconnected consoles.",
     accent: "#aeec1d",
     to: "/products/soc",
     ctaLabel: "See the platform",
@@ -425,7 +425,7 @@ export const PRODUCT_SHOWCASE: readonly ProductShowcase[] = [
     shortName: "Endpoint",
     diagramLabel: "Endpoint",
     oneLiner:
-      "Manage, patch, enforce policy, run privileged remote operations, and prove compliance for every endpoint — from one command center.",
+      "Manage, patch, enforce policy, run privileged remote operations, and prove compliance for every endpoint - from one command center.",
     metric: { value: "1 control plane", label: "thousands of endpoints, zero direct access" },
     capabilities: [
       "Software & patch lifecycle automation",
@@ -448,7 +448,7 @@ export const PRODUCT_SHOWCASE: readonly ProductShowcase[] = [
     shortName: "Cloud",
     diagramLabel: "Cloud",
     oneLiner:
-      "Secure every cloud, govern every resource — posture, identity, compliance, and cost intelligence in one continuous view that feeds the core.",
+      "Secure every cloud, govern every resource - posture, identity, compliance, and cost intelligence in one continuous view that feeds the core.",
     metric: { value: "7+ frameworks", label: "ISO · SOC 2 · PCI · GDPR · NIST · CIS" },
     capabilities: [
       "Cloud posture management (CSPM)",
@@ -458,7 +458,7 @@ export const PRODUCT_SHOWCASE: readonly ProductShowcase[] = [
       "Cloud cost intelligence",
       "Multi-cloud & hybrid visibility",
     ],
-    outcome: "Continuous posture and cost intelligence across every cloud — not point-in-time scans.",
+    outcome: "Continuous posture and cost intelligence across every cloud - not point-in-time scans.",
     accent: "#c79a3e",
     to: "/products/cspm",
     ctaLabel: "See the platform",
@@ -471,7 +471,7 @@ export const PRODUCT_SHOWCASE: readonly ProductShowcase[] = [
     shortName: "Agents",
     diagramLabel: "Agents",
     oneLiner:
-      "Secure the AI workforce — agents, MCP servers, copilots — with visibility, governance, and response built for agent behavior, streamed into the core.",
+      "Secure the AI workforce - agents, MCP servers, copilots - with visibility, governance, and response built for agent behavior, streamed into the core.",
     metric: { value: "8+ domains", label: "agent visibility, governance & response" },
     capabilities: [
       "AI workforce inventory & visibility",
@@ -491,7 +491,7 @@ export const PRODUCT_SHOWCASE: readonly ProductShowcase[] = [
 export const PRODUCTS_MODEL = {
   eyebrow: "The model",
   title: "Bring the stack you already run. We make it intelligent.",
-  body: "SIEM, EDR, firewalls, identity, ticketing, threat intel — the CSOC ingests the tools you already run and turns scattered telemetry into correlated, decision-ready intelligence. Then Endpoint, Cloud, and Agent platforms layer on top, sharing the same data model from day one.",
+  body: "SIEM, EDR, firewalls, identity, ticketing, threat intel - the CSOC ingests the tools you already run and turns scattered telemetry into correlated, decision-ready intelligence. Then Endpoint, Cloud, and Agent platforms layer on top, sharing the same data model from day one.",
   stats: [
     { value: "100+", label: "integrations" },
     { value: "1", label: "unified data plane" },
@@ -509,7 +509,7 @@ export const PRODUCTS_CORE_STATS = [
 
 export const PRODUCTS_CORE_CTA = {
   title: "Start with the core. The layers come with it.",
-  body: "Tell us where the pressure is — alert overload, cloud posture, agentic AI rollout, or audit season — and we'll stand up the SOC core with the layers you need, integrated from day one.",
+  body: "Tell us where the pressure is - alert overload, cloud posture, agentic AI rollout, or audit season - and we'll stand up the SOC core with the layers you need, integrated from day one.",
   cta: "Book a strategy call",
   ctaTo: "/contact",
 } as const;
@@ -522,13 +522,13 @@ export const PRODUCTS_NAV_SECTIONS = [
 
 export const PRODUCTS_CLOSING = {
   title: "Ready to scope your security stack?",
-  body: "Tell us your priority — SOC overload, cloud posture and cost, audit season, or agentic AI rollout — and we will map the right product and accelerator.",
+  body: "Tell us your priority - SOC overload, cloud posture and cost, audit season, or agentic AI rollout - and we will map the right product and accelerator.",
   cta: "Book a strategy call",
   ctaTo: "/contact",
 } as const;
 
 export const PRODUCTS_FAQ_SECTION = {
-  title: "Products — quick answers",
+  title: "Products - quick answers",
   intro: "For security, platform, and procurement leads comparing SOC, endpoint, cloud, and ADR options.",
 } as const;
 
@@ -539,7 +539,7 @@ export const PRODUCTS_FAQ = [
   },
   {
     q: "What is Agent Detection & Response (ADR)?",
-    a: "Agent Detection & Response (ADR) provides continuous visibility, governance, threat detection, and response for AI agents, MCP servers, autonomous workflows, copilots, and RAG systems — a security model built for the AI workforce, not traditional endpoints alone.",
+    a: "Agent Detection & Response (ADR) provides continuous visibility, governance, threat detection, and response for AI agents, MCP servers, autonomous workflows, copilots, and RAG systems - a security model built for the AI workforce, not traditional endpoints alone.",
   },
   {
     q: "How is agentic AI security different from traditional EDR?",
@@ -547,15 +547,15 @@ export const PRODUCTS_FAQ = [
   },
   {
     q: "What is the Cloud Security & Governance Platform?",
-    a: "A unified platform for cloud visibility, security posture management (CSPM), DevSecOps, identity and access governance, compliance monitoring, and cost intelligence — so security, governance, and spend are managed together, not in separate tools.",
+    a: "A unified platform for cloud visibility, security posture management (CSPM), DevSecOps, identity and access governance, compliance monitoring, and cost intelligence - so security, governance, and spend are managed together, not in separate tools.",
   },
   {
     q: "What do we receive from a compliance audit readiness engagement?",
-    a: "Structured evidence packs, control gap analysis with owners, remediation priorities, and hooks for continuous compliance monitoring — aligned to the frameworks your auditors and regulators expect.",
+    a: "Structured evidence packs, control gap analysis with owners, remediation priorities, and hooks for continuous compliance monitoring - aligned to the frameworks your auditors and regulators expect.",
   },
   {
     q: "How do Solutions differ from Products on this page?",
-    a: "Products are the core platforms we operate long term. Solutions are focused accelerators — such as SIEM migration or SOC stand-up — with defined outcomes and timelines to reach production faster.",
+    a: "Products are the core platforms we operate long term. Solutions are focused accelerators - such as SIEM migration or SOC stand-up - with defined outcomes and timelines to reach production faster.",
   },
 ] as const;
 

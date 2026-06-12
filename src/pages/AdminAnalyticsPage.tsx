@@ -67,7 +67,7 @@ type Tab = "overview" | "clicks" | "engagement" | "audience" | "events";
 
 // ─── Date helpers ─────────────────────────────────────────────────────────────
 
-// Use local calendar date — toISOString() converts to UTC which breaks dates
+// Use local calendar date - toISOString() converts to UTC which breaks dates
 // for users in timezones ahead of UTC (e.g. IST +05:30 makes "today" appear as "yesterday").
 function toIso(d: Date) {
   const y = d.getFullYear();
@@ -109,7 +109,7 @@ const PRESETS: Array<{ label: string; range: () => DateRange }> = [
 function formatRange(r: DateRange) {
   const fmt = (d: Date) => `${d.getDate()} ${MONTH_NAMES[d.getMonth()]} ${d.getFullYear()}`;
   if (isSameDay(r.start, r.end)) return fmt(r.start);
-  return `${fmt(r.start)} — ${fmt(r.end)}`;
+  return `${fmt(r.start)} - ${fmt(r.end)}`;
 }
 
 // ─── Calendar month grid ──────────────────────────────────────────────────────
@@ -222,6 +222,7 @@ function DateRangePicker({
   const leftMon = leftMonth.month;
   const rightMon = (leftMon + 1) % 12;
   const rightYear = leftMon === 11 ? leftYear + 1 : leftYear;
+  const portalTarget = typeof document !== "undefined" ? document.body : null;
 
   // Recalculate popup position relative to button whenever open changes
   useEffect(() => {
@@ -236,7 +237,7 @@ function DateRangePicker({
   useEffect(() => {
     function onOutside(e: MouseEvent) {
       const target = e.target as Node;
-      // popupRef doesn't exist here — check ref (wrapper) and the portal root
+      // popupRef doesn't exist here - check ref (wrapper) and the portal root
       if (ref.current && ref.current.contains(target)) return;
       // If click is inside the portal popup, keep open
       const portal = document.getElementById("drp-portal");
@@ -315,7 +316,7 @@ function DateRangePicker({
         }} />
       </button>
 
-      {open && createPortal(
+      {open && portalTarget && createPortal(
         <div id="drp-portal" style={{
           ...popupStyle,
           background: "#0d0d28",
@@ -420,7 +421,7 @@ function DateRangePicker({
             </div>
           </div>
         </div>,
-        typeof document !== "undefined" ? document.body : null
+        portalTarget
       )}
     </div>
   );
@@ -429,13 +430,13 @@ function DateRangePicker({
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function fmtSeconds(s: number | null | undefined) {
-  if (!s) return "—";
+  if (!s) return "-";
   if (s < 60) return `${Math.round(s)}s`;
   return `${Math.floor(s / 60)}m ${Math.round(s % 60)}s`;
 }
 
 function pct(n: number, total: number) {
-  if (!total) return "—";
+  if (!total) return "-";
   return `${((n / total) * 100).toFixed(1)}%`;
 }
 
@@ -484,7 +485,7 @@ function DailyTrendChart({ data, range }: { data: Summary["daily_trend"]; range:
   if (!data.length) {
     return (
       <div style={{ textAlign: "center", color: "var(--adm-muted)", padding: "32px 0", fontSize: 13 }}>
-        No trend data yet — visit the site and come back here.
+        No trend data yet - visit the site and come back here.
       </div>
     );
   }
@@ -582,7 +583,7 @@ export default function AdminAnalyticsPage() {
       }
       const data = await res.json();
       if (!data || typeof data !== "object" || !("total_events" in data)) {
-        throw new Error("Backend returned empty summary — check server logs");
+        throw new Error("Backend returned empty summary - check server logs");
       }
       setSummary(data as Summary);
     } catch (e: unknown) {
@@ -693,7 +694,7 @@ export default function AdminAnalyticsPage() {
         fontSize: 12, color: "var(--adm-muted)",
       }}>
         <Globe size={13} style={{ color: "var(--adm-accent)", flexShrink: 0 }} />
-        <span>Showing <strong style={{ color: "var(--adm-text)" }}>public site</strong> traffic only — admin &amp; login pages are excluded from all metrics.</span>
+        <span>Showing <strong style={{ color: "var(--adm-text)" }}>public site</strong> traffic only - admin &amp; login pages are excluded from all metrics.</span>
       </div>
 
       {error && (
@@ -705,32 +706,32 @@ export default function AdminAnalyticsPage() {
       {/* ── Hero stats ──────────────────────────────────────────────────────── */}
       <div className="adm-stats" style={{ marginBottom: 24 }}>
         <StatCard accent icon={<Eye size={20} />}
-          value={loading ? "—" : (summary?.total_page_views ?? 0).toLocaleString()}
+          value={loading ? "-" : (summary?.total_page_views ?? 0).toLocaleString()}
           label="Page Views" sub="public site only" />
         <StatCard icon={<Users size={20} />}
-          value={loading ? "—" : (summary?.unique_sessions ?? 0).toLocaleString()}
+          value={loading ? "-" : (summary?.unique_sessions ?? 0).toLocaleString()}
           label="Sessions" />
         <StatCard icon={<Zap size={20} />} color="#a78bfa"
-          value={loading ? "—" : (summary?.unique_ips ?? 0).toLocaleString()}
+          value={loading ? "-" : (summary?.unique_ips ?? 0).toLocaleString()}
           label="Unique Visitors" />
         <StatCard icon={<MousePointerClick size={20} />} color="var(--adm-green)"
-          value={loading ? "—" : totalCTAs.toLocaleString()}
+          value={loading ? "-" : totalCTAs.toLocaleString()}
           label="CTA Clicks" />
         <StatCard icon={<Clock size={20} />} color="#f59e0b"
-          value={loading ? "—" : fmtSeconds(summary?.time_on_page?.median_seconds)}
+          value={loading ? "-" : fmtSeconds(summary?.time_on_page?.median_seconds)}
           label="Median Time on Page" />
         <StatCard icon={<Target size={20} />} color="#f97316"
-          value={loading ? "—" : (
+          value={loading ? "-" : (
             (summary?.conversion_funnel?.find((s) => s.step === "Leads Captured")?.count ?? 0).toLocaleString()
           )}
           label="Leads Captured" />
         <StatCard icon={<Mail size={20} />} color="#10b981"
-          value={loading ? "—" : (
+          value={loading ? "-" : (
             (summary?.conversion_funnel?.find((s) => s.step === "Newsletter Subs")?.count ?? 0).toLocaleString()
           )}
           label="New Subscribers" />
         <StatCard icon={<Activity size={20} />}
-          value={loading ? "—" : `${summary?.bounce_rate ?? 0}%`}
+          value={loading ? "-" : `${summary?.bounce_rate ?? 0}%`}
           label="Bounce Rate"
           sub={`${(summary?.avg_pages_per_session ?? 0).toFixed(1)} pages/session`} />
       </div>
@@ -757,7 +758,7 @@ export default function AdminAnalyticsPage() {
           {/* Daily trend chart */}
           <div className="adm-card" style={{ marginBottom: 20 }}>
             <div className="adm-card__title" style={{ marginBottom: 12 }}>
-              <TrendingUp size={13} /> Page Views — Daily Trend
+              <TrendingUp size={13} /> Page Views - Daily Trend
               <span style={{ fontSize: 11, color: "var(--adm-muted)", marginLeft: 8, fontWeight: 400 }}>
                 ({formatRange(dateRange)})
               </span>
@@ -800,7 +801,7 @@ export default function AdminAnalyticsPage() {
                               {p.views.toLocaleString()}
                             </td>
                             <td style={{ textAlign: "right", color: "var(--adm-muted)", fontSize: 12 }}>
-                              {p.unique_sessions?.toLocaleString() ?? "—"}
+                              {p.unique_sessions?.toLocaleString() ?? "-"}
                             </td>
                           </tr>
                         ))
@@ -904,14 +905,14 @@ export default function AdminAnalyticsPage() {
                       {!summary?.cta_clicks?.length
                         ? <tr>
                             <td colSpan={3} className="adm-table__empty">
-                              No CTA clicks yet. Tracking active — data will appear as users interact.
+                              No CTA clicks yet. Tracking active - data will appear as users interact.
                             </td>
                           </tr>
                         : summary.cta_clicks.map((e, i) => (
                           <tr key={i}>
                             <td style={{ maxWidth: 240 }}>
                               <div className="adm-truncate" style={{ fontSize: 12, fontWeight: 500 }}>
-                                {e.label || "—"}
+                                {e.label || "-"}
                               </div>
                               {e.href && (
                                 <div className="adm-truncate"
@@ -1007,7 +1008,7 @@ export default function AdminAnalyticsPage() {
                       : Object.entries(formFunnelGrouped).map(([form, counts]) => {
                           const started = counts["form_start"] ?? 0;
                           const submitted = counts["form_submit"] ?? 0;
-                          const conv = started ? ((submitted / started) * 100).toFixed(0) + "%" : "—";
+                          const conv = started ? ((submitted / started) * 100).toFixed(0) + "%" : "-";
                           return (
                             <tr key={form}>
                               <td style={{ fontWeight: 500 }}>{form}</td>
@@ -1062,7 +1063,7 @@ export default function AdminAnalyticsPage() {
                         ))}
                       </div>
                       <p style={{ fontSize: 11, color: "var(--adm-muted)", margin: 0 }}>
-                        Measures visible time only — pauses when the tab is hidden.
+                        Measures visible time only - pauses when the tab is hidden.
                       </p>
                     </div>
                   )
@@ -1083,7 +1084,7 @@ export default function AdminAnalyticsPage() {
                   <div>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
                       {[
-                        ["Avg Pages / Session", summary?.avg_pages_per_session?.toFixed(1) ?? "—"],
+                        ["Avg Pages / Session", summary?.avg_pages_per_session?.toFixed(1) ?? "-"],
                         ["Total Sessions", (summary?.unique_sessions ?? 0).toLocaleString()],
                       ].map(([k, v]) => (
                         <div key={k} className="adm-stat" style={{ padding: "10px 14px" }}>
@@ -1192,7 +1193,7 @@ export default function AdminAnalyticsPage() {
                                   fontWeight: byDay[d][t] ? 600 : 400,
                                   color: byDay[d][t] ? "var(--adm-text)" : "var(--adm-dim)",
                                 }}>
-                                  {byDay[d][t] ?? "—"}
+                                  {byDay[d][t] ?? "-"}
                                 </td>
                               ))}
                             </tr>
@@ -1239,7 +1240,7 @@ export default function AdminAnalyticsPage() {
                           <tr key={c.country}>
                             <td>{c.country || "Unknown"}</td>
                             <td style={{ textAlign: "right", fontWeight: 600 }}>
-                              {c.sessions?.toLocaleString() ?? "—"}
+                              {c.sessions?.toLocaleString() ?? "-"}
                             </td>
                             <td style={{ textAlign: "right", color: "var(--adm-muted)", fontSize: 12 }}>
                               {c.events.toLocaleString()}
@@ -1473,7 +1474,7 @@ export default function AdminAnalyticsPage() {
                                 </td>
                                 <td className="adm-truncate"
                                   style={{ maxWidth: 140, fontSize: 11 }}>
-                                  {ev.page_path || "—"}
+                                  {ev.page_path || "-"}
                                 </td>
                                 <td style={{
                                   fontSize: 11,
@@ -1483,10 +1484,10 @@ export default function AdminAnalyticsPage() {
                                   whiteSpace: "nowrap",
                                   color: label ? "var(--adm-text)" : "var(--adm-dim)",
                                 }} title={metaStr}>
-                                  {label || metaStr || "—"}
+                                  {label || metaStr || "-"}
                                 </td>
                                 <td style={{ fontSize: 11, color: "var(--adm-muted)", whiteSpace: "nowrap" }}>
-                                  {[ev.city, ev.country].filter(Boolean).join(", ") || "—"}
+                                  {[ev.city, ev.country].filter(Boolean).join(", ") || "-"}
                                 </td>
                                 <td className="adm-truncate"
                                   style={{ maxWidth: 120, fontSize: 10, color: "var(--adm-muted)" }}>
@@ -1494,7 +1495,7 @@ export default function AdminAnalyticsPage() {
                                 </td>
                                 <td style={{ fontSize: 11, color: "var(--adm-muted)" }}>
                                   {[ev.utm_source, ev.utm_medium, ev.utm_campaign]
-                                    .filter(Boolean).join(" / ") || "—"}
+                                    .filter(Boolean).join(" / ") || "-"}
                                 </td>
                                 <td className="adm-mono" style={{ fontSize: 10, whiteSpace: "nowrap" }}>
                                   {ev.session_id?.slice(0, 8)}…

@@ -291,7 +291,7 @@ export default function PortfolioCaseStudyPage() {
 
         <CtaBand
           title="Compare your situation to this case."
-          body="Bring your constraints — environment, timeline, and budget. We scope before we quote."
+          body="Bring your constraints - environment, timeline, and budget. We scope before we quote."
           primary={{ label: "All case studies", to: "/portfolio" }}
         />
       </main>

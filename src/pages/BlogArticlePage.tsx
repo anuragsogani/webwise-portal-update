@@ -640,7 +640,7 @@ export default function BlogArticlePage() {
 
         <CtaBand
           title="Talk to AiRAT about your system"
-          body="Bring a concrete scenario — search latency, SOC evidence gaps, or RAG drift."
+          body="Bring a concrete scenario - search latency, SOC evidence gaps, or RAG drift."
           primary={{ label: "Explore services", to: "/services" }}
         />
       </main>

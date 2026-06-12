@@ -171,7 +171,7 @@ export default function App() {
       <Route path="/admin/case-studies/:slug/edit" element={<PrivateRoute><AdminCaseStudyEditorPage /></PrivateRoute>} />
       <Route path="/admin/leads" element={<PrivateRoute><AdminLeadsPage /></PrivateRoute>} />
       <Route path="/admin/subscribers" element={<PrivateRoute><AdminSubscribersPage /></PrivateRoute>} />
-      {/* Legacy blog management — keep old URLs working */}
+      {/* Legacy blog management - keep old URLs working */}
       <Route path="/admin/manage-blogs" element={<PrivateRoute><AdminBlogsPage /></PrivateRoute>} />
       <Route path="/admin/create-blog" element={<PrivateRoute><AdminBlogEditorPage /></PrivateRoute>} />
       <Route path="*" element={<NotFoundPage />} />

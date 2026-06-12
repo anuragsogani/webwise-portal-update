@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------------------
-   SOC Product Page — layout, panel system, component overrides
+   SOC Product Page - layout, panel system, component overrides
    Does NOT override any global design-system tokens.
    --------------------------------------------------------------------------- */
 
@@ -25,7 +25,7 @@ body:has(.soc-first-scroll) .service-stack-hero-doodle {
   scroll-margin-top: 0;
 }
 
-/* Hero already controls its own padding — don't double-stack from .section   */
+/* Hero already controls its own padding - don't double-stack from .section   */
 .soc-scroll-panel.soc-first-scroll {
   justify-content: flex-start; /* body grid handles internal layout */
 }
@@ -83,7 +83,7 @@ body:has(.soc-scroll-panel) {
   }
 }
 
-/* Visual column — transparent, no extra padding */
+/* Visual column - transparent, no extra padding */
 .soc-scroll-band .feature-module__visual {
   overflow: hidden;
   display: flex;
@@ -216,7 +216,7 @@ body:has(.soc-scroll-panel) {
   border-top: 1px solid var(--color-hairline-strong);
 }
 
-/* Inside the hero KPI card, remove borders — card provides the container */
+/* Inside the hero KPI card, remove borders - card provides the container */
 .soc-hero-metrics .soc-metric {
   padding-top: 0;
   border-top: none;
@@ -332,7 +332,7 @@ body:has(.soc-scroll-panel) {
   display: block;
   width: 100%;
   border-radius: 14px;
-  overflow: hidden;           /* clips image to rounded corners — no extra card padding needed */
+  overflow: hidden;           /* clips image to rounded corners - no extra card padding needed */
   background: transparent;
 }
 
@@ -352,7 +352,7 @@ body:has(.soc-scroll-panel) {
   background: transparent;
 }
 
-/* Visibility panel: minimal block padding — this is an image-first section */
+/* Visibility panel: minimal block padding - this is an image-first section */
 .soc-scroll-panel[aria-labelledby="soc-visibility-title"] {
   padding-block: clamp(var(--space-md), 2vh, 1.25rem);
 }
@@ -408,7 +408,7 @@ body:has(.soc-scroll-panel) {
   overflow: visible;
 }
 
-/* List: natural flex column — no forced equal heights, no empty gaps */
+/* List: natural flex column - no forced equal heights, no empty gaps */
 .soc-intel-rotator .feature-module-rotator__services {
   display: block;
   overflow: visible;
@@ -715,6 +715,8 @@ body:has(.soc-scroll-panel) {
   display: grid;
   gap: clamp(0.75rem, 1.5vw, 1.25rem);
   width: 100%;
+  max-width: calc(100vw - 4rem);
+  box-sizing: border-box;
 }
 
 .soc-context-copy {
@@ -722,10 +724,13 @@ body:has(.soc-scroll-panel) {
   gap: 0.35rem;
   align-content: start;
   max-width: min(68rem, 100%);
+  min-width: 0;
 }
 
 .soc-context-visual {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   border-radius: 12px;
   overflow: hidden;
   background: transparent;
@@ -767,6 +772,12 @@ body:has(.soc-scroll-panel) {
   .soc-context-copy .display-lg,
   .soc-context-copy .body-md {
     white-space: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  .soc-context-stack {
+    max-width: calc(100vw - 1.5rem);
   }
 }
 
@@ -837,7 +848,7 @@ body:has(.soc-scroll-panel) {
   grid-column: 2;
 }
 
-/* Highlighted "Full Autonomous" card — teal accent */
+/* Highlighted "Full Autonomous" card - teal accent */
 .soc-mode-card--featured {
   border-color: var(--color-accent-teal, #46838c);
   background: rgba(70, 131, 140, 0.06);

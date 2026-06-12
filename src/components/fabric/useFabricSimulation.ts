@@ -1,5 +1,5 @@
 /**
- * useFabricSimulation — dotted wave terrain engine (single rAF loop).
+ * useFabricSimulation - dotted wave terrain engine (single rAF loop).
  *
  * A grid of points is displaced by a travelling heightfield and projected
  * through a simple perspective camera into a flowing surface. Depth is read
@@ -34,7 +34,7 @@ export function useFabricSimulation(
 
     const { width: W, height: H, cols: C, rows: Rr } = geometry;
 
-    // camera / field constants — field sits low so it clears the headline
+    // camera / field constants - field sits low so it clears the headline
     const focal = 560;
     const dx = (W * 1.6) / C; // wider so the bundle reaches the corners
     const dz = 17;

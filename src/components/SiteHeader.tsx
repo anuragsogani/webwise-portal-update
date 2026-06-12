@@ -39,7 +39,7 @@ function drawerLinkKey(label: string, to: string) {
   return `${to}|${label}`;
 }
 
-/** Flatten nav for mobile drawer — skip duplicate to+label pairs from mega + top-level links */
+/** Flatten nav for mobile drawer - skip duplicate to+label pairs from mega + top-level links */
 function buildDrawerLinks() {
   const seen = new Set<string>();
   const links: { label: string; to: string }[] = [];
@@ -219,7 +219,7 @@ export default function SiteHeader() {
       </a>
 
       <div className="top-nav__inner container">
-        <Link className="top-nav__brand" to="/" aria-label="AiRAT — home">
+        <Link className="top-nav__brand" to="/" aria-label="AiRAT - home">
           <BrandLogo size={32} className="top-nav__brand-mark" decorative />
           <span className="top-nav__brand-text" aria-hidden="true">
             AiRAT

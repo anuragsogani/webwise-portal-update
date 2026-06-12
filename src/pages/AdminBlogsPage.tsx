@@ -269,10 +269,10 @@ export default function AdminBlogsPage() {
                     {blog.title}
                   </div>
                   <div style={{ padding: "12px 16px 12px 0" }}>
-                    <span className="adm-badge adm-badge--dim">{blog.category || "—"}</span>
+                    <span className="adm-badge adm-badge--dim">{blog.category || "-"}</span>
                   </div>
                   <div style={{ padding: "12px 16px 12px 0", fontSize: 12, color: "var(--adm-muted)" }}>
-                    {blog.author || "—"}
+                    {blog.author || "-"}
                   </div>
                   <div style={{ padding: "12px 16px 12px 0" }}>
                     <span className={`adm-badge adm-badge--${blog.status}`}>{blog.status}</span>

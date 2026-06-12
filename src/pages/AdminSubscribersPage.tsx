@@ -160,14 +160,14 @@ export default function AdminSubscribersPage() {
                           </span>
                         </td>
                         <td style={{ fontSize: 12, color: "var(--adm-muted)" }}>
-                          {[s.city, s.country].filter(Boolean).join(", ") || "—"}
+                          {[s.city, s.country].filter(Boolean).join(", ") || "-"}
                         </td>
                         <td style={{ fontSize: 11, color: "var(--adm-muted)" }} className="adm-truncate">
                           {s.source_page ? (
                             <a href={s.source_page} target="_blank" rel="noopener noreferrer" style={{ color: "var(--adm-muted)" }}>
                               {s.source_page.replace(/^https?:\/\/[^/]+/, "")}
                             </a>
-                          ) : "—"}
+                          ) : "-"}
                         </td>
                         <td style={{ fontSize: 12, color: "var(--adm-muted)" }}>
                           {new Date(s.created_at).toLocaleDateString()}
@@ -185,7 +185,7 @@ export default function AdminSubscribersPage() {
           </div>
         </div>
 
-        {/* Sidebar — Top Countries */}
+        {/* Sidebar - Top Countries */}
         <div>
           <div className="adm-card">
             <div className="adm-card__title">Top Countries</div>

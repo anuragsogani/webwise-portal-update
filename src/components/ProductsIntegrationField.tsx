@@ -1,9 +1,9 @@
 /**
- * ProductsIntegrationField — the CSOC intelligence core ingesting a customer's
+ * ProductsIntegrationField - the CSOC intelligence core ingesting a customer's
  * existing stack (SIEM, EDR, ticketing, identity, threat intel …) plus AiRAT's
  * own planes. Hybrid HTML + SVG: crisp HTML chips with depth (size / opacity /
  * blur), SVG curved connectors and particles that flow inward and shift from
- * grey to lime at the core — raw telemetry becoming intelligence.
+ * grey to lime at the core - raw telemetry becoming intelligence.
  *
  * Coordinates are percentages; the container locks aspect-ratio so the SVG
  * viewBox (0..1000 × 0..780) maps 1:1 to chip left/top %. Reduced-motion safe.
@@ -15,11 +15,11 @@ type Node = { label: string; x: number; y: number; tier: Tier; accent?: string }
 
 /* x,y in percent of the field. Core sits at 50/50. */
 const NODES: Node[] = [
-  // AiRAT planes — first-class, accented
+  // AiRAT planes - first-class, accented
   { label: "Endpoint", x: 50, y: 13, tier: "plane", accent: "#46838c" },
   { label: "Cloud", x: 85, y: 73, tier: "plane", accent: "#c79a3e" },
   { label: "Agents", x: 15, y: 73, tier: "plane", accent: "#17100d" },
-  // existing stack — the tools customers already run
+  // existing stack - the tools customers already run
   { label: "SIEM", x: 23, y: 25, tier: "near" },
   { label: "EDR / XDR", x: 77, y: 23, tier: "near" },
   { label: "Ticketing", x: 84, y: 45, tier: "mid" },
@@ -53,7 +53,7 @@ function ProductsIntegrationFieldImpl() {
     <div
       className="pif"
       role="img"
-      aria-label="A customer's existing security stack — SIEM, EDR, ticketing, identity, threat intel and more — plus AiRAT's Endpoint, Cloud and Agent planes, all flowing into the central CSOC intelligence core."
+      aria-label="A customer's existing security stack - SIEM, EDR, ticketing, identity, threat intel and more - plus AiRAT's Endpoint, Cloud and Agent planes, all flowing into the central CSOC intelligence core."
     >
       <svg className="pif__links" viewBox="0 0 1000 780" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <defs>

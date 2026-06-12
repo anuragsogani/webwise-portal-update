@@ -1,2 +1,2 @@
-/** Deprecated — replaced by SignalLayer (directional, meaning-bearing signals). */
+/** Deprecated - replaced by SignalLayer (directional, meaning-bearing signals). */
 export {};

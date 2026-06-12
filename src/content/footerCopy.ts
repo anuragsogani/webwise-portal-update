@@ -1,10 +1,10 @@
-/** Site footer  -  micro1-style layout; watermark branding */
+/** Site footer - micro1-style layout; watermark branding */
 
 /** Primary wordmark in the footer column (high contrast on dark bar) */
 export const FOOTER_BRAND_MARK = "AiRAT" as const;
 
 export const FOOTER_TAGLINE =
-  "Security and AI platforms for regulated enterprises in UAE, India, and Europe - outcomes before acronyms.";
+  "Security and AI platforms for regulated enterprises in UAE, India, Singapore, and Europe - outcomes before acronyms.";
 
 export const FOOTER_ADDRESS_LINES = ["E-238A Ramnagar Vivek Vihar", "Jaipur, Rajasthan, India"] as const;
 

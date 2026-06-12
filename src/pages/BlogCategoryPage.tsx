@@ -290,7 +290,7 @@ export default function BlogCategoryPage() {
 
         <hr className="sp-rule" />
 
-        {/* Other categories — dynamic */}
+        {/* Other categories - dynamic */}
         {allCategories.filter((c) => c !== category).length > 0 && (
           <section className="sp-section" aria-labelledby="cat-other-heading">
             <div className="sp-section__label">

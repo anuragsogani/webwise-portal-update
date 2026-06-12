@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /login
+Disallow: /demo/
+
+Sitemap: https://airat.in/sitemap.xml

@@ -77,7 +77,7 @@ export default function ProductsPage() {
           </div>
         </section>
 
-        {/* The model — diagram + explanation */}
+        {/* The model - diagram + explanation */}
         <section className="section section--warm" aria-labelledby="products-model-heading">
           <div className="container products-model__grid">
             <RevealOnScroll className="products-model__visual" as="div" direction="scale">
@@ -146,13 +146,19 @@ export default function ProductsPage() {
             </p>
             <h2 className="display-lg">Three planes, wired to the core from day one.</h2>
             <p className="body-lg">
-              Each shares the CSOC's data model, telemetry, and response fabric — so coverage expands without a new
+              Each shares the CSOC's data model, telemetry, and response fabric - so coverage expands without a new
               integration project.
             </p>
           </div>
           <RevealOnScroll className="container products-layers" as="div">
             {layers.map((l, i) => (
-              <article key={l.id} id={`product-${l.id}`} className="player-card" style={{ "--pl-accent": l.accent } as React.CSSProperties}>
+              <Link
+                key={l.id}
+                to={l.to}
+                className="player-card"
+                style={{ "--pl-accent": l.accent } as React.CSSProperties}
+                aria-label={`${l.ctaLabel}: ${l.title}`}
+              >
                 <div className="player-card__head">
                   <span className="player-card__kicker">{l.kicker}</span>
                   <span className="player-card__index">{`0${i + 2}`}</span>
@@ -166,13 +172,13 @@ export default function ProductsPage() {
                 <ul className="pc-checks">
                   {l.capabilities.map((c) => (
                     <li key={c}>{c}</li>
-                  ))}
+                ))}
                 </ul>
                 <p className="pc-outcome body-sm">{l.outcome}</p>
-                <Link to={l.to} className="text-link player-card__cta">
+                <span className="text-link player-card__cta" aria-hidden="true">
                   {l.ctaLabel}
-                </Link>
-              </article>
+                </span>
+              </Link>
             ))}
           </RevealOnScroll>
         </section>

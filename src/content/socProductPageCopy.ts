@@ -6,12 +6,12 @@ const CSOC = "/images/csoc";
 export const SOC_PRODUCT_SEO = {
   title: "Autonomous Security Operations Platform | AiRAT SOC",
   description:
-    "Unify your security stack, correlate threats across your environment, and let AI-powered analysts investigate, prioritize, and respond 24×7. From millions of events to actionable decisions — automatically.",
+    "Unify your security stack, correlate threats, and let AI-powered analysts investigate, prioritize, and respond 24x7.",
 } as const;
 
 export const SOC_HERO = {
   eyebrow: "Autonomous Security Operations Platform",
-  title: "From Millions of Events to Actionable Decisions — Automatically",
+  title: "From Millions of Events to Actionable Decisions - Automatically",
   lead:
     "Unify your security stack, correlate threats across your entire environment, and let AI-powered analysts investigate, prioritize, and respond 24×7.",
   tagline: "Monitor. Analyze. Investigate. Respond.",
@@ -141,7 +141,7 @@ export const SOC_SCROLL_TWO = {
   automation: {
     eyebrow: "Automated response",
     title: "Respond faster. Stay in control.",
-    lead: "Choose how much automation you want — from assisted recommendations to full autonomous response.",
+    lead: "Choose how much automation you want - from assisted recommendations to full autonomous response.",
     modes: [
       { title: "Assisted Mode", body: "AI recommends actions. Your team approves execution." },
       { title: "Semi-Automated", body: "Pre-approved workflows execute automatically." },
@@ -159,7 +159,7 @@ export const SOC_SCROLL_TWO = {
   },
 } as const;
 
-/** Intelligence engine rotator — one visual per capability (matches homepage FeatureModuleRotator) */
+/** Intelligence engine rotator - one visual per capability (matches homepage FeatureModuleRotator) */
 export const SOC_INTELLIGENCE_ROTATOR_VISUALS: readonly HomeVisual[] = [
   {
     src: `${CSOC}/csoc_chain_1_trim.png`,

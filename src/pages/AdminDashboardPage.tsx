@@ -85,32 +85,32 @@ export default function AdminDashboardPage() {
       <div className="adm-stats">
         <div className="adm-stat adm-stat--accent">
           <div className="adm-stat__icon"><BarChart2 size={20} /></div>
-          <div className="adm-stat__value">{loading ? "—" : s?.pageViews ?? 0}</div>
+          <div className="adm-stat__value">{loading ? "-" : s?.pageViews ?? 0}</div>
           <div className="adm-stat__label">Page Views (30d)</div>
         </div>
         <div className="adm-stat adm-stat--green">
           <div className="adm-stat__icon"><Users size={20} /></div>
-          <div className="adm-stat__value">{loading ? "—" : s?.leads ?? 0}</div>
+          <div className="adm-stat__value">{loading ? "-" : s?.leads ?? 0}</div>
           <div className="adm-stat__label">Leads Captured</div>
         </div>
         <div className="adm-stat adm-stat--yellow">
           <div className="adm-stat__icon"><FileText size={20} /></div>
-          <div className="adm-stat__value">{loading ? "—" : s?.blogs.published ?? 0}</div>
+          <div className="adm-stat__value">{loading ? "-" : s?.blogs.published ?? 0}</div>
           <div className="adm-stat__label">Published Posts</div>
         </div>
         <div className="adm-stat">
           <div className="adm-stat__icon"><FileText size={20} /></div>
-          <div className="adm-stat__value">{loading ? "—" : s?.blogs.drafts ?? 0}</div>
+          <div className="adm-stat__value">{loading ? "-" : s?.blogs.drafts ?? 0}</div>
           <div className="adm-stat__label">Drafts in Queue</div>
         </div>
         <div className="adm-stat">
           <div className="adm-stat__icon"><FolderKanban size={20} /></div>
-          <div className="adm-stat__value">{loading ? "—" : s?.caseStudies ?? 0}</div>
+          <div className="adm-stat__value">{loading ? "-" : s?.caseStudies ?? 0}</div>
           <div className="adm-stat__label">Case Studies</div>
         </div>
         <div className="adm-stat">
           <div className="adm-stat__icon"><Mail size={20} /></div>
-          <div className="adm-stat__value">{loading ? "—" : s?.subscribers ?? 0}</div>
+          <div className="adm-stat__value">{loading ? "-" : s?.subscribers ?? 0}</div>
           <div className="adm-stat__label">Subscribers</div>
         </div>
       </div>
@@ -137,7 +137,7 @@ export default function AdminDashboardPage() {
           {
             icon: <FileText size={24} />,
             title: "Blog Management",
-            desc: `${s?.blogs.total ?? 0} posts — ${s?.blogs.drafts ?? 0} drafts queued`,
+            desc: `${s?.blogs.total ?? 0} posts - ${s?.blogs.drafts ?? 0} drafts queued`,
             path: "/admin/blogs",
           },
           {

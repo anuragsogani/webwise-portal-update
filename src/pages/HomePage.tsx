@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AiratShell from "../components/AiratShell";
 import EditorialTile from "../components/EditorialTile";
@@ -8,6 +9,7 @@ import SiteFooter from "../components/SiteFooter";
 import ClientLogoMarquee from "../components/ClientLogoMarquee";
 import OutcomesBand from "../components/OutcomesBand";
 import TrustedByLeaders from "../components/TrustedByLeaders";
+import { SEO } from "../components/SEO";
 import {
   CASES_EYEBROW,
   CASES_LEAD,
@@ -26,6 +28,9 @@ import {
 import PillarVisual from "../components/PillarVisual";
 import { SERVICES_PILLARS } from "../content/servicesPageCopy";
 import { HOME_SCENE } from "../content/homePageVisuals";
+import { faqsToSchemaPairs } from "../content/faqTypes";
+import { faqPageSchema, injectJsonLdScript } from "../lib/jsonLd";
+import { getSiteBaseUrl } from "../lib/siteBaseUrl";
 import "../styles/homepage.css";
 import "../styles/services-page.css";
 
@@ -37,8 +42,54 @@ const PILLAR_ACCENTS: Record<string, string> = {
 };
 
 export default function HomePage() {
+  useEffect(() => {
+    const base = getSiteBaseUrl().replace(/\/$/, "");
+    const rmOrg = injectJsonLdScript("airat-ld-organization", {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "AiRAT",
+      url: `${base}/`,
+      logo: `${base}/AiRAT_LOGO.PNG`,
+      email: "shared@airat.in",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Jaipur",
+        addressRegion: "Rajasthan",
+        addressCountry: "IN",
+      },
+      areaServed: ["UAE", "India", "Singapore", "Europe", "Australia", "United States"],
+      knowsAbout: [
+        "Security operations",
+        "SIEM and XDR",
+        "Agent Detection and Response",
+        "RAG systems",
+        "AI visibility",
+        "AEO and GEO",
+        "Data engineering",
+        "OpenSearch",
+      ],
+    });
+    const rmWebsite = injectJsonLdScript("airat-ld-website", {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "AiRAT",
+      url: `${base}/`,
+      publisher: {
+        "@type": "Organization",
+        name: "AiRAT",
+      },
+    });
+    const rmFaq = injectJsonLdScript("airat-ld-faq-home", faqPageSchema(faqsToSchemaPairs(HOME_FAQ)));
+    return () => {
+      rmOrg();
+      rmWebsite();
+      rmFaq();
+    };
+  }, []);
+
   return (
     <AiratShell>
+      <SEO />
       <SiteHeader />
       <main id="main-content">
         <section className="hero-scene section">
@@ -49,7 +100,6 @@ export default function HomePage() {
                 alt=""
                 width={2528}
                 height={1664}
-                fetchPriority="high"
                 decoding="async"
               />
             </ParallaxLayer>
@@ -78,6 +128,7 @@ export default function HomePage() {
                   </Link>
                 </span>
                 <span className="hero-band__title-line hero-band__title-line--secondary">
+                  {" "}
                   {HERO_H1_LINE3.trim()}
                 </span>
               </h1>
@@ -96,16 +147,16 @@ export default function HomePage() {
               </div>
             </RevealOnScroll>
           </div>
-        </section>
 
-        <RevealOnScroll direction="fade" delay={5} className="hero-scene__logos-band">
-          <div className="hero-scene__logos">
-            <div className="container hero-scene__logos-inner">
-              <p className="hero-scene__logos-label">{HOME_CLIENTS_SECTION.lead}</p>
-              <ClientLogoMarquee />
+          <RevealOnScroll direction="fade" delay={5} className="hero-scene__logos-band">
+            <div className="hero-scene__logos">
+              <div className="container hero-scene__logos-inner">
+                <p className="hero-scene__logos-label">{HOME_CLIENTS_SECTION.lead}</p>
+                <ClientLogoMarquee />
+              </div>
             </div>
-          </div>
-        </RevealOnScroll>
+          </RevealOnScroll>
+        </section>
 
         <OutcomesBand />
 

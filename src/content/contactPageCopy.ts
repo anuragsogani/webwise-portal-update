@@ -1,7 +1,7 @@
 export const CONTACT_SEO = {
   title: "Contact AiRAT | Book a Strategy Call",
   description:
-    "Reach AiRAT to discuss production security, AI, and data platforms. Book a 30-minute strategy call  -  no commitment  -  or send a brief for async review. UAE, India, Europe.",
+    "Reach AiRAT about production security, AI, and data platforms. Book a 30-minute strategy call or send a brief for async review.",
 } as const;
 
 export const CONTACT_HERO = {
@@ -26,11 +26,11 @@ export const CONTACT_OUTCOME_CHIPS = [
 
 export const CONTACT_FORM = {
   title: "Send a message",
-  lead: "Share the problem in a few lines. We reply with clear next steps — usually within one business day.",
+  lead: "Share the problem in a few lines. We reply with clear next steps - usually within one business day.",
   optionalTitle: "Add context (optional)",
   submitLabel: "Send message",
   submitSending: "Sending…",
-  success: "Message received. We will reply with clear next steps  -  usually within one business day.",
+  success: "Message received. We will reply with clear next steps - usually within one business day.",
 } as const;
 
 export const CONTACT_ASIDE = {
@@ -47,7 +47,7 @@ export const CONTACT_STORY_BRIDGE =
 
 export const CONTACT_FAQ_SECTION = {
   title: "Before you write",
-  intro: "Include these points to reduce back-and-forth  -  we can respond with a useful next step immediately.",
+  intro: "Include these points to reduce back-and-forth - we can respond with a useful next step immediately.",
 } as const;
 
 export const CONTACT_FAQ = [
@@ -57,11 +57,11 @@ export const CONTACT_FAQ = [
   },
   {
     q: "How quickly do you respond?",
-    a: "Typically within one business day  -  either clarifying questions or a proposed next step (call slot or written follow-up).",
+    a: "Typically within one business day - either clarifying questions or a proposed next step (call slot or written follow-up).",
   },
   {
     q: "Is the strategy call free?",
-    a: "Yes. It is a 30-minute working session to establish mutual fit  -  not a scripted product demo.",
+    a: "Yes. It is a 30-minute working session to establish mutual fit - not a scripted product demo.",
   },
   {
     q: "Do you sign NDAs before deep-dive conversations?",

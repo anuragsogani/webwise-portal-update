@@ -14,7 +14,7 @@
 export const AI_VIS_PAGE_SEO = {
   title: "AI Visibility & LLM Brand Presence | AiRAT",
   description:
-    "AiRAT helps enterprises build measurable presence inside AI-generated answers: ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews. Built by engineers who design LLM retrieval systems.",
+    "Build measurable brand presence inside ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews with engineers who design LLM retrieval systems.",
 } as const;
 
 export const AI_VIS_PAGE_HERO = {

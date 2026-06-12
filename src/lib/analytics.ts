@@ -3,7 +3,7 @@
  * All trackEvent calls also fire first-party analytics to /api/events.
  */
 
-const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined;
+const GA_ID = (import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined) || "G-DN16CEMGDW";
 
 let booted = false;
 

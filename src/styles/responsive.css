@@ -52,7 +52,7 @@ dd,
 }
 
 /* ────────────────────────────────────────────────────────────
-   COARSE POINTER  —  tap-target minimums (WCAG 2.5.5)
+   COARSE POINTER  -  tap-target minimums (WCAG 2.5.5)
    ──────────────────────────────────────────────────────────── */
 @media (hover: none) and (pointer: coarse) {
   .sh-hamburger,
@@ -615,7 +615,7 @@ dd,
 }
 
 /* ══════════════════════════════════════════════════════════════
-   METHODOLOGY PHASE — reinforce mobile (also in inner-pages.css)
+   METHODOLOGY PHASE - reinforce mobile (also in inner-pages.css)
    ══════════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
   .methodology-phase {
@@ -631,20 +631,24 @@ dd,
 }
 
 /* ══════════════════════════════════════════════════════════════
-   REDUCED MOTION  — disable non-essential animations
+   REDUCED MOTION  - disable non-essential animations
    ══════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   .hero-badge .dot { animation: none; }
   .trust-marquee-track { animation: none; flex-wrap: wrap; width: 100%; }
   .marquee { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; }
   .client-marquee__track {
+    position: static;
     animation: none;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     gap: 1.5rem 2rem;
+    transform: none;
   }
   .client-marquee__viewport {
+    height: auto;
+    padding-block: clamp(0.85rem, 2vw, 1.35rem);
     -webkit-mask-image: none;
     mask-image: none;
   }

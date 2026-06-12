@@ -1,5 +1,5 @@
 /*
- * Cross-page layout rhythm — section stacks, container alignment,
+ * Cross-page layout rhythm - section stacks, container alignment,
  * homepage grids, and inner-page spacing overrides.
  */
 
@@ -108,7 +108,7 @@ main:not(#main-content) {
   padding-bottom: var(--space-section-fluid);
 }
 
-/* Blog index — legacy .bi-* used --white (dark-theme text) on light canvas */
+/* Blog index - legacy .bi-* used --white (dark-theme text) on light canvas */
 .bi-main :is(
   .bi-hero__h1,
   .bi-domain__title,
@@ -157,7 +157,7 @@ main:not(#main-content) {
   padding-bottom: var(--space-lg);
 }
 
-/* ── Shared page system — light theme text + rhythm ────────── */
+/* ── Shared page system - light theme text + rhythm ────────── */
 .sp-section-title,
 .sp-section-title--lg,
 .sp-section-title--sm,

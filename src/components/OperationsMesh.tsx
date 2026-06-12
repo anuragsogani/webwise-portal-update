@@ -1,5 +1,5 @@
 /**
- * OperationsMesh — wide services hero centrepiece.
+ * OperationsMesh - wide services hero centrepiece.
  * A sprawling constellation: four pillar nodes route signal through an
  * organic network into a central AiRAT core. Reads as "fragmented systems,
  * one intelligent operation." Pure inline SVG + CSS (services-page.css).
@@ -27,7 +27,7 @@ function routeTo(x: number, y: number) {
   return `M ${x} ${y} C ${midX} ${y}, ${x + (CX - x) * 0.25} ${bendY}, ${CX} ${CY}`;
 }
 
-/* faint background constellation — organic scatter + thin links */
+/* faint background constellation - organic scatter + thin links */
 const FIELD: { x: number; y: number; r: number; solid?: boolean }[] = [
   { x: 250, y: 150, r: 4 }, { x: 330, y: 110, r: 3, solid: true }, { x: 300, y: 210, r: 5 },
   { x: 210, y: 250, r: 4, solid: true }, { x: 160, y: 330, r: 5 }, { x: 250, y: 360, r: 3 },
@@ -53,7 +53,7 @@ export default function OperationsMesh() {
       className="ops-mesh"
       viewBox="0 0 760 580"
       role="img"
-      aria-label={`Four operational domains — security, AI, data, and platform — routing signal into a central ${BRAND_NAME} operations core.`}
+      aria-label={`Four operational domains - security, AI, data, and platform - routing signal into a central ${BRAND_NAME} operations core.`}
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>

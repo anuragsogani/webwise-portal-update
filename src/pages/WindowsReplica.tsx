@@ -243,7 +243,7 @@ export default function WindowsReplica({
                     <td className="py-2"></td>
                   </tr>
                 ))}
-                {/* Invoices folder — expandable, contains the malicious .exe */}
+                {/* Invoices folder - expandable, contains the malicious .exe */}
                 <tr
                   className="hover:bg-white/5 cursor-pointer group"
                   onDoubleClick={() => setInvoicesOpen(prev => !prev)}
@@ -713,7 +713,7 @@ export default function WindowsReplica({
         </div>
       )}
 
-      {/* FAKE CMD FLASH — appears briefly when URGENT_Invoice_Q3.exe is run */}
+      {/* FAKE CMD FLASH - appears briefly when URGENT_Invoice_Q3.exe is run */}
       {showCmdFlash && (
         <motion.div
           data-guide-id="win-attack-sim"

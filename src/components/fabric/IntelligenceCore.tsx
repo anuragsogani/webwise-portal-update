@@ -1,8 +1,8 @@
 /**
- * IntelligenceCore — the AiRAT diamond toward the centre-right.
+ * IntelligenceCore - the AiRAT diamond toward the centre-right.
  * A rotated-square (diamond) frame holds the brand SVG logo in a clean square.
  * Subtle pulse via Framer Motion (the one place motion state is beneficial).
- * Particles are drawn toward it by the simulation — intelligence aggregation.
+ * Particles are drawn toward it by the simulation - intelligence aggregation.
  */
 import { memo } from "react";
 import { motion } from "framer-motion";
@@ -37,7 +37,7 @@ function IntelligenceCoreImpl({ core, reducedMotion }: Props) {
         />
       )}
 
-      {/* core diamond frame — gentle breathing scale */}
+      {/* core diamond frame - gentle breathing scale */}
       <motion.g
         style={{ transformBox: "fill-box", transformOrigin: "center" }}
         animate={reducedMotion ? undefined : { scale: [1, 1.025, 1] }}

@@ -1,5 +1,5 @@
 /**
- * CspmVisuals — live visuals for the Cloud Security & Governance page.
+ * CspmVisuals - live visuals for the Cloud Security & Governance page.
  *  - CloudScanMap: clouds feeding a continuous scanner core.
  *  - PostureScan: a live scan streaming pass/fail check results.
  *  - FindingsPriority: raw findings ranked into the few that matter.
@@ -19,7 +19,7 @@ const SC = { x: 250, y: 185 };
 
 function CloudScanMapImpl() {
   return (
-    <svg className="ev-agent" viewBox="0 0 500 380" role="img" aria-label="Six clouds — AWS, Azure, GCP, Kubernetes, OCI and M365 — continuously scanned by one engine." xmlns="http://www.w3.org/2000/svg">
+    <svg className="ev-agent" viewBox="0 0 500 380" role="img" aria-label="Six clouds - AWS, Azure, GCP, Kubernetes, OCI and M365 - continuously scanned by one engine." xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient id="cs-halo" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="#c79a3e" stopOpacity="0.2" />

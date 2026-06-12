@@ -1,5 +1,5 @@
 /**
- * PillarVisual — bespoke "before → order" live panels for the services pillars.
+ * PillarVisual - bespoke "before → order" live panels for the services pillars.
  * Each panel animates the exact transformation the pillar sells. The colour
  * adopts the section's --svc-accent. Pure inline SVG + CSS (services-page.css).
  * Reduced-motion safe (animations disabled, end-state shown).
@@ -228,7 +228,7 @@ function PlatformViz() {
         <path d="M316 40 l3 3 l5 -6" fill="none" />
       </g>
 
-      {/* alignment guides — the order beneath the growth */}
+      {/* alignment guides - the order beneath the growth */}
       <g className="pv-guides">
         {cols.map((x) => (
           <line key={`v${x}`} x1={x + 8} y1="64" x2={x + 8} y2="162" />

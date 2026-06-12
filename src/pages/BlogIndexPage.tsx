@@ -11,6 +11,8 @@ import {
   BLOG_INDEX_SEO,
 } from "../content/blog/blogPageCopy";
 import { SEO } from "../components/SEO";
+import { breadcrumbSchema, injectJsonLdScript } from "../lib/jsonLd";
+import { getSiteBaseUrl } from "../lib/siteBaseUrl";
 import "../styles/tokens.css";
 import "../styles/homepage.css";
 import "../styles/inner-pages.css";
@@ -19,13 +21,13 @@ import "../styles/insights.css";
 /** Known research-area descriptions for well-known categories. */
 const KNOWN_CLUSTER_DESCRIPTIONS: Record<string, string> = {
   "ai-llm":
-    "RAG architecture, evaluation harnesses, governed deployment, agent boundaries, and LLM procurement — for teams taking AI from prototype to production.",
+    "RAG architecture, evaluation harnesses, governed deployment, agent boundaries, and LLM procurement - for teams taking AI from prototype to production.",
   "cyber-soc":
-    "Detection engineering, SOC automation, evidence design, XDR cutover, and threat-informed defence — built for security teams that write runbooks, not slide decks.",
+    "Detection engineering, SOC automation, evidence design, XDR cutover, and threat-informed defence - built for security teams that write runbooks, not slide decks.",
   "data-search":
-    "Medallion architecture, streaming pipelines, OpenSearch migrations, real-time analytics, and KYC/ML operational discipline — for platform and data engineering leads.",
+    "Medallion architecture, streaming pipelines, OpenSearch migrations, real-time analytics, and KYC/ML operational discipline - for platform and data engineering leads.",
   playbooks:
-    "Cutover plans, SLA frameworks, bid writing strategy, observability design, and evaluation ownership — practical references for technical buyers and delivery leads.",
+    "Cutover plans, SLA frameworks, bid writing strategy, observability design, and evaluation ownership - practical references for technical buyers and delivery leads.",
   "case-thinking":
     "Structured thinking on platform decisions, vendor evaluation, architecture trade-offs, and the reasoning patterns that hold up under board-level scrutiny.",
 };
@@ -51,6 +53,35 @@ export default function BlogIndexPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [unsubBanner, setUnsubBanner] = useState<string | null>(null);
   const [visiblePubsCount, setVisiblePubsCount] = useState(7);
+
+  useEffect(() => {
+    const origin = getSiteBaseUrl();
+    const base = origin.replace(/\/$/, "");
+    const removeBreadcrumb = injectJsonLdScript(
+      "airat-ld-breadcrumb-blog",
+      breadcrumbSchema(origin, [
+        { name: "Home", path: "/" },
+        { name: "Insights", path: "/blog" },
+      ]),
+    );
+    const removeBlog = injectJsonLdScript("airat-ld-blog-index", {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      name: "AiRAT Insights",
+      description: BLOG_INDEX_SEO.description,
+      url: `${base}/blog`,
+      publisher: {
+        "@type": "Organization",
+        name: "AiRAT",
+        url: base,
+      },
+    });
+
+    return () => {
+      removeBreadcrumb();
+      removeBlog();
+    };
+  }, []);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -260,7 +291,7 @@ export default function BlogIndexPage() {
             </div>
           </div>
 
-          {/* Category filter row — dynamic */}
+          {/* Category filter row - dynamic */}
           <div className="bi-pubs__filters" role="group" aria-label="Filter by area">
             <button
               type="button"
@@ -341,7 +372,7 @@ export default function BlogIndexPage() {
 
         <CtaBand
           title="Talk to AiRAT about your system"
-          body="Bring a concrete scenario — search latency, SOC evidence gaps, or RAG drift."
+          body="Bring a concrete scenario - search latency, SOC evidence gaps, or RAG drift."
           primary={{ label: "Explore services", to: "/services" }}
         />
       </main>

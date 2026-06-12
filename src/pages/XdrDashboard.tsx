@@ -211,7 +211,7 @@ export default function XdrDashboard({ onExecuteCommand, airatInstalled, airatOn
                 : selectedCommand === 'velociraptor' ? 'Velociraptor'
                 : selectedCommand === 'status' ? 'System'
                 : 'Command';
-            const logMessage = `Command '${selectedCommand}' executed — Task ID: ${taskId}`;
+            const logMessage = `Command '${selectedCommand}' executed - Task ID: ${taskId}`;
 
             const newLog = {
                 timestamp: now,
@@ -284,7 +284,7 @@ export default function XdrDashboard({ onExecuteCommand, airatInstalled, airatOn
           ]
         : basePieData;
 
-    // Per-agent area chart — top 3 agents only, real-time 5-min slots
+    // Per-agent area chart - top 3 agents only, real-time 5-min slots
     const top3Agents = allAgents.slice(0, 3);
     const chartAgentKeys = top3Agents.map((a: any) => a.agentName);
     const agentStartTimes: Record<string, Date | null> = {};
@@ -378,10 +378,10 @@ export default function XdrDashboard({ onExecuteCommand, airatInstalled, airatOn
 
             {/* CHARTS ROW */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                {/* AREA CHART — top 3 agents, last 24h hourly */}
+                {/* AREA CHART - top 3 agents, last 24h hourly */}
                 <div className="bg-[var(--xdr-surface-1)] rounded-xl p-5 border border-[var(--xdr-border)] shadow-sm lg:col-span-2" data-guide-id="xdr-agent-activity-chart">
                     <h3 className="text-sm font-bold text-[var(--xdr-text-soft)] mb-1 flex items-center gap-2">
-                        <Activity className="w-4 h-4 text-blue-600" /> Top 3 Agents — Alert Activity (Last 24 Hours)
+                        <Activity className="w-4 h-4 text-blue-600" /> Top 3 Agents - Alert Activity (Last 24 Hours)
                     </h3>
                     <p className="text-[11px] text-slate-400 mb-3">Alerts per hour · live</p>
                     <ResponsiveContainer width="100%" height={220}>
@@ -450,7 +450,7 @@ export default function XdrDashboard({ onExecuteCommand, airatInstalled, airatOn
                         <Shield className="w-4 h-4 text-blue-600" /> Agent Status Distribution
                     </h3>
                     <div className="flex flex-row items-center justify-between flex-1 gap-3 mt-1">
-                        {/* SVG Donut — fills the card height */}
+                        {/* SVG Donut - fills the card height */}
                         <div className="shrink-0">
                         <svg width="200" height="200" viewBox="0 0 200 200">
                             {(() => {
@@ -493,7 +493,7 @@ export default function XdrDashboard({ onExecuteCommand, airatInstalled, airatOn
                             </text>
                         </svg>
                         </div>
-                        {/* Legend — right, vertically centered, no excess gap */}
+                        {/* Legend - right, vertically centered, no excess gap */}
                         <div className="flex flex-col justify-center gap-4 self-stretch pr-1">
                             {pieData.map((item, idx) => {
                                 const total = pieData.reduce((s, d) => s + d.value, 0);
@@ -558,7 +558,7 @@ export default function XdrDashboard({ onExecuteCommand, airatInstalled, airatOn
                                     <td className="p-4">{agent.osInfo}</td>
                                     <td className="p-4 text-[var(--xdr-text-muted)] text-xs">{agent.lastSeen}</td>
                                     <td className="p-4">{getAgentStatusBadge(agent.status)}</td>
-                                    <td className="p-4 text-[var(--xdr-text-muted)] text-xs whitespace-nowrap">{agent.onboardedOn || '—'}</td>
+                                    <td className="p-4 text-[var(--xdr-text-muted)] text-xs whitespace-nowrap">{agent.onboardedOn || '-'}</td>
                                     <td className="p-4">
                                         <button 
                                             onClick={() => navigateToAgent(agent.agentUuid)}

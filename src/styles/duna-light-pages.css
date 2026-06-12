@@ -189,7 +189,7 @@
   color: var(--color-ink);
 }
 
-/* ── FAQ accordion — colors inherit from components.css ───── */
+/* ── FAQ accordion - colors inherit from components.css ───── */
 .faq-section .section-title {
   color: var(--color-ink);
 }
@@ -355,7 +355,7 @@
   border-top: 1px solid var(--color-hairline);
 }
 
-/* ── Blog index (.bi-*) — light theme typography ───────────── */
+/* ── Blog index (.bi-*) - light theme typography ───────────── */
 .page-wrap .bi-main {
   color: var(--color-body);
 }
@@ -529,7 +529,7 @@
   color: var(--color-ink);
 }
 
-/* ── Blog article (.ba-main) — light theme typography ──────── */
+/* ── Blog article (.ba-main) - light theme typography ──────── */
 .page-wrap .ba-main {
   color: var(--color-body);
 }
@@ -615,7 +615,7 @@
   background: var(--color-canvas-warm);
 }
 
-/* ── Blog category (.bcp-*) — light theme typography ───────── */
+/* ── Blog category (.bcp-*) - light theme typography ───────── */
 .page-wrap .bcp-primer,
 .page-wrap .bcp-featured__desc {
   font-family: var(--font-body);
@@ -670,7 +670,7 @@
   border-bottom-color: var(--color-hairline);
 }
 
-/* ── Blog index — light theme colors & borders ─────────────── */
+/* ── Blog index - light theme colors & borders ─────────────── */
 .page-wrap .bi-pubs__search {
   background: var(--color-canvas);
   color: var(--color-ink);
@@ -720,7 +720,7 @@
   color: var(--color-muted);
 }
 
-/* ── Blog article — light theme colors & prose ─────────────── */
+/* ── Blog article - light theme colors & prose ─────────────── */
 .page-wrap .ba-progress {
   background: var(--color-primary);
 }

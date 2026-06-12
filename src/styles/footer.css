@@ -1,4 +1,4 @@
-/* Duna footer — scenic landscape band + link columns */
+/* Duna footer - scenic landscape band + link columns */
 
 .footer {
   background: var(--color-surface-dark);
@@ -17,6 +17,8 @@
 .footer__scene {
   position: absolute;
   inset: 0;
+  overflow: hidden;
+  contain: strict;
   pointer-events: none;
 }
 
@@ -165,7 +167,7 @@
   color: #fff;
 }
 
-/* AI summary links — footer module */
+/* AI summary links - footer module */
 .ai-summary-links {
   display: flex;
   flex-wrap: wrap;

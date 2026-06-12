@@ -1,89 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core pages -->
+  <url><loc>https://airat.in/</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://airat.in/about</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://airat.in/services</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://airat.in/products</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://airat.in/integrations</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://airat.in/portfolio</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://airat.in/blog</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://airat.in/resources</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://airat.in/resources/trust</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/methodology</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/technology-expertise</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/contact</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/privacy</loc><lastmod>2026-06-12</lastmod><changefreq>yearly</changefreq><priority>0.35</priority></url>
+  <url><loc>https://airat.in/terms</loc><lastmod>2026-06-12</lastmod><changefreq>yearly</changefreq><priority>0.35</priority></url>
 
-  <!-- ── CORE PAGES ──────────────────────────────────────────────────────── -->
-  <url><loc>https://airat.in/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://airat.in/about</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://airat.in/services</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://airat.in/methodology</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://airat.in/technology-expertise</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://airat.in/contact</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/resources</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://airat.in/demo</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://airat.in/privacy</loc><lastmod>2026-05-27</lastmod><changefreq>yearly</changefreq><priority>0.35</priority></url>
-  <url><loc>https://airat.in/terms</loc><lastmod>2026-05-27</lastmod><changefreq>yearly</changefreq><priority>0.35</priority></url>
+  <!-- Products -->
+  <url><loc>https://airat.in/products/soc</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://airat.in/products/adr</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://airat.in/products/cspm</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://airat.in/products/endpoint</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
-  <!-- ── SERVICE SUB-PAGES ───────────────────────────────────────────────── -->
-  <url><loc>https://airat.in/services/aeo-geo</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/services/technical-seo</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/services/sxo</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/services/ai-visibility</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Service pages -->
+  <url><loc>https://airat.in/services/aeo-geo</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://airat.in/services/ai-visibility</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://airat.in/services/technical-seo</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/services/sxo</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- ── PORTFOLIO ───────────────────────────────────────────────────────── -->
-  <url><loc>https://airat.in/portfolio</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://airat.in/portfolio/hawkeye-multi-tenant-cybersecurity-platform</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/portfolio/enterprise-xdr-agent-windows-endpoint-protection</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/portfolio/dva-institutional-cryptocurrency-trading-platform</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/portfolio/elk-log-observability-tier1-bank</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/portfolio/msazn-opensearch-ecommerce-search-uae</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/portfolio/genda-phool-hyperlocal-delivery-platform-india</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/portfolio/safemargin-ai-cyber-insurance-marketplace</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/portfolio/socai-bot-ai-cyber-compliance-assistant</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/portfolio/athena-unified-ai-cybersecurity-platform-eu</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/portfolio/enterprise-delta-lake-unified-analytics-platform</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <!-- GTM landing pages -->
+  <url><loc>https://airat.in/apac-cybersecurity-ai-soc-automation</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://airat.in/for-mssps</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
-  <!-- ── BLOG INDEX ──────────────────────────────────────────────────────── -->
-  <url><loc>https://airat.in/blog</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <!-- Portfolio case studies -->
+  <url><loc>https://airat.in/portfolio/hawkeye-multi-tenant-cybersecurity-platform</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/portfolio/enterprise-xdr-agent-windows-endpoint-protection</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/portfolio/dva-institutional-cryptocurrency-trading-platform</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/portfolio/elk-log-observability-tier1-bank</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/portfolio/msazn-opensearch-ecommerce-search-uae</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/portfolio/genda-phool-hyperlocal-delivery-platform-india</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/portfolio/safemargin-ai-cyber-insurance-marketplace</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/portfolio/socai-bot-ai-cyber-compliance-assistant</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/portfolio/athena-unified-ai-cybersecurity-platform-eu</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/portfolio/enterprise-delta-lake-unified-analytics-platform</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
-  <!-- ── BLOG CATEGORY HUBS ──────────────────────────────────────────────── -->
-  <url><loc>https://airat.in/blog/category/ai-llm</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/blog/category/cyber-soc</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/blog/category/data-search</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/blog/category/playbooks</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/category/case-thinking</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <!-- Portfolio industry hubs -->
+  <url><loc>https://airat.in/portfolio/industry/cybersecurity</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://airat.in/portfolio/industry/ai-platforms</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://airat.in/portfolio/industry/data-search</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://airat.in/portfolio/industry/cloud-observability</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://airat.in/portfolio/industry/fintech-trading</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://airat.in/portfolio/industry/e-commerce</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://airat.in/portfolio/industry/retail-enterprise-platforms</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <!-- ── BLOG ARTICLES ──────────────────────────────────────────────────── -->
-  <url><loc>https://airat.in/blog/self-healing-data-pipelines-ai-native</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/deepfake-resistant-authentication-enterprise</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/agentic-ai-governance-identity-enterprise</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/ai-overviews-inline-citations-seo-2026</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/entity-seo-knowledge-graph</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/llm-citation-patterns</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/geo-why-seo-not-enough-2025</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/governed-llm-apis-rate-limits-tenancy</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/data-contracts-medallion-bronze-silver-gold</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/threat-informed-detection-engineering-practice</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/case-based-thinking-platform-bids</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/elk-opensearch-migration-cutover-oncall</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/real-time-analytics-pipelines-sla-finance</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/observability-ai-systems-logs-traces-outputs</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/llm-evaluation-frameworks-procurement</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/kyc-ml-pipelines-operational-debt</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/soc-automation-evidence-auditability</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/opensearch-vs-elastic-cutover-checklist</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/blog/rag-evaluation-ownership-production</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <!-- Blog category hubs -->
+  <url><loc>https://airat.in/blog/category/ai-llm</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/blog/category/cyber-soc</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/blog/category/data-search</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/blog/category/playbooks</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/category/case-thinking</loc><lastmod>2026-06-12</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
 
-  <!-- ── GLOSSARY ────────────────────────────────────────────────────────── -->
-  <url><loc>https://airat.in/glossary</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airat.in/glossary/xdr</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/rag</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/geo</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://airat.in/glossary/siem</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/soar</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/mdr</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/data-lake</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/medallion-architecture</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/data-contract</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/opensearch</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/zero-trust</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://airat.in/glossary/mitre-attck</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <!-- Blog articles -->
+  <url><loc>https://airat.in/blog/agentic-ai-governance-identity-enterprise</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/ai-overviews-inline-citations-seo-2026</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/case-based-thinking-platform-bids</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/data-contracts-medallion-bronze-silver-gold</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/deepfake-resistant-authentication-enterprise</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/elk-opensearch-migration-cutover-oncall</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/entity-seo-knowledge-graph</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/geo-why-seo-not-enough-2025</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/governed-llm-apis-rate-limits-tenancy</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/kyc-ml-pipelines-operational-debt</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/llm-citation-patterns</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/llm-evaluation-frameworks-procurement</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/observability-ai-systems-logs-traces-outputs</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/opensearch-vs-elastic-cutover-checklist</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/rag-evaluation-ownership-production</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/real-time-analytics-pipelines-sla-finance</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/self-healing-data-pipelines-ai-native</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/soc-automation-evidence-auditability</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/blog/threat-informed-detection-engineering-practice</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
-  <!-- ── INDUSTRY PAGES ─────────────────────────────────────────────────── -->
-  <url><loc>https://airat.in/industries/fintech</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://airat.in/login</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-
-  <!-- ── GTM LANDING PAGES ─────────────────────────────────────────────── -->
-  <url><loc>https://airat.in/apac-cybersecurity-ai-soc-automation/</loc><lastmod>2026-05-29</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://airat.in/for-mssps/</loc><lastmod>2026-05-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <!-- Glossary -->
+  <url><loc>https://airat.in/glossary</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airat.in/glossary/xdr</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/rag</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/geo</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://airat.in/glossary/siem</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/soar</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/mdr</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/data-lake</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/medallion-architecture</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/data-contract</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/opensearch</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/zero-trust</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/glossary/mitre-attck</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://airat.in/industries/fintech</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

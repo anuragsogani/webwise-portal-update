@@ -1,4 +1,4 @@
-/** Pudding-style pixel bust — https://pudding.cool/2021/12/sesame/ */
+/** Pudding-style pixel bust - https://pudding.cool/2021/12/sesame/ */
 
 import type { TrustedLeaderCharacterVariant } from "../content/homePageCopy";
 

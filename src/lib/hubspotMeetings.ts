@@ -37,7 +37,7 @@ function _recordMeetingIntent(intent: string | undefined, source: string | undef
       page_url,
     }),
   }).catch(() => {
-    // Best-effort — don't surface errors to the user
+    // Best-effort - don't surface errors to the user
   });
 }
 

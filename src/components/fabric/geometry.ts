@@ -1,7 +1,7 @@
 /**
  * Geometry for the Dotted Wave Terrain.
  * The grid itself is generated in the engine; here we only fix the core
- * (horizon anchor) and its rings. Deterministic, trivial — kept for symmetry.
+ * (horizon anchor) and its rings. Deterministic, trivial - kept for symmetry.
  */
 import type { FabricConfig, FabricGeometry, Ring, Vec2 } from "./types";
 
